@@ -71,7 +71,12 @@ a{color:#161616}a:hover{color:#000000}
 .hp-pane{animation:uFadeUp .45s cubic-bezier(.2,.7,.2,1) both}
 .hp-bar{transition:height .6s cubic-bezier(.2,.8,.25,1),width .6s cubic-bezier(.2,.8,.25,1)}
 .hp-ask:hover{filter:brightness(.96)}@media (max-width: 900px){.hp-chat{border-right:0 !important;border-bottom:1px solid #ECECE8;min-height:0 !important}}
-@media (max-width: 900px){.hp-shell{grid-template-columns:1fr !important}.hp-side{padding:12px 20px 0 !important;justify-content:flex-start !important}.hp-rail{flex-direction:row !important}.hp-brand{grid-template-columns:1fr !important}.hp-kpis{grid-template-columns:1fr 1fr !important}.hp-three{grid-template-columns:1fr !important}}
+@media (max-width: 900px){.hp-shell{grid-template-columns:1fr !important}.hp-side{padding:12px 20px 0 !important;justify-content:flex-start !important}.hp-rail{flex-direction:row !important}.hp-brand{grid-template-columns:1fr !important}.hp-kpis{grid-template-columns:repeat(2, minmax(0, 1fr)) !important}.hp-three{grid-template-columns:1fr !important}}
+@media (max-width: 560px){.hp-kpis{grid-template-columns:minmax(0, 1fr) !important}#hp-dash{padding:16px 16px 20px !important}.hp-mbars,.hp-mlab{gap:4px !important}.hp-mlab>span{font-size:10.5px !important}.hp-mlab>span:nth-child(even){visibility:hidden}}
+
+@media (max-width: 560px){.hp-frame{display:flex;flex-direction:column;height:min(680px, calc(100svh - 96px))}.hp-top{flex:none;gap:4px !important;padding:12px 12px 10px 16px !important;border-bottom:1px solid #ECECE8}.hp-top>*{flex-shrink:0}.hp-top>span:nth-of-type(3){display:none !important}.hp-shell{display:flex !important;flex-direction:column;flex:1 1 auto;min-height:0 !important}.hp-shell>.hp-main{order:1;flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}.hp-shell>.hp-side{order:2;flex:none;padding:8px 12px !important;justify-content:center !important;border-top:1px solid #ECECE8;background:#FFFFFF}.hp-rail{width:100%;justify-content:space-around;box-shadow:none !important;padding:0 !important}}
+
+@media (max-width: 560px){.hp-ai{height:min(680px, calc(100svh - 96px));min-height:0 !important}.hp-ai-col{min-height:0;height:100%}.hp-ai-idle,.hp-ai-msgs{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-left:16px !important;padding-right:16px !important}.hp-ai-msgs{padding-top:20px !important}.hp-ai-tool{max-width:100%;box-sizing:border-box;min-width:0}.hp-ai-foot{flex:none;padding:10px 16px 16px !important;border-top:1px solid #EDEAE0}.hp-ai-sugs{flex-wrap:nowrap !important;overflow-x:auto;margin:0 -16px;padding:0 16px 2px;scrollbar-width:none}.hp-ai-sugs::-webkit-scrollbar{display:none}.hp-ai-sugs>*{flex:none}}
 </style>
 <style>.u-lg{transition:background-color .2s}.u-lg:hover{background-color:#F6F6F4}
 /* menu mobile */
@@ -333,7 +338,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
       <div style="border-radius: 28px; background: #F4F4F2; padding: clamp(12px, 1.6vw, 20px)">
         <sc-if value="{{hpIsPanel}}" hint-placeholder-val="{{ true }}">
         <div class="hp-frame" style="position: relative; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECECE8, 0 30px 60px -40px rgba(22,22,22,0.35); overflow: hidden">
-          <div style="display: flex; align-items: center; gap: 14px; padding: 16px 20px 0 24px">
+          <div class="hp-top" style="display: flex; align-items: center; gap: 14px; padding: 16px 20px 0 24px">
             <svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47" fill="{{logoFill}}" style="transition: fill .4s"></path></svg>
             <span style="flex: 1 1 auto"></span>
             <span style="display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px; border-radius: 10px; background: #E8F3D3; font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums"><svg width="16" height="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13M12 8c-1.5-3-5-3.5-5-1.2C7 8 9 8 12 8zM12 8c1.5-3 5-3.5 5-1.2C17 8 15 8 12 8z"></path></svg>10,000</span>
@@ -353,7 +358,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
           </aside>
           </sc-if>
 
-          <div style="min-width: 0; display: flex; flex-direction: column">
+          <div class="hp-main" style="min-width: 0; display: flex; flex-direction: column">
             <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; padding: 28px 32px 8px">
               <span style="font-size: 32px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 500">{{hpTitle}}</span>
               <sc-if value="{{hpIsDash}}" hint-placeholder-val="{{ true }}">
@@ -387,12 +392,12 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
                 <div class="{{hpCf}}" style="animation-delay: 240ms; display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: 16px; box-shadow: inset 0 0 0 1px #E6E6E2">
                   <span style="font-size: 15px; font-weight: 500">Monthly growth</span>
                   <span style="display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; color: #3F3F3B"><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 11px; height: 11px; border-radius: 50%; background: #161616"></span>Verified Human Tokens</span><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 11px; height: 11px; border-radius: 50%; background: #E3E0D6"></span>New Human Tokens</span></span>
-                  <div role="img" aria-label="Bar chart of verified and new Human Tokens per month" style="display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); align-items: end; gap: 10px; height: 170px; padding-top: 8px; border-bottom: 1px solid #E6E6E2">
+                  <div class="hp-mbars" role="img" aria-label="Bar chart of verified and new Human Tokens per month" style="display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); align-items: end; gap: 10px; height: 170px; padding-top: 8px; border-bottom: 1px solid #E6E6E2">
                     <sc-for list="{{hpMonths}}" as="b" hint-placeholder-count="11">
                       <span style="display: flex; align-items: flex-end; justify-content: center; gap: 3px; height: 100%"><span class="hp-bar {{hpGb}}" style="animation-delay: {{b.d}}ms; display: block; width: 38%; max-width: 14px; height: {{b.v}}%; border-radius: 3px 3px 0 0; background: #161616"></span><span class="hp-bar {{hpGb}}" style="animation-delay: {{b.d2}}ms; display: block; width: 38%; max-width: 14px; height: {{b.n}}%; border-radius: 3px 3px 0 0; background: #E3E0D6"></span></span>
                     </sc-for>
                   </div>
-                  <div style="display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 10px; margin-top: -6px">
+                  <div class="hp-mlab" style="display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 10px; margin-top: -6px">
                     <sc-for list="{{hpMonths}}" as="b" hint-placeholder-count="11">
                       <span style="text-align: center; font-size: 12px; color: #5C5C58">{{b.m}}</span>
                     </sc-for>
@@ -498,10 +503,10 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
             <span style="min-height: 34px; display: flex; align-items: center; padding: 0 10px; font-size: 13.5px; color: #5C5A52">Review sign-up flow</span>
             <span style="margin-top: auto; padding: 10px; font-size: 11.5px; line-height: 1.4; color: #A09D92">Illustrative example. Works in any client that supports MCP.</span>
           </aside>
-          <div style="min-width: 0; display: flex; flex-direction: column">
+          <div class="hp-ai-col" style="min-width: 0; display: flex; flex-direction: column">
             <div style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-bottom: 1px solid #EDEAE0; font-size: 13.5px; color: #5C5A52">Human Platform</div>
             <sc-if value="{{agIdle}}" hint-placeholder-val="{{ true }}">
-              <div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 22px; width: min(620px, 100%); margin: 0 auto; padding: 32px 24px; box-sizing: border-box">
+              <div class="hp-ai-idle" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 22px; width: min(620px, 100%); margin: 0 auto; padding: 32px 24px; box-sizing: border-box">
                 <span style="text-align: center; font-family: ui-serif, Georgia, 'Times New Roman', serif; font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; color: #2B2A26">What should we change in Unico today?</span>
                 <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px 12px 10px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #E6E3D9, 0 4px 14px -8px rgba(60,50,30,0.18)">
                     <span style="min-height: 24px; font-size: 15px; color: #9A978C">{{agPh}}</span>
@@ -520,9 +525,9 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
               </div>
             </sc-if>
             <sc-if value="{{agHas}}" hint-placeholder-val="{{ false }}">
-              <div aria-live="polite" style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; width: min(660px, 100%); margin: 0 auto; padding: 32px 24px 16px; box-sizing: border-box">
+              <div class="hp-ai-msgs" aria-live="polite" style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; width: min(660px, 100%); margin: 0 auto; padding: 32px 24px 16px; box-sizing: border-box">
                 <div class="u-step" data-on="{{ag1}}" style="align-self: flex-end; max-width: 80%; padding: 10px 16px; border-radius: 16px; background: #EFEDE5; font-size: 15px; line-height: 1.45">{{agP}}</div>
-                <div class="u-step" data-on="{{ag2}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 36px; padding: 0 14px 0 10px; border-radius: 10px; box-shadow: inset 0 0 0 1px #E6E3D9; background: #FFFFFF; font-size: 13px; color: #5C5A52; max-width: 100%; overflow: hidden"><span style="display: grid; place-items: center; width: 20px; height: 20px; border-radius: 6px; background: #161616; color: #FFFFFF; font-size: 10px; font-weight: 600">u</span><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Used <span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #1F1E1B">{{agTool}}</span></span></div>
+                <div class="u-step hp-ai-tool" data-on="{{ag2}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 36px; padding: 0 14px 0 10px; border-radius: 10px; box-shadow: inset 0 0 0 1px #E6E3D9; background: #FFFFFF; font-size: 13px; color: #5C5A52; max-width: 100%; overflow: hidden"><span style="display: grid; place-items: center; width: 20px; height: 20px; border-radius: 6px; background: #161616; color: #FFFFFF; font-size: 10px; font-weight: 600">u</span><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Used <span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #1F1E1B">{{agTool}}</span></span></div>
                 <div class="u-step" data-on="{{ag3}}" style="display: flex; flex-direction: column; gap: 14px">
                   <span style="font-family: ui-serif, Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.55; color: #1F1E1B">{{agR}}</span>
                   <div style="display: flex; flex-direction: column; border-radius: 14px; background: #FFFFFF; box-shadow: inset 0 0 0 1px #E6E3D9; overflow: hidden">
@@ -534,8 +539,8 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
                   <button type="button" class="u-link" onClick="{{agSeePortal}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0; border: 0; background: none; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 500; color: #3E4A22">View in the Unico Portal <span aria-hidden="true">→</span></button>
                 </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 12px; width: min(660px, 100%); margin: 0 auto; padding: 0 24px 24px; box-sizing: border-box">
-                <div role="list" aria-label="Suggested requests" style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px">
+              <div class="hp-ai-foot" style="display: flex; flex-direction: column; gap: 12px; width: min(660px, 100%); margin: 0 auto; padding: 0 24px 24px; box-sizing: border-box">
+                <div class="hp-ai-sugs" role="list" aria-label="Suggested requests" style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px">
                     <sc-for list="{{agList}}" as="a" hint-placeholder-count="4">
                       <button type="button" role="listitem" class="hp-ask" onClick="{{a.run}}" aria-pressed="{{a.sel}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px; border: 0; border-radius: 12px; background: {{a.bg}}; color: {{a.fg}}; box-shadow: {{a.sh}}; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 13.5px; transition: background-color .2s, color .2s"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{a.icon}}"></path></svg>{{a.chip}}</button>
                     </sc-for>
