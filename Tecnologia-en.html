@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unico · Technology</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<style>
+html{scroll-behavior:smooth}[id]{scroll-margin-top:88px}@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+.u-cico{color:rgba(0,0,0,.55);animation:uCico 2.4s linear infinite}@keyframes uCico{to{transform:rotate(360deg)}}@media (prefers-reduced-motion: reduce){.u-cico{animation:none}}
+.u-sec{transition:background-color .2s,transform .2s}.u-sec:hover{filter:brightness(.96)}
+.u-capon .u-menu{opacity:0;transition:opacity .18s ease}.u-menu{transition:opacity .35s ease .1s}.u-isl{position:absolute;left:50%;top:0;transform:translateX(-50%);z-index:5;overflow:hidden;background:rgb(252,252,253);color:rgba(0,0,0,.87);opacity:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08),0 20px 56px rgba(0,0,0,.14);transition:opacity .3s ease}.u-isl[data-on="1"]{opacity:1;pointer-events:auto;transition:opacity .12s ease}@keyframes uCapTxt{from{opacity:0;transform:translateY(6px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}@keyframes uCapIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}.u-captxt{animation:uCapTxt .48s cubic-bezier(.22,1,.36,1) .12s both}.u-capin{animation:uCapIn .52s cubic-bezier(.22,1,.36,1) .26s both}.u-capx{transition:background-color .15s}.u-capx:hover{background-color:rgba(0,0,0,.1) !important}
+
+.u-try{transition:background-color .3s ease}.u-try:hover{background-color:#E3E8D2}.u-try .u-tarr{transition:transform .3s cubic-bezier(.2,.7,.2,1)}.u-try:hover .u-tarr{transform:translateX(4px)}@media (prefers-reduced-motion: reduce){.u-try .u-tarr{transition:none}}
+
+body{margin:0;background:#FFFFFF}
+a{color:#161616}a:hover{color:#000000}
+@keyframes uFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.u-in{animation:uFadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.u-hdr{animation:uFadeUp .8s cubic-bezier(.2,.7,.2,1) both}
+@media (max-width: 760px){.u-mega{display:none !important}}
+.u-nmi{transition:background-color .2s}
+.u-nmi:hover{background-color:#F6F6F4}
+.u-nmi.u-nrow:hover{background-color:#EDEDEA}
+.u-nrow .u-narr{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.u-nrow:hover .u-narr{transform:translateX(6px)}
+.u-btn{transition:transform .25s cubic-bezier(.2,.7,.2,1),background-color .25s,border-color .25s,color .25s}
+.u-btn:hover{transform:translateY(-1px)}
+.u-ghost:hover{border-color:#161616}
+.u-link{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s cubic-bezier(.2,.7,.2,1)}
+.u-link:hover{background-size:100% 1px}
+.u-tab{transition:color .3s}
+.u-tab:hover{color:#161616}
+.u-vp{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.u-vp:hover{transform:translateY(-4px)}
+.u-gar{transition:background-color .3s}
+.u-gar:hover{background-color:#F8F8F6}
+.u-gar .u-arr{display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.u-gar:hover .u-arr{transform:translateX(4px)}
+
+.u-ch{grid-area:1 / 1;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s linear .55s}
+.u-ch[data-on="1"]{opacity:1;visibility:visible;transform:none;transition:opacity .6s ease .12s,transform .8s cubic-bezier(.2,.7,.2,1) .12s,visibility 0s}
+.u-nb{transition:color .3s}
+.u-nb .u-nbar{transform-origin:left center;transform:scaleX(0);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.u-nb[data-on="1"]{color:#161616}
+.u-nb[data-on="1"] .u-nbar{transform:scaleX(1)}
+.u-nb:hover{color:#161616}
+.u-num>li{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.u-num[data-in="1"]>li{opacity:1;transform:none}.u-num[data-in="1"]>li:nth-child(1){transition-delay:0.00s}.u-num[data-in="1"]>li:nth-child(2){transition-delay:0.08s}.u-num[data-in="1"]>li:nth-child(3){transition-delay:0.16s}.u-num[data-in="1"]>li:nth-child(4){transition-delay:0.24s}.u-num[data-in="1"]>li:nth-child(5){transition-delay:0.32s}@media (prefers-reduced-motion: reduce){.u-num>li{transition:none;transform:none}}
+.u-resp{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.u-resp[data-on="1"]{opacity:1;transform:none;transition-delay:.35s}
+.u-chip{transition:opacity .3s}
+
+.u-faq summary{list-style:none;cursor:pointer}
+.u-faq summary::-webkit-details-marker{display:none}
+.u-faq .u-plus{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.u-faq[open] .u-plus{transform:rotate(45deg)}
+.u-faq summary:hover .u-q{color:#000000}
+
+@media (max-width: 960px){.u-split{grid-template-columns:1fr !important}.u-cta{grid-template-columns:1fr !important}.u-fcols{grid-template-columns:1fr 1fr !important}.u-opts{grid-template-columns:1fr !important}.u-atk{grid-template-columns:1fr auto !important}.u-atk>span:nth-child(2){grid-column:1 / -1;grid-row:2}}
+@media (max-width: 860px){.u-stagegrid{grid-template-columns:1fr !important;grid-template-rows:minmax(0,1fr) auto !important;gap:20px !important;padding-top:76px !important}.u-panel{order:-1;height:100% !important;min-height:0 !important}.u-chnav{display:none !important}.u-chtext{min-height:210px !important}}
+@media (max-width: 760px){.u-menu{display:none !important}}
+@media (prefers-reduced-motion: reduce){.u-in,.u-hdr{animation:none}.u-btn,.u-vp,.u-ch,.u-ch[data-on="1"],.u-resp,.u-resp[data-on="1"],.u-nb .u-nbar{transition:none}}
+</style>
+<style>.u-lg{transition:background-color .2s}.u-lg:hover{background-color:#F6F6F4}</style>
+</helmet>
+<div style="background: #FFFFFF; color: #161616; font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased">
+
+  <header class="u-hdr" style="position: sticky; top: 0; z-index: 20">
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; bottom: -36px; pointer-events: none; opacity: {{hdrOp}}; transition: opacity .4s ease; background: linear-gradient(to bottom, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.82) 45%, rgba(255,255,255,0.4) 75%, rgba(255,255,255,0) 100%); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%)"></div>
+    <nav aria-label="Main" onMouseLeave="{{menuClose}}" style="position: relative; max-width: 1200px; margin: 0 auto; padding: {{navPad}}px 24px; transition: padding .45s cubic-bezier(.2,.7,.2,1); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px">
+      <a href="HomeI-en.html" aria-label="Unico, home page" style="justify-self: start; display: flex; align-items: center; min-height: 44px">
+        <svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47" fill="{{logoFill}}" style="transition: fill .4s"></path></svg>
+      </a>
+      <div id="u-isl" class="u-isl" data-on="{{capOn}}" role="dialog" aria-label="Capture test" aria-hidden="{{capHidden}}" style="width: 126px; height: 37px; border-radius: 24px">
+          <div id="u-capglow" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 140px; pointer-events: none; opacity: {{capGlow}}; transition: opacity .5s ease"></div>
+          <div id="u-capline" aria-hidden="true" style="position: absolute; inset: 0; border-radius: inherit; padding: 1px; box-sizing: border-box; pointer-events: none; opacity: {{capGlow}}; transition: opacity .5s ease; -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0)"></div>
+          <video id="u-capvid" autoplay="" muted="" playsinline="" aria-hidden="true" style="position: absolute; width: 2px; height: 2px; opacity: 0; pointer-events: none"></video>
+          <video id="u-capcam" autoplay="" muted="" playsinline="" aria-hidden="true" style="position: absolute; top: 64px; left: 50%; width: 200px; height: 236px; margin-left: -100px; border-radius: 50%; object-fit: cover; transform: scaleX(-1) scale({{capMediaS}}); background: rgba(0,0,0,0.05); pointer-events: none; opacity: {{capCamOp}}; transition: opacity .4s ease, transform .9s cubic-bezier(.22,1,.36,1)"></video>
+          <div aria-hidden="true" style="position: absolute; top: 64px; left: 50%; width: 200px; height: 236px; margin-left: -100px; border-radius: 50%; overflow: hidden; pointer-events: none; opacity: {{capSimOp}}; transform: scale({{capMediaS}}); transition: opacity .4s ease, transform .9s cubic-bezier(.22,1,.36,1)"><video src="fbf64dd0005b72aee4ce3ebfcc20b628.mp4" autoplay="" muted="" loop="" playsinline="" style="width: 100%; height: 100%; object-fit: cover; object-position: 44% 30%; transform: scale(1.12); transform-origin: 44% 35%"></video></div>
+          <canvas id="u-capcv" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 370px; height: 480px; pointer-events: none"></canvas>
+          <div aria-live="polite">
+            <sc-if value="{{capFast}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; left: 0; right: 0; top: 186px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center">
+                <div style="font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: 0.15px">Look at the screen</div>
+                <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6); font-variant-numeric: tabular-nums">Capturing automatically</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{capVerify}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; left: 0; right: 0; top: 186px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center">
+                <div style="font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: 0.15px">Generating the Human Token</div>
+                <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6); font-variant-numeric: tabular-nums">{{capTime}}</div>
+              </div>
+            </sc-if>
+            <div style="position: absolute; left: 0; right: 0; top: 322px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; opacity: {{capCamTxtOp}}; transition: opacity .3s ease">
+              <div style="display: inline-flex; align-items: center; gap: 10px; font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: 0.15px"><svg class="u-cico" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1.2 2.4" stroke-linecap="round"></rect></svg><span>{{capCamT1}}</span></div>
+              <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6); font-variant-numeric: tabular-nums">{{capCamT2}}</div>
+            </div>
+            <sc-if value="{{capCamBtn}}" hint-placeholder-val="{{false}}">
+              <div class="u-capin" style="position: absolute; left: 0; right: 0; top: 254px; display: flex; justify-content: center"><button type="button" class="u-sec" onClick="{{capCam}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.75); cursor: pointer; font: 500 13px 'Geist', sans-serif; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h3.5L8 5.5h8L17.5 8H21v11H3z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>See the capture</button></div>
+            </sc-if>
+            <sc-if value="{{capOk}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; left: 0; right: 0; top: 172px; padding: 0 22px; display: flex; flex-direction: column; align-items: center; text-align: center">
+                <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6)">Your Human Token</div>
+                <div style="margin-top: 4px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 19px; letter-spacing: 0.02em; color: rgb(33,33,33); white-space: nowrap">{{capTok}}</div>
+                <div style="margin-top: 16px; align-self: stretch; display: flex; align-items: stretch; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.08)">
+                  <div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 2px"><span style="font-size: 20px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; font-variant-numeric: tabular-nums">{{capTime}}</span><span style="font-size: 12px; color: rgba(0,0,0,0.55)">to generate</span></div>
+                  <span aria-hidden="true" style="width: 1px; background: rgba(0,0,0,0.08)"></span>
+                  <div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 2px"><span style="font-size: 20px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; font-variant-numeric: tabular-nums">0</span><span style="font-size: 12px; color: rgba(0,0,0,0.55)">photos stored</span></div>
+                </div>
+                <div style="margin-top: 18px; display: flex; gap: 8px; justify-content: center"><button type="button" class="u-btn" onClick="{{capAgain}}" style="min-height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: rgb(33,33,33); color: #FFFFFF; cursor: pointer; font: 500 14px 'Geist', sans-serif">Try again</button><button type="button" class="u-sec" onClick="{{capCam}}" aria-label="See the capture" title="See the capture" style="width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.75); display: grid; place-items: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h3.5L8 5.5h8L17.5 8H21v11H3z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></button></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{capSquare}}" hint-placeholder-val="{{false}}">
+              <div class="u-capin" aria-hidden="true" style="position: absolute; left: 22px; top: 12px; height: 32px; display: flex; align-items: center; color: rgba(0,0,0,0.5)"><svg aria-hidden="true" width="42" height="9" viewBox="0 0 135 29" fill="currentColor"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47"></path></svg></div>
+            </sc-if>
+            <sc-if value="{{capSquare}}" hint-placeholder-val="{{false}}">
+              <button type="button" class="u-capx u-capin" onClick="{{capClose}}" aria-label="Close" style="position: absolute; right: 12px; top: 12px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.6); display: grid; place-items: center; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+            </sc-if>
+            <sc-if value="{{capPill}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; white-space: nowrap">
+                <span style="width: 22px; flex: none"></span>
+                <span style="font-size: 14px; font-weight: 500; letter-spacing: 0.17px; color: rgb(96,121,56)">Real person</span>
+                <span style="font-size: 14px; color: rgba(0,0,0,0.5); font-variant-numeric: tabular-nums">{{capTime}}</span>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      <div id="u-navpill" class="{{capCls}}" style="position: relative; z-index: 7; display: flex; align-items: center; padding: 5px; border-radius: 999px; background: {{pillBg}}; -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); border: 1px solid {{pillBorder}}; box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 8px 24px -10px rgba(22,22,22,0.14); transition: background-color .4s, border-color .4s">
+        
+        
+      <div class="u-menu" role="list" style="position: relative; display: flex">
+        <span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 0; width: 104px; border-radius: 999px; background: {{hovBg}}; transform: translateX({{hovX}}px); opacity: {{hovOp}}; transition: transform .35s cubic-bezier(.3,.7,.2,1), opacity .25s"></span>
+        <span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 0; width: 104px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(22,22,22,0.06), 0 4px 12px rgba(22,22,22,0.06); transform: translateX({{actX}}px)"></span>
+        <sc-for list="{{menus}}" as="m" hint-placeholder-count="5">
+          <a role="listitem" href="{{m.href}}" onMouseEnter="{{m.open}}" onFocus="{{m.open}}" aria-expanded="{{m.expanded}}" aria-current="{{m.current}}" style="position: relative; width: 104px; min-height: {{itemH}}px; display: grid; place-items: center; border-radius: 999px; text-decoration: none; font-size: {{navFs}}px; font-weight: 500; color: {{m.color}}; transition: color .25s, min-height .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1)">{{m.label}}</a>
+        </sc-for>
+      </div>
+      </div>
+      <div style="justify-self: end; display: flex; align-items: center; gap: 10px">
+        <div style="position: relative; z-index: 4" onMouseEnter="{{langOpen}}" onMouseLeave="{{langClose}}">
+          <button type="button" onClick="{{langToggle}}" aria-expanded="{{langExpanded}}" aria-haspopup="true" aria-label="Language: English" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; border: 0; background: transparent; cursor: pointer; font: 500 14px 'Geist', sans-serif; color: {{enColor}}; transition: color .4s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"></path></svg><span>EN</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="transform: rotate({{langRot}}deg); transition: transform .3s"><path d="M6 9l6 6 6-6"></path></svg></button>
+          <div onMouseEnter="{{langOpen}}" style="position: absolute; z-index: 5; right: 0; top: 100%; width: 320px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{langOp}}; transform: translateY({{langY}}px); pointer-events: {{langPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
+            <div role="dialog" aria-label="Language" style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.2); padding: 12px; display: flex; flex-direction: column; gap: 4px">
+              <span style="padding: 6px 12px 4px; font-size: 13px; color: #6E6E69">Language</span>
+              <a class="u-lg" href="#topo" lang="en" aria-current="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 8px 12px; border-radius: 14px; background: #F3F3EF; text-decoration: none; color: #161616"><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 15px; font-weight: 500">English</span><span style="font-size: 12.5px; color: #6E6E69">Current language</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A7F4B" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></a><a class="u-lg" href="Tecnologia.html" hreflang="pt-BR" lang="pt-BR" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 8px 12px; border-radius: 14px; text-decoration: none; color: #161616"><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 15px; font-weight: 500">Português</span><span style="font-size: 12.5px; color: #6E6E69">Portuguese</span></span><span style="font-size: 12.5px; color: #6E6E69">Switch</span></a>
+              <div style="margin: 8px 12px 0; padding-top: 12px; border-top: 1px solid #ECECE8; font-size: 13px; color: #6E6E69">Other languages</div>
+              <ul style="margin: 0; padding: 0 0 4px; list-style: none; max-height: 248px; overflow-y: auto"><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="zh" style="font-size: 14px; color: #8A8A85">中文 <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Mandarin</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="hi" style="font-size: 14px; color: #8A8A85">हिन्दी <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Hindi</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="es" style="font-size: 14px; color: #8A8A85">Español <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Spanish</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="fr" style="font-size: 14px; color: #8A8A85">Français <span lang="en" style="font-size: 12.5px; color: #A3A39E">· French</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ar" style="font-size: 14px; color: #8A8A85">العربية <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Arabic</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="bn" style="font-size: 14px; color: #8A8A85">বাংলা <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Bengali</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ru" style="font-size: 14px; color: #8A8A85">Русский <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Russian</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ur" style="font-size: 14px; color: #8A8A85">اردو <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Urdu</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="id" style="font-size: 14px; color: #8A8A85">Bahasa Indonesia <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Indonesian</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="de" style="font-size: 14px; color: #8A8A85">Deutsch <span lang="en" style="font-size: 12.5px; color: #A3A39E">· German</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ja" style="font-size: 14px; color: #8A8A85">日本語 <span lang="en" style="font-size: 12.5px; color: #A3A39E">· Japanese</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Not available</span></li></ul>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="u-btn u-sec" onClick="{{capOpen}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{secBg}}; color: {{secFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none" aria-label="Tokenize me: get my Human Token">Tokenize me</button>
+        <div style="position: relative" onMouseLeave="{{startClose}}">
+          <button type="button" class="u-btn" onClick="{{startToggle}}" onMouseEnter="{{startOpen}}" aria-expanded="{{startExpanded}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{ctaBg}}; color: {{ctaFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none">Get started</button>
+          <div style="position: absolute; right: 0; top: 100%; width: 400px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{startOp}}; transform: translateY({{startY}}px); pointer-events: {{startPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
+            <div style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.2); padding: 20px; display: flex; flex-direction: column; gap: 14px">
+              <div style="display: flex; flex-direction: column; gap: 4px">
+                <span style="font-size: 16px; font-weight: 500">Connect Unico to your agent</span>
+                <span style="font-size: 13.5px; color: #6E6E69">Paste the command into your MCP client. Your first token in minutes.</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 12px; background: #F4F4F2">
+                <code style="flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: 'Geist Mono', monospace; font-size: 12.5px">{{navCmd}}</code>
+                <button type="button" onClick="{{navCopy}}" style="flex: none; min-height: 36px; padding: 0 12px; border: 1px solid #E4E4E0; border-radius: 9px; background: #FFFFFF; cursor: pointer; font: 500 13px 'Geist', sans-serif; color: #161616"><span aria-live="polite">{{navCopyLabel}}</span></button>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; font-size: 13px; color: #5C5C58">
+                <span>10,000 free tokens</span>
+                <a class="u-link" href="Confianca-en.html" style="color: #161616">US$100K guarantee</a>
+              </div>
+              <div aria-hidden="true" style="height: 1px; background: #EDEDEA"></div>
+              <button type="button" class="u-try" onClick="{{capOpen}}" aria-label="Try the capture with your own face" style="width: calc(100% + 16px); border: 0; cursor: pointer; text-align: left; font: inherit; display: flex; align-items: center; gap: 14px; margin: -4px -8px -8px; padding: 10px 12px 10px 10px; border-radius: 16px; background: #EEF0E4; color: #161616; text-decoration: none">
+                <span aria-hidden="true" style="flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #161616; color: #7EE2A1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"></path><rect x="11" y="11" width="2" height="2" fill="currentColor" stroke="none"></rect></svg></span>
+                <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Try the capture</span><span style="font-size: 13px; line-height: 1.4; color: #5C5C58">From face to Human Token in under a second. Make yours.</span></span>
+                <span class="u-tarr" aria-hidden="true" style="flex: none; font-size: 18px">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="u-mega" style="position: absolute; left: 50%; top: 100%; width: min(680px, calc(100% - 48px)); padding-top: 4px; opacity: {{megaOp}}; transform: translate(-50%, {{megaY}}px); pointer-events: {{megaPE}}; transition: opacity .28s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
+        <div style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.18); padding: 12px; overflow: hidden">
+          <div style="position: relative; display: grid">
+          <sc-for list="{{menus}}" as="m" hint-placeholder-count="1">
+            <sc-if value="{{m.has}}" hint-placeholder-val="{{ true }}">
+              <div aria-hidden="{{m.hidden}}" style="grid-area: 1 / 1; position: {{m.pos}}; left: 0; right: 0; top: 0; opacity: {{m.op}}; visibility: {{m.vis}}; pointer-events: {{m.pe}}; transition: opacity .22s ease, visibility .22s">
+                <sc-if value="{{m.grid}}" hint-placeholder-val="{{ true }}">
+                <div style="display: grid; grid-template-columns: repeat({{m.cols}}, minmax(0, 1fr)); gap: 2px 8px">
+                  <sc-for list="{{m.items}}" as="it" hint-placeholder-count="4">
+                    <a class="u-nmi" href="{{it.href}}" style="display: flex; flex-direction: {{m.idir}}; align-items: {{m.ialign}}; gap: 16px; padding: 12px; border-radius: 14px; text-decoration: none; color: #161616">
+                      <span style="flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: #F3F3EF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F3F3B" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges" aria-hidden="true"><path d="{{it.icon}}"></path></svg></span>
+                      <span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 500">{{it.title}}</span><span style="font-size: 13.5px; line-height: 1.4; color: #6E6E69">{{it.text}}</span></span>
+                    </a>
+                  </sc-for>
+                </div>
+                </sc-if>
+                <sc-if value="{{m.story}}" hint-placeholder-val="{{ false }}">
+                <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 8px">
+                  <a class="u-nmi" href="Clientes-en.html#historia-nubank" style="display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 14px; text-decoration: none; color: #161616">
+                    <span style="flex: none; width: 124px; height: 96px; border-radius: 12px; overflow: hidden; background: #5A3A22"><img src="65e6a591b26666089e14f6f279cd0203.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%"></span>
+                    <span style="display: flex; flex-direction: column; gap: 8px"><span style="display: flex; align-items: center; gap: 8px"><img src="c676b56f3a417c658f017282ac20cdd3.png" alt="Nubank" style="height: 14px; width: auto"><span style="font-size: 12.5px; color: #8A8A85">Featured story</span></span><span style="font-size: 15px; line-height: 1.35; font-weight: 500">How Nubank recognizes the same customer in any country.</span></span>
+                  </a>
+                  <a class="u-nmi u-nrow" href="Clientes-en.html#historias" style="display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 16px 18px; border-radius: 14px; background: #F4F4F2; text-decoration: none; color: #161616">
+                    <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 500">All stories</span><span style="font-size: 13.5px; line-height: 1.4; color: #6E6E69">Uber, Shopee, DiDi, Persona and more.</span></span>
+                    <span class="u-narr" aria-hidden="true" style="align-self: flex-start; font-size: 16px">→</span>
+                  </a>
+                </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </sc-for>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="topo">
+
+    <!-- 1. Hero -->
+    <section aria-labelledby="hero-titulo" style="padding: clamp(56px, 8vh, 96px) 0 clamp(40px, 6vh, 64px)">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+        <nav class="u-in" aria-label="You are here" style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #8A8A85"><a href="HomeI-en.html" style="color: #8A8A85; text-decoration: none">Home</a><span aria-hidden="true" style="color: #C4C4BF">/</span><span aria-current="page" style="color: #161616">Technology</span></nav>
+        <h1 id="hero-titulo" class="u-in" style="margin: 0; max-width: 820px; font-size: clamp(36px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 500; animation-delay: .08s">A two-second selfie. <span style="color: #8A8A85">Everything that happens inside it.</span></h1>
+        <p class="u-in" style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.5; color: #5C5C58; animation-delay: .16s">From your customer's camera to the answer in your system, in six steps.</p>
+        <a class="u-in" href="#historia" style="margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; font-weight: 500; color: #161616; text-decoration: none; animation-delay: .24s">Scroll to follow along <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <!-- 2. A história, em uma cena só -->
+    <section id="historia" aria-label="How it works, step by step" style="position: relative; height: 600vh">
+      <div style="position: sticky; top: 0; height: 100vh; overflow: hidden">
+        <div class="u-stagegrid" style="height: 100%; max-width: 1200px; margin: 0 auto; padding: 96px 24px 32px; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 56px; align-items: center">
+
+          <div style="display: flex; flex-direction: column; gap: 40px; min-width: 0">
+            <nav class="u-chnav" aria-label="Steps" style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px">
+              <button type="button" class="u-nb" data-on="{{on0}}" aria-current="{{cur0}}" onClick="{{go0}}" style="display: flex; flex-direction: column; gap: 10px; min-height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; text-align: left; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #A3A39E"><span style="position: relative; display: block; height: 2px; background: #E4E4E0"><span class="u-nbar" style="position: absolute; inset: 0; background: #161616"></span></span>01</button>
+              <button type="button" class="u-nb" data-on="{{on1}}" aria-current="{{cur1}}" onClick="{{go1}}" style="display: flex; flex-direction: column; gap: 10px; min-height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; text-align: left; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #A3A39E"><span style="position: relative; display: block; height: 2px; background: #E4E4E0"><span class="u-nbar" style="position: absolute; inset: 0; background: #161616"></span></span>02</button>
+              <button type="button" class="u-nb" data-on="{{on2}}" aria-current="{{cur2}}" onClick="{{go2}}" style="display: flex; flex-direction: column; gap: 10px; min-height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; text-align: left; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #A3A39E"><span style="position: relative; display: block; height: 2px; background: #E4E4E0"><span class="u-nbar" style="position: absolute; inset: 0; background: #161616"></span></span>03</button>
+              <button type="button" class="u-nb" data-on="{{on3}}" aria-current="{{cur3}}" onClick="{{go3}}" style="display: flex; flex-direction: column; gap: 10px; min-height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; text-align: left; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #A3A39E"><span style="position: relative; display: block; height: 2px; background: #E4E4E0"><span class="u-nbar" style="position: absolute; inset: 0; background: #161616"></span></span>04</button>
+              <button type="button" class="u-nb" data-on="{{on4}}" aria-current="{{cur4}}" onClick="{{go4}}" style="display: flex; flex-direction: column; gap: 10px; min-height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; text-align: left; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #A3A39E"><span style="position: relative; display: block; height: 2px; background: #E4E4E0"><span class="u-nbar" style="position: absolute; inset: 0; background: #161616"></span></span>05</button>
+              <button type="button" class="u-nb" data-on="{{on5}}" aria-current="{{cur5}}" onClick="{{go5}}" style="display: flex; flex-direction: column; gap: 10px; min-height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; text-align: left; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #A3A39E"><span style="position: relative; display: block; height: 2px; background: #E4E4E0"><span class="u-nbar" style="position: absolute; inset: 0; background: #161616"></span></span>06</button>
+            </nav>
+
+            <div class="u-chtext" style="display: grid; min-height: 300px">
+              <article class="u-ch" data-on="{{on0}}" style="display: flex; flex-direction: column; gap: 18px">
+                <span style="font-size: 14px; font-weight: 500; color: #8A8A85">Capture</span>
+                <h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.06; letter-spacing: -0.035em; font-weight: 500">Look at the camera.</h2>
+                <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.55; color: #5C5C58">Your customer takes a selfie in the app or browser, with the Unico SDK or the camera you already use. No documents or prior sign-up needed.</p>
+              </article>
+              <article class="u-ch" data-on="{{on1}}" style="display: flex; flex-direction: column; gap: 18px">
+                <span style="font-size: 14px; font-weight: 500; color: #8A8A85">Liveness</span>
+                <h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.06; letter-spacing: -0.035em; font-weight: 500">First: is this a real person?</h2>
+                <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.55; color: #5C5C58">Before anything else, Unico rules out anything that isn't a live person in front of the camera. No need to blink, smile or turn their head.</p>
+              </article>
+              <article class="u-ch" data-on="{{on2}}" style="display: flex; flex-direction: column; gap: 18px">
+                <span style="font-size: 14px; font-weight: 500; color: #8A8A85">Token</span>
+                <h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.06; letter-spacing: -0.035em; font-weight: 500">The face becomes a key.</h2>
+                <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.55; color: #5C5C58">The face's measurements produce a token, a code only that person can generate. It doesn't store the image and can't be used to rebuild it. The photo is deleted right after.</p>
+              </article>
+              <article class="u-ch" data-on="{{on3}}" style="display: flex; flex-direction: column; gap: 18px">
+                <span style="font-size: 14px; font-weight: 500; color: #8A8A85">Search</span>
+                <h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.06; letter-spacing: -0.035em; font-weight: 500">Has this person been here before?</h2>
+                <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.55; color: #5C5C58">The new token is compared at once against every token in your database, not just the one on that account. If it already exists, it's the same person, even with a different name, email or phone number.</p>
+              </article>
+              <article class="u-ch" data-on="{{on4}}" style="display: flex; flex-direction: column; gap: 18px">
+                <span style="font-size: 14px; font-weight: 500; color: #8A8A85">Any country</span>
+                <h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.06; letter-spacing: -0.035em; font-weight: 500">The same key everywhere.</h2>
+                <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.55; color: #5C5C58">Since nothing depends on local documents, the same person generates the same token in Brazil, Mexico or Nigeria. One account per person, in every country where you operate.</p>
+              </article>
+              <article class="u-ch" data-on="{{on5}}" style="display: flex; flex-direction: column; gap: 18px">
+                <span style="font-size: 14px; font-weight: 500; color: #8A8A85">Response</span>
+                <h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.06; letter-spacing: -0.035em; font-weight: 500">Only the answer reaches you.</h2>
+                <p style="margin: 0; max-width: 440px; font-size: 17px; line-height: 1.55; color: #5C5C58">Your system receives the token and whether the person is new or already known. No photos, no face data. What you do with the answer is up to you.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="u-panel" style="position: relative; height: min(100%, 680px); min-height: 420px; border-radius: 28px; background: {{panelBg}}; transition: background-color .8s ease; overflow: hidden">
+            <canvas id="t-stage" role="img" aria-label="{{stageAlt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none"></canvas>
+            <span class="u-chip" aria-hidden="true" style="position: absolute; left: 20px; top: 20px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.10); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: rgba(255,255,255,0.78)"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{chipDot}}; transition: background-color .4s"></span>{{chip}}</span>
+            <div class="u-resp" data-on="{{on5}}" aria-hidden="{{respHidden}}" style="position: absolute; left: 20px; right: 20px; bottom: 20px; max-width: 380px; margin: 0 auto; padding: 16px 18px; border-radius: 16px; background: #FFFFFF; color: #161616; box-shadow: 0 24px 48px -24px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13.5px">
+              <span style="display: inline-flex; align-items: center; gap: 8px; color: #6E6E69"><svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="#1A7F4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2.5 6.2 2.2 2.2 4.8-4.9"></path></svg>Real person <span style="color: #C4C4BF">·</span> already registered</span>
+              <span style="color: #8A8A86">Token <span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #161616">7b21…e4d0</span></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2b. Em números -->
+    <section id="numeros" aria-labelledby="num-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 0">
+      <h2 id="num-titulo" style="margin: 0 0 56px; max-width: 760px; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">By the numbers. <span style="color: #8A8A85">What backs every token.</span></h2>
+      <ul class="u-num" data-in="{{numIn}}" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 40px 32px">
+          <li style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #E4E4E0">
+            <span style="font-size: clamp(36px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.04em; font-weight: 500; color: #161616; white-space: nowrap; font-variant-numeric: tabular-nums">{{num0}}</span>
+            <span style="max-width: 220px; font-size: 15px; line-height: 1.45; color: #6E6E69">tokens generated</span>
+          </li>
+          <li style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #E4E4E0">
+            <span style="font-size: clamp(36px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.04em; font-weight: 500; color: #161616; white-space: nowrap; font-variant-numeric: tabular-nums">{{num1}}</span>
+            <span style="max-width: 220px; font-size: 15px; line-height: 1.45; color: #6E6E69">transactions a year of know-how behind every token</span>
+          </li>
+          <li style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #E4E4E0">
+            <span style="font-size: clamp(36px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.04em; font-weight: 500; color: #161616; white-space: nowrap; font-variant-numeric: tabular-nums">{{num2}}</span>
+            <span style="max-width: 220px; font-size: 15px; line-height: 1.45; color: #6E6E69">to generate a token</span>
+          </li>
+          <li style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #E4E4E0">
+            <span style="font-size: clamp(36px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.04em; font-weight: 500; color: #161616; white-space: nowrap; font-variant-numeric: tabular-nums">{{num3}}</span>
+            <span style="max-width: 220px; font-size: 15px; line-height: 1.45; color: #6E6E69">countries of operation</span>
+          </li>
+          <li style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #E4E4E0">
+            <span style="font-size: clamp(36px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.04em; font-weight: 500; color: #161616; white-space: nowrap; font-variant-numeric: tabular-nums">{{num4}}</span>
+            <span style="max-width: 220px; font-size: 15px; line-height: 1.45; color: #6E6E69">Type 2, the certification Unico operates under</span>
+          </li>
+      </ul>
+    </section>
+
+    <!-- 3. O que fica de fora -->
+    <section id="tecnologia-prova-de-vida" aria-labelledby="atk-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 0">
+      <div class="u-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 32px 64px; align-items: start">
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <h2 id="atk-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">What liveness detection blocks. <span style="color: #8A8A85">Before any token exists.</span></h2>
+          <p style="margin: 0; max-width: 420px; font-size: 17px; line-height: 1.55; color: #5C5C58">Two types of fraud, two defenses. Presentation attacks put something in front of the camera. Injection attacks replace what the camera sends.</p>
+        </div>
+        <div style="display: flex; flex-direction: column">
+          <div class="u-atk" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr) auto; align-items: center; gap: 8px 32px; padding: 24px 0; border-top: 1px solid #ECECE8">
+            <span style="font-size: 20px; letter-spacing: -0.015em; font-weight: 500">Printed photo</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #6E6E69">A photo of the person held up to the camera.</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8A8A85">PAD</span>
+          </div>
+          <div class="u-atk" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr) auto; align-items: center; gap: 8px 32px; padding: 24px 0; border-top: 1px solid #ECECE8">
+            <span style="font-size: 20px; letter-spacing: -0.015em; font-weight: 500">Another screen</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #6E6E69">A photo or video shown on another phone or monitor.</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8A8A85">PAD</span>
+          </div>
+          <div class="u-atk" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr) auto; align-items: center; gap: 8px 32px; padding: 24px 0; border-top: 1px solid #ECECE8">
+            <span style="font-size: 20px; letter-spacing: -0.015em; font-weight: 500">Mask</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #6E6E69">Paper, silicone or 3D-printed.</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8A8A85">PAD</span>
+          </div>
+          <div class="u-atk" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr) auto; align-items: center; gap: 8px 32px; padding: 24px 0; border-top: 1px solid #ECECE8">
+            <span style="font-size: 20px; letter-spacing: -0.015em; font-weight: 500">Deepfake</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #6E6E69">A face generated or swapped by artificial intelligence.</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8A8A85">IAD</span>
+          </div>
+          <div class="u-atk" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr) auto; align-items: center; gap: 8px 32px; padding: 24px 0; border-top: 1px solid #ECECE8; border-bottom: 1px solid #ECECE8">
+            <span style="font-size: 20px; letter-spacing: -0.015em; font-weight: 500">Virtual camera</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #6E6E69">Images sent by software in place of the real camera.</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8A8A85">IAD</span>
+          </div>
+          <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #5C5C58">
+            <span style="padding: 8px 12px; border-radius: 999px; background: #F4F4F2">iBeta · PAD · ISO/IEC 30107-3 · [level]</span>
+            <span style="padding: 8px 12px; border-radius: 999px; background: #F4F4F2">IAD · [standard] · [level]</span>
+          </div>
+          <a class="u-gar" href="Confianca-en.html#garantia" style="margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 20px 24px; border-radius: 20px; background: #FFFFFF; color: #161616; text-decoration: none; box-shadow: 0 0 0 1px #ECECE8, 0 12px 32px -20px rgba(22,22,22,0.12)">
+            <span style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 16px; font-weight: 600">US$100K performance guarantee</span>
+              <span style="font-size: 14px; line-height: 1.45; color: #5C5C58">If a deepfake gets through or the same person receives two tokens, Unico pays. [Terms to be defined with legal]</span>
+            </span>
+            <span class="u-arr" style="flex: none; font-size: 14px; font-weight: 500">See terms →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Decisão: consentimento -->
+    <section id="consentimento" aria-labelledby="cs-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 0">
+      <div class="u-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 32px 64px">
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <h2 id="cs-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">Where the person says yes. <span style="color: #8A8A85">You choose.</span></h2>
+          <p style="margin: 0; max-width: 420px; font-size: 17px; line-height: 1.55; color: #5C5C58">Recognizing someone by their face requires their consent. There are two models, with the same call and the same token.</p>
+        </div>
+        <div class="u-opts" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+          <article class="u-vp" style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 20px; background: #F4F4F2">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8A8A85">in your flow</span>
+            <h3 style="margin: 0; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500">Client Side</h3>
+            <p style="margin: 0; font-size: 15.5px; line-height: 1.5; color: #5C5C58">You collect consent in your own experience, with your copy and your design, and notify Unico. For teams that already have a sign-up flow designed and want control over every screen.</p>
+          </article>
+          <article class="u-vp" style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 20px; background: #F4F4F2">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #8A8A85">in the Unico widget</span>
+            <h3 style="margin: 0; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500">Unico Side</h3>
+            <p style="margin: 0; font-size: 15.5px; line-height: 1.5; color: #5C5C58">Consent happens alongside capture, with the wording and format each region requires. For teams that want to start from scratch in minutes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Perguntas -->
+    <section id="perguntas" aria-labelledby="faq-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 144px">
+      <div class="u-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 32px 64px; align-items: start">
+        <h2 id="faq-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">Questions integrators ask.</h2>
+        <div style="display: flex; flex-direction: column; border-bottom: 1px solid #ECECE8">
+          <details class="u-faq" style="border-top: 1px solid #ECECE8">
+            <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 44px; padding: 22px 0"><span class="u-q" style="font-size: 19px; line-height: 1.35; letter-spacing: -0.01em; font-weight: 500">Do beards, glasses or aging change the token?</span><span class="u-plus" aria-hidden="true" style="flex: none; font-size: 22px; color: #5C5C58">+</span></summary>
+            <p style="margin: 0; padding: 0 48px 24px 0; font-size: 16px; line-height: 1.55; color: #5C5C58">No. The token comes from the structure of the face, not how it looks on a given day. Common changes don't turn someone into a different person. [Limits to be confirmed with engineering]</p>
+          </details>
+          <details class="u-faq" style="border-top: 1px solid #ECECE8">
+            <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 44px; padding: 22px 0"><span class="u-q" style="font-size: 19px; line-height: 1.35; letter-spacing: -0.01em; font-weight: 500">Do I need to store the selfie?</span><span class="u-plus" aria-hidden="true" style="flex: none; font-size: 22px; color: #5C5C58">+</span></summary>
+            <p style="margin: 0; padding: 0 48px 24px 0; font-size: 16px; line-height: 1.55; color: #5C5C58">No. You store only the token, alongside the account. It's what recognizes the person later: at login, during account recovery or before a sensitive action.</p>
+          </details>
+          <details class="u-faq" style="border-top: 1px solid #ECECE8">
+            <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 44px; padding: 22px 0"><span class="u-q" style="font-size: 19px; line-height: 1.35; letter-spacing: -0.01em; font-weight: 500">Do identical twins get the same token?</span><span class="u-plus" aria-hidden="true" style="flex: none; font-size: 22px; color: #5C5C58">+</span></summary>
+            <p style="margin: 0; padding: 0 48px 24px 0; font-size: 16px; line-height: 1.55; color: #5C5C58">[Answer to be confirmed with engineering]</p>
+          </details>
+          <details class="u-faq" style="border-top: 1px solid #ECECE8">
+            <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 44px; padding: 22px 0"><span class="u-q" style="font-size: 19px; line-height: 1.35; letter-spacing: -0.01em; font-weight: 500">How long does it take, from click to response?</span><span class="u-plus" aria-hidden="true" style="flex: none; font-size: 22px; color: #5C5C58">+</span></summary>
+            <p style="margin: 0; padding: 0 48px 24px 0; font-size: 16px; line-height: 1.55; color: #5C5C58">[Typical time to be confirmed with engineering]</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Fechamento -->
+
+  </main>
+
+  <footer id="comecar" aria-labelledby="fim-titulo" style="background: #161616; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 24px 32px">
+      <div class="u-cta" style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px 64px; align-items: end">
+        <h2 id="fim-titulo" style="margin: 0; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 500">See it in action. <span style="color: rgba(255,255,255,0.5)">Your first token in minutes.</span></h2>
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 20px; border-radius: 16px; background: #222220; border: 1px solid #2E2E2B">
+            <span aria-hidden="true" style="font-family: 'Geist Mono', monospace; font-size: 14px; color: rgba(255,255,255,0.45)">$</span>
+            <code style="flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: 'Geist Mono', monospace; font-size: 14px; color: #FFFFFF">{{mcpCmd}}</code>
+            <button type="button" class="u-btn" onClick="{{copy}}" style="flex: none; min-height: 44px; min-width: 92px; padding: 0 16px; border: 0; border-radius: 10px; background: #FFFFFF; cursor: pointer; font: 500 14px 'Geist', sans-serif; color: #161616"><span aria-live="polite">{{copyLabel}}</span></button>
+          </div>
+          <p style="margin: 0; font-size: 15px; color: rgba(255,255,255,0.6)">Connect Unico to your agent via MCP. The first 10,000 tokens are on us.</p>
+        </div>
+      </div>
+      <div class="u-fcols" style="margin-top: clamp(72px, 9vw, 112px); padding-top: 40px; border-top: 1px solid #2A2A27; display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px">
+        <div style="display: flex; flex-direction: column; gap: 14px"><svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29" fill="#FFFFFF"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47"></path></svg><span style="font-size: 14px; color: rgba(255,255,255,0.5)">Human Recognition</span><span style="margin-top: 2px; font-size: 13px; color: rgba(255,255,255,0.4)">© 2026 Unico</span></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Resources</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="#topo" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Human Token</a></li><li><a class="u-tab" href="HumanPlatform-en.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Human Platform</a></li><li><a class="u-tab" href="Integracao-en.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Integration</a></li><li><a class="u-tab" href="#pagina-docs" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Docs</a></li></ul></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Company</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="Sobre-en.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">About Unico</a></li><li><a class="u-tab" href="Clientes-en.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Customers</a></li><li><a class="u-tab" href="#pagina-newsroom" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Newsroom</a></li><li><a class="u-tab" href="Confianca-en.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Trust Center</a></li><li><a class="u-tab" href="#carreiras" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Careers</a></li></ul></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Legal</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="#privacidade" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Privacy</a></li><li><a class="u-tab" href="#termos" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Terms</a></li></ul></div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"particulas":{"editor":"range","default":1,"min":0.5,"max":1.5,"step":0.1,"section":"Scene"},"$preview":{"width":1440,"height":9000}}'>
+// Captura Unico (fluxo rápido), portada do protótipo "Verificação Selfie".
+function uCapture(host) {
+  var E = { mode: 'swirl', modeT: 0, parts: null, W: 280, H: 190, N: 720, timers: [], ph: 'idle', raf: 0, ps: null, view: null, stream: null };
+  var C = { base: '33,33,33', hue: '151,71,255', ok: '96,121,56', flash: '151,71,255', hueA: [151, 71, 255], okA: [96, 121, 56], okHA: [130, 160, 80], baseA: [33, 33, 33] };
+  function later(fn, ms) { E.timers.push(setTimeout(fn, ms)); }
+  function clear() { E.timers.forEach(clearTimeout); E.timers = []; }
+  function rnd() { return Math.random(); }
+  function setPh(ph, extra) { E.ph = ph; host.phase(ph, extra); }
+
+  function navDims() {
+    var n = host.el('u-navpill');
+    if (!n) { return [530, 52, 26]; }
+    return [n.offsetWidth + 2, n.offsetHeight + 2, (n.offsetHeight + 2) / 2];
+  }
+  function dims(ph) {
+    if (ph === 'fastSuccess') { return [264, 378, 48]; }
+    if (ph === 'fast' || ph === 'fastVerify') { return [264, 320, 48]; }
+    if (ph === 'camScan' || ph === 'camVerify' || ph === 'camFail') { return [300, 430, 48]; }
+    if (ph === 'pill') { return [300, 50, 25]; }
+    return navDims();
+  }
+
+  function startCam(ok, fail) {
+    if (E.stream) { ok && ok(); return; }
+    var md = navigator.mediaDevices;
+    if (!md || !md.getUserMedia) { fail && fail(); return; }
+    try {
+      md.getUserMedia({ video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 800 } }, audio: false })
+        .then(function (st) {
+          if (E.ph === 'idle' || E.ph === 'closing') { st.getTracks().forEach(function (t) { t.stop(); }); return; }
+          E.stream = st;
+          ['u-capvid', 'u-capcam'].forEach(function (id) { var v = host.el(id); if (v) { v.srcObject = st; if (v.play) { v.play().catch(function () {}); } } });
+          ok && ok();
+        })
+        .catch(function () { fail && fail(); });
+    } catch (e) { fail && fail(); }
+  }
+  function stopCam() { if (E.stream) { E.stream.getTracks().forEach(function (t) { t.stop(); }); E.stream = null; } }
+
+  function initParts() {
+    var W = E.W, H = E.H, P = [];
+    for (var i = 0; i < E.N; i++) {
+      var a = rnd() * 6.283, r = 50 + rnd() * 45;
+      P.push({ x: W / 2 + Math.cos(a) * r, y: H / 2 + Math.sin(a) * r * 0.85, a: a, r: r, sp: 0.004 + rnd() * 0.012, tx: 0, ty: 0, w: 0.5, s: 0.6 + rnd() * 0.8, k: rnd() * 0.05, hue: rnd() < 0.22, ph: rnd() * 6.283 });
+    }
+    E.parts = P;
+  }
+  function assign(tg, resort) {
+    var cx = E.W / 2, cy = E.H / 2, P = E.parts;
+    var ang = function (x, y) { return Math.atan2(y - cy, x - cx); };
+    tg.sort(function (a, b) { return ang(a.x, a.y) - ang(b.x, b.y); });
+    if (resort || !E.order) { E.order = P.map(function (_, i) { return i; }).sort(function (i, j) { return ang(P[i].x, P[i].y) - ang(P[j].x, P[j].y); }); }
+    var n = tg.length, m = E.order.length;
+    E.order.forEach(function (pi, idx) {
+      var g = tg[Math.floor(idx * n / m)], p = P[pi];
+      p.tx = g.x + (rnd() - 0.5) * g.j; p.ty = g.y + (rnd() - 0.5) * g.j; p.w = g.w; p.tag = g.tag || null; p.ey = g.ey || 0; p.fr = g.fr || 0;
+    });
+  }
+  function glyphTargets() {
+    // Rosto de escaneamento: cantos de enquadramento retos (linguagem dos ícones Unico) + olhos, nariz e sorriso.
+    var cx = E.W / 2, cy = E.H / 2 + 2, T = [], i;
+    var push = function (x, y, w, j, tag, ey, fr) { T.push({ x: x, y: y, w: w, j: j, tag: tag, ey: ey, fr: fr }); };
+    var hw = 60, hh = 64, rc = 18, arm = 16, nFill = Math.round(E.N * 0.17), nFeat = Math.round(E.N * 0.35), nBr = E.N - nFeat - nFill;
+    // quatro cantos arredondados: braço vertical, arco, braço horizontal
+    var corners = [[-1, -1], [1, -1], [1, 1], [-1, 1]], per = Math.floor(nBr / 4), Lc = arm * 2 + rc * Math.PI / 2;
+    corners.forEach(function (q, ci) {
+      var sx = q[0], sy = q[1], ox = cx + sx * (hw - rc), oy = cy + sy * (hh - rc);
+      for (var k = 0; k < per; k++) {
+        var u = k / (per - 1) * Lc, x, y;
+        if (u < arm) { x = cx + sx * hw; y = cy + sy * (hh - rc - arm + u); }
+        else if (u < arm + rc * Math.PI / 2) { var th = (u - arm) / rc; var ang = sy > 0 ? (sx > 0 ? th : Math.PI - th) : (sx > 0 ? -th : Math.PI + th); x = ox + Math.cos(ang) * rc; y = oy + Math.sin(ang) * rc; }
+        else { var w2 = u - arm - rc * Math.PI / 2; y = cy + sy * hh; x = cx + sx * (hw - rc - w2); }
+        push(x, y, 0.95, 5.5, 'out', 0, (ci + k / per) / 4);
+      }
+    });
+    var ne = Math.round(nFeat * 0.16), nn = Math.round(nFeat * 0.26), nm = nFeat - 2 * ne - nn;
+    [-1, 1].forEach(function (s) { for (var i = 0; i < ne; i++) { push(cx + s * 22 + (rnd() - 0.5) * 5, cy - 30 + (i / ne) * 18, 1, 2.5, 'eye', cy - 21); } });
+    var nv = Math.round(nn * 0.72);
+    for (i = 0; i < nv; i++) { push(cx + 2 + (rnd() - 0.5) * 3, cy - 26 + (i / nv) * 30, 0.95, 4, 'feat', 0); }
+    for (i = 0; i < nn - nv; i++) { push(cx + 2 - (i / (nn - nv)) * 8, cy + 4 + (rnd() - 0.5) * 3, 0.95, 4, 'feat', 0); }
+    for (i = 0; i < nm; i++) { var b = 0.22 * Math.PI + (i / nm) * 0.56 * Math.PI; push(cx + Math.cos(b) * 26, cy + 10 + Math.sin(b) * 16, 1, 5, 'feat', 0); }
+    while (T.length < E.N) { var u2 = rnd() * 6.283, rr3 = Math.sqrt(rnd()); push(cx + Math.cos(u2) * rr3 * 78, cy + Math.sin(u2) * rr3 * 82, 0.14 + rnd() * 0.12, 0, 'fill', 0); }
+    return T;
+  }
+  function camTargets() {
+    var v = host.el('u-capvid');
+    if (!E.stream || !v || !v.videoWidth) { return null; }
+    var gw = 72, gh = 92, cx = E.W / 2, cy = E.H / 2, sc = 1.5;
+    var oc = E.oc || (E.oc = document.createElement('canvas')); oc.width = gw; oc.height = gh;
+    var o = oc.getContext('2d', { willReadFrequently: true });
+    var vw = v.videoWidth, vh = v.videoHeight, ar = gw / gh, sh = vh * 0.8, sw = sh * ar; if (sw > vw) { sw = vw; sh = sw / ar; }
+    o.save(); o.translate(gw, 0); o.scale(-1, 1); o.drawImage(v, (vw - sw) / 2, (vh - sh) / 2, sw, sh, 0, 0, gw, gh); o.restore();
+    var d = o.getImageData(0, 0, gw, gh).data, g = new Float32Array(gw * gh), i, x, y;
+    for (i = 0; i < gw * gh; i++) { g[i] = 0.299 * d[i * 4] + 0.587 * d[i * 4 + 1] + 0.114 * d[i * 4 + 2]; }
+    var cells = [], lmin = 255, lmax = 0, mmax = 0;
+    for (y = 1; y < gh - 1; y++) { for (x = 1; x < gw - 1; x++) {
+      var nx = (x - gw / 2) / (gw * 0.47), ny = (y - gh / 2) / (gh * 0.48);
+      if (nx * nx + ny * ny > 1) { continue; }
+      i = y * gw + x;
+      var gx = -g[i - gw - 1] - 2 * g[i - 1] - g[i + gw - 1] + g[i - gw + 1] + 2 * g[i + 1] + g[i + gw + 1];
+      var gy = -g[i - gw - 1] - 2 * g[i - gw] - g[i - gw + 1] + g[i + gw - 1] + 2 * g[i + gw] + g[i + gw + 1];
+      var mag = Math.hypot(gx, gy);
+      if (mag > mmax) { mmax = mag; } if (g[i] < lmin) { lmin = g[i]; } if (g[i] > lmax) { lmax = g[i]; }
+      cells.push({ x: x, y: y, mag: mag, lum: g[i] });
+    } }
+    if (mmax < 40 || lmax - lmin < 25) { return null; }
+    var acc = 0, cdf = cells.map(function (c) { c.wt = 0.6 * Math.pow((c.lum - lmin) / (lmax - lmin), 1.4) + 0.4 * (c.mag / mmax); acc += c.wt; return acc; });
+    var n = Math.floor(E.N * 0.9), T = [];
+    for (var k = 0; k < n; k++) {
+      var r = rnd() * acc, lo = 0, hi = cdf.length - 1;
+      while (lo < hi) { var mid = (lo + hi) >> 1; if (cdf[mid] < r) { lo = mid + 1; } else { hi = mid; } }
+      var c = cells[lo];
+      T.push({ x: cx + (c.x - gw / 2 + rnd() - 0.5) * sc, y: cy + (c.y - gh / 2 + rnd() - 0.5) * sc, w: 0.25 + 0.75 * c.wt, j: 0 });
+    }
+    for (i = n; i < E.N; i++) { var aa = (i - n) / (E.N - n) * 6.283; T.push({ x: cx + Math.cos(aa) * gw * 0.47 * sc, y: cy + Math.sin(aa) * gh * 0.48 * sc, w: 0.3, j: 2 }); }
+    return T;
+  }
+  function checkMorph() {
+    var cx = E.W / 2, cy = E.H / 2, P = E.parts;
+    var d = function (p) { return Math.hypot((p.x - cx) / 56, (p.y - cy) / 64); };
+    var byDist = P.slice().sort(function (a, b) { return d(b) - d(a); });
+    var nOut = Math.round(P.length * 0.62), outer = byDist.slice(0, nOut), inner = byDist.slice(nOut);
+    outer.sort(function (a, b) { return Math.atan2(a.y - cy, a.x - cx) - Math.atan2(b.y - cy, b.x - cx); });
+    outer.forEach(function (p, oi) { var a = -Math.PI + (oi + 0.5) / outer.length * 6.283, rr = 64 + (rnd() - 0.5) * 6.5; p.tx = cx + Math.cos(a) * rr; p.ty = cy + Math.sin(a) * rr; p.w = 0.85; p.grp = 'ring'; p.ra = a; p.rr = rr; p.dl = (((a + Math.PI / 2) / 6.283 + 1) % 1) * 520 + rnd() * 260; p.du = 1150 + rnd() * 550; p.sp2 = 0.9 + rnd() * 0.9; });
+    var pts = [[-26, 2], [-8, 20], [28, -18]], l1 = Math.hypot(18, 18), l2 = Math.hypot(36, 38);
+    inner.sort(function (a, b) { return a.x - b.x; });
+    inner.forEach(function (p, i) {
+      var u = i / inner.length * (l1 + l2), ab = u < l1 ? [pts[0], pts[1]] : [pts[1], pts[2]], a = ab[0], b = ab[1];
+      var fr = u < l1 ? u / l1 : (u - l1) / l2, dx = b[0] - a[0], dy = b[1] - a[1], dl = Math.hypot(dx, dy), off = ((i % 5) - 2) * 1.6 + (rnd() - 0.5) * 1.2;
+      p.tx = cx + a[0] + dx * fr - dy / dl * off; p.ty = cy + a[1] + dy * fr + dx / dl * off; p.w = 1; p.grp = 'check'; p.ux = dx / dl; p.uy = dy / dl; p.dl = 280 + (u / (l1 + l2)) * 520 + rnd() * 260; p.du = 1150 + rnd() * 550; p.sp2 = -(0.7 + rnd() * 0.9);
+    });
+    P.forEach(function (p) { p.e = 0; p.ox = p.x; p.oy = p.y; p.tag = null; });
+  }
+  function uTargets() {
+    // o "U" da Unico: duas hastes e a curva de baixo, traço largo
+    var cx = E.W / 2, cy = E.H / 2, T = [], R = 40, top = cy - 52, base = cy + 4;
+    var Ls = base - top, La = Math.PI * R, L = 2 * Ls + La;
+    for (var i = 0; i < E.N; i++) {
+      var u = rnd() * L, x, y, nx, ny;
+      if (u < Ls) { x = cx - R; y = top + u; nx = -1; ny = 0; }
+      else if (u < Ls + La) { var th = Math.PI - (u - Ls) / R; x = cx + Math.cos(th) * R; y = base + Math.sin(th) * R; nx = Math.cos(th); ny = Math.sin(th); }
+      else { x = cx + R; y = base - (u - Ls - La); nx = 1; ny = 0; }
+      var off = (rnd() - 0.5) * 18; T.push({ x: x + nx * off, y: y + ny * off, w: 0.35 + rnd() * 0.65, j: 1.5, tag: 'u' });
+    }
+    return T;
+  }
+  function ovalTargets() {
+    // anel de partículas em volta do oval da câmera
+    var cx = E.W / 2, cy = E.H / 2, T = [], rx = 59, ry = 69, nRing = Math.round(E.N * 0.5);
+    for (var i = 0; i < E.N; i++) {
+      var a = rnd() * 6.283, isR = i < nRing, d = isR ? 1 + (rnd() - 0.5) * 0.05 : 1 + (rnd() - 0.5) * 0.25;
+      T.push({ x: cx + Math.cos(a) * rx * d, y: cy + Math.sin(a) * ry * d, w: isR ? 0.7 + rnd() * 0.3 : 0.3, j: 1, tag: isR ? 'out' : 'fill', fr: ((a + Math.PI / 2) / 6.283 + 1) % 1 });
+    }
+    return T;
+  }
+  function setMode(m) {
+    if (!E.parts) { initParts(); }
+    E.mode = m; E.modeT = performance.now();
+    var cx = E.W / 2, cy = E.H / 2;
+    if (m === 'u') { E.mode = 'form'; E.glyphOn = false; assign(uTargets(), true); }
+    if (m === 'ring') { E.mode = 'form'; E.glyphOn = false; assign(ovalTargets(), true); }
+    if (m === 'swirl') { E.glyphOn = false; E.parts.forEach(function (p) { p.a = Math.atan2(p.y - cy, p.x - cx); p.r = 50 + rnd() * 45; p.grp = null; }); }
+    if (m === 'glyph') { E.mode = 'form'; E.glyphOn = true; assign(glyphTargets(), true); }
+    if (m === 'form') { var ct = camTargets(); if (ct) { E.glyphOn = false; assign(ct, true); } else if (!E.glyphOn) { E.glyphOn = true; assign(glyphTargets(), true); } E.lastSample = performance.now(); }
+    if (m === 'check') { E.glyphOn = false; checkMorph(); }
+  }
+
+  function tick(t) {
+    E.raf = requestAnimationFrame(tick);
+    var pe = host.el('u-isl');
+    if (pe) {
+      var D = dims(E.ph), s = E.ps || (E.ps = { w: D[0], h: D[1], r: D[2], vw: 0, vh: 0, vr: 0 });
+      s.vw = s.vw * 0.6 + (D[0] - s.w) * 0.06; s.w += s.vw;
+      s.vh = s.vh * 0.62 + (D[1] - s.h) * 0.045; s.h += s.vh;
+      s.vr = s.vr * 0.6 + (D[2] - s.r) * 0.06; s.r += s.vr;
+      var nv = host.el('u-navpill'), top0 = nv ? nv.offsetTop - 1 : 0, open = E.ph !== 'idle' && E.ph !== 'closing';
+      var tt = open && nv ? nv.offsetTop + nv.offsetHeight + 10 : top0;
+      if (s.t == null) { s.t = top0; s.vt = 0; }
+      s.vt = s.vt * 0.6 + (tt - s.t) * 0.06; s.t += s.vt;
+      pe.style.top = s.t.toFixed(2) + 'px';
+      pe.style.width = s.w.toFixed(2) + 'px'; pe.style.height = s.h.toFixed(2) + 'px'; pe.style.borderRadius = s.r.toFixed(2) + 'px';
+    }
+    var gl = host.el('u-capglow');
+    if (gl) {
+      var a1 = 30 + Math.sin(t * 0.00042) * 12, a2 = 52 + Math.sin(t * 0.00057 + 2) * 14, a3 = 72 + Math.sin(t * 0.00049 + 4) * 12;
+      var o1 = 0.36 + Math.sin(t * 0.0008) * 0.08, o2 = 0.3 + Math.sin(t * 0.0009 + 2) * 0.08, o3 = 0.42 + Math.sin(t * 0.00075 + 4) * 0.08;
+      gl.style.background = 'radial-gradient(38% 70% at ' + a1.toFixed(1) + '% 112%, rgba(57,115,148,' + o1.toFixed(3) + '), transparent 70%), radial-gradient(34% 64% at ' + a2.toFixed(1) + '% 116%, rgba(96,160,90,' + o2.toFixed(3) + '), transparent 70%), radial-gradient(40% 72% at ' + a3.toFixed(1) + '% 114%, rgba(151,71,255,' + o3.toFixed(3) + '), transparent 72%)';
+    }
+    var gll = host.el('u-capline');
+    if (gll) { var an = (t * 0.06) % 360; gll.style.background = 'conic-gradient(from ' + an.toFixed(1) + 'deg, transparent 0deg, rgba(41,182,246,0.8) 40deg, rgba(171,198,129,0.8) 70deg, rgba(206,147,216,0.9) 100deg, transparent 140deg, transparent 360deg)'; }
+    var c = host.el('u-capcv');
+    if (!c) { return; }
+    if (!E.parts) { initParts(); }
+    var W = E.W, H = E.H, CW = 370, CH = 480, dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (c.width !== CW * dpr) { c.width = CW * dpr; c.height = CH * dpr; }
+    var ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, CW, CH);
+    if (E.ph === 'idle' || E.ph === 'closing') { return; }
+    var pw = E.ps ? E.ps.w : 232;
+    var camPh = E.ph === 'camScan' || E.ph === 'camVerify' || E.ph === 'camFail';
+    E.camShow = camPh && (!!E.stream || !!E.sim);
+    var vt = E.ph === 'pill' ? { dx: -pw / 2 + 30, y: 25, s: 0.16 } : camPh ? { dx: 0, y: 182, s: 1.75 } : { dx: 0, y: 104, s: 0.82 };
+    var v = E.view || (E.view = { dx: vt.dx, y: vt.y, s: vt.s, x: 0 });
+    v.dx += (vt.dx - v.dx) * 0.08; v.x = pw / 2 + v.dx; v.y += (vt.y - v.y) * 0.08; v.s += (vt.s - v.s) * 0.08;
+    var vs = v.s > 1.2 ? 0.85 : Math.max(v.s < 0.4 ? 0.32 : 0.6, v.s);
+    var cx = W / 2, cy = H / 2, m = E.mode, el = t - E.modeT;
+    if (m === 'form' && !E.glyphOn && E.stream && t - (E.lastSample || 0) > 700) { E.lastSample = t; var tg = camTargets(); if (tg) { assign(tg, false); } }
+    var flash = t < (E.flashUntil || 0), band = cy - 80 + ((el % 1200) / 1200) * 160;
+    var blink = E.glyphOn && (t % 2300) < 170;
+    if (E.glyphOn) {
+      var yt = Math.sin(t * 0.0026) * 0.7 + Math.sin(t * 0.0047) * 0.18 + Math.sin(t * 0.0011) * 0.08, pt = Math.sin(t * 0.0033 + 1) * 0.45 + Math.sin(t * 0.0009) * 0.2;
+      E.yaw = (E.yaw || 0) + (yt - (E.yaw || 0)) * 0.08; E.pitch = (E.pitch || 0) + (pt - (E.pitch || 0)) * 0.08; E.roll = Math.sin(t * 0.0009) * 0.06 + E.yaw * 0.06;
+    }
+    for (var i = 0; i < E.parts.length; i++) {
+      var p = E.parts[i], tx, ty;
+      if (m === 'check') {
+        var u = Math.max(0, Math.min(1, (el - p.dl) / (p.du || 1100)));
+        var e = u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; p.e = e;
+        var ex, ey;
+        if (p.grp === 'ring') { var ra = p.ra + el * 0.00025; ex = cx + Math.cos(ra) * p.rr; ey = cy + Math.sin(ra) * p.rr; }
+        else { var sl = Math.sin(t * 0.002 + p.ph) * 0.8; ex = p.tx + p.ux * sl; ey = p.ty + p.uy * sl; }
+        // espiral: o vetor até o destino gira enquanto encolhe, com um leve "respiro" para fora no começo
+        var vx = p.ox - ex, vy = p.oy - ey, rot = (p.sp2 || 1) * Math.sin(e * Math.PI * 0.5) * 1.4, cr2 = Math.cos(rot), sr2 = Math.sin(rot);
+        var shrink = (1 - e) * (1 + 0.35 * Math.sin(Math.min(1, u * 1.6) * Math.PI));
+        var wob = Math.sin(e * Math.PI) * 3.2;
+        p.x = ex + (vx * cr2 - vy * sr2) * shrink + Math.sin(t * 0.0042 + p.ph) * wob;
+        p.y = ey + (vx * sr2 + vy * cr2) * shrink + Math.cos(t * 0.0037 + p.ph * 1.3) * wob;
+      } else if (m === 'swirl') { p.a += p.sp; var rr2 = p.r + Math.sin(t * 0.002 + p.ph) * 6; tx = cx + Math.cos(p.a) * rr2; ty = cy + Math.sin(p.a) * rr2 * 0.85; }
+      else {
+        var bx = p.tx, by = p.ty;
+        if (E.glyphOn) {
+          if (blink && p.tag === 'eye') { by = p.ey + (by - p.ey) * 0.12; }
+          var dx = bx - cx, dy = by - cy, Y = E.yaw, Pt = E.pitch, R = E.roll, isF = p.tag === 'eye' || p.tag === 'feat';
+          var nx = isF ? dx * (1 - 0.28 * Y * Math.sign(dx)) + Y * 15 : p.tag === 'fill' ? dx * (1 - 0.1 * Math.abs(Y)) + Y * 7 : dx * (1 - 0.1 * Math.abs(Y)) + Y * 3;
+          var ny = isF ? dy + Pt * 10 : p.tag === 'fill' ? dy * (1 - 0.06 * Math.abs(Pt)) + Pt * 4 : dy * (1 - 0.08 * Math.abs(Pt)) + Pt * 2;
+          var br = 1 + 0.012 * Math.sin(t * 0.0021), cr = Math.cos(R), sr = Math.sin(R);
+          bx = cx + (nx * cr - ny * sr) * br; by = cy + (nx * sr + ny * cr) * br;
+        }
+        tx = bx + Math.sin(t * 0.002 + p.ph) * 0.8; ty = by + Math.cos(t * 0.0023 + p.ph) * 0.8;
+      }
+      var k = m === 'swirl' ? 0.08 : (E.glyphOn ? 0.1 + p.k : 0.05 + p.k);
+      if (m !== 'check') { p.x += (tx - p.x) * k; p.y += (ty - p.y) * k; }
+      var a, col = p.hue ? C.hue : C.base, sz = m === 'check' ? p.s * (1 - 0.15 * (p.e || 0)) : p.s;
+      if (m === 'swirl') { a = 0.3 + 0.35 * (0.5 + 0.5 * Math.sin(t * 0.003 + p.ph)); } else { a = p.w * (0.75 + 0.25 * Math.sin(t * 0.004 + p.ph)); }
+      if (m === 'verify') { var bb = Math.max(0, 1 - Math.abs(p.y - band) / 14); a = p.w * 0.85 + bb * 0.5; sz *= 1 + bb * 0.8; if (bb > 0.3) { col = C.hue; } }
+      if (m === 'check') {
+        var ct2 = p.e || 0, from = p.hue ? C.hueA : C.baseA, to = p.hue ? C.okHA : C.okA;
+        col = from.map(function (q, j) { return Math.round(q + (to[j] - q) * ct2); }).join(',');
+        var pulse = Math.max(0, 1 - Math.abs(el - 2050) / 420); a = Math.min(1, a + pulse * 0.22); sz *= 1 + pulse * 0.15;
+      }
+      if (flash) { a = 1; sz *= 1.6; col = C.flash; }
+      if (E.camShow && p.tag !== 'out') { continue; }
+      var qx = p.x - cx, qy = p.y - cy;
+      if (E.camShow) {
+        // guia: o contorno "respira" na direção para onde a cabeça deve ir, girando em círculo
+        if (E.guideT0) {
+          var ga = Math.min(1, (t - E.guideT0) / 4200), gr = ga * 6.283 - Math.PI / 2, pa = Math.atan2(qy, qx), bulge = 1 + 0.07 * Math.cos(pa - gr);
+          qx = qx * bulge + Math.cos(gr) * 4; qy = qy * bulge + Math.sin(gr) * 4;
+          if (p.fr != null) {
+            if (p.fr <= ga) { col = C.ok; a = 1; }
+            var dd = Math.abs(p.fr - ga); dd = Math.min(dd, 1 - dd); if (dd < 0.06) { col = C.hue; a = 1; sz *= 1 + (0.06 - dd) * 10; }
+          }
+        } else if (E.guideDone && p.fr != null) { col = C.ok; a = Math.max(a, 0.9); }
+      }
+      ctx.fillStyle = 'rgba(' + col + ',' + Math.min(1, a) + ')';
+      ctx.beginPath(); ctx.arc(v.x + qx * v.s, v.y + qy * v.s, sz * vs, 0, 6.283); ctx.fill();
+    }
+  }
+  function loop() { if (!E.raf) { E.raf = requestAnimationFrame(tick); } }
+  function halt() { if (E.raf) { cancelAnimationFrame(E.raf); E.raf = 0; } }
+  function hex(n) { var o = ''; for (var i = 0; i < n; i++) { o += '0123456789abcdef'[Math.floor(rnd() * 16)]; } return o; }
+
+  function close() {
+    clear(); stopCam(); E.sim = false; E.guideT0 = 0; E.guideDone = false; setPh('closing');
+    later(function () { setPh('idle'); E.view = null; }, 620);
+    later(function () { halt(); E.ps = null; }, 1000);
+  }
+  function verifyThen(vph, dur) {
+    E.flashUntil = performance.now() + 200; setMode('verify');
+    var t0 = performance.now(), last = 0; setPh(vph, { capT: 0 });
+    E.vProg = 0;
+    var step = function (now) { if (E.ph !== vph) { return; } var d = now - t0; E.vProg = Math.min(1, d / dur); if (d - last > 33) { last = d; host.time(Math.min(d, dur)); } if (d < dur) { requestAnimationFrame(step); } };
+    requestAnimationFrame(step);
+    later(function () { stopCam(); E.sim = false; E.guideT0 = 0; E.guideDone = false; setPh('fastSuccess', { capT: dur, capTok: hex(4) + ' ' + hex(4) + ' ' + hex(4) + ' ' + hex(4) }); setMode('check'); }, dur + 40);
+  }
+  function begin() {
+    clear();
+    if (!E.raf) { var n0 = navDims(); E.ps = { w: n0[0], h: n0[1], r: n0[2], vw: 0, vh: 0, vr: 0 }; E.view = null; }
+    loop();
+  }
+  var api = {
+    runFast: function () {
+      begin(); stopCam(); E.sim = false;
+      if (!E.parts) { initParts(); }
+      setMode('u'); setPh('fast', { capT: 0, capTok: '' });
+      later(function () { setMode('glyph'); }, 750);
+      later(function () { setMode('form'); }, 1000);
+      var dur = 680 + Math.round(rnd() * 240);
+      later(function () { verifyThen('fastVerify', dur); }, 2500);
+    },
+    runCamera: function () {
+      begin();
+      if (!E.parts) { initParts(); }
+      E.sim = false; E.guideT0 = 0; E.guideDone = false; setMode('u');
+      setPh('camScan', { capT: 0, capTok: '', capLive: false, capSim: false, capStep: 0 });
+      var dur = 680 + Math.round(rnd() * 240), t0 = performance.now();
+      var step = function (n) { host.phase('camScan', { capStep: n }); };
+      var go = function (sim) {
+        if (E.ph !== 'camScan') { return; }
+        later(function () {
+          if (E.ph !== 'camScan') { return; }
+          E.sim = sim; host.phase('camScan', { capLive: true, capSim: sim, capStep: 1 }); setMode('ring');
+          later(function () { step(2); E.guideT0 = performance.now(); }, 2200);
+          later(function () { E.guideT0 = 0; E.guideDone = true; step(3); }, 2200 + 4400);
+          later(function () { verifyThen('camVerify', dur); }, 2200 + 4400 + 1400);
+        }, Math.max(0, 900 - (performance.now() - t0)));
+      };
+      startCam(function () { go(false); }, function () { go(true); });
+    },
+    cancel: function () { close(); },
+    destroy: function () { clear(); halt(); stopCam(); }
+  };
+  return api;
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { ch: 0, copied: false, scrolled: false, overDark: false };
+    this.p = 0; this.ps = 0;
+  }
+
+  /* ---------- formas (mesmo vocabulário da Linguagem visual; unidades locais, moldura em ±60, y para baixo) ---------- */
+  glyph(N, round) {
+    var T = [], push = function (x, y, w, j, tag, ey) { T.push({ x: x, y: y, w: w, j: j, tag: tag, ey: ey || 0 }); };
+    var m = Math.max(1, N / 1100), cy = 2, H = 60, R = 24, L = 18, arc = Math.PI / 2 * R, seg = L + arc + L, per = Math.round(85 * m), i, k, ne = Math.round(36 * m), nn = Math.round(34 * m), nb = Math.round(12 * m), nm = Math.round(60 * m);
+    var brk = function (t) { var d = t * seg; if (d < L) { return [H - R - L + d, -H]; } if (d < L + arc) { var a = -Math.PI / 2 + (d - L) / R; return [H - R + Math.cos(a) * R, -H + R + Math.sin(a) * R]; } return [H, -H + R + (d - L - arc)]; };
+    for (k = 0; k < (round ? 0 : 4); k++) { for (i = 0; i < per; i++) { var p = brk(i / (per - 1)), x = p[0], y = p[1]; for (var r = 0; r < k; r++) { var tx = -y; y = x; x = tx; } push(x, cy + y, 0.95, 1.6, 'out'); } }
+    [-1, 1].forEach(function (s) { for (var q = 0; q < ne; q++) { push(s * 19 + (Math.random() - 0.5) * 2.4, cy - 26 + (q / ne) * 14, 1, 0.6, 'eye', cy - 19); } });
+    for (i = 0; i < nn; i++) { push(2, cy - 20 + (i / nn) * 28, 0.95, 1.4, 'feat'); }
+    for (i = 0; i < nb; i++) { push(2 - (i / nb) * 10.8, cy + 8, 0.95, 1.4, 'feat'); }
+    for (i = 0; i < nm; i++) { var a5 = 0.3 * Math.PI + (i / nm) * 0.4 * Math.PI; push(Math.cos(a5) * 24, cy + 6 + Math.sin(a5) * 12, 1, 1.4, 'feat'); }
+    var fh = H - 7, fr = R - 5;
+    while (T.length < N) { var fx = (Math.random() * 2 - 1) * fh, fy = (Math.random() * 2 - 1) * fh, ex = Math.max(0, Math.abs(fx) - (fh - fr)), ey = Math.max(0, Math.abs(fy) - (fh - fr)); if (round ? (fx * fx + fy * fy > 44 * 44) : (ex * ex + ey * ey > fr * fr)) { continue; } push(fx, cy + fy, 0.26, 0, 'fill'); }
+    return T;
+  }
+  landData() { return [-72,-40,-71,-40,-70,-40,-68,-40,-67,-40,-65,-40,-64,-40,-62,-40,176,-40,-73,-39,-71,-39,-70,-39,-68,-39,-67,-39,-66,-39,-64,-39,-63,-39,-61,-39,146,-39,176,-39,177,-39,-73,-38,-72,-38,-70,-38,-69,-38,-67,-38,-66,-38,-65,-38,-63,-38,-62,-38,-60,-38,-59,-38,-58,-38,141,-38,142,-38,144,-38,145,-38,147,-38,148,-38,176,-38,-73,-37,-71,-37,-70,-37,-69,-37,-67,-37,-66,-37,-65,-37,-63,-37,-62,-37,-60,-37,-59,-37,-58,-37,140,-37,142,-37,143,-37,144,-37,146,-37,147,-37,148,-37,150,-37,175,-37,-72,-36,-70,-36,-69,-36,-68,-36,-66,-36,-65,-36,-64,-36,-62,-36,-61,-36,-60,-36,-58,-36,139,-36,141,-36,142,-36,143,-36,145,-36,146,-36,148,-36,149,-36,150,-36,-72,-34,-71,-34,-69,-34,-68,-34,-67,-34,-65,-34,-64,-34,-63,-34,-61,-34,-60,-34,-59,-34,-56,-34,-55,-34,20,-34,116,-34,117,-34,119,-34,136,-34,139,-34,140,-34,141,-34,143,-34,144,-34,145,-34,147,-34,148,-34,149,-34,151,-34,-71,-33,-69,-33,-68,-33,-67,-33,-65,-33,-64,-33,-63,-33,-61,-33,-60,-33,-59,-33,-57,-33,-56,-33,-55,-33,-53,-33,19,-33,20,-33,22,-33,23,-33,24,-33,26,-33,117,-33,118,-33,119,-33,121,-33,122,-33,123,-33,135,-33,136,-33,139,-33,140,-33,142,-33,143,-33,144,-33,146,-33,147,-33,148,-33,150,-33,151,-33,-71,-32,-70,-32,-68,-32,-67,-32,-66,-32,-64,-32,-63,-32,-62,-32,-60,-32,-59,-32,-58,-32,-57,-32,-55,-32,-54,-32,-53,-32,19,-32,20,-32,21,-32,23,-32,24,-32,25,-32,27,-32,28,-32,116,-32,118,-32,119,-32,120,-32,122,-32,123,-32,124,-32,125,-32,135,-32,136,-32,137,-32,138,-32,140,-32,141,-32,142,-32,144,-32,145,-32,146,-32,148,-32,149,-32,150,-32,151,-32,-71,-31,-69,-31,-68,-31,-67,-31,-66,-31,-64,-31,-63,-31,-62,-31,-60,-31,-59,-31,-58,-31,-57,-31,-55,-31,-54,-31,-53,-31,-51,-31,18,-31,19,-31,21,-31,22,-31,23,-31,24,-31,26,-31,27,-31,28,-31,30,-31,116,-31,117,-31,118,-31,120,-31,121,-31,122,-31,123,-31,125,-31,126,-31,127,-31,129,-31,130,-31,131,-31,132,-31,134,-31,135,-31,136,-31,138,-31,139,-31,140,-31,141,-31,143,-31,144,-31,145,-31,147,-31,148,-31,149,-31,150,-31,152,-31,153,-31,-71,-30,-69,-30,-68,-30,-67,-30,-66,-30,-64,-30,-63,-30,-62,-30,-60,-30,-59,-30,-58,-30,-57,-30,-55,-30,-54,-30,-53,-30,-52,-30,-50,-30,18,-30,20,-30,21,-30,22,-30,24,-30,25,-30,26,-30,27,-30,29,-30,30,-30,115,-30,116,-30,118,-30,119,-30,120,-30,121,-30,123,-30,124,-30,125,-30,127,-30,128,-30,129,-30,130,-30,132,-30,133,-30,134,-30,135,-30,137,-30,138,-30,139,-30,141,-30,142,-30,143,-30,144,-30,146,-30,147,-30,148,-30,149,-30,151,-30,152,-30,-70,-29,-69,-29,-68,-29,-67,-29,-65,-29,-64,-29,-63,-29,-62,-29,-60,-29,-59,-29,-58,-29,-57,-29,-55,-29,-54,-29,-53,-29,-52,-29,-50,-29,18,-29,19,-29,20,-29,21,-29,23,-29,24,-29,25,-29,26,-29,28,-29,29,-29,30,-29,31,-29,116,-29,117,-29,118,-29,120,-29,121,-29,122,-29,123,-29,125,-29,126,-29,127,-29,128,-29,130,-29,131,-29,132,-29,133,-29,135,-29,136,-29,137,-29,138,-29,140,-29,141,-29,142,-29,143,-29,145,-29,146,-29,147,-29,149,-29,150,-29,151,-29,152,-29,-70,-28,-69,-28,-68,-28,-67,-28,-65,-28,-64,-28,-63,-28,-62,-28,-60,-28,-59,-28,-58,-28,-57,-28,-55,-28,-54,-28,-53,-28,-52,-28,-50,-28,-49,-28,17,-28,18,-28,19,-28,21,-28,22,-28,23,-28,24,-28,26,-28,27,-28,28,-28,29,-28,31,-28,32,-28,115,-28,116,-28,118,-28,119,-28,120,-28,121,-28,123,-28,124,-28,125,-28,126,-28,128,-28,129,-28,130,-28,131,-28,133,-28,134,-28,135,-28,136,-28,138,-28,139,-28,140,-28,141,-28,143,-28,144,-28,145,-28,146,-28,148,-28,149,-28,150,-28,151,-28,153,-28,-70,-27,-69,-27,-68,-27,-67,-27,-65,-27,-64,-27,-63,-27,-62,-27,-60,-27,-59,-27,-58,-27,-57,-27,-55,-27,-54,-27,-53,-27,-52,-27,-51,-27,-49,-27,16,-27,17,-27,18,-27,20,-27,21,-27,22,-27,23,-27,25,-27,26,-27,27,-27,28,-27,30,-27,31,-27,32,-27,115,-27,116,-27,117,-27,118,-27,120,-27,121,-27,122,-27,123,-27,125,-27,126,-27,127,-27,128,-27,129,-27,131,-27,132,-27,133,-27,134,-27,136,-27,137,-27,138,-27,139,-27,141,-27,142,-27,143,-27,144,-27,145,-27,147,-27,148,-27,149,-27,150,-27,152,-27,153,-27,-70,-26,-69,-26,-68,-26,-67,-26,-65,-26,-64,-26,-63,-26,-62,-26,-60,-26,-59,-26,-58,-26,-57,-26,-56,-26,-54,-26,-53,-26,-52,-26,-51,-26,-49,-26,15,-26,16,-26,18,-26,19,-26,20,-26,21,-26,23,-26,24,-26,25,-26,26,-26,27,-26,29,-26,30,-26,31,-26,32,-26,115,-26,117,-26,118,-26,119,-26,120,-26,121,-26,123,-26,124,-26,125,-26,126,-26,128,-26,129,-26,130,-26,131,-26,132,-26,134,-26,135,-26,136,-26,137,-26,139,-26,140,-26,141,-26,142,-26,143,-26,145,-26,146,-26,147,-26,148,-26,149,-26,151,-26,152,-26,-70,-25,-69,-25,-68,-25,-66,-25,-65,-25,-64,-25,-63,-25,-62,-25,-60,-25,-59,-25,-58,-25,-57,-25,-56,-25,-54,-25,-53,-25,-52,-25,-51,-25,-50,-25,-48,-25,16,-25,17,-25,18,-25,19,-25,21,-25,22,-25,23,-25,24,-25,25,-25,27,-25,28,-25,29,-25,30,-25,31,-25,33,-25,34,-25,45,-25,46,-25,47,-25,115,-25,116,-25,117,-25,118,-25,120,-25,121,-25,122,-25,123,-25,124,-25,126,-25,127,-25,128,-25,129,-25,130,-25,132,-25,133,-25,134,-25,135,-25,137,-25,138,-25,139,-25,140,-25,141,-25,143,-25,144,-25,145,-25,146,-25,147,-25,149,-25,150,-25,151,-25,-70,-23,-68,-23,-67,-23,-66,-23,-65,-23,-64,-23,-62,-23,-61,-23,-60,-23,-59,-23,-58,-23,-56,-23,-55,-23,-54,-23,-53,-23,-52,-23,-50,-23,-49,-23,-48,-23,-47,-23,-46,-23,16,-23,17,-23,18,-23,19,-23,20,-23,22,-23,23,-23,24,-23,25,-23,26,-23,28,-23,29,-23,30,-23,31,-23,32,-23,34,-23,35,-23,44,-23,46,-23,47,-23,114,-23,115,-23,116,-23,118,-23,119,-23,120,-23,121,-23,122,-23,124,-23,125,-23,126,-23,127,-23,128,-23,130,-23,131,-23,132,-23,133,-23,134,-23,136,-23,137,-23,138,-23,139,-23,140,-23,142,-23,143,-23,144,-23,145,-23,146,-23,148,-23,149,-23,150,-23,-70,-22,-68,-22,-67,-22,-66,-22,-65,-22,-64,-22,-62,-22,-61,-22,-60,-22,-59,-22,-58,-22,-56,-22,-55,-22,-54,-22,-53,-22,-52,-22,-50,-22,-49,-22,-48,-22,-47,-22,-46,-22,-45,-22,-43,-22,-42,-22,15,-22,16,-22,17,-22,18,-22,20,-22,21,-22,22,-22,23,-22,24,-22,26,-22,27,-22,28,-22,29,-22,30,-22,31,-22,33,-22,34,-22,35,-22,43,-22,45,-22,46,-22,47,-22,115,-22,116,-22,117,-22,118,-22,119,-22,121,-22,122,-22,123,-22,124,-22,125,-22,127,-22,128,-22,129,-22,130,-22,131,-22,132,-22,134,-22,135,-22,136,-22,137,-22,138,-22,140,-22,141,-22,142,-22,143,-22,144,-22,146,-22,147,-22,148,-22,149,-22,150,-22,-69,-21,-68,-21,-67,-21,-66,-21,-64,-21,-63,-21,-62,-21,-61,-21,-60,-21,-58,-21,-57,-21,-56,-21,-55,-21,-54,-21,-53,-21,-51,-21,-50,-21,-49,-21,-48,-21,-47,-21,-45,-21,-44,-21,-43,-21,-42,-21,15,-21,16,-21,17,-21,18,-21,19,-21,21,-21,22,-21,23,-21,24,-21,25,-21,27,-21,28,-21,29,-21,30,-21,31,-21,32,-21,34,-21,35,-21,44,-21,45,-21,47,-21,48,-21,116,-21,117,-21,119,-21,120,-21,121,-21,122,-21,123,-21,125,-21,126,-21,127,-21,128,-21,129,-21,130,-21,132,-21,133,-21,134,-21,135,-21,136,-21,138,-21,139,-21,140,-21,141,-21,142,-21,143,-21,145,-21,146,-21,147,-21,148,-21,166,-21,-70,-20,-69,-20,-67,-20,-66,-20,-65,-20,-64,-20,-63,-20,-62,-20,-60,-20,-59,-20,-58,-20,-57,-20,-56,-20,-55,-20,-53,-20,-52,-20,-51,-20,-50,-20,-49,-20,-47,-20,-46,-20,-45,-20,-44,-20,-43,-20,-42,-20,-40,-20,13,-20,15,-20,16,-20,17,-20,18,-20,19,-20,21,-20,22,-20,23,-20,24,-20,25,-20,26,-20,28,-20,29,-20,30,-20,31,-20,32,-20,33,-20,35,-20,45,-20,46,-20,47,-20,119,-20,120,-20,121,-20,123,-20,124,-20,125,-20,126,-20,127,-20,128,-20,130,-20,131,-20,132,-20,133,-20,134,-20,135,-20,137,-20,138,-20,139,-20,140,-20,141,-20,142,-20,144,-20,145,-20,146,-20,147,-20,148,-20,-69,-19,-68,-19,-67,-19,-66,-19,-65,-19,-63,-19,-62,-19,-61,-19,-60,-19,-59,-19,-58,-19,-57,-19,-55,-19,-54,-19,-53,-19,-52,-19,-51,-19,-50,-19,-48,-19,-47,-19,-46,-19,-45,-19,-44,-19,-43,-19,-41,-19,-40,-19,13,-19,15,-19,16,-19,17,-19,18,-19,19,-19,20,-19,22,-19,23,-19,24,-19,25,-19,26,-19,27,-19,29,-19,30,-19,31,-19,32,-19,33,-19,34,-19,36,-19,45,-19,46,-19,47,-19,48,-19,122,-19,123,-19,124,-19,125,-19,126,-19,128,-19,129,-19,130,-19,131,-19,132,-19,133,-19,135,-19,136,-19,137,-19,138,-19,139,-19,140,-19,142,-19,143,-19,144,-19,145,-19,146,-19,-70,-18,-69,-18,-68,-18,-67,-18,-65,-18,-64,-18,-63,-18,-62,-18,-61,-18,-60,-18,-58,-18,-57,-18,-56,-18,-55,-18,-54,-18,-53,-18,-52,-18,-50,-18,-49,-18,-48,-18,-47,-18,-46,-18,-45,-18,-43,-18,-42,-18,-41,-18,-40,-18,12,-18,13,-18,14,-18,16,-18,17,-18,18,-18,19,-18,20,-18,21,-18,23,-18,24,-18,25,-18,26,-18,27,-18,28,-18,30,-18,31,-18,32,-18,33,-18,34,-18,35,-18,36,-18,45,-18,46,-18,47,-18,48,-18,49,-18,123,-18,124,-18,126,-18,127,-18,128,-18,129,-18,130,-18,131,-18,133,-18,134,-18,135,-18,136,-18,137,-18,138,-18,139,-18,141,-18,142,-18,143,-18,144,-18,145,-18,178,-18,-72,-17,-71,-17,-70,-17,-68,-17,-67,-17,-66,-17,-65,-17,-64,-17,-63,-17,-62,-17,-60,-17,-59,-17,-58,-17,-57,-17,-56,-17,-55,-17,-53,-17,-52,-17,-51,-17,-50,-17,-49,-17,-48,-17,-47,-17,-45,-17,-44,-17,-43,-17,-42,-17,-41,-17,-40,-17,12,-17,13,-17,14,-17,16,-17,17,-17,18,-17,19,-17,20,-17,21,-17,22,-17,24,-17,25,-17,26,-17,27,-17,28,-17,29,-17,30,-17,32,-17,33,-17,34,-17,35,-17,36,-17,37,-17,39,-17,44,-17,45,-17,47,-17,48,-17,49,-17,125,-17,126,-17,127,-17,128,-17,129,-17,131,-17,132,-17,133,-17,134,-17,135,-17,136,-17,137,-17,139,-17,142,-17,143,-17,144,-17,145,-17,179,-17,-74,-16,-73,-16,-71,-16,-70,-16,-69,-16,-68,-16,-67,-16,-66,-16,-65,-16,-63,-16,-62,-16,-61,-16,-60,-16,-59,-16,-58,-16,-57,-16,-55,-16,-54,-16,-53,-16,-52,-16,-51,-16,-50,-16,-49,-16,-47,-16,-46,-16,-45,-16,-44,-16,-43,-16,-42,-16,-41,-16,-39,-16,12,-16,13,-16,14,-16,15,-16,17,-16,18,-16,19,-16,20,-16,21,-16,22,-16,23,-16,25,-16,26,-16,27,-16,28,-16,29,-16,30,-16,31,-16,33,-16,34,-16,35,-16,36,-16,37,-16,38,-16,39,-16,46,-16,47,-16,49,-16,125,-16,126,-16,127,-16,129,-16,130,-16,131,-16,132,-16,133,-16,134,-16,135,-16,137,-16,142,-16,143,-16,145,-16,-76,-15,-74,-15,-73,-15,-72,-15,-71,-15,-70,-15,-69,-15,-68,-15,-66,-15,-65,-15,-64,-15,-63,-15,-62,-15,-61,-15,-60,-15,-58,-15,-57,-15,-56,-15,-55,-15,-54,-15,-53,-15,-52,-15,-51,-15,-49,-15,-48,-15,-47,-15,-46,-15,-45,-15,-44,-15,-43,-15,-41,-15,-40,-15,-39,-15,13,-15,14,-15,15,-15,16,-15,18,-15,19,-15,20,-15,21,-15,22,-15,23,-15,24,-15,26,-15,27,-15,28,-15,29,-15,30,-15,31,-15,32,-15,34,-15,35,-15,36,-15,37,-15,38,-15,39,-15,40,-15,48,-15,49,-15,125,-15,127,-15,128,-15,130,-15,131,-15,132,-15,133,-15,135,-15,143,-15,144,-15,145,-15,-76,-14,-75,-14,-74,-14,-72,-14,-71,-14,-70,-14,-69,-14,-68,-14,-67,-14,-66,-14,-65,-14,-63,-14,-62,-14,-61,-14,-60,-14,-59,-14,-58,-14,-57,-14,-55,-14,-54,-14,-53,-14,-52,-14,-51,-14,-50,-14,-49,-14,-48,-14,-46,-14,-45,-14,-44,-14,-43,-14,-42,-14,-41,-14,-40,-14,14,-14,15,-14,16,-14,17,-14,18,-14,19,-14,20,-14,22,-14,23,-14,24,-14,25,-14,26,-14,27,-14,28,-14,29,-14,31,-14,32,-14,33,-14,34,-14,35,-14,36,-14,37,-14,38,-14,40,-14,49,-14,50,-14,130,-14,131,-14,132,-14,134,-14,135,-14,136,-14,143,-14,-76,-12,-75,-12,-74,-12,-73,-12,-72,-12,-71,-12,-70,-12,-69,-12,-67,-12,-66,-12,-65,-12,-64,-12,-63,-12,-62,-12,-61,-12,-60,-12,-58,-12,-57,-12,-56,-12,-55,-12,-54,-12,-53,-12,-52,-12,-51,-12,-49,-12,-48,-12,-47,-12,-46,-12,-45,-12,-44,-12,-43,-12,-42,-12,-40,-12,-39,-12,-38,-12,14,-12,15,-12,16,-12,17,-12,18,-12,19,-12,20,-12,21,-12,23,-12,24,-12,25,-12,26,-12,27,-12,28,-12,29,-12,30,-12,32,-12,33,-12,34,-12,35,-12,36,-12,37,-12,38,-12,39,-12,41,-12,50,-12,132,-12,133,-12,134,-12,135,-12,136,-12,142,-12,143,-12,-77,-11,-76,-11,-75,-11,-73,-11,-72,-11,-71,-11,-70,-11,-69,-11,-68,-11,-67,-11,-66,-11,-64,-11,-63,-11,-62,-11,-61,-11,-60,-11,-59,-11,-58,-11,-57,-11,-56,-11,-54,-11,-53,-11,-52,-11,-51,-11,-50,-11,-49,-11,-48,-11,-47,-11,-45,-11,-44,-11,-43,-11,-42,-11,-41,-11,-40,-11,-39,-11,-38,-11,14,-11,15,-11,16,-11,17,-11,19,-11,20,-11,21,-11,22,-11,23,-11,24,-11,25,-11,26,-11,27,-11,29,-11,30,-11,31,-11,32,-11,33,-11,34,-11,35,-11,36,-11,38,-11,39,-11,40,-11,133,-11,-77,-10,-76,-10,-75,-10,-74,-10,-73,-10,-72,-10,-70,-10,-69,-10,-68,-10,-67,-10,-66,-10,-65,-10,-64,-10,-63,-10,-61,-10,-60,-10,-59,-10,-58,-10,-57,-10,-56,-10,-55,-10,-54,-10,-53,-10,-51,-10,-50,-10,-49,-10,-48,-10,-47,-10,-46,-10,-45,-10,-44,-10,-42,-10,-41,-10,-40,-10,-39,-10,-38,-10,-37,-10,13,-10,15,-10,16,-10,17,-10,18,-10,19,-10,20,-10,21,-10,22,-10,23,-10,25,-10,26,-10,27,-10,28,-10,29,-10,30,-10,31,-10,32,-10,34,-10,35,-10,36,-10,37,-10,38,-10,39,-10,40,-10,150,-10,-79,-9,-77,-9,-76,-9,-75,-9,-74,-9,-73,-9,-72,-9,-71,-9,-70,-9,-69,-9,-67,-9,-66,-9,-65,-9,-64,-9,-63,-9,-62,-9,-61,-9,-60,-9,-59,-9,-57,-9,-56,-9,-55,-9,-54,-9,-53,-9,-52,-9,-51,-9,-50,-9,-48,-9,-47,-9,-46,-9,-45,-9,-44,-9,-43,-9,-42,-9,-41,-9,-40,-9,-38,-9,-37,-9,-36,-9,14,-9,15,-9,16,-9,17,-9,18,-9,20,-9,21,-9,22,-9,23,-9,24,-9,25,-9,26,-9,27,-9,28,-9,30,-9,31,-9,32,-9,33,-9,34,-9,35,-9,36,-9,37,-9,38,-9,40,-9,124,-9,125,-9,148,-9,149,-9,161,-9,-79,-8,-78,-8,-77,-8,-76,-8,-74,-8,-73,-8,-72,-8,-71,-8,-70,-8,-69,-8,-68,-8,-67,-8,-66,-8,-64,-8,-63,-8,-62,-8,-61,-8,-60,-8,-59,-8,-58,-8,-57,-8,-56,-8,-54,-8,-53,-8,-52,-8,-51,-8,-50,-8,-49,-8,-48,-8,-47,-8,-46,-8,-44,-8,-43,-8,-42,-8,-41,-8,-40,-8,-39,-8,-38,-8,-37,-8,-36,-8,13,-8,14,-8,16,-8,17,-8,18,-8,19,-8,20,-8,21,-8,22,-8,23,-8,24,-8,26,-8,27,-8,28,-8,29,-8,30,-8,31,-8,32,-8,33,-8,34,-8,36,-8,37,-8,38,-8,39,-8,111,-8,112,-8,113,-8,114,-8,138,-8,139,-8,140,-8,141,-8,142,-8,143,-8,147,-8,148,-8,-79,-7,-78,-7,-77,-7,-76,-7,-75,-7,-74,-7,-73,-7,-71,-7,-70,-7,-69,-7,-68,-7,-67,-7,-66,-7,-65,-7,-64,-7,-63,-7,-61,-7,-60,-7,-59,-7,-58,-7,-57,-7,-56,-7,-55,-7,-54,-7,-53,-7,-52,-7,-50,-7,-49,-7,-48,-7,-47,-7,-46,-7,-45,-7,-44,-7,-43,-7,-42,-7,-40,-7,-39,-7,-38,-7,-37,-7,-36,-7,-35,-7,14,-7,15,-7,16,-7,17,-7,18,-7,19,-7,20,-7,22,-7,23,-7,24,-7,25,-7,26,-7,27,-7,28,-7,29,-7,30,-7,32,-7,33,-7,34,-7,35,-7,36,-7,37,-7,38,-7,39,-7,107,-7,108,-7,109,-7,110,-7,111,-7,112,-7,139,-7,140,-7,141,-7,142,-7,143,-7,145,-7,146,-7,147,-7,157,-7,-81,-6,-80,-6,-78,-6,-77,-6,-76,-6,-75,-6,-74,-6,-73,-6,-72,-6,-71,-6,-70,-6,-68,-6,-67,-6,-66,-6,-65,-6,-64,-6,-63,-6,-62,-6,-61,-6,-60,-6,-59,-6,-57,-6,-56,-6,-55,-6,-54,-6,-53,-6,-52,-6,-51,-6,-50,-6,-49,-6,-47,-6,-46,-6,-45,-6,-44,-6,-43,-6,-42,-6,-41,-6,-40,-6,-39,-6,-38,-6,-36,-6,-35,-6,13,-6,14,-6,15,-6,17,-6,18,-6,19,-6,20,-6,21,-6,22,-6,23,-6,24,-6,25,-6,27,-6,28,-6,29,-6,30,-6,31,-6,32,-6,33,-6,34,-6,35,-6,36,-6,38,-6,39,-6,135,-6,139,-6,140,-6,141,-6,142,-6,144,-6,145,-6,146,-6,147,-6,149,-6,150,-6,-81,-5,-80,-5,-78,-5,-77,-5,-76,-5,-75,-5,-74,-5,-73,-5,-72,-5,-71,-5,-70,-5,-68,-5,-67,-5,-66,-5,-65,-5,-64,-5,-63,-5,-62,-5,-61,-5,-60,-5,-59,-5,-57,-5,-56,-5,-55,-5,-54,-5,-53,-5,-52,-5,-51,-5,-50,-5,-49,-5,-47,-5,-46,-5,-45,-5,-44,-5,-43,-5,-42,-5,-41,-5,-40,-5,-39,-5,-38,-5,12,-5,13,-5,14,-5,15,-5,17,-5,18,-5,19,-5,20,-5,21,-5,22,-5,23,-5,24,-5,25,-5,27,-5,28,-5,29,-5,30,-5,31,-5,32,-5,33,-5,34,-5,35,-5,36,-5,38,-5,39,-5,104,-5,105,-5,120,-5,123,-5,137,-5,138,-5,139,-5,140,-5,141,-5,142,-5,144,-5,145,-5,-80,-4,-79,-4,-78,-4,-77,-4,-75,-4,-74,-4,-73,-4,-72,-4,-71,-4,-70,-4,-69,-4,-68,-4,-67,-4,-66,-4,-64,-4,-63,-4,-62,-4,-61,-4,-60,-4,-59,-4,-58,-4,-57,-4,-56,-4,-54,-4,-53,-4,-52,-4,-51,-4,-50,-4,-49,-4,-48,-4,-47,-4,-46,-4,-45,-4,-43,-4,-42,-4,-41,-4,-40,-4,-39,-4,12,-4,13,-4,14,-4,15,-4,16,-4,17,-4,18,-4,19,-4,20,-4,21,-4,23,-4,24,-4,25,-4,26,-4,27,-4,28,-4,29,-4,30,-4,31,-4,32,-4,34,-4,35,-4,36,-4,37,-4,38,-4,39,-4,103,-4,104,-4,105,-4,115,-4,116,-4,122,-4,135,-4,136,-4,137,-4,138,-4,139,-4,140,-4,141,-4,143,-4,144,-4,152,-4,-79,-3,-78,-3,-77,-3,-75,-3,-74,-3,-73,-3,-72,-3,-71,-3,-70,-3,-69,-3,-68,-3,-67,-3,-66,-3,-64,-3,-63,-3,-62,-3,-61,-3,-60,-3,-59,-3,-58,-3,-57,-3,-56,-3,-54,-3,-53,-3,-52,-3,-51,-3,-50,-3,-49,-3,-48,-3,-47,-3,-46,-3,-45,-3,-43,-3,10,-3,12,-3,13,-3,14,-3,15,-3,16,-3,17,-3,18,-3,19,-3,20,-3,21,-3,23,-3,24,-3,25,-3,26,-3,27,-3,28,-3,29,-3,30,-3,31,-3,32,-3,34,-3,35,-3,36,-3,37,-3,38,-3,39,-3,40,-3,102,-3,103,-3,104,-3,105,-3,111,-3,112,-3,113,-3,114,-3,115,-3,116,-3,119,-3,121,-3,122,-3,133,-3,134,-3,137,-3,138,-3,139,-3,140,-3,-80,-1,-79,-1,-78,-1,-77,-1,-75,-1,-74,-1,-73,-1,-72,-1,-71,-1,-70,-1,-69,-1,-68,-1,-67,-1,-66,-1,-64,-1,-63,-1,-62,-1,-61,-1,-60,-1,-59,-1,-58,-1,-57,-1,-56,-1,-54,-1,-53,-1,-52,-1,-51,-1,-50,-1,-49,-1,-48,-1,-47,-1,-46,-1,9,-1,10,-1,12,-1,13,-1,14,-1,15,-1,16,-1,17,-1,18,-1,19,-1,20,-1,21,-1,23,-1,24,-1,25,-1,26,-1,27,-1,28,-1,29,-1,30,-1,31,-1,32,-1,34,-1,35,-1,36,-1,37,-1,38,-1,39,-1,40,-1,41,-1,101,-1,102,-1,103,-1,104,-1,111,-1,112,-1,113,-1,114,-1,115,-1,116,-1,119,-1,121,-1,122,-1,132,-1,133,-1,134,-1,-80,0,-79,0,-78,0,-77,0,-75,0,-74,0,-73,0,-72,0,-71,0,-70,0,-69,0,-68,0,-67,0,-66,0,-64,0,-63,0,-62,0,-61,0,-60,0,-59,0,-58,0,-57,0,-56,0,-54,0,-53,0,-52,0,-51,0,-50,0,-49,0,9,0,10,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,101,0,102,0,103,0,110,0,111,0,112,0,113,0,114,0,115,0,116,0,117,0,-80,1,-79,1,-78,1,-77,1,-75,1,-74,1,-73,1,-72,1,-71,1,-70,1,-69,1,-68,1,-67,1,-66,1,-64,1,-63,1,-62,1,-61,1,-60,1,-59,1,-58,1,-57,1,-56,1,-54,1,-53,1,-52,1,-51,1,10,1,12,1,13,1,14,1,15,1,16,1,17,1,18,1,19,1,20,1,21,1,23,1,24,1,25,1,26,1,27,1,28,1,29,1,30,1,31,1,32,1,34,1,35,1,36,1,37,1,38,1,39,1,40,1,41,1,42,1,43,1,100,1,101,1,102,1,103,1,110,1,111,1,112,1,113,1,114,1,115,1,116,1,117,1,121,1,122,1,123,1,124,1,128,1,-78,2,-77,2,-75,2,-74,2,-73,2,-72,2,-71,2,-70,2,-69,2,-68,2,-67,2,-66,2,-64,2,-63,2,-62,2,-61,2,-60,2,-59,2,-58,2,-57,2,-56,2,-54,2,-53,2,-52,2,-51,2,10,2,12,2,13,2,14,2,15,2,16,2,17,2,18,2,19,2,20,2,21,2,23,2,24,2,25,2,26,2,27,2,28,2,29,2,30,2,31,2,32,2,34,2,35,2,36,2,37,2,38,2,39,2,40,2,41,2,42,2,43,2,45,2,100,2,101,2,102,2,103,2,104,2,110,2,112,2,113,2,114,2,115,2,116,2,117,2,-78,3,-77,3,-75,3,-74,3,-73,3,-72,3,-71,3,-70,3,-69,3,-68,3,-67,3,-66,3,-64,3,-63,3,-62,3,-61,3,-60,3,-59,3,-58,3,-57,3,-56,3,-54,3,-53,3,-52,3,-51,3,10,3,12,3,13,3,14,3,15,3,16,3,17,3,18,3,19,3,20,3,21,3,23,3,24,3,25,3,26,3,27,3,28,3,29,3,30,3,31,3,32,3,34,3,35,3,36,3,37,3,38,3,39,3,40,3,41,3,42,3,43,3,45,3,46,3,97,3,99,3,100,3,102,3,103,3,113,3,114,3,115,3,116,3,117,3,-77,4,-76,4,-75,4,-74,4,-73,4,-72,4,-71,4,-70,4,-68,4,-67,4,-66,4,-65,4,-64,4,-63,4,-62,4,-61,4,-60,4,-59,4,-57,4,-56,4,-55,4,-54,4,-53,4,-52,4,10,4,11,4,12,4,13,4,14,4,15,4,17,4,18,4,19,4,20,4,21,4,22,4,23,4,24,4,25,4,27,4,28,4,29,4,30,4,31,4,32,4,33,4,34,4,35,4,36,4,38,4,39,4,40,4,41,4,42,4,43,4,44,4,45,4,46,4,47,4,97,4,98,4,102,4,103,4,115,4,116,4,117,4,-77,5,-76,5,-75,5,-74,5,-73,5,-72,5,-71,5,-70,5,-68,5,-67,5,-66,5,-65,5,-64,5,-63,5,-62,5,-61,5,-60,5,-59,5,-57,5,-56,5,-55,5,-54,5,-53,5,-9,5,-8,5,-7,5,-6,5,-3,5,-2,5,-1,5,6,5,7,5,8,5,9,5,10,5,11,5,12,5,13,5,14,5,15,5,17,5,18,5,19,5,20,5,21,5,22,5,23,5,24,5,25,5,27,5,28,5,29,5,30,5,31,5,32,5,33,5,34,5,35,5,36,5,38,5,39,5,40,5,41,5,42,5,43,5,44,5,45,5,46,5,47,5,96,5,97,5,100,5,102,5,103,5,116,5,117,5,118,5,-77,6,-76,6,-75,6,-74,6,-73,6,-71,6,-70,6,-69,6,-68,6,-67,6,-66,6,-65,6,-64,6,-63,6,-61,6,-60,6,-59,6,-58,6,-11,6,-9,6,-8,6,-7,6,-6,6,-5,6,-4,6,-3,6,-2,6,-1,6,1,6,2,6,5,6,6,6,7,6,8,6,9,6,11,6,12,6,13,6,14,6,15,6,16,6,17,6,18,6,19,6,20,6,22,6,23,6,24,6,25,6,26,6,27,6,28,6,29,6,30,6,32,6,33,6,34,6,35,6,36,6,37,6,38,6,39,6,40,6,42,6,43,6,44,6,45,6,46,6,47,6,48,6,80,6,100,6,101,6,117,6,125,6,-77,7,-76,7,-75,7,-74,7,-73,7,-71,7,-70,7,-69,7,-68,7,-67,7,-66,7,-65,7,-64,7,-63,7,-61,7,-60,7,-59,7,-12,7,-11,7,-9,7,-8,7,-7,7,-6,7,-5,7,-4,7,-3,7,-2,7,-1,7,1,7,2,7,3,7,4,7,5,7,6,7,7,7,8,7,9,7,11,7,12,7,13,7,14,7,15,7,16,7,17,7,18,7,19,7,20,7,22,7,23,7,24,7,25,7,26,7,27,7,28,7,29,7,30,7,32,7,33,7,34,7,35,7,36,7,37,7,38,7,39,7,40,7,42,7,43,7,44,7,45,7,46,7,47,7,48,7,49,7,80,7,81,7,100,7,122,7,125,7,126,7,-83,8,-82,8,-81,8,-78,8,-77,8,-76,8,-74,8,-73,8,-72,8,-71,8,-70,8,-69,8,-68,8,-67,8,-66,8,-64,8,-63,8,-62,8,-61,8,-60,8,-12,8,-11,8,-10,8,-9,8,-8,8,-7,8,-6,8,-4,8,-3,8,-2,8,-1,8,0,8,1,8,2,8,3,8,4,8,6,8,7,8,8,8,9,8,10,8,11,8,12,8,13,8,14,8,16,8,17,8,18,8,19,8,20,8,21,8,22,8,23,8,24,8,26,8,27,8,28,8,29,8,30,8,31,8,32,8,33,8,34,8,36,8,37,8,38,8,39,8,40,8,41,8,42,8,43,8,44,8,46,8,47,8,48,8,49,8,50,8,78,8,80,8,81,8,99,8,100,8,123,8,124,8,126,8,-84,10,-83,10,-80,10,-75,10,-74,10,-73,10,-71,10,-70,10,-69,10,-67,10,-66,10,-65,10,-64,10,-63,10,-62,10,-13,10,-12,10,-11,10,-9,10,-8,10,-7,10,-6,10,-5,10,-4,10,-3,10,-2,10,-1,10,1,10,2,10,3,10,4,10,5,10,6,10,7,10,8,10,9,10,11,10,12,10,13,10,14,10,15,10,16,10,17,10,18,10,20,10,21,10,22,10,23,10,24,10,25,10,26,10,27,10,28,10,30,10,31,10,32,10,33,10,34,10,35,10,36,10,37,10,38,10,40,10,41,10,42,10,43,10,44,10,45,10,46,10,47,10,48,10,50,10,77,10,79,10,99,10,105,10,123,10,-85,11,-84,11,-75,11,-74,11,-73,11,-70,11,-69,11,-64,11,-63,11,-61,11,-15,11,-13,11,-12,11,-11,11,-10,11,-9,11,-8,11,-7,11,-6,11,-4,11,-3,11,-2,11,-1,11,0,11,1,11,2,11,3,11,4,11,6,11,7,11,8,11,9,11,10,11,11,11,12,11,13,11,15,11,16,11,17,11,18,11,19,11,20,11,21,11,22,11,23,11,25,11,26,11,27,11,28,11,29,11,30,11,31,11,32,11,34,11,35,11,36,11,37,11,38,11,39,11,40,11,41,11,42,11,44,11,46,11,47,11,48,11,49,11,50,11,76,11,77,11,78,11,79,11,104,11,105,11,106,11,107,11,120,11,123,11,-85,12,-84,12,-72,12,-70,12,-16,12,-15,12,-13,12,-12,12,-11,12,-10,12,-9,12,-8,12,-7,12,-6,12,-4,12,-3,12,-2,12,-1,12,0,12,1,12,2,12,3,12,5,12,6,12,7,12,8,12,9,12,10,12,11,12,12,12,14,12,15,12,16,12,17,12,18,12,19,12,20,12,21,12,23,12,24,12,25,12,26,12,27,12,28,12,29,12,30,12,32,12,33,12,34,12,35,12,36,12,37,12,38,12,39,12,41,12,42,12,43,12,51,12,77,12,78,12,79,12,99,12,104,12,105,12,106,12,107,12,108,12,109,12,-87,13,-86,13,-85,13,-84,13,-16,13,-15,13,-14,13,-13,13,-12,13,-11,13,-10,13,-8,13,-7,13,-6,13,-5,13,-4,13,-3,13,-2,13,-1,13,1,13,2,13,3,13,4,13,5,13,6,13,7,13,8,13,10,13,11,13,12,13,13,13,14,13,15,13,16,13,17,13,19,13,20,13,21,13,22,13,23,13,24,13,25,13,27,13,28,13,29,13,30,13,31,13,32,13,33,13,34,13,36,13,37,13,38,13,39,13,40,13,41,13,42,13,43,13,45,13,75,13,76,13,77,13,78,13,80,13,99,13,100,13,101,13,102,13,103,13,104,13,106,13,107,13,108,13,109,13,121,13,-91,14,-89,14,-88,14,-87,14,-86,14,-85,14,-84,14,-16,14,-15,14,-14,14,-12,14,-11,14,-10,14,-9,14,-8,14,-7,14,-6,14,-5,14,-3,14,-2,14,-1,14,0,14,1,14,2,14,3,14,5,14,6,14,7,14,8,14,9,14,10,14,11,14,12,14,14,14,15,14,16,14,17,14,18,14,19,14,20,14,22,14,23,14,24,14,25,14,26,14,27,14,28,14,29,14,31,14,32,14,33,14,34,14,35,14,36,14,37,14,38,14,40,14,41,14,44,14,45,14,46,14,48,14,75,14,76,14,77,14,78,14,79,14,98,14,100,14,101,14,102,14,103,14,104,14,105,14,106,14,108,14,109,14,121,14,122,14,123,14,-92,15,-91,15,-90,15,-89,15,-88,15,-87,15,-85,15,-84,15,-83,15,-17,15,-16,15,-15,15,-14,15,-13,15,-11,15,-10,15,-9,15,-8,15,-7,15,-6,15,-5,15,-3,15,-2,15,-1,15,0,15,1,15,2,15,3,15,5,15,6,15,7,15,8,15,9,15,10,15,11,15,13,15,14,15,15,15,16,15,17,15,18,15,19,15,21,15,22,15,23,15,24,15,25,15,26,15,27,15,28,15,30,15,31,15,32,15,33,15,34,15,35,15,36,15,38,15,39,15,40,15,43,15,44,15,46,15,47,15,48,15,49,15,50,15,75,15,76,15,77,15,79,15,80,15,98,15,99,15,100,15,101,15,103,15,104,15,105,15,106,15,107,15,108,15,121,15,-97,16,-96,16,-94,16,-93,16,-92,16,-91,16,-89,16,-16,16,-15,16,-14,16,-13,16,-11,16,-10,16,-9,16,-8,16,-7,16,-6,16,-5,16,-3,16,-2,16,-1,16,0,16,1,16,2,16,3,16,5,16,6,16,7,16,8,16,9,16,10,16,11,16,13,16,14,16,15,16,16,16,17,16,18,16,19,16,21,16,22,16,23,16,24,16,25,16,26,16,28,16,29,16,30,16,31,16,32,16,33,16,34,16,36,16,37,16,38,16,39,16,44,16,45,16,46,16,47,16,48,16,49,16,50,16,52,16,75,16,76,16,77,16,78,16,79,16,80,16,95,16,99,16,100,16,101,16,102,16,103,16,104,16,105,16,107,16,108,16,120,16,122,16,-101,17,-99,17,-98,17,-97,17,-96,17,-95,17,-94,17,-93,17,-91,17,-90,17,-89,17,-16,17,-14,17,-13,17,-12,17,-11,17,-10,17,-9,17,-7,17,-6,17,-5,17,-4,17,-3,17,-2,17,-1,17,1,17,2,17,3,17,4,17,5,17,6,17,7,17,9,17,10,17,11,17,12,17,13,17,14,17,16,17,17,17,18,17,19,17,20,17,21,17,22,17,24,17,25,17,26,17,27,17,28,17,29,17,30,17,32,17,33,17,34,17,35,17,36,17,37,17,39,17,43,17,44,17,45,17,47,17,48,17,49,17,50,17,51,17,52,17,53,17,55,17,74,17,75,17,76,17,78,17,79,17,80,17,81,17,82,17,95,17,96,17,97,17,98,17,99,17,101,17,102,17,103,17,104,17,105,17,106,17,121,17,-102,18,-101,18,-100,18,-99,18,-98,18,-97,18,-95,18,-93,18,-92,18,-91,18,-90,18,-89,18,-78,18,-77,18,-74,18,-72,18,-71,18,-69,18,-67,18,-16,18,-14,18,-13,18,-12,18,-11,18,-10,18,-9,18,-8,18,-6,18,-5,18,-4,18,-3,18,-2,18,-1,18,1,18,2,18,3,18,4,18,5,18,6,18,8,18,9,18,10,18,11,18,12,18,13,18,14,18,16,18,17,18,18,18,19,18,20,18,21,18,23,18,24,18,25,18,26,18,27,18,28,18,30,18,31,18,32,18,33,18,34,18,35,18,36,18,38,18,42,18,43,18,45,18,46,18,47,18,48,18,49,18,50,18,52,18,53,18,54,18,55,18,56,18,74,18,75,18,76,18,77,18,78,18,79,18,80,18,82,18,83,18,84,18,94,18,95,18,97,18,98,18,99,18,100,18,101,18,102,18,104,18,105,18,106,18,109,18,121,18,122,18,-156,19,-104,19,-103,19,-102,19,-101,19,-100,19,-98,19,-97,19,-90,19,-89,19,-88,19,-72,19,-70,19,-16,19,-15,19,-13,19,-12,19,-11,19,-10,19,-9,19,-8,19,-6,19,-5,19,-4,19,-3,19,-2,19,-1,19,1,19,2,19,3,19,4,19,5,19,6,19,8,19,9,19,10,19,11,19,12,19,13,19,15,19,16,19,17,19,18,19,19,19,20,19,22,19,23,19,24,19,25,19,26,19,27,19,29,19,30,19,31,19,32,19,33,19,34,19,36,19,37,19,41,19,43,19,44,19,45,19,46,19,47,19,48,19,50,19,51,19,52,19,53,19,54,19,55,19,57,19,58,19,74,19,75,19,76,19,77,19,79,19,80,19,81,19,82,19,83,19,84,19,94,19,95,19,96,19,97,19,98,19,100,19,101,19,102,19,103,19,104,19,105,19,109,19,110,19,-105,21,-104,21,-103,21,-101,21,-100,21,-99,21,-98,21,-90,21,-89,21,-87,21,-77,21,-76,21,-16,21,-15,21,-13,21,-12,21,-11,21,-10,21,-9,21,-8,21,-6,21,-5,21,-4,21,-3,21,-2,21,-1,21,1,21,2,21,3,21,4,21,5,21,6,21,8,21,9,21,10,21,11,21,12,21,13,21,15,21,16,21,17,21,18,21,19,21,21,21,22,21,23,21,24,21,25,21,26,21,28,21,29,21,30,21,31,21,32,21,33,21,35,21,36,21,37,21,40,21,42,21,43,21,44,21,45,21,46,21,47,21,49,21,50,21,51,21,52,21,53,21,55,21,56,21,57,21,58,21,73,21,74,21,76,21,77,21,78,21,79,21,80,21,81,21,83,21,84,21,85,21,86,21,93,21,94,21,96,21,97,21,98,21,99,21,100,21,101,21,103,21,104,21,105,21,106,21,-105,22,-104,22,-103,22,-102,22,-101,22,-99,22,-98,22,-79,22,-78,22,-17,22,-15,22,-14,22,-13,22,-12,22,-11,22,-9,22,-8,22,-7,22,-6,22,-5,22,-4,22,-2,22,-1,22,0,22,1,22,2,22,4,22,5,22,6,22,7,22,8,22,9,22,11,22,12,22,13,22,14,22,15,22,17,22,18,22,19,22,20,22,21,22,23,22,24,22,25,22,26,22,27,22,28,22,30,22,31,22,32,22,33,22,34,22,36,22,37,22,40,22,41,22,43,22,44,22,45,22,46,22,47,22,49,22,50,22,51,22,52,22,53,22,54,22,56,22,57,22,58,22,59,22,70,22,71,22,72,22,73,22,75,22,76,22,77,22,78,22,79,22,81,22,82,22,83,22,84,22,85,22,86,22,92,22,94,22,95,22,96,22,97,22,98,22,99,22,101,22,102,22,103,22,104,22,105,22,107,22,108,22,110,22,111,22,-105,23,-104,23,-103,23,-101,23,-100,23,-99,23,-83,23,-82,23,-81,23,-80,23,-15,23,-14,23,-13,23,-12,23,-11,23,-10,23,-8,23,-7,23,-6,23,-5,23,-4,23,-2,23,-1,23,0,23,1,23,2,23,4,23,5,23,6,23,7,23,8,23,10,23,11,23,12,23,13,23,14,23,15,23,17,23,18,23,19,23,20,23,21,23,23,23,24,23,25,23,26,23,27,23,29,23,30,23,31,23,32,23,33,23,35,23,36,23,39,23,41,23,42,23,43,23,44,23,45,23,46,23,48,23,49,23,50,23,51,23,52,23,54,23,55,23,56,23,57,23,58,23,70,23,72,23,73,23,74,23,75,23,76,23,77,23,79,23,80,23,81,23,82,23,83,23,85,23,86,23,87,23,88,23,89,23,92,23,93,23,94,23,95,23,97,23,98,23,99,23,100,23,101,23,103,23,104,23,105,23,106,23,107,23,108,23,110,23,111,23,112,23,113,23,114,23,120,23,-110,24,-107,24,-105,24,-104,24,-103,24,-102,24,-101,24,-99,24,-98,24,-78,24,-15,24,-14,24,-13,24,-11,24,-10,24,-9,24,-8,24,-7,24,-5,24,-4,24,-3,24,-2,24,-1,24,1,24,2,24,3,24,4,24,5,24,7,24,8,24,9,24,10,24,11,24,13,24,14,24,15,24,16,24,17,24,19,24,20,24,21,24,22,24,23,24,25,24,26,24,27,24,28,24,29,24,31,24,32,24,33,24,34,24,36,24,39,24,40,24,42,24,43,24,44,24,45,24,46,24,48,24,49,24,50,24,51,24,52,24,54,24,55,24,56,24,57,24,68,24,69,24,70,24,72,24,73,24,74,24,75,24,76,24,78,24,79,24,80,24,81,24,82,24,84,24,85,24,86,24,87,24,88,24,90,24,91,24,92,24,93,24,95,24,96,24,97,24,98,24,99,24,101,24,102,24,103,24,104,24,105,24,107,24,108,24,109,24,110,24,111,24,113,24,114,24,115,24,116,24,117,24,121,24,-112,25,-111,25,-107,25,-106,25,-105,25,-104,25,-102,25,-101,25,-100,25,-99,25,-98,25,-78,25,-14,25,-13,25,-12,25,-10,25,-9,25,-8,25,-7,25,-5,25,-4,25,-3,25,-2,25,-1,25,1,25,2,25,3,25,4,25,5,25,7,25,8,25,9,25,10,25,12,25,13,25,14,25,15,25,16,25,18,25,19,25,20,25,21,25,22,25,24,25,25,25,26,25,27,25,28,25,30,25,31,25,32,25,33,25,35,25,38,25,39,25,41,25,42,25,43,25,44,25,45,25,47,25,48,25,49,25,50,25,55,25,56,25,67,25,68,25,70,25,71,25,72,25,73,25,75,25,76,25,77,25,78,25,79,25,81,25,82,25,83,25,84,25,85,25,87,25,88,25,89,25,90,25,92,25,93,25,94,25,95,25,96,25,98,25,99,25,100,25,101,25,102,25,104,25,105,25,106,25,107,25,108,25,110,25,111,25,112,25,113,25,115,25,116,25,117,25,118,25,122,25,-111,26,-109,26,-108,26,-107,26,-105,26,-104,26,-103,26,-102,26,-100,26,-99,26,-98,26,-81,26,-13,26,-12,26,-11,26,-10,26,-9,26,-7,26,-6,26,-5,26,-4,26,-2,26,-1,26,0,26,1,26,2,26,4,26,5,26,6,26,7,26,9,26,10,26,11,26,12,26,13,26,15,26,16,26,17,26,18,26,20,26,21,26,22,26,23,26,24,26,26,26,27,26,28,26,29,26,31,26,32,26,33,26,37,26,38,26,39,26,40,26,42,26,43,26,44,26,45,26,47,26,48,26,49,26,56,26,58,26,59,26,60,26,61,26,62,26,64,26,65,26,66,26,67,26,69,26,70,26,71,26,72,26,73,26,75,26,76,26,77,26,78,26,80,26,81,26,82,26,83,26,84,26,86,26,87,26,88,26,89,26,91,26,92,26,93,26,94,26,96,26,97,26,98,26,99,26,100,26,102,26,103,26,104,26,105,26,107,26,108,26,109,26,110,26,111,26,113,26,114,26,115,26,116,26,118,26,119,26,-113,27,-109,27,-108,27,-107,27,-106,27,-105,27,-103,27,-102,27,-101,27,-100,27,-98,27,-82,27,-81,27,-13,27,-12,27,-11,27,-9,27,-8,27,-7,27,-6,27,-4,27,-3,27,-2,27,-1,27,1,27,2,27,3,27,4,27,6,27,7,27,8,27,9,27,11,27,12,27,13,27,14,27,15,27,17,27,18,27,19,27,20,27,22,27,23,27,24,27,25,27,27,27,28,27,29,27,30,27,32,27,33,27,36,27,38,27,39,27,40,27,41,27,43,27,44,27,45,27,46,27,48,27,49,27,54,27,55,27,56,27,58,27,59,27,60,27,61,27,62,27,64,27,65,27,66,27,67,27,69,27,70,27,71,27,72,27,74,27,75,27,76,27,77,27,79,27,80,27,81,27,82,27,84,27,85,27,86,27,87,27,88,27,90,27,91,27,92,27,93,27,95,27,96,27,97,27,98,27,100,27,101,27,102,27,103,27,105,27,106,27,107,27,108,27,109,27,111,27,112,27,113,27,114,27,116,27,117,27,118,27,119,27,-114,28,-111,28,-110,28,-109,28,-107,28,-106,28,-105,28,-104,28,-102,28,-101,28,-100,28,-99,28,-97,28,-82,28,-81,28,-11,28,-10,28,-9,28,-7,28,-6,28,-5,28,-4,28,-2,28,-1,28,0,28,1,28,3,28,4,28,5,28,6,28,8,28,9,28,10,28,11,28,13,28,14,28,15,28,16,28,18,28,19,28,20,28,21,28,23,28,24,28,25,28,26,28,28,28,29,28,30,28,31,28,33,28,34,28,35,28,36,28,38,28,39,28,40,28,41,28,43,28,44,28,45,28,46,28,48,28,53,28,54,28,55,28,56,28,58,28,59,28,60,28,61,28,63,28,64,28,65,28,66,28,68,28,69,28,70,28,71,28,73,28,74,28,75,28,76,28,78,28,79,28,80,28,81,28,83,28,84,28,85,28,86,28,88,28,89,28,90,28,91,28,93,28,94,28,95,28,96,28,98,28,99,28,100,28,101,28,103,28,104,28,105,28,106,28,108,28,109,28,110,28,111,28,113,28,114,28,115,28,116,28,118,28,119,28,120,28,121,28,-114,29,-112,29,-111,29,-109,29,-108,29,-107,29,-105,29,-104,29,-103,29,-102,29,-100,29,-99,29,-98,29,-97,29,-95,29,-90,29,-83,29,-81,29,-9,29,-8,29,-7,29,-6,29,-4,29,-3,29,-2,29,-1,29,1,29,2,29,3,29,4,29,6,29,7,29,8,29,9,29,11,29,12,29,13,29,15,29,16,29,17,29,18,29,20,29,21,29,22,29,23,29,25,29,26,29,27,29,28,29,30,29,31,29,32,29,33,29,35,29,36,29,37,29,39,29,40,29,41,29,42,29,44,29,45,29,46,29,47,29,51,29,52,29,54,29,55,29,56,29,57,29,59,29,60,29,61,29,63,29,64,29,65,29,66,29,68,29,69,29,70,29,71,29,73,29,74,29,75,29,76,29,78,29,79,29,80,29,81,29,83,29,84,29,85,29,87,29,88,29,89,29,90,29,92,29,93,29,94,29,95,29,97,29,98,29,99,29,100,29,102,29,103,29,104,29,105,29,107,29,108,29,109,29,111,29,112,29,113,29,114,29,116,29,117,29,118,29,119,29,121,29,122,29,-115,30,-112,30,-111,30,-110,30,-109,30,-107,30,-106,30,-105,30,-103,30,-102,30,-101,30,-100,30,-98,30,-97,30,-96,30,-94,30,-93,30,-92,30,-91,30,-89,30,-88,30,-87,30,-86,30,-84,30,-83,30,-82,30,-9,30,-8,30,-6,30,-5,30,-4,30,-3,30,-1,30,0,30,1,30,3,30,4,30,5,30,6,30,8,30,9,30,10,30,11,30,13,30,14,30,15,30,17,30,18,30,20,30,22,30,23,30,24,30,26,30,27,30,28,30,29,30,31,30,32,30,33,30,34,30,36,30,37,30,38,30,40,30,41,30,42,30,43,30,45,30,46,30,47,30,49,30,50,30,51,30,52,30,54,30,55,30,56,30,57,30,59,30,60,30,61,30,63,30,64,30,65,30,66,30,68,30,69,30,70,30,71,30,73,30,74,30,75,30,77,30,78,30,79,30,80,30,82,30,83,30,84,30,86,30,87,30,88,30,89,30,91,30,92,30,93,30,94,30,96,30,97,30,98,30,100,30,101,30,102,30,103,30,105,30,106,30,107,30,109,30,110,30,111,30,112,30,114,30,115,30,116,30,117,30,119,30,120,30,121,30,-115,32,-113,32,-112,32,-110,32,-109,32,-108,32,-106,32,-105,32,-104,32,-103,32,-101,32,-100,32,-99,32,-97,32,-96,32,-95,32,-94,32,-92,32,-91,32,-90,32,-88,32,-87,32,-86,32,-85,32,-83,32,-82,32,-8,32,-7,32,-6,32,-5,32,-3,32,-2,32,-1,32,1,32,2,32,3,32,5,32,6,32,7,32,8,32,10,32,11,32,12,32,14,32,15,32,20,32,21,32,23,32,24,32,25,32,26,32,35,32,37,32,38,32,39,32,41,32,42,32,43,32,45,32,46,32,47,32,48,32,50,32,51,32,52,32,54,32,55,32,56,32,57,32,59,32,60,32,61,32,63,32,64,32,65,32,66,32,68,32,69,32,70,32,72,32,73,32,74,32,75,32,77,32,78,32,79,32,81,32,82,32,83,32,85,32,86,32,87,32,88,32,90,32,91,32,92,32,94,32,95,32,96,32,97,32,99,32,100,32,101,32,103,32,104,32,105,32,106,32,108,32,109,32,110,32,112,32,113,32,114,32,115,32,117,32,118,32,119,32,121,32,131,32,-116,33,-115,33,-113,33,-112,33,-111,33,-110,33,-108,33,-107,33,-106,33,-104,33,-103,33,-102,33,-100,33,-99,33,-98,33,-97,33,-95,33,-94,33,-93,33,-91,33,-90,33,-89,33,-87,33,-86,33,-85,33,-83,33,-82,33,-81,33,-9,33,-8,33,-7,33,-5,33,-4,33,-3,33,-1,33,0,33,1,33,3,33,4,33,5,33,7,33,8,33,9,33,10,33,12,33,13,33,21,33,22,33,35,33,37,33,38,33,39,33,40,33,42,33,43,33,44,33,46,33,47,33,48,33,50,33,51,33,52,33,53,33,55,33,56,33,57,33,59,33,60,33,61,33,63,33,64,33,65,33,67,33,68,33,69,33,70,33,72,33,73,33,74,33,76,33,77,33,78,33,80,33,81,33,82,33,83,33,85,33,86,33,87,33,89,33,90,33,91,33,93,33,94,33,95,33,97,33,98,33,99,33,100,33,102,33,103,33,104,33,106,33,107,33,108,33,110,33,111,33,112,33,113,33,115,33,116,33,117,33,119,33,120,33,130,33,132,33,-118,34,-116,34,-115,34,-114,34,-112,34,-111,34,-110,34,-109,34,-107,34,-106,34,-105,34,-103,34,-102,34,-101,34,-99,34,-98,34,-97,34,-95,34,-94,34,-93,34,-91,34,-90,34,-89,34,-87,34,-86,34,-85,34,-83,34,-82,34,-81,34,-79,34,-7,34,-5,34,-4,34,-3,34,-1,34,0,34,1,34,3,34,4,34,5,34,7,34,8,34,9,34,11,34,36,34,37,34,38,34,40,34,41,34,42,34,44,34,45,34,46,34,48,34,49,34,50,34,52,34,53,34,54,34,56,34,57,34,58,34,60,34,61,34,62,34,64,34,65,34,66,34,68,34,69,34,70,34,71,34,73,34,74,34,75,34,77,34,78,34,79,34,81,34,82,34,83,34,85,34,86,34,87,34,89,34,90,34,91,34,93,34,94,34,95,34,97,34,98,34,99,34,101,34,102,34,103,34,105,34,106,34,107,34,109,34,110,34,111,34,113,34,114,34,115,34,116,34,118,34,119,34,120,34,131,34,134,34,-120,35,-118,35,-117,35,-116,35,-114,35,-113,35,-112,35,-110,35,-109,35,-108,35,-106,35,-105,35,-104,35,-102,35,-101,35,-100,35,-98,35,-97,35,-96,35,-94,35,-93,35,-92,35,-90,35,-89,35,-88,35,-86,35,-85,35,-84,35,-82,35,-81,35,-80,35,-78,35,-77,35,-6,35,-5,35,-3,35,-2,35,-1,35,1,35,2,35,3,35,5,35,6,35,7,35,9,35,10,35,33,35,37,35,38,35,39,35,41,35,42,35,43,35,45,35,46,35,48,35,49,35,50,35,52,35,53,35,54,35,56,35,57,35,58,35,60,35,61,35,62,35,64,35,65,35,66,35,68,35,69,35,70,35,72,35,73,35,74,35,76,35,77,35,78,35,80,35,81,35,82,35,84,35,85,35,86,35,88,35,89,35,90,35,92,35,93,35,94,35,96,35,97,35,98,35,100,35,101,35,102,35,104,35,105,35,106,35,108,35,109,35,110,35,112,35,113,35,114,35,116,35,117,35,118,35,126,35,128,35,133,35,134,35,136,35,137,35,139,35,-120,36,-119,36,-118,36,-116,36,-115,36,-113,36,-112,36,-111,36,-109,36,-108,36,-107,36,-105,36,-104,36,-103,36,-101,36,-100,36,-98,36,-97,36,-96,36,-94,36,-93,36,-92,36,-90,36,-89,36,-88,36,-86,36,-85,36,-84,36,-82,36,-81,36,-79,36,-78,36,-77,36,1,36,2,36,3,36,5,36,6,36,7,36,9,36,10,36,37,36,39,36,40,36,41,36,43,36,44,36,46,36,47,36,48,36,50,36,51,36,52,36,54,36,55,36,56,36,58,36,59,36,60,36,62,36,63,36,65,36,66,36,67,36,69,36,70,36,71,36,73,36,74,36,75,36,77,36,78,36,79,36,81,36,82,36,84,36,85,36,86,36,88,36,89,36,90,36,92,36,93,36,94,36,96,36,97,36,98,36,100,36,101,36,103,36,104,36,105,36,107,36,108,36,109,36,111,36,112,36,113,36,115,36,116,36,118,36,119,36,127,36,128,36,137,36,138,36,139,36,141,36,-122,37,-121,37,-119,37,-118,37,-117,37,-115,37,-114,37,-112,37,-111,37,-110,37,-108,37,-107,37,-106,37,-104,37,-103,37,-101,37,-100,37,-99,37,-97,37,-96,37,-94,37,-93,37,-92,37,-90,37,-89,37,-88,37,-86,37,-85,37,-83,37,-82,37,-81,37,-79,37,-78,37,-77,37,-6,37,-5,37,-3,37,-2,37,6,37,9,37,14,37,23,37,28,37,30,37,31,37,32,37,34,37,35,37,37,37,38,37,39,37,41,37,42,37,43,37,45,37,46,37,48,37,49,37,50,37,54,37,56,37,57,37,59,37,60,37,61,37,63,37,64,37,66,37,67,37,68,37,70,37,71,37,72,37,74,37,75,37,77,37,78,37,79,37,81,37,82,37,83,37,85,37,86,37,88,37,89,37,90,37,92,37,93,37,94,37,96,37,97,37,99,37,100,37,101,37,103,37,104,37,106,37,107,37,108,37,110,37,111,37,112,37,114,37,115,37,117,37,118,37,119,37,121,37,122,37,128,37,129,37,139,37,140,37,-123,38,-121,38,-120,38,-119,38,-117,38,-116,38,-114,38,-113,38,-112,38,-110,38,-109,38,-107,38,-106,38,-105,38,-103,38,-102,38,-100,38,-99,38,-98,38,-96,38,-95,38,-93,38,-92,38,-91,38,-89,38,-88,38,-87,38,-85,38,-84,38,-82,38,-81,38,-80,38,-78,38,-77,38,-75,38,-8,38,-7,38,-6,38,-4,38,-3,38,-1,38,15,38,22,38,24,38,27,38,28,38,29,38,31,38,32,38,33,38,35,38,36,38,38,38,39,38,40,38,42,38,43,38,45,38,46,38,47,38,49,38,54,38,56,38,57,38,59,38,60,38,61,38,63,38,64,38,66,38,67,38,68,38,70,38,71,38,73,38,74,38,75,38,77,38,78,38,80,38,81,38,82,38,84,38,85,38,87,38,88,38,89,38,91,38,92,38,93,38,95,38,96,38,98,38,99,38,100,38,102,38,103,38,105,38,106,38,107,38,109,38,110,38,112,38,113,38,114,38,116,38,117,38,126,38,127,38,128,38,140,38,141,38,-123,39,-122,39,-120,39,-119,39,-118,39,-116,39,-115,39,-113,39,-112,39,-111,39,-109,39,-108,39,-106,39,-105,39,-103,39,-102,39,-101,39,-99,39,-98,39,-96,39,-95,39,-94,39,-92,39,-91,39,-89,39,-88,39,-86,39,-85,39,-84,39,-82,39,-81,39,-79,39,-78,39,-77,39,-9,39,-7,39,-6,39,-4,39,-3,39,-1,39,9,39,17,39,21,39,23,39,27,39,28,39,30,39,31,39,33,39,34,39,35,39,37,39,38,39,40,39,41,39,43,39,44,39,45,39,47,39,48,39,54,39,55,39,57,39,58,39,60,39,61,39,62,39,64,39,65,39,67,39,68,39,69,39,71,39,72,39,74,39,75,39,77,39,78,39,79,39,81,39,82,39,84,39,85,39,86,39,88,39,89,39,91,39,92,39,94,39,95,39,96,39,98,39,99,39,101,39,102,39,103,39,105,39,106,39,108,39,109,39,111,39,112,39,113,39,115,39,116,39,118,39,122,39,126,39,140,39,142,39,-124,40,-122,40,-121,40,-120,40,-118,40,-117,40,-115,40,-114,40,-112,40,-111,40,-109,40,-108,40,-107,40,-105,40,-104,40,-102,40,-101,40,-99,40,-98,40,-96,40,-95,40,-94,40,-92,40,-91,40,-89,40,-88,40,-86,40,-85,40,-84,40,-82,40,-81,40,-79,40,-78,40,-76,40,-75,40,-9,40,-7,40,-6,40,-4,40,-3,40,-1,40,0,40,9,40,16,40,20,40,22,40,23,40,27,40,29,40,30,40,32,40,33,40,35,40,36,40,37,40,39,40,40,40,42,40,43,40,45,40,46,40,48,40,49,40,53,40,55,40,56,40,58,40,59,40,60,40,62,40,63,40,65,40,66,40,68,40,69,40,71,40,72,40,73,40,75,40,76,40,78,40,79,40,81,40,82,40,84,40,85,40,86,40,88,40,89,40,91,40,92,40,94,40,95,40,96,40,98,40,99,40,101,40,102,40,104,40,105,40,107,40,108,40,109,40,111,40,112,40,114,40,115,40,117,40,118,40,120,40,122,40,124,40,125,40,127,40,128,40,141,40,-124,41,-123,41,-121,41,-120,41,-118,41,-117,41,-115,41,-114,41,-112,41,-111,41,-109,41,-108,41,-107,41,-105,41,-104,41,-102,41,-101,41,-99,41,-98,41,-96,41,-95,41,-93,41,-92,41,-90,41,-89,41,-87,41,-86,41,-84,41,-83,41,-82,41,-80,41,-79,41,-77,41,-76,41,-74,41,-73,41,-8,41,-7,41,-5,41,-4,41,-2,41,-1,41,1,41,2,41,14,41,15,41,20,41,21,41,23,41,24,41,26,41,27,41,29,41,33,41,35,41,36,41,42,41,43,41,45,41,46,41,48,41,55,41,57,41,58,41,60,41,61,41,62,41,64,41,65,41,67,41,68,41,70,41,71,41,73,41,74,41,76,41,77,41,79,41,80,41,82,41,83,41,84,41,86,41,87,41,89,41,90,41,92,41,93,41,95,41,96,41,98,41,99,41,101,41,102,41,104,41,105,41,107,41,108,41,109,41,111,41,112,41,114,41,115,41,117,41,118,41,120,41,121,41,123,41,124,41,126,41,127,41,129,41,-123,43,-122,43,-120,43,-119,43,-117,43,-116,43,-114,43,-113,43,-111,43,-110,43,-108,43,-107,43,-105,43,-104,43,-102,43,-101,43,-99,43,-98,43,-96,43,-95,43,-93,43,-92,43,-90,43,-89,43,-87,43,-86,43,-84,43,-83,43,-81,43,-80,43,-78,43,-77,43,-75,43,-74,43,-72,43,-71,43,-8,43,-7,43,-5,43,-4,43,-2,43,-1,43,1,43,2,43,11,43,13,43,14,43,19,43,20,43,22,43,23,43,25,43,26,43,28,43,43,43,44,43,46,43,47,43,53,43,55,43,56,43,58,43,59,43,60,43,62,43,63,43,65,43,66,43,68,43,69,43,71,43,72,43,74,43,75,43,77,43,78,43,80,43,81,43,83,43,84,43,86,43,87,43,89,43,90,43,92,43,93,43,95,43,96,43,98,43,99,43,101,43,102,43,104,43,105,43,107,43,108,43,110,43,111,43,113,43,114,43,116,43,117,43,119,43,120,43,122,43,123,43,125,43,126,43,128,43,129,43,131,43,141,43,143,43,-124,44,-122,44,-121,44,-119,44,-118,44,-116,44,-115,44,-113,44,-112,44,-110,44,-109,44,-107,44,-106,44,-104,44,-103,44,-101,44,-99,44,-98,44,-96,44,-95,44,-93,44,-92,44,-90,44,-89,44,-87,44,-86,44,-84,44,-83,44,-81,44,-80,44,-78,44,-77,44,-75,44,-74,44,-72,44,-71,44,-1,44,1,44,2,44,4,44,5,44,7,44,11,44,13,44,16,44,17,44,19,44,21,44,22,44,24,44,25,44,27,44,28,44,40,44,42,44,43,44,45,44,46,44,52,44,54,44,55,44,57,44,58,44,60,44,62,44,63,44,65,44,66,44,68,44,69,44,71,44,72,44,74,44,75,44,77,44,78,44,80,44,81,44,83,44,84,44,86,44,87,44,89,44,90,44,92,44,93,44,95,44,96,44,98,44,99,44,101,44,103,44,104,44,106,44,107,44,109,44,110,44,112,44,113,44,115,44,116,44,118,44,119,44,121,44,122,44,124,44,125,44,127,44,128,44,130,44,131,44,133,44,134,44,142,44,144,44,145,44,-123,45,-121,45,-120,45,-118,45,-117,45,-115,45,-114,45,-112,45,-110,45,-109,45,-107,45,-106,45,-104,45,-103,45,-101,45,-100,45,-98,45,-97,45,-95,45,-93,45,-92,45,-90,45,-89,45,-87,45,-86,45,-84,45,-83,45,-81,45,-80,45,-78,45,-76,45,-75,45,-73,45,-72,45,-70,45,-69,45,-66,45,-64,45,-1,45,1,45,2,45,4,45,5,45,7,45,8,45,10,45,12,45,16,45,18,45,19,45,21,45,22,45,24,45,25,45,27,45,29,45,38,45,39,45,41,45,42,45,44,45,46,45,52,45,53,45,55,45,56,45,58,45,59,45,61,45,63,45,64,45,66,45,67,45,69,45,70,45,72,45,73,45,75,45,76,45,78,45,80,45,81,45,83,45,84,45,86,45,87,45,89,45,90,45,92,45,93,45,95,45,97,45,98,45,100,45,101,45,103,45,104,45,106,45,107,45,109,45,110,45,112,45,114,45,115,45,117,45,118,45,120,45,121,45,123,45,124,45,126,45,127,45,129,45,131,45,132,45,134,45,135,45,143,45,-123,46,-122,46,-120,46,-118,46,-117,46,-115,46,-114,46,-112,46,-111,46,-109,46,-107,46,-106,46,-104,46,-103,46,-101,46,-99,46,-98,46,-96,46,-95,46,-93,46,-92,46,-90,46,-88,46,-87,46,-85,46,-84,46,-82,46,-81,46,-79,46,-77,46,-76,46,-74,46,-73,46,-71,46,-69,46,-68,46,-66,46,-65,46,-62,46,0,46,2,46,3,46,5,46,6,46,8,46,9,46,11,46,13,46,14,46,16,46,17,46,19,46,21,46,22,46,24,46,25,46,27,46,28,46,30,46,35,46,38,46,39,46,41,46,43,46,44,46,46,46,47,46,54,46,55,46,57,46,58,46,60,46,62,46,63,46,65,46,66,46,68,46,69,46,71,46,73,46,74,46,76,46,77,46,79,46,81,46,82,46,84,46,85,46,87,46,88,46,90,46,92,46,93,46,95,46,96,46,98,46,99,46,101,46,103,46,104,46,106,46,107,46,109,46,111,46,112,46,114,46,115,46,117,46,118,46,120,46,122,46,123,46,125,46,126,46,128,46,129,46,131,46,133,46,134,46,136,46,137,46,-124,47,-122,47,-121,47,-119,47,-117,47,-116,47,-114,47,-112,47,-111,47,-109,47,-108,47,-106,47,-104,47,-103,47,-101,47,-100,47,-98,47,-96,47,-95,47,-93,47,-92,47,-90,47,-88,47,-87,47,-85,47,-84,47,-82,47,-80,47,-79,47,-77,47,-76,47,-74,47,-72,47,-69,47,-67,47,-66,47,-53,47,-2,47,0,47,2,47,3,47,5,47,6,47,8,47,10,47,11,47,13,47,14,47,16,47,18,47,19,47,21,47,23,47,24,47,26,47,27,47,29,47,31,47,32,47,34,47,35,47,37,47,40,47,42,47,43,47,45,47,47,47,48,47,50,47,53,47,55,47,56,47,58,47,59,47,61,47,63,47,64,47,66,47,68,47,69,47,71,47,72,47,74,47,76,47,77,47,79,47,80,47,82,47,84,47,85,47,87,47,88,47,90,47,92,47,93,47,95,47,96,47,98,47,100,47,101,47,103,47,104,47,106,47,108,47,109,47,111,47,113,47,114,47,116,47,117,47,119,47,121,47,122,47,124,47,125,47,127,47,129,47,130,47,132,47,133,47,135,47,137,47,138,47,143,47,-124,48,-121,48,-119,48,-118,48,-116,48,-114,48,-113,48,-111,48,-109,48,-108,48,-106,48,-104,48,-103,48,-101,48,-99,48,-98,48,-96,48,-95,48,-93,48,-91,48,-90,48,-88,48,-86,48,-85,48,-83,48,-81,48,-80,48,-78,48,-76,48,-75,48,-73,48,-72,48,-70,48,-68,48,-67,48,-58,48,-57,48,-55,48,-53,48,-4,48,-2,48,-1,48,1,48,2,48,4,48,6,48,7,48,9,48,11,48,12,48,14,48,16,48,17,48,19,48,21,48,22,48,24,48,25,48,27,48,29,48,30,48,32,48,34,48,35,48,37,48,39,48,40,48,42,48,44,48,45,48,47,48,48,48,50,48,52,48,53,48,55,48,57,48,58,48,60,48,62,48,63,48,65,48,67,48,68,48,70,48,72,48,73,48,75,48,76,48,78,48,80,48,81,48,83,48,85,48,86,48,88,48,90,48,91,48,93,48,95,48,96,48,98,48,99,48,101,48,103,48,104,48,106,48,108,48,109,48,111,48,113,48,114,48,116,48,118,48,119,48,121,48,122,48,124,48,126,48,127,48,129,48,131,48,132,48,134,48,136,48,137,48,139,48,142,48,-124,49,-123,49,-121,49,-119,49,-118,49,-116,49,-114,49,-113,49,-111,49,-109,49,-108,49,-106,49,-104,49,-103,49,-101,49,-99,49,-98,49,-96,49,-94,49,-93,49,-91,49,-89,49,-87,49,-86,49,-84,49,-82,49,-81,49,-79,49,-77,49,-76,49,-74,49,-72,49,-71,49,-69,49,-66,49,-62,49,-57,49,-56,49,-54,49,-2,49,0,49,2,49,3,49,5,49,7,49,8,49,10,49,12,49,13,49,15,49,17,49,19,49,20,49,22,49,24,49,25,49,27,49,29,49,30,49,32,49,34,49,35,49,37,49,39,49,40,49,42,49,44,49,45,49,47,49,49,49,50,49,52,49,54,49,56,49,57,49,59,49,61,49,62,49,64,49,66,49,67,49,69,49,71,49,72,49,74,49,76,49,77,49,79,49,81,49,82,49,84,49,86,49,87,49,89,49,91,49,93,49,94,49,96,49,98,49,99,49,101,49,103,49,104,49,106,49,108,49,109,49,111,49,113,49,114,49,116,49,118,49,119,49,121,49,123,49,124,49,126,49,128,49,130,49,131,49,133,49,135,49,136,49,138,49,140,49,143,49,-127,50,-125,50,-123,50,-121,50,-120,50,-118,50,-116,50,-115,50,-113,50,-111,50,-109,50,-108,50,-106,50,-104,50,-102,50,-101,50,-99,50,-97,50,-96,50,-94,50,-92,50,-90,50,-89,50,-87,50,-85,50,-84,50,-82,50,-80,50,-78,50,-77,50,-75,50,-73,50,-71,50,-70,50,-68,50,-63,50,-61,50,3,50,4,50,6,50,8,50,9,50,11,50,13,50,15,50,16,50,18,50,20,50,22,50,23,50,25,50,27,50,28,50,30,50,32,50,34,50,35,50,37,50,39,50,40,50,42,50,44,50,46,50,47,50,49,50,51,50,53,50,54,50,56,50,58,50,59,50,61,50,63,50,65,50,66,50,68,50,70,50,71,50,73,50,75,50,77,50,78,50,80,50,82,50,84,50,85,50,87,50,89,50,90,50,92,50,94,50,96,50,97,50,99,50,101,50,102,50,104,50,106,50,108,50,109,50,111,50,113,50,115,50,116,50,118,50,120,50,121,50,123,50,125,50,127,50,128,50,130,50,132,50,133,50,135,50,137,50,139,50,140,50,144,50,-127,51,-126,51,-124,51,-122,51,-120,51,-119,51,-117,51,-115,51,-113,51,-112,51,-110,51,-108,51,-106,51,-104,51,-103,51,-101,51,-99,51,-97,51,-96,51,-94,51,-92,51,-90,51,-89,51,-87,51,-85,51,-83,51,-82,51,-78,51,-76,51,-75,51,-73,51,-71,51,-69,51,-68,51,-66,51,-64,51,-62,51,-61,51,-59,51,-3,51,-1,51,1,51,4,51,6,51,8,51,10,51,11,51,13,51,15,51,17,51,18,51,20,51,22,51,24,51,25,51,27,51,29,51,31,51,32,51,34,51,36,51,38,51,40,51,41,51,43,51,45,51,47,51,48,51,50,51,52,51,54,51,55,51,57,51,59,51,61,51,62,51,64,51,66,51,68,51,69,51,71,51,73,51,75,51,76,51,78,51,80,51,82,51,83,51,85,51,87,51,89,51,90,51,92,51,94,51,96,51,97,51,99,51,101,51,103,51,104,51,106,51,108,51,110,51,112,51,113,51,115,51,117,51,119,51,120,51,122,51,124,51,126,51,127,51,129,51,131,51,133,51,134,51,136,51,138,51,140,51,143,51,157,51,-128,52,-126,52,-124,52,-122,52,-121,52,-119,52,-117,52,-115,52,-113,52,-112,52,-110,52,-108,52,-106,52,-104,52,-103,52,-101,52,-99,52,-97,52,-95,52,-94,52,-92,52,-90,52,-88,52,-86,52,-85,52,-83,52,-77,52,-76,52,-74,52,-72,52,-70,52,-68,52,-67,52,-65,52,-63,52,-61,52,-59,52,-58,52,-56,52,-9,52,-7,52,-4,52,-2,52,0,52,5,52,7,52,9,52,11,52,13,52,14,52,16,52,18,52,20,52,22,52,23,52,25,52,27,52,29,52,31,52,32,52,34,52,36,52,38,52,40,52,41,52,43,52,45,52,47,52,49,52,50,52,52,52,54,52,56,52,58,52,59,52,61,52,63,52,65,52,67,52,68,52,70,52,72,52,74,52,76,52,77,52,79,52,81,52,83,52,85,52,86,52,88,52,90,52,92,52,94,52,95,52,97,52,99,52,101,52,103,52,104,52,106,52,108,52,110,52,112,52,113,52,115,52,117,52,119,52,121,52,122,52,124,52,126,52,128,52,130,52,131,52,133,52,135,52,137,52,139,52,140,52,142,52,157,52,-132,54,-128,54,-126,54,-125,54,-123,54,-121,54,-119,54,-117,54,-115,54,-114,54,-112,54,-110,54,-108,54,-106,54,-104,54,-102,54,-101,54,-99,54,-97,54,-95,54,-93,54,-91,54,-90,54,-88,54,-86,54,-84,54,-78,54,-77,54,-75,54,-73,54,-71,54,-69,54,-67,54,-66,54,-64,54,-62,54,-60,54,-58,54,-56,54,-8,54,-6,54,-3,54,-1,54,8,54,10,54,12,54,14,54,16,54,18,54,19,54,21,54,23,54,25,54,27,54,29,54,30,54,32,54,34,54,36,54,38,54,40,54,42,54,43,54,45,54,47,54,49,54,51,54,53,54,54,54,56,54,58,54,60,54,62,54,64,54,66,54,67,54,69,54,71,54,73,54,75,54,77,54,78,54,80,54,82,54,84,54,86,54,88,54,90,54,91,54,93,54,95,54,97,54,99,54,101,54,102,54,104,54,106,54,108,54,110,54,112,54,114,54,115,54,117,54,119,54,121,54,123,54,125,54,126,54,128,54,130,54,132,54,134,54,136,54,138,54,139,54,156,54,158,54,160,54,-165,55,-129,55,-127,55,-125,55,-123,55,-121,55,-119,55,-117,55,-116,55,-114,55,-112,55,-110,55,-108,55,-106,55,-104,55,-102,55,-100,55,-99,55,-97,55,-95,55,-93,55,-91,55,-89,55,-87,55,-85,55,-83,55,-80,55,-78,55,-76,55,-74,55,-72,55,-70,55,-68,55,-66,55,-64,55,-63,55,-61,55,-59,55,-8,55,-2,55,9,55,17,55,21,55,23,55,25,55,27,55,28,55,30,55,32,55,34,55,36,55,38,55,40,55,42,55,44,55,45,55,47,55,49,55,51,55,53,55,55,55,57,55,59,55,61,55,63,55,64,55,66,55,68,55,70,55,72,55,74,55,76,55,78,55,80,55,81,55,83,55,85,55,87,55,89,55,91,55,93,55,95,55,97,55,99,55,100,55,102,55,104,55,106,55,108,55,110,55,112,55,114,55,116,55,117,55,119,55,121,55,123,55,125,55,127,55,129,55,131,55,133,55,135,55,136,55,157,55,159,55,161,55,-160,56,-131,56,-129,56,-127,56,-125,56,-123,56,-121,56,-119,56,-117,56,-115,56,-113,56,-112,56,-110,56,-108,56,-106,56,-104,56,-102,56,-100,56,-98,56,-96,56,-94,56,-92,56,-90,56,-88,56,-86,56,-76,56,-74,56,-72,56,-70,56,-68,56,-67,56,-65,56,-63,56,-61,56,-4,56,-2,56,10,56,12,56,14,56,22,56,23,56,25,56,27,56,29,56,31,56,33,56,35,56,37,56,39,56,41,56,43,56,45,56,47,56,49,56,51,56,53,56,55,56,57,56,59,56,61,56,63,56,65,56,67,56,68,56,70,56,72,56,74,56,76,56,78,56,80,56,82,56,84,56,86,56,88,56,90,56,92,56,94,56,96,56,98,56,100,56,102,56,104,56,106,56,108,56,110,56,112,56,113,56,115,56,117,56,119,56,121,56,123,56,125,56,127,56,129,56,131,56,133,56,135,56,157,56,158,56,160,56,-158,57,-154,57,-132,57,-130,57,-128,57,-126,57,-124,57,-122,57,-120,57,-118,57,-116,57,-114,57,-112,57,-110,57,-108,57,-106,57,-104,57,-102,57,-100,57,-98,57,-96,57,-94,57,-92,57,-89,57,-75,57,-73,57,-71,57,-69,57,-67,57,-65,57,-63,57,-5,57,-3,57,9,57,13,57,15,57,21,57,23,57,25,57,27,57,29,57,31,57,33,57,35,57,37,57,39,57,41,57,43,57,45,57,47,57,49,57,51,57,53,57,55,57,57,57,59,57,61,57,63,57,65,57,67,57,69,57,71,57,73,57,75,57,77,57,79,57,81,57,83,57,85,57,87,57,89,57,92,57,94,57,96,57,98,57,100,57,102,57,104,57,106,57,108,57,110,57,112,57,114,57,116,57,118,57,120,57,122,57,124,57,126,57,128,57,130,57,132,57,134,57,136,57,138,57,158,57,160,57,162,57,-157,58,-155,58,-153,58,-132,58,-130,58,-128,58,-126,58,-124,58,-122,58,-120,58,-118,58,-116,58,-114,58,-112,58,-110,58,-108,58,-106,58,-103,58,-101,58,-99,58,-97,58,-95,58,-93,58,-77,58,-74,58,-72,58,-70,58,-68,58,-66,58,-64,58,-4,58,12,58,14,58,17,58,25,58,27,58,29,58,31,58,33,58,35,58,37,58,39,58,41,58,43,58,46,58,48,58,50,58,52,58,54,58,56,58,58,58,60,58,62,58,64,58,66,58,68,58,70,58,72,58,74,58,77,58,79,58,81,58,83,58,85,58,87,58,89,58,91,58,93,58,95,58,97,58,99,58,101,58,103,58,106,58,108,58,110,58,112,58,114,58,116,58,118,58,120,58,122,58,124,58,126,58,128,58,130,58,132,58,134,58,137,58,139,58,159,58,161,58,-161,59,-159,59,-157,59,-154,59,-137,59,-135,59,-133,59,-131,59,-129,59,-127,59,-125,59,-122,59,-120,59,-118,59,-116,59,-114,59,-112,59,-110,59,-108,59,-105,59,-103,59,-101,59,-99,59,-97,59,-95,59,-78,59,-76,59,-73,59,-71,59,-65,59,7,59,12,59,14,59,16,59,24,59,27,59,29,59,31,59,33,59,35,59,37,59,39,59,42,59,44,59,46,59,48,59,50,59,52,59,54,59,56,59,59,59,61,59,63,59,65,59,67,59,69,59,71,59,73,59,76,59,78,59,80,59,82,59,84,59,86,59,88,59,91,59,93,59,95,59,97,59,99,59,101,59,103,59,105,59,108,59,110,59,112,59,114,59,116,59,118,59,120,59,122,59,125,59,127,59,129,59,131,59,133,59,135,59,137,59,140,59,142,59,152,59,161,59,-167,60,-162,60,-160,60,-158,60,-156,60,-153,60,-151,60,-149,60,-142,60,-140,60,-138,60,-136,60,-134,60,-131,60,-129,60,-127,60,-125,60,-123,60,-120,60,-118,60,-116,60,-114,60,-112,60,-109,60,-107,60,-105,60,-103,60,-100,60,-98,60,-96,60,-76,60,-74,60,-72,60,6,60,8,60,10,60,12,60,14,60,17,60,23,60,30,60,32,60,34,60,36,60,39,60,41,60,43,60,45,60,47,60,50,60,52,60,54,60,56,60,59,60,61,60,63,60,65,60,67,60,70,60,72,60,74,60,76,60,78,60,81,60,83,60,85,60,87,60,89,60,92,60,94,60,96,60,98,60,100,60,103,60,105,60,107,60,109,60,112,60,114,60,116,60,118,60,120,60,123,60,125,60,127,60,129,60,131,60,134,60,136,60,138,60,140,60,142,60,145,60,147,60,149,60,151,60,153,60,162,60,165,60,167,60,-164,61,-162,61,-159,61,-157,61,-155,61,-153,61,-150,61,-148,61,-146,61,-144,61,-141,61,-139,61,-137,61,-134,61,-132,61,-130,61,-128,61,-125,61,-123,61,-121,61,-118,61,-116,61,-114,61,-112,61,-109,61,-107,61,-105,61,-103,61,-100,61,-98,61,-96,61,-77,61,-75,61,-73,61,-48,61,-46,61,-43,61,7,61,9,61,11,61,14,61,16,61,23,61,25,61,27,61,30,61,32,61,34,61,36,61,39,61,41,61,43,61,46,61,48,61,50,61,52,61,55,61,57,61,59,61,62,61,64,61,66,61,68,61,71,61,73,61,75,61,77,61,80,61,82,61,84,61,87,61,89,61,91,61,93,61,96,61,98,61,100,61,103,61,105,61,107,61,109,61,112,61,114,61,116,61,118,61,121,61,123,61,125,61,128,61,130,61,132,61,134,61,137,61,139,61,141,61,144,61,146,61,148,61,150,61,153,61,155,61,164,61,166,61,169,61,171,61,-163,62,-161,62,-159,62,-156,62,-154,62,-152,62,-149,62,-147,62,-144,62,-142,62,-140,62,-137,62,-135,62,-133,62,-130,62,-128,62,-126,62,-123,62,-121,62,-118,62,-116,62,-114,62,-111,62,-109,62,-107,62,-104,62,-102,62,-99,62,-97,62,-95,62,-83,62,-50,62,-47,62,-45,62,-43,62,7,62,9,62,12,62,14,62,17,62,21,62,24,62,26,62,28,62,31,62,33,62,36,62,38,62,40,62,43,62,45,62,47,62,50,62,52,62,54,62,57,62,59,62,62,62,64,62,66,62,69,62,71,62,73,62,76,62,78,62,81,62,83,62,85,62,88,62,90,62,92,62,95,62,97,62,99,62,102,62,104,62,107,62,109,62,111,62,114,62,116,62,118,62,121,62,123,62,126,62,128,62,130,62,133,62,135,62,137,62,140,62,142,62,144,62,147,62,149,62,152,62,154,62,156,62,159,62,161,62,166,62,168,62,171,62,173,62,175,62,-170,63,-160,63,-158,63,-156,63,-153,63,-151,63,-148,63,-146,63,-143,63,-141,63,-138,63,-136,63,-133,63,-131,63,-129,63,-126,63,-124,63,-121,63,-119,63,-116,63,-114,63,-111,63,-109,63,-107,63,-104,63,-102,63,-99,63,-97,63,-94,63,-92,63,-70,63,-67,63,-65,63,-50,63,-48,63,-45,63,-43,63,9,63,11,63,13,63,16,63,18,63,23,63,26,63,28,63,31,63,33,63,36,63,38,63,40,63,43,63,45,63,48,63,50,63,53,63,55,63,58,63,60,63,62,63,65,63,67,63,70,63,72,63,75,63,77,63,80,63,82,63,84,63,87,63,89,63,92,63,94,63,97,63,99,63,102,63,104,63,107,63,109,63,111,63,114,63,116,63,119,63,121,63,124,63,126,63,129,63,131,63,133,63,136,63,138,63,141,63,143,63,146,63,148,63,151,63,153,63,156,63,158,63,160,63,163,63,165,63,168,63,170,63,173,63,175,63,178,63,-165,65,-160,65,-157,65,-154,65,-152,65,-149,65,-147,65,-144,65,-142,65,-139,65,-137,65,-134,65,-131,65,-129,65,-126,65,-124,65,-121,65,-119,65,-116,65,-114,65,-111,65,-109,65,-106,65,-103,65,-101,65,-98,65,-96,65,-93,65,-91,65,-88,65,-86,65,-83,65,-78,65,-75,65,-73,65,-70,65,-68,65,-50,65,-47,65,-45,65,-42,65,-22,65,-19,65,-17,65,11,65,14,65,17,65,19,65,24,65,27,65,29,65,32,65,34,65,37,65,40,65,42,65,45,65,47,65,50,65,52,65,55,65,57,65,60,65,63,65,65,65,68,65,70,65,73,65,75,65,78,65,80,65,83,65,86,65,88,65,91,65,93,65,96,65,98,65,101,65,103,65,106,65,109,65,111,65,114,65,116,65,119,65,121,65,124,65,126,65,129,65,131,65,134,65,137,65,139,65,142,65,144,65,147,65,149,65,152,65,154,65,157,65,160,65,162,65,165,65,167,65,170,65,172,65,175,65,177,65,-180,66,-177,66,-175,66,-172,66,-167,66,-164,66,-161,66,-159,66,-156,66,-153,66,-151,66,-148,66,-145,66,-143,66,-140,66,-137,66,-135,66,-132,66,-129,66,-127,66,-124,66,-121,66,-119,66,-116,66,-113,66,-111,66,-108,66,-105,66,-103,66,-100,66,-97,66,-95,66,-92,66,-89,66,-87,66,-73,66,-71,66,-68,66,-65,66,-52,66,-49,66,-47,66,-44,66,-41,66,-23,66,-20,66,-17,66,-15,66,12,66,15,66,17,66,20,66,25,66,28,66,31,66,33,66,41,66,44,66,47,66,49,66,52,66,55,66,57,66,60,66,63,66,65,66,68,66,71,66,73,66,76,66,79,66,81,66,84,66,87,66,89,66,92,66,95,66,97,66,100,66,103,66,105,66,108,66,111,66,113,66,116,66,119,66,121,66,124,66,127,66,129,66,132,66,135,66,137,66,140,66,143,66,145,66,148,66,151,66,153,66,156,66,159,66,161,66,164,66,167,66,169,66,172,66,175,66,177,66,-180,67,-177,67,-174,67,-172,67,-160,67,-158,67,-155,67,-152,67,-149,67,-147,67,-144,67,-141,67,-138,67,-135,67,-133,67,-130,67,-127,67,-124,67,-121,67,-119,67,-116,67,-113,67,-110,67,-107,67,-105,67,-102,67,-99,67,-96,67,-93,67,-91,67,-88,67,-85,67,-71,67,-68,67,-66,67,-63,67,-52,67,-49,67,-46,67,-43,67,-40,67,-38,67,-35,67,15,67,18,67,21,67,24,67,27,67,29,67,32,67,35,67,38,67,40,67,46,67,49,67,52,67,54,67,57,67,60,67,63,67,66,67,68,67,71,67,74,67,77,67,80,67,82,67,85,67,88,67,91,67,93,67,96,67,99,67,102,67,105,67,107,67,110,67,113,67,116,67,119,67,121,67,124,67,127,67,130,67,133,67,135,67,138,67,141,67,144,67,147,67,149,67,152,67,155,67,158,67,160,67,163,67,166,67,169,67,172,67,174,67,177,67,-180,68,-177,68,-163,68,-160,68,-157,68,-154,68,-151,68,-148,68,-145,68,-142,68,-139,68,-136,68,-134,68,-131,68,-128,68,-125,68,-122,68,-119,68,-116,68,-110,68,-107,68,-105,68,-93,68,-90,68,-84,68,-75,68,-73,68,-70,68,-67,68,-52,68,-49,68,-46,68,-44,68,-41,68,-38,68,-35,68,17,68,20,68,23,68,26,68,29,68,32,68,35,68,38,68,46,68,49,68,52,68,55,68,58,68,61,68,64,68,67,68,70,68,73,68,75,68,78,68,81,68,84,68,87,68,90,68,93,68,96,68,99,68,102,68,105,68,107,68,110,68,113,68,116,68,119,68,122,68,125,68,128,68,131,68,134,68,136,68,139,68,142,68,145,68,148,68,151,68,154,68,157,68,160,68,163,68,165,68,168,68,171,68,174,68,177,68,-180,69,-165,69,-162,69,-159,69,-156,69,-153,69,-149,69,-146,69,-143,69,-140,69,-137,69,-134,69,-131,69,-128,69,-125,69,-122,69,-119,69,-113,69,-110,69,-104,69,-92,69,-85,69,-82,69,-76,69,-73,69,-70,69,-49,69,-46,69,-43,69,-40,69,-37,69,-34,69,-31,69,-27,69,18,69,21,69,24,69,27,69,31,69,34,69,37,69,61,69,64,69,70,69,76,69,79,69,82,69,85,69,88,69,92,69,95,69,98,69,101,69,104,69,107,69,110,69,113,69,116,69,119,69,122,69,125,69,128,69,131,69,134,69,137,69,140,69,143,69,146,69,149,69,153,69,156,69,159,69,162,69,165,69,168,69,171,69,174,69,177,69,-161,70,-157,70,-154,70,-151,70,-148,70,-145,70,-116,70,-112,70,-109,70,-106,70,-103,70,-93,70,-84,70,-80,70,-77,70,-74,70,-71,70,-55,70,-51,70,-48,70,-45,70,-42,70,-39,70,-35,70,-32,70,-29,70,-26,70,23,70,26,70,29,70,68,70,71,70,74,70,77,70,80,70,84,70,87,70,90,70,93,70,96,70,100,70,103,70,106,70,109,70,113,70,116,70,119,70,122,70,125,70,129,70,132,70,135,70,138,70,141,70,145,70,148,70,151,70,154,70,158,70,170,70,-156,71,-122,71,-115,71,-112,71,-109,71,-105,71,-95,71,-88,71,-85,71,-82,71,-78,71,-75,71,-51,71,-48,71,-44,71,-41,71,-37,71,-34,71,-31,71,-27,71,-24,71,54,71,68,71,71,71,75,71,78,71,82,71,85,71,88,71,92,71,95,71,98,71,102,71,105,71,109,71,112,71,115,71,119,71,122,71,126,71,129,71,132,71,136,71,139,71,143,71,146,71,149,71,-122,72,-115,72,-112,72,-101,72,-97,72,-90,72,-86,72,-83,72,-79,72,-76,72,-54,72,-50,72,-47,72,-43,72,-40,72,-36,72,-32,72,-29,72,-25,72,54,72,72,72,76,72,79,72,83,72,86,72,90,72,94,72,97,72,101,72,104,72,108,72,112,72,115,72,119,72,122,72,126,72,140,72,144,72,148,72,-123,73,-119,73,-100,73,-96,73,-92,73,-88,73,-84,73,-80,73,-54,73,-50,73,-46,73,-42,73,-38,73,-34,73,-31,73,-27,73,84,73,88,73,92,73,96,73,100,73,103,73,107,73,111,73,115,73,119,73,126,73,142,73,-123,74,-53,74,-49,74,-45,74,-41,74,-37,74,-33,74,-29,74,-25,74,-20,74,57,74,90,74,94,74,98,74,102,74,106,74,-114,76,-110,76,-92,76,-88,76,-83,76,-57,76,-53,76,-48,76,-44,76,-40,76,-35,76,-31,76,-26,76,-22,76,61,76,92,76,97,76,101,76,105,76,110,76,140,76,145,76,-118,77,-109,77,-99,77,-95,77,-85,77,-81,77,-66,77,-62,77,-57,77,-52,77,-47,77,-43,77,-38,77,-33,77,-28,77,-24,77,66,77,104,77,109,77,-113,78,-87,78,-82,78,-67,78,-62,78,-57,78,-51,78,-46,78,-41,78,-36,78,-31,78,-26,78,-21,78,15,78,-101,79,-90,79,-84,79,-79,79,-67,79,-62,79,-56,79,-51,79,-45,79,-39,79,-34,79,-28,79,-22,79,17,79,101,79,-92,80,-85,80,-79,80,-73,80,-66,80,-60,80,-54,80,-47,80,-41,80,-35,80,-28,80,-22,80,16,80,22,80,98,80];
+  }
+  globeXY(lon, lat, rot) {
+    var D = Math.PI / 180, lo = (lon + rot) * D, la = lat * D, tl = -18 * D;
+    var cx = Math.cos(la) * Math.sin(lo), cy = Math.sin(la), cz = Math.cos(la) * Math.cos(lo);
+    var yy = cy * Math.cos(tl) - cz * Math.sin(tl), zz = cy * Math.sin(tl) + cz * Math.cos(tl);
+    return [cx * 64, -yy * 64, zz];
+  }
+  sample(arr, n) { var out = []; for (var i = 0; i < n; i++) { out.push(Object.assign({}, arr[Math.floor(i * arr.length / n)])); } return out; }
+  place(arr, s, dx, dy, keepTag) { return arr.map(function (g) { return { x: dx + g.x * s, y: dy + g.y * s, w: g.w, j: g.j * s, tag: keepTag ? g.tag : null, ey: dy + g.ey * s }; }); }
+  keyShape(N) {
+    var nf = Math.round(N * 0.5), KX = -34, rnd = function (a, b) { return a + Math.random() * (b - a); };
+    var T = this.place(this.glyph(nf, true), 0.58, KX, -1.2, false), n = N - nf;
+    for (var i = 0; i < n; i++) {
+      var u = i / n, g;
+      if (u < 0.46) { var a = u / 0.46 * 6.283; g = { x: KX + Math.cos(a) * 31 + rnd(-1.3, 1.3), y: Math.sin(a) * 31 + rnd(-1.3, 1.3), w: 0.95 }; }
+      else if (u < 0.8) { g = { x: rnd(-3, 66), y: rnd(-4, 4), w: 0.9 }; }
+      else if (u < 0.91) { g = { x: rnd(42, 50), y: rnd(4, 19), w: 0.9 }; }
+      else { g = { x: rnd(56, 64), y: rnd(4, 14), w: 0.9 }; }
+      g.j = 0; g.tag = 'rim'; T.push(g);
+    }
+    return T;
+  }
+  shape(name, N) {
+    var T = [], i, a;
+    if (name === 'face') { return this.glyph(N); }
+    if (name === 'key') { return this.keyShape(N); }
+    if (name === 'two') { var h = Math.floor(N / 2); return this.place(this.glyph(h), 0.56, -42, 0, true).concat(this.place(this.glyph(N - h), 0.56, 42, 0, true)); }
+    if (name === 'grid') {
+      var cols = 3, rows = 2, ncell = cols * rows, per2 = Math.floor(N / ncell), sp = 54, base = this.glyph(1100);
+      for (var ce = 0; ce < ncell; ce++) {
+        var gx = (ce % cols - (cols - 1) / 2) * sp, gy = (Math.floor(ce / cols) - (rows - 1) / 2) * sp, cnt = ce === ncell - 1 ? N - per2 * (ncell - 1) : per2;
+        var pts2 = this.place(this.sample(base, cnt), 0.38, gx, gy, true);
+        for (var q2 = 0; q2 < pts2.length; q2++) { pts2[q2].cell = ce; pts2[q2].ccx = gx; pts2[q2].ccy = gy; T.push(pts2[q2]); }
+      }
+      return T;
+    }
+    if (name === 'globe') {
+      var Ld = this.landData(), nL = Ld.length / 2, nRing = Math.round(N * 0.1), nCity = Math.round(N * 0.07), CIT = [[-46.6, -23.5], [-99.1, 19.4], [3.4, 6.5]];
+      for (i = 0; i < nRing; i++) { a = i / nRing * 6.283; T.push({ x: Math.cos(a) * 66, y: Math.sin(a) * 66, w: 0.32, j: 0.8, tag: 'ring' }); }
+      for (i = 0; i < nCity; i++) { var cc = CIT[i % 3], rr2 = Math.sqrt(Math.random()) * 2.2, aa = Math.random() * 6.283; T.push({ lon: cc[0] + Math.cos(aa) * rr2, lat: cc[1] + Math.sin(aa) * rr2, w: 1, j: 0, tag: 'city' }); }
+      while (T.length < N) { var li = Math.floor(Math.random() * nL); T.push({ lon: Ld[li * 2] + (Math.random() - 0.5) * 0.9, lat: Ld[li * 2 + 1] + (Math.random() - 0.5) * 0.9, w: 0.85, j: 0, tag: 'land' }); }
+      var self2 = this;
+      T.forEach(function (g) { if (g.lon != null) { var pp = self2.globeXY(g.lon, g.lat, 45); g.x = pp[0]; g.y = pp[1]; g.bx = g.lon; g.ey = g.lat; } });
+      return T;
+    }
+    if (name === 'check') {
+      var nc = Math.round(N * 0.42);
+      for (i = 0; i < nc; i++) { a = i / nc * 6.283; var rr = 64 + ((i * 7) % 5 - 2) * 0.8; T.push({ x: Math.cos(a) * rr, y: Math.sin(a) * rr, w: 0.8, j: 0.6, tag: 'ring' }); }
+      var pts = [[-26, 2], [-8, 20], [28, -18]], l1 = Math.hypot(18, 18), l2 = Math.hypot(36, 38), n = N - nc;
+      for (i = 0; i < n; i++) {
+        var uu = i / n * (l1 + l2), A = uu < l1 ? pts[0] : pts[1], B = uu < l1 ? pts[1] : pts[2], f = uu < l1 ? uu / l1 : (uu - l1) / l2;
+        var dx = B[0] - A[0], dy = B[1] - A[1], dl = Math.hypot(dx, dy), off = ((i % 7) - 3) * 1.3;
+        T.push({ x: A[0] + dx * f - dy / dl * off, y: A[1] + dy * f + dx / dl * off, w: 1, j: 0.8, tag: 'chk' });
+      }
+      return T;
+    }
+    return T;
+  }
+  /* cada capítulo vira um conjunto de alvos, ordenado por ângulo para a transição fluir */
+  buildChapter(name, N) {
+    var T = this.shape(name, N), TAGS = { out: 1, eye: 2, feat: 3, fill: 4, mer: 5, rim: 6, ring: 7, chk: 8, land: 9, city: 10 };
+    T.sort(function (a, b) { return Math.atan2(a.y, a.x) - Math.atan2(b.y, b.x); });
+    var C = { X: new Float32Array(N), Y: new Float32Array(N), W: new Float32Array(N), H: new Float32Array(N), G: new Uint8Array(N), EY: new Float32Array(N), BX: new Float32Array(N), CE: new Int16Array(N), CCX: new Float32Array(N), CCY: new Float32Array(N) };
+    for (var i = 0; i < N; i++) {
+      var g = T[Math.floor(i * T.length / N)], j = g.j || 0, tg = TAGS[g.tag] || 0;
+      C.X[i] = g.x + (Math.random() - 0.5) * j; C.Y[i] = g.y + (Math.random() - 0.5) * j; C.W[i] = g.w; C.G[i] = tg; C.EY[i] = g.ey || 0; C.BX[i] = g.bx || 0; C.CE[i] = g.cell == null ? -1 : g.cell; C.CCX[i] = g.ccx || 0; C.CCY[i] = g.ccy || 0;
+      var hl = 0;
+      if (name === 'key' && tg === 6) { hl = 1; }
+      if (name === 'two' && tg === 1) { hl = 1; }
+      if (name === 'globe' && tg === 10) { hl = 1; }
+      if (name === 'check') { hl = 1; }
+      C.H[i] = hl;
+    }
+    C.name = name;
+    return C;
+  }
+
+  /* ---------- motor ---------- */
+  initStage() {
+    var c = document.getElementById('t-stage'); if (!c) { return; }
+    var N = Math.round(3400 * (this.props.particulas ?? 1));
+    this.N = N;
+    var names = ['face', 'face', 'key', 'grid', 'globe', 'check'], self = this;
+    this.CH = names.map(function (nm) { return self.buildChapter(nm, N); });
+    this.S = new Float32Array(N); this.PH = new Float32Array(N); this.D = new Float32Array(N); this.CV = new Float32Array(N);
+    for (var i = 0; i < N; i++) { this.S[i] = 0.75 + Math.random() * 0.55; this.PH[i] = Math.random() * 6.283; this.D[i] = Math.random() * 0.35; this.CV[i] = (Math.random() - 0.5) * 0.7; }
+    this.buf = new Float32Array(N * 5);
+    var gl = null;
+    try { gl = c.getContext('webgl', { antialias: true, alpha: true, premultipliedAlpha: true }); } catch (e) {}
+    if (gl) {
+      var vs = 'attribute vec2 a_p;attribute float a_a;attribute float a_h;attribute float a_s;uniform vec2 u_sc;uniform float u_px;varying float v_a;varying float v_h;void main(){gl_Position=vec4(a_p*u_sc,0.0,1.0);gl_PointSize=max(1.0,a_s*u_px);v_a=a_a;v_h=a_h;}';
+      var fs = 'precision mediump float;uniform vec3 u_ink;uniform vec3 u_acc;varying float v_a;varying float v_h;void main(){float d=length(gl_PointCoord-0.5);float m=smoothstep(0.5,0.34,d);float a=m*clamp(v_a,0.0,1.0);vec3 col=mix(u_ink,u_acc,clamp(v_h,0.0,1.0));gl_FragColor=vec4(col*a,a);}';
+      var mk = function (t, s) { var sh = gl.createShader(t); gl.shaderSource(sh, s); gl.compileShader(sh); return sh; };
+      var pr = gl.createProgram(); gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+      if (gl.getProgramParameter(pr, gl.LINK_STATUS)) {
+        gl.useProgram(pr);
+        var b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, this.buf, gl.DYNAMIC_DRAW);
+        var at = function (nm, sz, off) { var l = gl.getAttribLocation(pr, nm); gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l, sz, gl.FLOAT, false, 20, off); };
+        at('a_p', 2, 0); at('a_a', 1, 8); at('a_h', 1, 12); at('a_s', 1, 16);
+        this.u = { sc: gl.getUniformLocation(pr, 'u_sc'), px: gl.getUniformLocation(pr, 'u_px'), ink: gl.getUniformLocation(pr, 'u_ink'), acc: gl.getUniformLocation(pr, 'u_acc') };
+        gl.uniform3f(this.u.ink, 0.93, 0.93, 0.91); gl.uniform3f(this.u.acc, 0.494, 0.886, 0.631);
+        gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA); gl.clearColor(0, 0, 0, 0);
+        this.gl = gl;
+      }
+    }
+    if (!this.gl) { this.ctx = c.getContext('2d'); }
+  }
+  /* posição de uma partícula em um capítulo, já com o movimento próprio da forma */
+  pos(ci, i, t, out) {
+    var C = this.CH[ci], x = C.X[i], y = C.Y[i], g = C.G[i], h = C.H[i], R = this.red, w = C.W[i];
+    if (C.name === 'face') {
+      if (this.blink && g === 2) { y = C.EY[i] + (y - C.EY[i]) * 0.12; }
+      var Y = this.yaw, P = this.pitch, isF = g === 2 || g === 3, nx, ny;
+      if (isF) { nx = x * (1 - 0.28 * Y * (x < 0 ? -1 : 1)) + Y * 15; ny = y + P * 10; }
+      else if (g === 4) { nx = x * (1 - 0.1 * Math.abs(Y)) + Y * 7; ny = y * (1 - 0.06 * Math.abs(P)) + P * 4; }
+      else { nx = x * (1 - 0.1 * Math.abs(Y)) + Y * 3; ny = y * (1 - 0.08 * Math.abs(P)) + P * 2; }
+      x = nx * this.cr - ny * this.sr; y = nx * this.sr + ny * this.cr;
+      if (ci === 1 && !R) { var bnd = Math.max(0, 1 - Math.abs(y - this.band) / 14); h = bnd > 0.3 ? 1 : 0; w = Math.min(1, w * 0.85 + bnd * 0.5); out[4] = 1 + bnd * 0.7; }
+      else if (ci === 1) { h = g === 1 ? 1 : 0; out[4] = 1; }
+      else { out[4] = 1; }
+    } else {
+      out[4] = 1;
+      if (C.name === 'globe' && (g === 9 || g === 10)) {
+        var gp = this.globeXY(C.BX[i], C.EY[i], this.grot), zz = gp[2];
+        x = gp[0]; y = gp[1];
+        if (zz > 0) { w = g === 10 ? 1 : 0.35 + 0.6 * zz; } else { w = g === 10 ? 0.1 : 0.06; h = 0; }
+        if (g === 10 && zz > 0) { out[4] = 1.2; }
+      }
+      if (C.name === 'key' && !R) { y += Math.sin(t * 1.2) * 1.5; }
+      if (C.name === 'grid') {
+        var cell = C.CE[i];
+        out[4] = g === 4 ? 0.6 : 0.78;
+        if (cell === this.gAct) {
+          h = 1;
+          if (this.gHold) { x = C.CCX[i] + (x - C.CCX[i]) * 1.28; y = C.CCY[i] + (y - C.CCY[i]) * 1.28; w = Math.min(1, w + 0.15); out[4] *= 1.15; }
+          else { w = Math.min(1, w + 0.2); }
+        } else if (this.gHold) { w *= 0.35; }
+      }
+    }
+    if (!R) { var wb = C.name === 'grid' ? 0.15 : 0.8; x += Math.sin(t * 2 + this.PH[i]) * wb; y += Math.cos(t * 2.3 + this.PH[i]) * wb; }
+    out[0] = x; out[1] = y; out[2] = w; out[3] = h;
+  }
+  frame(t, dt) {
+    var c = document.getElementById('t-stage'); if (!c) { return; }
+    var r = c.getBoundingClientRect(), vh = window.innerHeight || 800;
+    if (r.bottom < -20 || r.top > vh + 20) { return; }
+    var w = c.clientWidth, h = c.clientHeight, dpr = Math.min(2, window.devicePixelRatio || 1); if (!w || !h) { return; }
+    if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); if (this.gl) { this.gl.viewport(0, 0, c.width, c.height); } }
+    var R = this.red;
+    this.ps += (this.p - this.ps) * (R ? 1 : Math.min(1, dt * 7));
+    var p = this.ps, k = Math.min(5, Math.floor(p)), u = p - k, f = k >= 5 ? 0 : Math.max(0, Math.min(1, (u - 0.4) / 0.55));
+    if (!R) {
+      var yt = (Math.sin(t * 2.4) * 0.42 + Math.sin(t * 4.1) * 0.12 + Math.sin(t * 1.1) * 0.06) * 0.6, pt = (Math.sin(t * 3.1 + 1) * 0.28 + Math.sin(t * 0.9) * 0.18) * 0.6;
+      this.yaw = (this.yaw || 0) + (yt - (this.yaw || 0)) * 0.08; this.pitch = (this.pitch || 0) + (pt - (this.pitch || 0)) * 0.08;
+    } else { this.yaw = 0; this.pitch = 0; }
+    var roll = R ? 0 : Math.sin(t * 0.7) * 0.04 + this.yaw * 0.04; this.cr = Math.cos(roll); this.sr = Math.sin(roll);
+    this.blink = !R && ((t * 1000) % 2600) < 160;
+    this.band = -80 + (((t * 1000) % 1400) / 1400) * 160;
+    this.mer = Math.cos(t * 1.6);
+    this.grot = R ? 45 : 45 + Math.sin(t * 0.35) * 18;
+    var ORD = [0, 5, 2, 3, 1, 4], tc = R ? 4 : (t % 4.4);
+    if (tc < 2.2) { this.gAct = ORD[Math.min(5, Math.floor(tc / 0.37))]; this.gHold = false; } else { this.gAct = 4; this.gHold = true; }
+    var N = this.N, A = [0, 0, 0, 0, 1], B = [0, 0, 0, 0, 1], buf = this.buf, i;
+    for (i = 0; i < N; i++) {
+      this.pos(k, i, t, A);
+      var e = 0;
+      if (f > 0) { this.pos(k + 1, i, t, B); var q = Math.max(0, Math.min(1, (f - this.D[i]) / 0.65)); e = q < 0.5 ? 4 * q * q * q : 1 - Math.pow(-2 * q + 2, 3) / 2; }
+      var x, y, al, hl, sz;
+      if (e <= 0) { x = A[0]; y = A[1]; al = A[2]; hl = A[3]; sz = A[4]; }
+      else {
+        var ie = 1 - e, dx = B[0] - A[0], dy = B[1] - A[1], mx = (A[0] + B[0]) / 2 - dy * this.CV[i], my = (A[1] + B[1]) / 2 + dx * this.CV[i];
+        x = ie * ie * A[0] + 2 * ie * e * mx + e * e * B[0]; y = ie * ie * A[1] + 2 * ie * e * my + e * e * B[1];
+        al = A[2] + (B[2] - A[2]) * e; hl = A[3] + (B[3] - A[3]) * e; sz = A[4] + (B[4] - A[4]) * e;
+      }
+      if (!R) { al *= 0.9 + 0.1 * Math.sin(t * 4 + this.PH[i]); }
+      var o = i * 5; buf[o] = x; buf[o + 1] = y; buf[o + 2] = al; buf[o + 3] = hl; buf[o + 4] = this.S[i] * sz;
+    }
+    var sc = Math.min(w, h) / 165, dot = 2 * (0.5 + 0.42 * sc);
+    if (this.gl) {
+      var gl = this.gl; gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.uniform2f(this.u.sc, 2 * sc / w, -2 * sc / h); gl.uniform1f(this.u.px, dot * dpr);
+      gl.bufferSubData(gl.ARRAY_BUFFER, 0, buf); gl.drawArrays(gl.POINTS, 0, N);
+    } else if (this.ctx) {
+      var ctx = this.ctx; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+      for (i = 0; i < N; i++) { var oo = i * 5, hh = buf[oo + 3]; ctx.fillStyle = 'rgba(' + Math.round(237 - 111 * hh) + ',' + Math.round(237 - 11 * hh) + ',' + Math.round(232 - 71 * hh) + ',' + Math.min(1, buf[oo + 2]) + ')'; ctx.beginPath(); ctx.arc(w / 2 + buf[oo] * sc, h / 2 + buf[oo + 1] * sc, buf[oo + 4] * dot / 2, 0, 6.283); ctx.fill(); }
+    }
+  }
+  measure() {
+    var sec = document.getElementById('historia'); if (!sec) { return; }
+    var vh = window.innerHeight || 800, total = sec.offsetHeight - vh, r = sec.getBoundingClientRect();
+    var prog = total > 0 ? Math.max(0, Math.min(1, -r.top / total)) : 0;
+    this.p = Math.min(5, prog * 5.4);
+    var ch = Math.min(5, Math.floor(this.p + 0.3));
+    if (ch !== this.state.ch) { this.setState({ ch: ch }); }
+    var ft = document.querySelector('footer'), dk = ft ? ft.getBoundingClientRect().top < 64 : false, s = (window.scrollY || 0) > 40;
+    if (dk !== this.state.overDark || s !== this.state.scrolled) { this.setState({ overDark: dk, scrolled: s }); }
+  }
+  goTo(i) {
+    var sec = document.getElementById('historia'); if (!sec) { return; }
+    var vh = window.innerHeight || 800, total = sec.offsetHeight - vh, top = sec.getBoundingClientRect().top + (window.scrollY || 0);
+    window.scrollTo({ top: top + (i / 5.4) * total + 2, behavior: this.red ? 'auto' : 'smooth' });
+  }
+
+  componentDidMount() {
+    this._anchor = function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null; if (!a) { return; }
+      var id = (a.getAttribute('href') || '').slice(1); if (!id) { return; }
+      var tg = document.getElementById(id); if (!tg) { return; }
+      e.preventDefault();
+      var rm = false; try { rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (x) {}
+      window.scrollTo({ top: tg.getBoundingClientRect().top + (window.scrollY || 0) - 88, behavior: rm ? 'auto' : 'smooth' });
+    };
+    document.addEventListener('click', this._anchor, true);
+    var self = this;
+    this.red = false; try { this.red = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    this.initStage();
+    this.measure(); this.ps = this.p;
+    var alive = true, last = 0; this.stop = function () { alive = false; };
+    var loop = function (ms) { if (!alive) { return; } var t = ms / 1000, dt = last ? Math.min(0.05, t - last) : 0.016; last = t; if (self.N) { self.frame(self.red ? 0 : t, dt); } self.raf = window.requestAnimationFrame(loop); };
+    this.raf = window.requestAnimationFrame(loop);
+    this.numCheck = function () { if (self.numGo) { return; } var el = document.getElementById('numeros'); if (!el) { return; } var rc = el.getBoundingClientRect(); if (rc.top < window.innerHeight * 0.8 && rc.bottom > 0) { self.numGo = true; if (self.red) { self.setState({ numP: 1, numIn: true }); return; } var t0 = 0; var step = function (ms) { if (!t0) { t0 = ms; } var k = Math.min(1, (ms - t0) / 1600), e = 1 - Math.pow(1 - k, 3); self.setState({ numP: e, numIn: true }); if (k < 1) { self.numRaf = window.requestAnimationFrame(step); } }; self.numRaf = window.requestAnimationFrame(step); } };
+    this.onScroll = function () { self.measure(); self.numCheck(); };
+    this.numCheck();
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll, { passive: true });
+  }
+  capStart() { this.capEnsure(); this.setState({ startOn: false }); this.capE.runFast(); }
+  capEnsure() {
+    var self = this;
+    if (!this.capE) { this.capE = uCapture({
+      el: function (id) { return document.getElementById(id); },
+      phase: function (ph, extra) { var st = Object.assign({ capPh: ph }, extra || {}); self.setState(st); },
+      time: function (ms) { self.setState({ capT: ms }); }
+    }); }
+  }
+  capStop() { if (this.capE) { this.capE.cancel(); } }
+  capCamera() { this.capEnsure(); this.setState({ startOn: false }); this.capE.runCamera(); }
+
+  componentWillUnmount() { document.removeEventListener('click', this._anchor, true); if (this.capE) { this.capE.destroy(); } if (this.stop) { this.stop(); } if (this.raf) { window.cancelAnimationFrame(this.raf); } clearTimeout(this.copyTimer); if (this.numRaf) { window.cancelAnimationFrame(this.numRaf); } window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onScroll); }
+
+  numVals() {
+    var q = this.state.numP || 0, done = q >= 1;
+    return { numIn: this.state.numIn ? '1' : '0', num0: '+' + Math.round(200 * q) + 'M', num1: '+' + (done ? '3' : (3 * q).toFixed(1)) + 'B', num2: '< 1 s', num3: Math.round(30 * q) + '+', num4: 'SOC 2' };
+  }
+  renderVals() { return Object.assign(this._pageVals(), this.navVals(1), this.numVals()); }
+  navVals(active) {
+    var self = this, st = this.state, onPhoto = !!st.overDark, sc = !!st.scrolled;
+    var o = st.menuOpen == null ? -1 : st.menuOpen, last = st.lastMenu == null ? 1 : st.lastMenu;
+    var cmd = '[Unico MCP connection command]';
+    var M = [
+      { label: 'Home', href: 'HomeI-en.html', items: [] },
+      { label: 'Resources', href: 'Tecnologia-en.html', items: [
+        { icon: 'M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M10 10h4v4h-4z', title: 'Human Token', text: 'How a selfie becomes a unique token per person.', href: 'Tecnologia-en.html' },
+        { icon: 'M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z', title: 'Human Platform', text: 'Customize your brand, manage branches and track reports.', href: 'HumanPlatform-en.html' },
+        { icon: 'M8 2v5M16 2v5M5 7h14v6H5zM12 13v9', title: 'Integration', text: 'MCP, SDK and API.', href: 'Integracao-en.html' },
+        { icon: 'M5 3h14v18H5zM9 8h6M9 12h6M9 16h3', title: 'Docs', text: 'Guides, getting started and status.', href: '#pagina-docs' }
+      ] },
+      { label: 'Company', href: 'Sobre-en.html', items: [
+        { icon: 'M4 21V7h8v14M12 11h8v10M7 10h2v2H7zM7 14h2v2H7zM15 14h2v2h-2z', title: 'About Unico', text: 'Who we are and what we do.', href: 'Sobre-en.html' },
+        { icon: 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M16 3.5a4 4 0 0 1 0 7.5M22 21v-1a6 6 0 0 0-4-5.6', title: 'Customers', text: 'Stories from teams using Unico.', href: 'Clientes-en.html' },
+        { icon: 'M4 4h16v4H4zM4 11h10M4 15h16M4 19h8', title: 'Newsroom', text: 'News, launches and press kit.', href: '#pagina-newsroom' },
+        { icon: 'M4 4h16v16H4zM8 8h8v8H8z', title: 'Trust Center', text: 'Certifications and privacy.', href: 'Confianca-en.html' },
+        { icon: 'M4 20 20 4M11 4h9v9', title: 'Careers', text: 'Come build with us.', href: '#carreiras' }
+      ] }
+    ];
+    var megaHas = o > 0 && M[o] && M[o].items.length > 0;
+    return {
+      menus: M.map(function (m, i) {
+        var has = m.items.length > 0, on = o === i && has;
+        var cur = (o >= 0 && M[o] && M[o].items.length > 0) ? o : last, vis = has && cur === i;
+        return {
+          label: m.label, href: m.href, items: m.items,
+          expanded: has ? (on ? 'true' : 'false') : null,
+          color: active === i ? '#161616' : (onPhoto ? (o === i ? '#FFFFFF' : 'rgba(255,255,255,0.86)') : (o === i ? '#3F3F3B' : '#8A8A85')),
+          current: active === i ? 'page' : 'false',
+          open: function () { self.setState(has ? { menuOpen: i, lastMenu: i, startOn: false } : { menuOpen: i }); },
+          cols: m.items.length === 3 ? 3 : 2, idir: m.items.length === 3 ? 'column' : 'row', ialign: m.items.length === 3 ? 'flex-start' : 'center',
+          story: !!m.story, grid: !m.story, pos: vis ? 'relative' : 'absolute',
+          has: has, op: vis ? 1 : 0, vis: (vis && megaHas) ? 'visible' : 'hidden', pe: (vis && megaHas) ? 'auto' : 'none', hidden: (vis && megaHas) ? 'false' : 'true'
+        };
+      }),
+      menuClose: function () { self.setState({ menuOpen: -1 }); },
+      megaOp: megaHas ? 1 : 0, megaY: megaHas ? 0 : -6, megaPE: megaHas ? 'auto' : 'none',
+      actX: Math.max(0, active) * 104,
+      hovBg: onPhoto ? 'rgba(255,255,255,0.18)' : 'rgba(22,22,22,0.06)',
+      hovX: Math.max(0, o) * 104,
+      hovOp: (o >= 0 && o !== active) ? 1 : 0,
+      hdrOp: onPhoto ? 0 : 1,
+      pillBg: onPhoto ? 'rgba(255,255,255,0.16)' : 'rgba(241,241,239,0.62)',
+      pillBorder: onPhoto ? 'rgba(255,255,255,0.32)' : 'rgba(255,255,255,0.75)',
+      logoFill: onPhoto ? '#FFFFFF' : '#161616',
+      enColor: onPhoto ? '#FFFFFF' : '#5C5C58',
+      ctaBg: onPhoto ? '#FFFFFF' : '#161616',
+      secBg: onPhoto ? 'rgba(255,255,255,0.18)' : 'rgba(22,22,22,0.06)',
+      secFg: onPhoto ? '#FFFFFF' : '#161616',
+      ctaFg: onPhoto ? '#161616' : '#FFFFFF',
+      navPad: sc ? 4 : 14, itemH: sc ? 34 : 40, ctaH: sc ? 36 : 44, ctaPx: sc ? 16 : 20, navFs: sc ? 13.5 : 14.5,
+      langOp: self.state.langOn ? 1 : 0,
+      langY: self.state.langOn ? 0 : -6,
+      langPE: self.state.langOn ? 'auto' : 'none',
+      langRot: self.state.langOn ? 180 : 0,
+      langExpanded: self.state.langOn ? 'true' : 'false',
+      langOpen: function () { clearTimeout(self.langTimer); if (!self.state.langOn) self.setState({ langOn: true, startOn: false, menuOpen: -1 }); },
+      langClose: function () { clearTimeout(self.langTimer); self.langTimer = setTimeout(function () { self.setState({ langOn: false }); }, 450); },
+      langToggle: function () { clearTimeout(self.langTimer); self.setState({ langOn: !self.state.langOn, startOn: false, menuOpen: -1 }); },
+      startOp: st.startOn ? 1 : 0, startY: st.startOn ? 0 : -6, startPE: st.startOn ? 'auto' : 'none', startExpanded: st.startOn ? 'true' : 'false',
+      startOpen: function () { self.setState({ startOn: true, langOn: false, menuOpen: -1 }); },
+      startClose: function () { self.setState({ startOn: false }); },
+      capOn: (self.state.capPh && self.state.capPh !== 'idle') ? '1' : '0',
+      capHidden: (self.state.capPh && self.state.capPh !== 'idle') ? 'false' : 'true',
+      capCls: '',
+      capGlow: ['fast', 'fastVerify', 'fastSuccess', 'camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0 ? 0.7 : 0,
+      capSquare: ['fast', 'fastVerify', 'fastSuccess', 'camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0,
+      capCamOp: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capLive && !self.state.capSim) ? 1 : 0,
+      capMediaS: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capLive) ? 1 : 0.15,
+      capSimOp: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capSim) ? 1 : 0,
+      capScanWait: self.state.capPh === 'camScan' && !self.state.capLive, capScanLive: self.state.capPh === 'camScan' && !!self.state.capLive,
+      capCamVerify: self.state.capPh === 'camVerify', capCamFail: self.state.capPh === 'camFail',
+      capCamTxtOp: ['camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0 ? 1 : 0,
+      capCamT1: self.state.capPh === 'camVerify' ? 'Generating the Human Token' : (self.state.capPh === 'camScan' ? ['Opening the camera', 'Fit your face in the frame', 'Move your head in a circle', 'Perfect, hold still'][self.state.capLive ? (self.state.capStep || 1) : 0] : ''),
+      capCamT2: self.state.capPh === 'camVerify' ? ((self.state.capT || 0) / 1000).toFixed(2) + ' s' : (self.state.capPh === 'camScan' ? ['Allow access to continue', 'Hold the phone at eye level', 'Until the outline is complete', 'Capturing'][self.state.capLive ? (self.state.capStep || 1) : 0] : ''),
+      capCamKey: (self.state.capPh || '') + (self.state.capStep || 0),
+      capCamBtn: self.state.capPh === 'fast' || self.state.capPh === 'fastVerify',
+      capCam: function () { self.capCamera(); },
+      capFast: self.state.capPh === 'fast', capVerify: self.state.capPh === 'fastVerify', capOk: self.state.capPh === 'fastSuccess', capPill: self.state.capPh === 'pill',
+      capTime: ((self.state.capT || 0) / 1000).toFixed(2) + ' s',
+      capTok: self.state.capTok || '',
+      capOpen: function () { self.capStart(); },
+      capClose: function () { self.capStop(); },
+      capAgain: function () { self.capStart(); },
+      startToggle: function () { self.setState({ startOn: !self.state.startOn }); },
+      navCmd: cmd,
+      navCopyLabel: st.navCopied ? 'Copied' : 'Copy',
+      navCopy: function () { try { navigator.clipboard.writeText(cmd); } catch (e) {} self.setState({ navCopied: true }); clearTimeout(self.navCopyTimer); self.navCopyTimer = setTimeout(function () { self.setState({ navCopied: false }); }, 1800); }
+    };
+  }
+  _pageVals() {
+    var self = this, st = this.state, ch = st.ch;
+    var cmd = '[Unico MCP connection command]';
+    var onDark = !!st.overDark;
+    var CHIP = [['look at the camera', '#FFFFFF'], ['verifying', '#7EE2A1'], ['token generated · photo deleted', '#7EE2A1'], ['1:N · comparing against the entire database', '#7EE2A1'], ['BR · MX · NG · 1 token', '#7EE2A1'], ['response sent', '#7EE2A1']];
+    var ALT = ['Particle face inside a camera frame', 'A scan band sweeps across the particle face', 'The particle face turns into the head of a key', 'A grid of small faces, one per person in the database; the search moves across them and lights up the match', 'A spinning particle globe, with São Paulo, Mexico City and Lagos lit in green', 'Particles form a ring with a check mark'];
+    var v = {
+      mcpCmd: cmd,
+      copyLabel: st.copied ? 'Copied' : 'Copy',
+      copy: function () { try { navigator.clipboard.writeText(cmd); } catch (e) {} self.setState({ copied: true }); clearTimeout(self.copyTimer); self.copyTimer = setTimeout(function () { self.setState({ copied: false }); }, 1800); },
+      menus: [['Home', 'HomeI-en.html'], ['Technology', '#topo'], ['Integration', 'Integracao-en.html'], ['Customers', 'Clientes-en.html'], ['Company', 'Sobre-en.html']].map(function (m, i) {
+        return { label: m[0], href: m[1], current: i === 1 ? 'page' : 'false', color: i === 1 ? '#161616' : (onDark ? 'rgba(255,255,255,0.86)' : '#8A8A85') };
+      }),
+      hdrOp: onDark ? 0 : 1,
+      pillBg: onDark ? 'rgba(255,255,255,0.16)' : 'rgba(241,241,239,0.62)',
+      pillBorder: onDark ? 'rgba(255,255,255,0.32)' : 'rgba(255,255,255,0.75)',
+      logoFill: onDark ? '#FFFFFF' : '#161616',
+      enColor: onDark ? '#FFFFFF' : '#5C5C58',
+      ctaBg: onDark ? '#FFFFFF' : '#161616',
+      ctaFg: onDark ? '#161616' : '#FFFFFF',
+      navPad: st.scrolled ? 4 : 14,
+      itemH: st.scrolled ? 34 : 40,
+      ctaH: st.scrolled ? 36 : 44,
+      ctaPx: st.scrolled ? 16 : 20,
+      navFs: st.scrolled ? 13.5 : 14.5,
+      chip: CHIP[ch][0], chipDot: CHIP[ch][1], stageAlt: ALT[ch],
+      panelBg: ch === 5 ? '#1D2116' : '#161616',
+      respHidden: ch === 5 ? 'false' : 'true'
+    };
+    for (var i = 0; i < 6; i++) { (function (ix) { v['on' + ix] = ch === ix ? '1' : '0'; v['cur' + ix] = ch === ix ? 'step' : 'false'; v['go' + ix] = function () { self.goTo(ix); }; })(i); }
+    return v;
+  }
+}
+</script>
+</body>
+</html>

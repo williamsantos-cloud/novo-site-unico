@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unico · Human Platform</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<style>
+html{scroll-behavior:smooth}[id]{scroll-margin-top:88px}@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+.u-cico{color:rgba(0,0,0,.55);animation:uCico 2.4s linear infinite}@keyframes uCico{to{transform:rotate(360deg)}}@media (prefers-reduced-motion: reduce){.u-cico{animation:none}}
+.u-sec{transition:background-color .2s,transform .2s}.u-sec:hover{filter:brightness(.96)}
+.u-capon .u-menu{opacity:0;transition:opacity .18s ease}.u-menu{transition:opacity .35s ease .1s}.u-isl{position:absolute;left:50%;top:0;transform:translateX(-50%);z-index:5;overflow:hidden;background:rgb(252,252,253);color:rgba(0,0,0,.87);opacity:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08),0 20px 56px rgba(0,0,0,.14);transition:opacity .3s ease}.u-isl[data-on="1"]{opacity:1;pointer-events:auto;transition:opacity .12s ease}@keyframes uCapTxt{from{opacity:0;transform:translateY(6px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}@keyframes uCapIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}.u-captxt{animation:uCapTxt .48s cubic-bezier(.22,1,.36,1) .12s both}.u-capin{animation:uCapIn .52s cubic-bezier(.22,1,.36,1) .26s both}.u-capx{transition:background-color .15s}.u-capx:hover{background-color:rgba(0,0,0,.1) !important}
+
+.u-try{transition:background-color .3s ease}.u-try:hover{background-color:#E3E8D2}.u-try .u-tarr{transition:transform .3s cubic-bezier(.2,.7,.2,1)}.u-try:hover .u-tarr{transform:translateX(4px)}@media (prefers-reduced-motion: reduce){.u-try .u-tarr{transition:none}}
+
+body{margin:0;background:#FFFFFF}
+a{color:#161616}a:hover{color:#000000}
+@keyframes uFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.u-in{animation:uFadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.u-hdr{animation:uFadeUp .8s cubic-bezier(.2,.7,.2,1) both}
+@media (max-width: 760px){.u-mega{display:none !important}}
+.u-nmi{transition:background-color .2s}
+.u-nmi:hover{background-color:#F6F6F4}
+.u-nmi.u-nrow:hover{background-color:#EDEDEA}
+.u-nrow .u-narr{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.u-nrow:hover .u-narr{transform:translateX(6px)}
+.u-btn{transition:transform .25s cubic-bezier(.2,.7,.2,1),background-color .25s,border-color .25s,color .25s}
+.u-btn:hover{transform:translateY(-1px)}
+.u-ghost:hover{border-color:#161616}
+.u-link{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s cubic-bezier(.2,.7,.2,1)}
+.u-link:hover{background-size:100% 1px}
+.u-tab{transition:color .3s}
+.u-tab:hover{color:#161616}
+.u-pill{transition:background-color .25s,color .25s}
+.u-pill:hover{background-color:#E6E6E2;color:#161616}
+.u-ct{transition:background-color .25s,color .25s}
+.u-ct:hover{color:#FFFFFF}
+.u-lt{transition:background-color .25s,color .25s,box-shadow .25s}
+.u-lt:hover{color:#161616}
+.u-mi{transition:background-color .2s}
+.u-mi:hover{background-color:#F4F4F2 !important}
+.u-vp{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.u-vp:hover{transform:translateY(-4px)}
+.u-step{opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.u-step[data-on="1"]{opacity:1;transform:none}
+.u-code{scrollbar-width:thin}
+@keyframes uBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.u-caret{display:inline-block;width:7px;height:14px;margin-left:2px;vertical-align:-2px;background:#161616;animation:uBlink 1s steps(1) infinite}
+@media (max-width: 960px){.u-split{grid-template-columns:1fr !important}.u-cta{grid-template-columns:1fr !important}.u-fcols{grid-template-columns:1fr 1fr !important}.u-4{grid-template-columns:1fr 1fr !important}}
+@media (max-width: 760px){.u-menu{display:none !important}}
+@media (max-width: 560px){.u-4{grid-template-columns:1fr !important}}
+@media (prefers-reduced-motion: reduce){.u-in,.u-hdr,.u-caret{animation:none}.u-btn,.u-vp,.u-step{transition:none}}
+@media (max-width: 900px){.hp-ai{grid-template-columns:1fr !important}.hp-ai-side{display:none !important}}
+@media (max-width: 760px){.hp-modal{grid-template-columns:1fr !important}.hp-mprev{display:none !important}.hp-orow{grid-template-columns:1fr !important}}
+@media (max-width: 560px){.hp-modes{grid-template-columns:1fr !important}}
+.hp-gb{transform-origin:50% 100%}.hp-gbw{transform:scaleY(0)}.hp-gb0{animation:hpGrowA .9s cubic-bezier(.2,.8,.25,1) both}.hp-gb1{animation:hpGrowB .9s cubic-bezier(.2,.8,.25,1) both}
+@keyframes hpGrowA{from{transform:scaleY(0)}to{transform:scaleY(1)}}@keyframes hpGrowB{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.hp-cfw{opacity:0;transform:translateY(10px)}.hp-cf0{animation:hpCardA .6s cubic-bezier(.2,.7,.2,1) both}.hp-cf1{animation:hpCardB .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes hpCardA{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes hpCardB{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.hp-gbw,.hp-cfw{transform:none;opacity:1}.hp-gb0,.hp-gb1,.hp-cf0,.hp-cf1{animation:none}}
+.hp-tab{transition:background-color .2s,color .2s}
+.hp-tab:hover{color:#161616;background-color:#F4F4F2 !important}
+.hp-pane{animation:uFadeUp .45s cubic-bezier(.2,.7,.2,1) both}
+.hp-bar{transition:height .6s cubic-bezier(.2,.8,.25,1),width .6s cubic-bezier(.2,.8,.25,1)}
+.hp-ask:hover{filter:brightness(.96)}@media (max-width: 900px){.hp-chat{border-right:0 !important;border-bottom:1px solid #ECECE8;min-height:0 !important}}
+@media (max-width: 900px){.hp-shell{grid-template-columns:1fr !important}.hp-side{padding:12px 20px 0 !important;justify-content:flex-start !important}.hp-rail{flex-direction:row !important}.hp-brand{grid-template-columns:1fr !important}.hp-kpis{grid-template-columns:1fr 1fr !important}.hp-three{grid-template-columns:1fr !important}}
+</style>
+<style>.u-lg{transition:background-color .2s}.u-lg:hover{background-color:#F6F6F4}</style>
+</helmet>
+<div style="background: #FFFFFF; color: #161616; font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased">
+
+  <header class="u-hdr" style="position: sticky; top: 0; z-index: 20">
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; bottom: -36px; pointer-events: none; opacity: {{hdrOp}}; transition: opacity .4s ease; background: linear-gradient(to bottom, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.82) 45%, rgba(255,255,255,0.4) 75%, rgba(255,255,255,0) 100%); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%)"></div>
+    <nav aria-label="Principal" onMouseLeave="{{menuClose}}" style="position: relative; max-width: 1200px; margin: 0 auto; padding: {{navPad}}px 24px; transition: padding .45s cubic-bezier(.2,.7,.2,1); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px">
+      <a href="index.html" aria-label="Unico, página inicial" style="justify-self: start; display: flex; align-items: center; min-height: 44px">
+        <svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47" fill="{{logoFill}}" style="transition: fill .4s"></path></svg>
+      </a>
+      <div id="u-isl" class="u-isl" data-on="{{capOn}}" role="dialog" aria-label="Teste da captura" aria-hidden="{{capHidden}}" style="width: 126px; height: 37px; border-radius: 24px">
+          <div id="u-capglow" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 140px; pointer-events: none; opacity: {{capGlow}}; transition: opacity .5s ease"></div>
+          <div id="u-capline" aria-hidden="true" style="position: absolute; inset: 0; border-radius: inherit; padding: 1px; box-sizing: border-box; pointer-events: none; opacity: {{capGlow}}; transition: opacity .5s ease; -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0)"></div>
+          <video id="u-capvid" autoplay="" muted="" playsinline="" aria-hidden="true" style="position: absolute; width: 2px; height: 2px; opacity: 0; pointer-events: none"></video>
+          <video id="u-capcam" autoplay="" muted="" playsinline="" aria-hidden="true" style="position: absolute; top: 64px; left: 50%; width: 200px; height: 236px; margin-left: -100px; border-radius: 50%; object-fit: cover; transform: scaleX(-1) scale({{capMediaS}}); background: rgba(0,0,0,0.05); pointer-events: none; opacity: {{capCamOp}}; transition: opacity .4s ease, transform .9s cubic-bezier(.22,1,.36,1)"></video>
+          <div aria-hidden="true" style="position: absolute; top: 64px; left: 50%; width: 200px; height: 236px; margin-left: -100px; border-radius: 50%; overflow: hidden; pointer-events: none; opacity: {{capSimOp}}; transform: scale({{capMediaS}}); transition: opacity .4s ease, transform .9s cubic-bezier(.22,1,.36,1)"><video src="fbf64dd0005b72aee4ce3ebfcc20b628.mp4" autoplay="" muted="" loop="" playsinline="" style="width: 100%; height: 100%; object-fit: cover; object-position: 44% 30%; transform: scale(1.12); transform-origin: 44% 35%"></video></div>
+          <canvas id="u-capcv" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 370px; height: 480px; pointer-events: none"></canvas>
+          <div aria-live="polite">
+            <sc-if value="{{capFast}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; left: 0; right: 0; top: 186px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center">
+                <div style="font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: 0.15px">Olhe para a tela</div>
+                <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6); font-variant-numeric: tabular-nums">Capturando automaticamente</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{capVerify}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; left: 0; right: 0; top: 186px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center">
+                <div style="font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: 0.15px">Gerando o Human Token</div>
+                <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6); font-variant-numeric: tabular-nums">{{capTime}}</div>
+              </div>
+            </sc-if>
+            <div style="position: absolute; left: 0; right: 0; top: 322px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; opacity: {{capCamTxtOp}}; transition: opacity .3s ease">
+              <div style="display: inline-flex; align-items: center; gap: 10px; font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: 0.15px"><svg class="u-cico" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1.2 2.4" stroke-linecap="round"></rect></svg><span>{{capCamT1}}</span></div>
+              <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6); font-variant-numeric: tabular-nums">{{capCamT2}}</div>
+            </div>
+            <sc-if value="{{capCamBtn}}" hint-placeholder-val="{{false}}">
+              <div class="u-capin" style="position: absolute; left: 0; right: 0; top: 254px; display: flex; justify-content: center"><button type="button" class="u-sec" onClick="{{capCam}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.75); cursor: pointer; font: 500 13px 'Geist', sans-serif; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h3.5L8 5.5h8L17.5 8H21v11H3z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>Ver captura</button></div>
+            </sc-if>
+            <sc-if value="{{capOk}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; left: 0; right: 0; top: 172px; padding: 0 22px; display: flex; flex-direction: column; align-items: center; text-align: center">
+                <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6)">Seu Human Token</div>
+                <div style="margin-top: 4px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 19px; letter-spacing: 0.02em; color: rgb(33,33,33); white-space: nowrap">{{capTok}}</div>
+                <div style="margin-top: 16px; align-self: stretch; display: flex; align-items: stretch; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.08)">
+                  <div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 2px"><span style="font-size: 20px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; font-variant-numeric: tabular-nums">{{capTime}}</span><span style="font-size: 12px; color: rgba(0,0,0,0.55)">para gerar</span></div>
+                  <span aria-hidden="true" style="width: 1px; background: rgba(0,0,0,0.08)"></span>
+                  <div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 2px"><span style="font-size: 20px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; font-variant-numeric: tabular-nums">0</span><span style="font-size: 12px; color: rgba(0,0,0,0.55)">fotos guardadas</span></div>
+                </div>
+                <div style="margin-top: 18px; display: flex; gap: 8px; justify-content: center"><button type="button" class="u-btn" onClick="{{capAgain}}" style="min-height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: rgb(33,33,33); color: #FFFFFF; cursor: pointer; font: 500 14px 'Geist', sans-serif">Testar de novo</button><button type="button" class="u-sec" onClick="{{capCam}}" aria-label="Ver captura" title="Ver captura" style="width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.75); display: grid; place-items: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h3.5L8 5.5h8L17.5 8H21v11H3z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></button></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{capSquare}}" hint-placeholder-val="{{false}}">
+              <div class="u-capin" aria-hidden="true" style="position: absolute; left: 22px; top: 12px; height: 32px; display: flex; align-items: center; color: rgba(0,0,0,0.5)"><svg aria-hidden="true" width="42" height="9" viewBox="0 0 135 29" fill="currentColor"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47"></path></svg></div>
+            </sc-if>
+            <sc-if value="{{capSquare}}" hint-placeholder-val="{{false}}">
+              <button type="button" class="u-capx u-capin" onClick="{{capClose}}" aria-label="Fechar" style="position: absolute; right: 12px; top: 12px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.6); display: grid; place-items: center; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+            </sc-if>
+            <sc-if value="{{capPill}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; white-space: nowrap">
+                <span style="width: 22px; flex: none"></span>
+                <span style="font-size: 14px; font-weight: 500; letter-spacing: 0.17px; color: rgb(96,121,56)">Pessoa real</span>
+                <span style="font-size: 14px; color: rgba(0,0,0,0.5); font-variant-numeric: tabular-nums">{{capTime}}</span>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      <div id="u-navpill" class="{{capCls}}" style="position: relative; z-index: 7; display: flex; align-items: center; padding: 5px; border-radius: 999px; background: {{pillBg}}; -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); border: 1px solid {{pillBorder}}; box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 8px 24px -10px rgba(22,22,22,0.14); transition: background-color .4s, border-color .4s">
+        
+        
+      <div class="u-menu" role="list" style="position: relative; display: flex">
+        <span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 0; width: 104px; border-radius: 999px; background: {{hovBg}}; transform: translateX({{hovX}}px); opacity: {{hovOp}}; transition: transform .35s cubic-bezier(.3,.7,.2,1), opacity .25s"></span>
+        <span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 0; width: 104px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(22,22,22,0.06), 0 4px 12px rgba(22,22,22,0.06); transform: translateX({{actX}}px)"></span>
+        <sc-for list="{{menus}}" as="m" hint-placeholder-count="5">
+          <a role="listitem" href="{{m.href}}" onMouseEnter="{{m.open}}" onFocus="{{m.open}}" aria-expanded="{{m.expanded}}" aria-current="{{m.current}}" style="position: relative; width: 104px; min-height: {{itemH}}px; display: grid; place-items: center; border-radius: 999px; text-decoration: none; font-size: {{navFs}}px; font-weight: 500; color: {{m.color}}; transition: color .25s, min-height .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1)">{{m.label}}</a>
+        </sc-for>
+      </div>
+      </div>
+      <div style="justify-self: end; display: flex; align-items: center; gap: 10px">
+        <div style="position: relative; z-index: 4" onMouseEnter="{{langOpen}}" onMouseLeave="{{langClose}}">
+          <button type="button" onClick="{{langToggle}}" aria-expanded="{{langExpanded}}" aria-haspopup="true" aria-label="Idioma: Português" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; border: 0; background: transparent; cursor: pointer; font: 500 14px 'Geist', sans-serif; color: {{enColor}}; transition: color .4s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"></path></svg><span>PT</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="transform: rotate({{langRot}}deg); transition: transform .3s"><path d="M6 9l6 6 6-6"></path></svg></button>
+          <div onMouseEnter="{{langOpen}}" style="position: absolute; z-index: 5; right: 0; top: 100%; width: 320px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{langOp}}; transform: translateY({{langY}}px); pointer-events: {{langPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
+            <div role="dialog" aria-label="Idioma" style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.2); padding: 12px; display: flex; flex-direction: column; gap: 4px">
+              <span style="padding: 6px 12px 4px; font-size: 13px; color: #6E6E69">Idioma</span>
+              <a class="u-lg" href="#topo" lang="pt-BR" aria-current="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 8px 12px; border-radius: 14px; background: #F3F3EF; text-decoration: none; color: #161616"><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 15px; font-weight: 500">Português</span><span style="font-size: 12.5px; color: #6E6E69">Idioma atual</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A7F4B" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></a><a class="u-lg" href="HumanPlatform-en.html" hreflang="en" lang="en" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 8px 12px; border-radius: 14px; text-decoration: none; color: #161616"><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 15px; font-weight: 500">English</span><span style="font-size: 12.5px; color: #6E6E69">Inglês</span></span><span style="font-size: 12.5px; color: #6E6E69">Trocar</span></a>
+              <div style="margin: 8px 12px 0; padding-top: 12px; border-top: 1px solid #ECECE8; font-size: 13px; color: #6E6E69">Outros idiomas</div>
+              <ul style="margin: 0; padding: 0 0 4px; list-style: none; max-height: 248px; overflow-y: auto"><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="zh" style="font-size: 14px; color: #8A8A85">中文 <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Mandarim</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="hi" style="font-size: 14px; color: #8A8A85">हिन्दी <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Hindi</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="es" style="font-size: 14px; color: #8A8A85">Español <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Espanhol</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="fr" style="font-size: 14px; color: #8A8A85">Français <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Francês</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ar" style="font-size: 14px; color: #8A8A85">العربية <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Árabe</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="bn" style="font-size: 14px; color: #8A8A85">বাংলা <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Bengali</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ru" style="font-size: 14px; color: #8A8A85">Русский <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Russo</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ur" style="font-size: 14px; color: #8A8A85">اردو <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Urdu</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="id" style="font-size: 14px; color: #8A8A85">Bahasa Indonesia <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Indonésio</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="de" style="font-size: 14px; color: #8A8A85">Deutsch <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Alemão</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ja" style="font-size: 14px; color: #8A8A85">日本語 <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Japonês</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li></ul>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="u-btn u-sec" onClick="{{capOpen}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{secBg}}; color: {{secFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none" aria-label="Me tokenize: gerar meu Human Token">Me tokenize</button>
+        <div style="position: relative" onMouseLeave="{{startClose}}">
+          <button type="button" class="u-btn" onClick="{{startToggle}}" onMouseEnter="{{startOpen}}" aria-expanded="{{startExpanded}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{ctaBg}}; color: {{ctaFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none">Começar</button>
+          <div style="position: absolute; right: 0; top: 100%; width: 400px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{startOp}}; transform: translateY({{startY}}px); pointer-events: {{startPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
+            <div style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.2); padding: 20px; display: flex; flex-direction: column; gap: 14px">
+              <div style="display: flex; flex-direction: column; gap: 4px">
+                <span style="font-size: 16px; font-weight: 500">Conecte a Unico ao seu agente</span>
+                <span style="font-size: 13.5px; color: #6E6E69">Cole o comando no seu cliente MCP. O primeiro token sai em minutos.</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 12px; background: #F4F4F2">
+                <code style="flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: 'Geist Mono', monospace; font-size: 12.5px">{{navCmd}}</code>
+                <button type="button" onClick="{{navCopy}}" style="flex: none; min-height: 36px; padding: 0 12px; border: 1px solid #E4E4E0; border-radius: 9px; background: #FFFFFF; cursor: pointer; font: 500 13px 'Geist', sans-serif; color: #161616"><span aria-live="polite">{{navCopyLabel}}</span></button>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; font-size: 13px; color: #5C5C58">
+                <span>10.000 tokens grátis</span>
+                <a class="u-link" href="Confianca.html" style="color: #161616">Garantia de US$ 100 mil</a>
+              </div>
+              <div aria-hidden="true" style="height: 1px; background: #EDEDEA"></div>
+              <button type="button" class="u-try" onClick="{{capOpen}}" aria-label="Testar a captura com o seu rosto" style="width: calc(100% + 16px); border: 0; cursor: pointer; text-align: left; font: inherit; display: flex; align-items: center; gap: 14px; margin: -4px -8px -8px; padding: 10px 12px 10px 10px; border-radius: 16px; background: #EEF0E4; color: #161616; text-decoration: none">
+                <span aria-hidden="true" style="flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #161616; color: #7EE2A1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"></path><rect x="11" y="11" width="2" height="2" fill="currentColor" stroke="none"></rect></svg></span>
+                <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Teste a captura</span><span style="font-size: 13px; line-height: 1.4; color: #5C5C58">Do rosto ao Human Token em menos de 1 segundo. Faça o seu.</span></span>
+                <span class="u-tarr" aria-hidden="true" style="flex: none; font-size: 18px">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="u-mega" style="position: absolute; left: 50%; top: 100%; width: min(680px, calc(100% - 48px)); padding-top: 4px; opacity: {{megaOp}}; transform: translate(-50%, {{megaY}}px); pointer-events: {{megaPE}}; transition: opacity .28s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
+        <div style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.18); padding: 12px; overflow: hidden">
+          <div style="position: relative; display: grid">
+          <sc-for list="{{menus}}" as="m" hint-placeholder-count="1">
+            <sc-if value="{{m.has}}" hint-placeholder-val="{{ true }}">
+              <div aria-hidden="{{m.hidden}}" style="grid-area: 1 / 1; position: {{m.pos}}; left: 0; right: 0; top: 0; opacity: {{m.op}}; visibility: {{m.vis}}; pointer-events: {{m.pe}}; transition: opacity .22s ease, visibility .22s">
+                <sc-if value="{{m.grid}}" hint-placeholder-val="{{ true }}">
+                <div style="display: grid; grid-template-columns: repeat({{m.cols}}, minmax(0, 1fr)); gap: 2px 8px">
+                  <sc-for list="{{m.items}}" as="it" hint-placeholder-count="4">
+                    <a class="u-nmi" href="{{it.href}}" style="display: flex; flex-direction: {{m.idir}}; align-items: {{m.ialign}}; gap: 16px; padding: 12px; border-radius: 14px; text-decoration: none; color: #161616">
+                      <span style="flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: #F3F3EF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F3F3B" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges" aria-hidden="true"><path d="{{it.icon}}"></path></svg></span>
+                      <span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 500">{{it.title}}</span><span style="font-size: 13.5px; line-height: 1.4; color: #6E6E69">{{it.text}}</span></span>
+                    </a>
+                  </sc-for>
+                </div>
+                </sc-if>
+                <sc-if value="{{m.story}}" hint-placeholder-val="{{ false }}">
+                <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 8px">
+                  <a class="u-nmi" href="Clientes.html#historia-nubank" style="display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 14px; text-decoration: none; color: #161616">
+                    <span style="flex: none; width: 124px; height: 96px; border-radius: 12px; overflow: hidden; background: #5A3A22"><img src="65e6a591b26666089e14f6f279cd0203.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%"></span>
+                    <span style="display: flex; flex-direction: column; gap: 8px"><span style="display: flex; align-items: center; gap: 8px"><img src="c676b56f3a417c658f017282ac20cdd3.png" alt="Nubank" style="height: 14px; width: auto"><span style="font-size: 12.5px; color: #8A8A85">História em destaque</span></span><span style="font-size: 15px; line-height: 1.35; font-weight: 500">Como o Nubank reconhece o mesmo cliente em qualquer país.</span></span>
+                  </a>
+                  <a class="u-nmi u-nrow" href="Clientes.html#historias" style="display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 16px 18px; border-radius: 14px; background: #F4F4F2; text-decoration: none; color: #161616">
+                    <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 500">Todas as histórias</span><span style="font-size: 13.5px; line-height: 1.4; color: #6E6E69">Uber, Shopee, DiDi, Persona e outras.</span></span>
+                    <span class="u-narr" aria-hidden="true" style="align-self: flex-start; font-size: 16px">→</span>
+                  </a>
+                </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </sc-for>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main id="topo" style="padding-bottom: 144px">
+
+    <!-- 1. Hero -->
+    <section aria-labelledby="hero-titulo" style="padding: clamp(56px, 8vh, 96px) 0 clamp(40px, 6vh, 56px)">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+        <nav class="u-in" aria-label="Você está em" style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #8A8A85"><a href="index.html" style="color: #8A8A85; text-decoration: none">Início</a><span aria-hidden="true" style="color: #C4C4BF">/</span><a href="Tecnologia.html" style="color: #8A8A85; text-decoration: none">Recursos</a><span aria-hidden="true" style="color: #C4C4BF">/</span><span aria-current="page" style="color: #161616">Human Platform</span></nav>
+        <h1 id="hero-titulo" class="u-in" style="margin: 0; max-width: 860px; font-size: clamp(36px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 500; animation-delay: .08s">Human Platform. <span style="color: #8A8A85">Você mesmo gerencia tudo, no portal ou pelo seu agente.</span></h1>
+        <p class="u-in" style="margin: 0; max-width: 600px; font-size: 18px; line-height: 1.5; color: #5C5C58; animation-delay: .16s">Mude a marca da captura, abra e pause branches e puxe relatórios sem abrir chamado nem esperar ninguém. Faça com cliques no portal ou peça ao seu agente de IA pelo MCP da Unico.</p>
+        <div class="u-in" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; animation-delay: .24s">
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. O painel, interativo -->
+    <section id="hp-app" aria-label="Prévia do painel" style="max-width: 1200px; margin: 0 auto; padding: 0 24px">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding-bottom: 28px">
+        <div role="radiogroup" aria-label="Como usar o Human Platform" class="hp-modes" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: min(640px, 100%); padding: 6px; border-radius: 24px; background: #F4F4F2">
+          <sc-for list="{{hpModes}}" as="m" hint-placeholder-count="2">
+            <button type="button" role="radio" aria-checked="{{m.sel}}" onClick="{{m.pick}}" style="display: flex; align-items: center; gap: 14px; min-height: 76px; padding: 12px 20px; border: 0; border-radius: 18px; background: {{m.bg}}; color: {{m.fg}}; box-shadow: {{m.sh}}; cursor: pointer; text-align: left; font-family: 'Geist', sans-serif; transition: background-color .25s, color .25s, box-shadow .25s">
+              <span style="flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: {{m.ibg}}; color: {{m.ifg}}; transition: background-color .25s, color .25s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{m.icon}}"></path></svg></span>
+              <span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 17px; letter-spacing: -0.01em; font-weight: 500">{{m.label}}</span><span style="font-size: 13.5px; line-height: 1.35; color: {{m.sub}}">{{m.desc}}</span></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="border-radius: 28px; background: #F4F4F2; padding: clamp(12px, 1.6vw, 20px)">
+        <sc-if value="{{hpIsPanel}}" hint-placeholder-val="{{ true }}">
+        <div class="hp-frame" style="position: relative; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECECE8, 0 30px 60px -40px rgba(22,22,22,0.35); overflow: hidden">
+          <div style="display: flex; align-items: center; gap: 14px; padding: 16px 20px 0 24px">
+            <svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47" fill="{{logoFill}}" style="transition: fill .4s"></path></svg>
+            <span style="flex: 1 1 auto"></span>
+            <span style="display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px; border-radius: 10px; background: #E8F3D3; font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums"><svg width="16" height="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13M12 8c-1.5-3-5-3.5-5-1.2C7 8 9 8 12 8zM12 8c1.5-3 5-3.5 5-1.2C17 8 15 8 12 8z"></path></svg>10.000</span>
+            <span aria-hidden="true" style="display: grid; place-items: center; width: 36px; height: 36px; color: #161616"><svg width="18" height="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"></path></svg></span>
+            <span aria-hidden="true" style="display: grid; place-items: center; width: 36px; height: 36px; color: #161616"><svg width="19" height="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.4M12 17h.01"></path></svg></span>
+            <span aria-hidden="true" style="display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #ECECEA; font-size: 12.5px; font-weight: 500; color: #5C5C58">W</span>
+          </div>
+          <div class="hp-shell" style="display: grid; grid-template-columns: {{hpCols}}; transition: grid-template-columns .35s cubic-bezier(.2,.7,.2,1); min-height: 620px">
+          <sc-if value="{{hpIsPanel}}" hint-placeholder-val="{{ true }}">
+          <aside class="hp-side" aria-label="Menu do portal" style="display: flex; align-items: center; justify-content: center; padding: 20px 0 20px 20px">
+            <div class="hp-rail" style="display: flex; flex-direction: column; gap: 2px; padding: 4px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECECE8, 0 6px 16px -6px rgba(22,22,22,0.12)">
+              <button type="button" class="hp-tab" aria-label="Pedir ao agente" title="Pedir ao agente" onClick="{{hpGoAgent}}" style="position: relative; display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 10px; background: transparent; color: #161616; cursor: pointer"><svg width="22" height="22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"></path></svg><span style="position: absolute; top: 9px; right: 9px; width: 7px; height: 7px; border-radius: 50%; background: #F2A93B"></span></button>
+              <sc-for list="{{hpTabs}}" as="t" hint-placeholder-count="4">
+                <button type="button" class="hp-tab" aria-pressed="{{t.sel}}" aria-label="{{t.label}}" title="{{t.label}}" onClick="{{t.pick}}" style="display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 10px; background: {{t.bg}}; color: {{t.fg}}; cursor: pointer"><svg width="22" height="22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="{{t.icon}}"></path></svg></button>
+              </sc-for>
+            </div>
+          </aside>
+          </sc-if>
+
+          <div style="min-width: 0; display: flex; flex-direction: column">
+            <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; padding: 28px 32px 8px">
+              <span style="font-size: 32px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 500">{{hpTitle}}</span>
+              <sc-if value="{{hpIsDash}}" hint-placeholder-val="{{ true }}">
+                <span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12.5px; font-weight: 500; color: #3F3F3B">Data</span><button type="button" onClick="{{hpNextPeriod}}" style="display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 12px 0 16px; border: 0; border-radius: 6px; background: #FFFFFF; box-shadow: inset 0 0 0 1px #DCDCD8; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 14px; color: #161616">{{hpPeriodName}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button></span>
+              </sc-if>
+            </div>
+            <sc-if value="{{hpIsSet}}" hint-placeholder-val="{{ false }}">
+              <div role="tablist" aria-label="Configurações" style="display: flex; gap: 4px; margin: 12px 32px 0; border-bottom: 1px solid #E6E6E2; overflow-x: auto">
+                <sc-for list="{{hpSubs}}" as="t" hint-placeholder-count="4">
+                  <button type="button" role="tab" aria-selected="{{t.sel}}" onClick="{{t.pick}}" style="flex: none; min-height: 44px; padding: 0 14px; border: 0; border-bottom: 2px solid {{t.ul}}; margin-bottom: -1px; background: none; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 14px; font-weight: {{t.fw}}; color: {{t.fg}}; transition: color .2s, border-color .2s">{{t.label}}</button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <!-- Dashboard -->
+            <sc-if value="{{hpIsDash}}" hint-placeholder-val="{{ true }}">
+              <div id="hp-dash" class="hp-pane" style="display: flex; flex-direction: column; gap: 20px; padding: 20px 32px 24px">
+                <div class="hp-kpis" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+                  <sc-for list="{{hpCards}}" as="k" hint-placeholder-count="2">
+                    <div class="{{hpCf}}" style="animation-delay: {{k.d}}ms; display: flex; flex-direction: column; gap: 10px; min-height: 168px; padding: 20px; border-radius: 16px; box-shadow: inset 0 0 0 1px #E6E6E2; box-sizing: border-box"><span style="font-size: 14px; color: #3F3F3B">{{k.label}}</span><span style="margin-top: auto; font-size: 34px; line-height: 1; letter-spacing: -0.03em; font-weight: 500; font-variant-numeric: tabular-nums">{{k.value}}</span><span style="font-size: 12.5px; line-height: 1.4; color: #5C5C58">{{k.desc}}</span></div>
+                  </sc-for>
+                  <div class="{{hpCf}}" style="animation-delay: 160ms; display: flex; flex-direction: column; gap: 14px; min-height: 168px; padding: 20px; border-radius: 16px; box-shadow: inset 0 0 0 1px #E6E6E2; box-sizing: border-box">
+                    <span style="font-size: 15px; font-weight: 500">Status</span>
+                    <div style="display: flex; gap: 24px; margin-top: auto">
+                      <sc-for list="{{hpStatus}}" as="x" hint-placeholder-count="2">
+                        <span style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="font-size: 30px; line-height: 1; letter-spacing: -0.03em; font-weight: 500; font-variant-numeric: tabular-nums">{{x.pct}}</span><span style="padding: 3px 10px; border-radius: 999px; background: {{x.bg}}; color: {{x.fg}}; font-size: 13px">{{x.label}}</span><span style="font-size: 12.5px; color: #5C5C58; font-variant-numeric: tabular-nums">{{x.n}}</span></span>
+                      </sc-for>
+                    </div>
+                  </div>
+                </div>
+                <div class="{{hpCf}}" style="animation-delay: 240ms; display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: 16px; box-shadow: inset 0 0 0 1px #E6E6E2">
+                  <span style="font-size: 15px; font-weight: 500">Crescimento mensal</span>
+                  <span style="display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; color: #3F3F3B"><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 11px; height: 11px; border-radius: 50%; background: #161616"></span>Human Tokens verificados</span><span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 11px; height: 11px; border-radius: 50%; background: #E3E0D6"></span>Human Tokens novos</span></span>
+                  <div role="img" aria-label="Gráfico de barras com Human Tokens verificados e novos por mês" style="display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); align-items: end; gap: 10px; height: 170px; padding-top: 8px; border-bottom: 1px solid #E6E6E2">
+                    <sc-for list="{{hpMonths}}" as="b" hint-placeholder-count="11">
+                      <span style="display: flex; align-items: flex-end; justify-content: center; gap: 3px; height: 100%"><span class="hp-bar {{hpGb}}" style="animation-delay: {{b.d}}ms; display: block; width: 38%; max-width: 14px; height: {{b.v}}%; border-radius: 3px 3px 0 0; background: #161616"></span><span class="hp-bar {{hpGb}}" style="animation-delay: {{b.d2}}ms; display: block; width: 38%; max-width: 14px; height: {{b.n}}%; border-radius: 3px 3px 0 0; background: #E3E0D6"></span></span>
+                    </sc-for>
+                  </div>
+                  <div style="display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 10px; margin-top: -6px">
+                    <sc-for list="{{hpMonths}}" as="b" hint-placeholder-count="11">
+                      <span style="text-align: center; font-size: 12px; color: #5C5C58">{{b.m}}</span>
+                    </sc-for>
+                  </div>
+                </div>
+                <span style="align-self: flex-end; font-size: 11.5px; color: #A3A39E">Dados de exemplo</span>
+              </div>
+            </sc-if>
+
+            <!-- Configurações › Organização -->
+            <sc-if value="{{hpIsOrg}}" hint-placeholder-val="{{ false }}">
+              <div class="hp-pane" style="display: flex; flex-direction: column; max-width: 760px; padding: 12px 32px 28px">
+                <div class="hp-orow" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 16px 32px; padding: 20px 0; border-top: 0"><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14.5px">Nome da organização</span><span style="font-size: 12.5px; color: #6E6E69">Aparece para as pessoas na captura.</span></span><span style="display: flex; flex-direction: column; gap: 10px"><span style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">Nome da organização</span><span style="font-size: 14.5px; color: #161616">Sua empresa</span></span></span></div>
+                <div class="hp-orow" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 16px 32px; padding: 20px 0; border-top: 1px solid #ECECE8"><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14.5px">Site da organização</span><span style="font-size: 12.5px; color: #6E6E69">Informação oficial da sua empresa.</span></span><span style="display: flex; flex-direction: column; gap: 10px"><span style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">Site</span><span style="font-size: 14.5px; color: #161616">suaempresa.com.br</span></span></span></div>
+                <div class="hp-orow" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 16px 32px; padding: 20px 0; border-top: 1px solid #ECECE8"><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14.5px">Logo da organização</span><span style="font-size: 12.5px; color: #6E6E69">Aparece para as pessoas na captura.</span></span><span style="display: flex; flex-direction: column; gap: 10px"><span style="display: flex; align-items: center; gap: 12px; padding: 5px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8"><span style="display: grid; place-items: center; width: 44px; height: 44px; border-radius: 6px; background: #F1F1EE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 13v8M8 17l4-4 4 4M20 16.6A5 5 0 0 0 18 7h-1.3A8 8 0 1 0 4 15.3"></path></svg></span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px">Enviar logo</span><span style="font-size: 11.5px; color: #8A8A85">PNG, JPG ou SVG, até 2 MB</span></span></span></span></div>
+                <div class="hp-orow" style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 16px 32px; padding: 20px 0; border-top: 1px solid #ECECE8"><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14.5px">Dados legais</span><span style="font-size: 12.5px; color: #6E6E69">Informação oficial da sua empresa.</span></span><span style="display: flex; flex-direction: column; gap: 10px"><span style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">Razão social</span><span style="font-size: 14.5px; color: #161616">Sua Empresa Ltda.</span></span><span style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">Categoria</span><span style="font-size: 14.5px; color: #161616">Tecnologia / SaaS</span></span></span></div>
+              </div>
+            </sc-if>
+
+            <!-- Configurações › Chaves de API -->
+            <sc-if value="{{hpIsApi}}" hint-placeholder-val="{{ false }}">
+              <div class="hp-pane" style="display: flex; flex-direction: column; gap: 20px; padding: 24px 32px 28px">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px"><span style="font-size: 14.5px; color: #6E6E69">Chaves para chamar a API e o SDK da Unico.</span><button type="button" class="u-btn" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 0; border-radius: 8px; background: #161616; color: #FFFFFF; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 13.5px; font-weight: 500">Criar chave</button></div>
+                <div style="overflow-x: auto; border-radius: 12px; box-shadow: inset 0 0 0 1px #E6E6E2"><table style="width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px"><thead style="background: #FAFAF7"><tr><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">Nome</th><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">Chave</th><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">Criada em</th></tr></thead><tbody><tr><td style="padding: 14px 16px; border-top: 1px solid #ECECE8">Produção</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8; font-family: 'Geist Mono', monospace; font-size: 13px">unk_live_••••8f2a</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8; color: #6E6E69">12 out</td></tr><tr><td style="padding: 14px 16px; border-top: 1px solid #ECECE8">Homologação</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8; font-family: 'Geist Mono', monospace; font-size: 13px">unk_test_••••41c0</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8; color: #6E6E69">03 set</td></tr></tbody></table></div>
+              </div>
+            </sc-if>
+
+            <!-- Configurações › Usuários -->
+            <sc-if value="{{hpIsUsers}}" hint-placeholder-val="{{ false }}">
+              <div class="hp-pane" style="display: flex; flex-direction: column; gap: 20px; padding: 24px 32px 28px">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px"><span style="font-size: 14.5px; color: #6E6E69">Quem do seu time acessa o portal.</span><button type="button" class="u-btn" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 0; border-radius: 8px; background: #161616; color: #FFFFFF; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 13.5px; font-weight: 500">Convidar pessoa</button></div>
+                <div style="overflow-x: auto; border-radius: 12px; box-shadow: inset 0 0 0 1px #E6E6E2"><table style="width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px"><thead style="background: #FAFAF7"><tr><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">Nome</th><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">Time</th><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">Papel</th></tr></thead><tbody><tr><td style="padding: 14px 16px; border-top: 1px solid #ECECE8">Ana Ribeiro</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8; color: #6E6E69">Produto</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8">Admin</td></tr><tr><td style="padding: 14px 16px; border-top: 1px solid #ECECE8">Carlos Mendes</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8; color: #6E6E69">Operações</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8">Editor</td></tr><tr><td style="padding: 14px 16px; border-top: 1px solid #ECECE8">Júlia Prado</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8; color: #6E6E69">Compliance</td><td style="padding: 14px 16px; border-top: 1px solid #ECECE8">Leitura</td></tr></tbody></table></div>
+              </div>
+            </sc-if>
+
+            <!-- Configurações › Branches -->
+            <sc-if value="{{hpIsBr}}" hint-placeholder-val="{{ false }}">
+              <div class="hp-pane" style="display: flex; flex-direction: column; gap: 20px; padding: 24px 32px 28px">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px"><span style="font-size: 14.5px; color: #6E6E69">Cada branch tem marca, domínios e relatórios próprios.</span><button type="button" class="u-btn" onClick="{{hpOpenNew}}" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 0; border-radius: 8px; background: #161616; color: #FFFFFF; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 13.5px; font-weight: 500">Criar branch</button></div>
+                <div style="overflow-x: auto; border-radius: 12px; box-shadow: inset 0 0 0 1px #E6E6E2">
+                  <table style="width: 100%; min-width: 620px; border-collapse: collapse; font-size: 14px">
+                    <thead style="background: #FAFAF7"><tr><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">ID da branch</th><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">Nome</th><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">País</th><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left">Ativa</th><th scope="col" style="padding: 12px 16px; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: #6E6E69; text-align: left; text-align: right">Ações</th></tr></thead>
+                    <tbody>
+                      <sc-for list="{{hpBranches}}" as="br" hint-placeholder-count="3">
+                        <tr style="background: {{br.bg}}; transition: background-color .3s">
+                          <td style="padding: 14px 16px; border-top: 1px solid #ECECE8; font-family: 'Geist Mono', monospace; font-size: 12.5px; color: #3F3F3B">{{br.uid}}</td>
+                          <td style="padding: 14px 16px; border-top: 1px solid #ECECE8">{{br.name}}</td>
+                          <td style="padding: 14px 16px; border-top: 1px solid #ECECE8; color: #5C5C58">{{br.country}}</td>
+                          <td style="padding: 14px 16px; border-top: 1px solid #ECECE8"><button type="button" role="switch" aria-checked="{{br.on}}" aria-label="Ativar {{br.name}}" onClick="{{br.toggle}}" style="position: relative; width: 40px; height: 24px; border: 0; border-radius: 999px; background: {{br.tbg}}; cursor: pointer; transition: background-color .25s"><span style="position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 1px 2px rgba(22,22,22,0.2); transform: translateX({{br.tx}}px); transition: transform .25s cubic-bezier(.3,1.3,.5,1)"></span></button></td>
+                          <td style="padding: 14px 16px; border-top: 1px solid #ECECE8; text-align: right"><button type="button" aria-label="Editar {{br.name}}" onClick="{{br.edit}}" style="min-width: 36px; min-height: 32px; border: 0; border-radius: 8px; background: transparent; cursor: pointer; font-size: 18px; line-height: 1; color: #161616">···</button></td>
+                        </tr>
+                      </sc-for>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      <sc-if value="{{hpModalOn}}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; padding: 20px; background: rgba(22,22,22,0.34)">
+            <div role="dialog" aria-modal="true" aria-label="{{hpModalTitle}}" class="hp-modal" style="display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 24px; width: min(780px, 100%); max-height: 100%; overflow: auto; box-sizing: border-box; padding: 28px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 30px 80px -30px rgba(22,22,22,0.5)">
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <span style="font-size: 22px; letter-spacing: -0.02em; font-weight: 500">{{hpModalTitle}}</span>
+                <span style="margin-top: -6px; font-size: 13.5px; color: #6E6E69">Dê um nome e a cara da sua marca para esta branch.</span>
+                <label style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">Nome da branch</span><input type="text" value="{{hpMName}}" onInput="{{hpMNameSet}}" placeholder="Ex.: Lima" maxlength="28" style="padding: 0; border: 0; outline: none; background: none; font-family: 'Geist', sans-serif; font-size: 14.5px; color: #161616"></label>
+                <span style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">País</span><span style="font-size: 14.5px; color: #161616">{{hpMCountry}}</span></span>
+                <span style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">Cor principal</span><span style="display: flex; align-items: center; justify-content: space-between; gap: 10px"><span style="font-size: 14.5px; color: #161616; font-family: 'Geist Mono', monospace; font-size: 13.5px">{{hpColor}}</span><span role="radiogroup" aria-label="Cor principal" style="display: flex; gap: 6px"><sc-for list="{{hpColors}}" as="c" hint-placeholder-count="5"><button type="button" role="radio" aria-checked="{{c.sel}}" aria-label="{{c.name}}" onClick="{{c.pick}}" style="width: 24px; height: 24px; border: 0; border-radius: 6px; background: {{c.hex}}; box-shadow: {{c.ring}}; cursor: pointer; transition: box-shadow .2s"></button></sc-for></span></span></span>
+                <span style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">Cantos</span><span role="radiogroup" aria-label="Cantos" style="display: flex; gap: 4px; padding-top: 2px"><sc-for list="{{hpRadii}}" as="r" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{r.sel}}" onClick="{{r.pick}}" style="min-height: 28px; padding: 0 10px; border: 0; border-radius: 999px; background: {{r.bg}}; color: {{r.fg}}; box-shadow: {{r.sh}}; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 12.5px; font-weight: 500">{{r.label}}</button></sc-for></span></span>
+                <label style="display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: center; padding: 6px 14px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8; box-sizing: border-box"><span style="font-size: 12px; color: #8A8A85">Texto do botão</span><input type="text" value="{{hpCta}}" onInput="{{hpCtaSet}}" maxlength="28" style="padding: 0; border: 0; outline: none; background: none; font-family: 'Geist', sans-serif; font-size: 14.5px; color: #161616"></label>
+                <span style="display: flex; align-items: center; gap: 12px; padding: 5px; border-radius: 8px; box-shadow: inset 0 0 0 1px #DCDCD8"><span style="display: grid; place-items: center; width: 44px; height: 44px; border-radius: 6px; background: #F1F1EE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 13v8M8 17l4-4 4 4M20 16.6A5 5 0 0 0 18 7h-1.3A8 8 0 1 0 4 15.3"></path></svg></span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px">Enviar logo</span><span style="font-size: 11.5px; color: #8A8A85">PNG, JPG ou SVG, até 2 MB</span></span></span>
+                <span style="display: flex; justify-content: flex-end; gap: 10px; padding-top: 6px">
+                  <button type="button" class="u-btn u-ghost" onClick="{{hpCloseModal}}" style="min-height: 42px; padding: 0 18px; border: 0; border-radius: 8px; background: #FFFFFF; box-shadow: inset 0 0 0 1px #DCDCD8; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 14px; color: #161616">Cancelar</button>
+                  <button type="button" class="u-btn" onClick="{{hpSaveModal}}" style="min-height: 42px; padding: 0 18px; border: 0; border-radius: 8px; background: {{hpMSaveBg}}; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 500; color: #FFFFFF; transition: background-color .2s">{{hpMSave}}</button>
+                </span>
+              </div>
+              <div class="hp-mprev" style="display: grid; place-items: center; padding: 16px; border-radius: 16px; background: #F4F4F2">
+                <div aria-label="Prévia da tela de captura" role="img" style="position: relative; width: 220px; height: 404px; box-sizing: border-box; padding: 20px 16px; border-radius: 34px; background: #FFFFFF; box-shadow: 0 0 0 6px #161616, 0 24px 48px -24px rgba(22,22,22,0.4); display: flex; flex-direction: column; align-items: center; gap: 16px">
+                    <span style="align-self: stretch; display: flex; align-items: center; justify-content: space-between"><span style="font-size: 13px; font-weight: 600; letter-spacing: -0.02em">sua marca</span><span style="font-size: 11px; color: #8A8A85">1/2</span></span>
+                    <span style="font-size: 15px; font-weight: 500; text-align: center">Olhe para a câmera</span>
+                    <span style="position: relative; width: 170px; height: 210px; border-radius: {{hpRad}}px; background: #EEF0E4; overflow: hidden; transition: border-radius .3s">
+                      <span style="position: absolute; inset: 14px; border-radius: {{hpRadIn}}px; border: 3px solid {{hpColor}}; transition: border-color .3s, border-radius .3s"></span>
+                      <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#8A8A85" stroke-width="1.4" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)"><path d="M9 9v2M15 9v2M12 10v3h-1M9 16c1.6 1.2 4.4 1.2 6 0"></path></svg>
+                    </span>
+                    <span style="font-size: 12px; text-align: center; color: #6E6E69">A verificação é automática</span>
+                    <span style="margin-top: auto; align-self: stretch; display: grid; place-items: center; min-height: 44px; border-radius: {{hpBtnRad}}px; background: {{hpColor}}; color: #FFFFFF; font-size: 14px; font-weight: 500; transition: background-color .3s, border-radius .3s">{{hpCta}}</span>
+                    <span style="font-size: 10.5px; color: #A3A39E">protegido pela unico</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+        </div>
+        </sc-if>
+        <sc-if value="{{hpIsAgent}}" hint-placeholder-val="{{ false }}">
+        <div class="hp-ai" aria-label="Exemplo de conversa num assistente de IA com o MCP da Unico" style="display: grid; grid-template-columns: 232px minmax(0, 1fr); min-height: 640px; border-radius: 20px; background: #FAF9F5; box-shadow: 0 0 0 1px #E9E6DC, 0 30px 60px -40px rgba(60,50,30,0.35); overflow: hidden; color: #1F1E1B">
+          <aside class="hp-ai-side" style="display: flex; flex-direction: column; gap: 4px; padding: 16px 12px; border-right: 1px solid #EDEAE0; background: #F5F3EC">
+            <span style="display: flex; gap: 6px; padding: 4px 6px 16px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #E3DFD3"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #E3DFD3"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #E3DFD3"></span></span>
+            <span style="display: flex; align-items: center; gap: 10px; min-height: 38px; padding: 0 10px; border-radius: 10px; font-size: 14px; font-weight: 500"><span style="display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #C96A48; color: #FFFFFF"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>Nova conversa</span>
+            <span style="padding: 18px 10px 6px; font-size: 12px; color: #8C897E">Recentes</span>
+            <span style="min-height: 34px; display: flex; align-items: center; padding: 0 10px; border-radius: 10px; background: #ECE9DF; font-size: 13.5px">Human Platform</span>
+            <span style="min-height: 34px; display: flex; align-items: center; padding: 0 10px; font-size: 13.5px; color: #5C5A52">Relatório semanal por branch</span>
+            <span style="min-height: 34px; display: flex; align-items: center; padding: 0 10px; font-size: 13.5px; color: #5C5A52">Revisar fluxo de cadastro</span>
+            <span style="margin-top: auto; padding: 10px; font-size: 11.5px; line-height: 1.4; color: #A09D92">Exemplo ilustrativo. Funciona em qualquer cliente com suporte a MCP.</span>
+          </aside>
+          <div style="min-width: 0; display: flex; flex-direction: column">
+            <div style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-bottom: 1px solid #EDEAE0; font-size: 13.5px; color: #5C5A52">Human Platform</div>
+            <sc-if value="{{agIdle}}" hint-placeholder-val="{{ true }}">
+              <div style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; gap: 22px; width: min(620px, 100%); margin: 0 auto; padding: 32px 24px; box-sizing: border-box">
+                <span style="text-align: center; font-family: ui-serif, Georgia, 'Times New Roman', serif; font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; color: #2B2A26">O que vamos ajustar na Unico hoje?</span>
+                <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px 12px 10px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #E6E3D9, 0 4px 14px -8px rgba(60,50,30,0.18)">
+                    <span style="min-height: 24px; font-size: 15px; color: #9A978C">{{agPh}}</span>
+                    <span style="display: flex; align-items: center; gap: 8px">
+                      <span aria-hidden="true" style="display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; box-shadow: inset 0 0 0 1px #E6E3D9; color: #5C5A52"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>
+                      <span style="display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px; border-radius: 10px; box-shadow: inset 0 0 0 1px #E6E3D9; font-size: 13px; color: #3D3B35"><span style="width: 6px; height: 6px; border-radius: 50%; background: #1A7F4B"></span>MCP da Unico</span>
+                      <span style="flex: 1 1 auto"></span>
+                      <span aria-hidden="true" style="display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: #C96A48; color: #FFFFFF"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></span>
+                    </span>
+                  </div>
+                <div role="list" aria-label="Sugestões de pedidos" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+                    <sc-for list="{{agList}}" as="a" hint-placeholder-count="4">
+                      <button type="button" role="listitem" class="hp-ask" onClick="{{a.run}}" aria-pressed="{{a.sel}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px; border: 0; border-radius: 12px; background: {{a.bg}}; color: {{a.fg}}; box-shadow: {{a.sh}}; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 13.5px; transition: background-color .2s, color .2s"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{a.icon}}"></path></svg>{{a.chip}}</button>
+                    </sc-for>
+                  </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{agHas}}" hint-placeholder-val="{{ false }}">
+              <div aria-live="polite" style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; width: min(660px, 100%); margin: 0 auto; padding: 32px 24px 16px; box-sizing: border-box">
+                <div class="u-step" data-on="{{ag1}}" style="align-self: flex-end; max-width: 80%; padding: 10px 16px; border-radius: 16px; background: #EFEDE5; font-size: 15px; line-height: 1.45">{{agP}}</div>
+                <div class="u-step" data-on="{{ag2}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 36px; padding: 0 14px 0 10px; border-radius: 10px; box-shadow: inset 0 0 0 1px #E6E3D9; background: #FFFFFF; font-size: 13px; color: #5C5A52; max-width: 100%; overflow: hidden"><span style="display: grid; place-items: center; width: 20px; height: 20px; border-radius: 6px; background: #161616; color: #FFFFFF; font-size: 10px; font-weight: 600">u</span><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Usou <span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #1F1E1B">{{agTool}}</span></span></div>
+                <div class="u-step" data-on="{{ag3}}" style="display: flex; flex-direction: column; gap: 14px">
+                  <span style="font-family: ui-serif, Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.55; color: #1F1E1B">{{agR}}</span>
+                  <div style="display: flex; flex-direction: column; border-radius: 14px; background: #FFFFFF; box-shadow: inset 0 0 0 1px #E6E3D9; overflow: hidden">
+                    <span style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid #EFEDE5; font-size: 12.5px; color: #8C897E"><span style="width: 6px; height: 6px; border-radius: 50%; background: #1A7F4B"></span>{{agResT}}</span>
+                    <sc-for list="{{agRows}}" as="r" hint-placeholder-count="2">
+                      <span style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 16px; border-top: 1px solid #F4F2EC; font-size: 14px"><span style="color: #5C5A52">{{r.k}}</span><span style="display: inline-flex; align-items: center; gap: 8px; font-weight: 500; font-variant-numeric: tabular-nums"><span style="width: 14px; height: 14px; border-radius: 4px; background: {{r.sw}}; display: {{r.swd}}"></span>{{r.v}}</span></span>
+                    </sc-for>
+                  </div>
+                  <button type="button" class="u-link" onClick="{{agSeePortal}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0; border: 0; background: none; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 14px; font-weight: 500; color: #3E4A22">Ver no Portal da Unico <span aria-hidden="true">→</span></button>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 12px; width: min(660px, 100%); margin: 0 auto; padding: 0 24px 24px; box-sizing: border-box">
+                <div role="list" aria-label="Sugestões de pedidos" style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px">
+                    <sc-for list="{{agList}}" as="a" hint-placeholder-count="4">
+                      <button type="button" role="listitem" class="hp-ask" onClick="{{a.run}}" aria-pressed="{{a.sel}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px; border: 0; border-radius: 12px; background: {{a.bg}}; color: {{a.fg}}; box-shadow: {{a.sh}}; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 13.5px; transition: background-color .2s, color .2s"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{a.icon}}"></path></svg>{{a.chip}}</button>
+                    </sc-for>
+                  </div>
+                <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px 12px 10px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #E6E3D9, 0 4px 14px -8px rgba(60,50,30,0.18)">
+                    <span style="min-height: 24px; font-size: 15px; color: #9A978C">{{agPh}}</span>
+                    <span style="display: flex; align-items: center; gap: 8px">
+                      <span aria-hidden="true" style="display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; box-shadow: inset 0 0 0 1px #E6E3D9; color: #5C5A52"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>
+                      <span style="display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px; border-radius: 10px; box-shadow: inset 0 0 0 1px #E6E3D9; font-size: 13px; color: #3D3B35"><span style="width: 6px; height: 6px; border-radius: 50%; background: #1A7F4B"></span>MCP da Unico</span>
+                      <span style="flex: 1 1 auto"></span>
+                      <span aria-hidden="true" style="display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: #C96A48; color: #FFFFFF"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></span>
+                    </span>
+                  </div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+        </sc-if>
+
+      </div>
+    </section>
+
+
+    <!-- 3. O que dá para fazer -->
+    <section aria-labelledby="feat-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 0">
+      <h2 id="feat-titulo" style="margin: 0 0 40px; max-width: 820px; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">No painel ou na conversa. <span style="color: #8A8A85">Quem opera, configura.</span></h2>
+      <div class="hp-three" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+        <article class="u-vp" style="display: flex; flex-direction: column; justify-content: space-between; gap: 40px; min-height: 280px; padding: 28px; border-radius: 22px; background: #F4F4F2">
+          <span style="color: #5F7034"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"></path><rect x="10" y="10" width="4" height="4" fill="currentColor" stroke="none"></rect></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 22px; letter-spacing: -0.02em; font-weight: 500">Sua marca na captura</span><span style="font-size: 15.5px; line-height: 1.5; color: #5C5C58">Cores, cantos, logo e textos. A pessoa vê o seu produto do começo ao fim, e a Unico fica nos bastidores.</span></span>
+        </article>
+        <article class="u-vp" style="display: flex; flex-direction: column; justify-content: space-between; gap: 40px; min-height: 280px; padding: 28px; border-radius: 22px; background: #F4F4F2">
+          <span style="color: #5F7034"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges" aria-hidden="true"><path d="M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 22px; letter-spacing: -0.02em; font-weight: 500">Branches e permissões</span><span style="font-size: 15.5px; line-height: 1.5; color: #5C5C58">Separe a operação por país, marca ou unidade de negócio. Cada time vê só o que precisa ver.</span></span>
+        </article>
+        <article class="u-vp" style="display: flex; flex-direction: column; justify-content: space-between; gap: 40px; min-height: 280px; padding: 28px; border-radius: 22px; background: #F4F4F2">
+          <span style="color: #5F7034"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges" aria-hidden="true"><path d="M4 20V14M10 20V9M16 20V12M22 20V4"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 22px; letter-spacing: -0.02em; font-weight: 500">Relatórios e auditoria</span><span style="font-size: 15.5px; line-height: 1.5; color: #5C5C58">Pessoas novas, já conhecidas e tentativas bloqueadas, por período e por branch. Exporte quando precisar.</span></span>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Para quem -->
+    <section aria-labelledby="quem-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 0">
+      <div class="u-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 32px 64px; align-items: start">
+        <h2 id="quem-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">Um painel, <span style="color: #8A8A85">três times.</span></h2>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #ECECE8">
+          <div style="display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.5fr); gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #ECECE8"><span style="font-size: 20px; letter-spacing: -0.015em; font-weight: 500">Produto</span><span style="font-size: 15.5px; line-height: 1.5; color: #5C5C58">Ajusta a experiência de captura e testa mudanças sem depender de uma nova versão do app.</span></div>
+          <div style="display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.5fr); gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #ECECE8"><span style="font-size: 20px; letter-spacing: -0.015em; font-weight: 500">Operações</span><span style="font-size: 15.5px; line-height: 1.5; color: #5C5C58">Acompanha volume e resultados por branch e abre uma nova unidade em minutos.</span></div>
+          <div style="display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.5fr); gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid #ECECE8"><span style="font-size: 20px; letter-spacing: -0.015em; font-weight: 500">Compliance</span><span style="font-size: 15.5px; line-height: 1.5; color: #5C5C58">Consulta o histórico de reconhecimentos e exporta relatórios para auditoria.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Fechamento -->
+    
+
+  </main>
+
+  <footer id="comecar" aria-labelledby="fim-titulo" style="background: #161616; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 24px 32px">
+      <div class="u-cta" style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px 64px; align-items: end">
+        <h2 id="fim-titulo" style="margin: 0; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 500">Comece pelo agente. <span style="color: rgba(255,255,255,0.5)">Os primeiros 10.000 tokens são por nossa conta.</span></h2>
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 20px; border-radius: 16px; background: #222220; border: 1px solid #2E2E2B">
+            <span aria-hidden="true" style="font-family: 'Geist Mono', monospace; font-size: 14px; color: rgba(255,255,255,0.45)">$</span>
+            <code style="flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: 'Geist Mono', monospace; font-size: 14px; color: #FFFFFF">{{mcpCmd}}</code>
+            <button type="button" class="u-btn" onClick="{{copy}}" style="flex: none; min-height: 44px; min-width: 92px; padding: 0 16px; border: 0; border-radius: 10px; background: #FFFFFF; cursor: pointer; font: 500 14px 'Geist', sans-serif; color: #161616"><span aria-live="polite">{{copyLabel}}</span></button>
+          </div>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.6)">Sem falar com vendas. Conecte e gere o primeiro token.</p>
+        </div>
+      </div>
+      <div class="u-fcols" style="margin-top: clamp(72px, 9vw, 112px); padding-top: 40px; border-top: 1px solid #2A2A27; display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px">
+        <div style="display: flex; flex-direction: column; gap: 14px"><svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29" fill="#FFFFFF"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47"></path></svg><span style="font-size: 14px; color: rgba(255,255,255,0.5)">Reconhecimento Humano</span><span style="margin-top: 2px; font-size: 13px; color: rgba(255,255,255,0.4)">© 2026 Unico</span></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Recursos</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="Tecnologia.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Human Token</a></li><li><a class="u-tab" href="HumanPlatform.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Human Platform</a></li><li><a class="u-tab" href="#topo" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Integração</a></li><li><a class="u-tab" href="#pagina-docs" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Documentação</a></li></ul></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Empresa</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="Sobre.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Sobre a Unico</a></li><li><a class="u-tab" href="Clientes.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Clientes</a></li><li><a class="u-tab" href="#pagina-newsroom" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Newsroom</a></li><li><a class="u-tab" href="Confianca.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Central de confiança</a></li><li><a class="u-tab" href="#carreiras" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Carreiras</a></li></ul></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Legal</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="#privacidade" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Privacidade</a></li><li><a class="u-tab" href="#termos" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Termos</a></li></ul></div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+// Captura Unico (fluxo rápido), portada do protótipo "Verificação Selfie".
+function uCapture(host) {
+  var E = { mode: 'swirl', modeT: 0, parts: null, W: 280, H: 190, N: 720, timers: [], ph: 'idle', raf: 0, ps: null, view: null, stream: null };
+  var C = { base: '33,33,33', hue: '151,71,255', ok: '96,121,56', flash: '151,71,255', hueA: [151, 71, 255], okA: [96, 121, 56], okHA: [130, 160, 80], baseA: [33, 33, 33] };
+  function later(fn, ms) { E.timers.push(setTimeout(fn, ms)); }
+  function clear() { E.timers.forEach(clearTimeout); E.timers = []; }
+  function rnd() { return Math.random(); }
+  function setPh(ph, extra) { E.ph = ph; host.phase(ph, extra); }
+
+  function navDims() {
+    var n = host.el('u-navpill');
+    if (!n) { return [530, 52, 26]; }
+    return [n.offsetWidth + 2, n.offsetHeight + 2, (n.offsetHeight + 2) / 2];
+  }
+  function dims(ph) {
+    if (ph === 'fastSuccess') { return [264, 378, 48]; }
+    if (ph === 'fast' || ph === 'fastVerify') { return [264, 320, 48]; }
+    if (ph === 'camScan' || ph === 'camVerify' || ph === 'camFail') { return [300, 430, 48]; }
+    if (ph === 'pill') { return [300, 50, 25]; }
+    return navDims();
+  }
+
+  function startCam(ok, fail) {
+    if (E.stream) { ok && ok(); return; }
+    var md = navigator.mediaDevices;
+    if (!md || !md.getUserMedia) { fail && fail(); return; }
+    try {
+      md.getUserMedia({ video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 800 } }, audio: false })
+        .then(function (st) {
+          if (E.ph === 'idle' || E.ph === 'closing') { st.getTracks().forEach(function (t) { t.stop(); }); return; }
+          E.stream = st;
+          ['u-capvid', 'u-capcam'].forEach(function (id) { var v = host.el(id); if (v) { v.srcObject = st; if (v.play) { v.play().catch(function () {}); } } });
+          ok && ok();
+        })
+        .catch(function () { fail && fail(); });
+    } catch (e) { fail && fail(); }
+  }
+  function stopCam() { if (E.stream) { E.stream.getTracks().forEach(function (t) { t.stop(); }); E.stream = null; } }
+
+  function initParts() {
+    var W = E.W, H = E.H, P = [];
+    for (var i = 0; i < E.N; i++) {
+      var a = rnd() * 6.283, r = 50 + rnd() * 45;
+      P.push({ x: W / 2 + Math.cos(a) * r, y: H / 2 + Math.sin(a) * r * 0.85, a: a, r: r, sp: 0.004 + rnd() * 0.012, tx: 0, ty: 0, w: 0.5, s: 0.6 + rnd() * 0.8, k: rnd() * 0.05, hue: rnd() < 0.22, ph: rnd() * 6.283 });
+    }
+    E.parts = P;
+  }
+  function assign(tg, resort) {
+    var cx = E.W / 2, cy = E.H / 2, P = E.parts;
+    var ang = function (x, y) { return Math.atan2(y - cy, x - cx); };
+    tg.sort(function (a, b) { return ang(a.x, a.y) - ang(b.x, b.y); });
+    if (resort || !E.order) { E.order = P.map(function (_, i) { return i; }).sort(function (i, j) { return ang(P[i].x, P[i].y) - ang(P[j].x, P[j].y); }); }
+    var n = tg.length, m = E.order.length;
+    E.order.forEach(function (pi, idx) {
+      var g = tg[Math.floor(idx * n / m)], p = P[pi];
+      p.tx = g.x + (rnd() - 0.5) * g.j; p.ty = g.y + (rnd() - 0.5) * g.j; p.w = g.w; p.tag = g.tag || null; p.ey = g.ey || 0; p.fr = g.fr || 0;
+    });
+  }
+  function glyphTargets() {
+    // Rosto de escaneamento: cantos de enquadramento retos (linguagem dos ícones Unico) + olhos, nariz e sorriso.
+    var cx = E.W / 2, cy = E.H / 2 + 2, T = [], i;
+    var push = function (x, y, w, j, tag, ey, fr) { T.push({ x: x, y: y, w: w, j: j, tag: tag, ey: ey, fr: fr }); };
+    var hw = 60, hh = 64, rc = 18, arm = 16, nFill = Math.round(E.N * 0.17), nFeat = Math.round(E.N * 0.35), nBr = E.N - nFeat - nFill;
+    // quatro cantos arredondados: braço vertical, arco, braço horizontal
+    var corners = [[-1, -1], [1, -1], [1, 1], [-1, 1]], per = Math.floor(nBr / 4), Lc = arm * 2 + rc * Math.PI / 2;
+    corners.forEach(function (q, ci) {
+      var sx = q[0], sy = q[1], ox = cx + sx * (hw - rc), oy = cy + sy * (hh - rc);
+      for (var k = 0; k < per; k++) {
+        var u = k / (per - 1) * Lc, x, y;
+        if (u < arm) { x = cx + sx * hw; y = cy + sy * (hh - rc - arm + u); }
+        else if (u < arm + rc * Math.PI / 2) { var th = (u - arm) / rc; var ang = sy > 0 ? (sx > 0 ? th : Math.PI - th) : (sx > 0 ? -th : Math.PI + th); x = ox + Math.cos(ang) * rc; y = oy + Math.sin(ang) * rc; }
+        else { var w2 = u - arm - rc * Math.PI / 2; y = cy + sy * hh; x = cx + sx * (hw - rc - w2); }
+        push(x, y, 0.95, 5.5, 'out', 0, (ci + k / per) / 4);
+      }
+    });
+    var ne = Math.round(nFeat * 0.16), nn = Math.round(nFeat * 0.26), nm = nFeat - 2 * ne - nn;
+    [-1, 1].forEach(function (s) { for (var i = 0; i < ne; i++) { push(cx + s * 22 + (rnd() - 0.5) * 5, cy - 30 + (i / ne) * 18, 1, 2.5, 'eye', cy - 21); } });
+    var nv = Math.round(nn * 0.72);
+    for (i = 0; i < nv; i++) { push(cx + 2 + (rnd() - 0.5) * 3, cy - 26 + (i / nv) * 30, 0.95, 4, 'feat', 0); }
+    for (i = 0; i < nn - nv; i++) { push(cx + 2 - (i / (nn - nv)) * 8, cy + 4 + (rnd() - 0.5) * 3, 0.95, 4, 'feat', 0); }
+    for (i = 0; i < nm; i++) { var b = 0.22 * Math.PI + (i / nm) * 0.56 * Math.PI; push(cx + Math.cos(b) * 26, cy + 10 + Math.sin(b) * 16, 1, 5, 'feat', 0); }
+    while (T.length < E.N) { var u2 = rnd() * 6.283, rr3 = Math.sqrt(rnd()); push(cx + Math.cos(u2) * rr3 * 78, cy + Math.sin(u2) * rr3 * 82, 0.14 + rnd() * 0.12, 0, 'fill', 0); }
+    return T;
+  }
+  function camTargets() {
+    var v = host.el('u-capvid');
+    if (!E.stream || !v || !v.videoWidth) { return null; }
+    var gw = 72, gh = 92, cx = E.W / 2, cy = E.H / 2, sc = 1.5;
+    var oc = E.oc || (E.oc = document.createElement('canvas')); oc.width = gw; oc.height = gh;
+    var o = oc.getContext('2d', { willReadFrequently: true });
+    var vw = v.videoWidth, vh = v.videoHeight, ar = gw / gh, sh = vh * 0.8, sw = sh * ar; if (sw > vw) { sw = vw; sh = sw / ar; }
+    o.save(); o.translate(gw, 0); o.scale(-1, 1); o.drawImage(v, (vw - sw) / 2, (vh - sh) / 2, sw, sh, 0, 0, gw, gh); o.restore();
+    var d = o.getImageData(0, 0, gw, gh).data, g = new Float32Array(gw * gh), i, x, y;
+    for (i = 0; i < gw * gh; i++) { g[i] = 0.299 * d[i * 4] + 0.587 * d[i * 4 + 1] + 0.114 * d[i * 4 + 2]; }
+    var cells = [], lmin = 255, lmax = 0, mmax = 0;
+    for (y = 1; y < gh - 1; y++) { for (x = 1; x < gw - 1; x++) {
+      var nx = (x - gw / 2) / (gw * 0.47), ny = (y - gh / 2) / (gh * 0.48);
+      if (nx * nx + ny * ny > 1) { continue; }
+      i = y * gw + x;
+      var gx = -g[i - gw - 1] - 2 * g[i - 1] - g[i + gw - 1] + g[i - gw + 1] + 2 * g[i + 1] + g[i + gw + 1];
+      var gy = -g[i - gw - 1] - 2 * g[i - gw] - g[i - gw + 1] + g[i + gw - 1] + 2 * g[i + gw] + g[i + gw + 1];
+      var mag = Math.hypot(gx, gy);
+      if (mag > mmax) { mmax = mag; } if (g[i] < lmin) { lmin = g[i]; } if (g[i] > lmax) { lmax = g[i]; }
+      cells.push({ x: x, y: y, mag: mag, lum: g[i] });
+    } }
+    if (mmax < 40 || lmax - lmin < 25) { return null; }
+    var acc = 0, cdf = cells.map(function (c) { c.wt = 0.6 * Math.pow((c.lum - lmin) / (lmax - lmin), 1.4) + 0.4 * (c.mag / mmax); acc += c.wt; return acc; });
+    var n = Math.floor(E.N * 0.9), T = [];
+    for (var k = 0; k < n; k++) {
+      var r = rnd() * acc, lo = 0, hi = cdf.length - 1;
+      while (lo < hi) { var mid = (lo + hi) >> 1; if (cdf[mid] < r) { lo = mid + 1; } else { hi = mid; } }
+      var c = cells[lo];
+      T.push({ x: cx + (c.x - gw / 2 + rnd() - 0.5) * sc, y: cy + (c.y - gh / 2 + rnd() - 0.5) * sc, w: 0.25 + 0.75 * c.wt, j: 0 });
+    }
+    for (i = n; i < E.N; i++) { var aa = (i - n) / (E.N - n) * 6.283; T.push({ x: cx + Math.cos(aa) * gw * 0.47 * sc, y: cy + Math.sin(aa) * gh * 0.48 * sc, w: 0.3, j: 2 }); }
+    return T;
+  }
+  function checkMorph() {
+    var cx = E.W / 2, cy = E.H / 2, P = E.parts;
+    var d = function (p) { return Math.hypot((p.x - cx) / 56, (p.y - cy) / 64); };
+    var byDist = P.slice().sort(function (a, b) { return d(b) - d(a); });
+    var nOut = Math.round(P.length * 0.62), outer = byDist.slice(0, nOut), inner = byDist.slice(nOut);
+    outer.sort(function (a, b) { return Math.atan2(a.y - cy, a.x - cx) - Math.atan2(b.y - cy, b.x - cx); });
+    outer.forEach(function (p, oi) { var a = -Math.PI + (oi + 0.5) / outer.length * 6.283, rr = 64 + (rnd() - 0.5) * 6.5; p.tx = cx + Math.cos(a) * rr; p.ty = cy + Math.sin(a) * rr; p.w = 0.85; p.grp = 'ring'; p.ra = a; p.rr = rr; p.dl = (((a + Math.PI / 2) / 6.283 + 1) % 1) * 520 + rnd() * 260; p.du = 1150 + rnd() * 550; p.sp2 = 0.9 + rnd() * 0.9; });
+    var pts = [[-26, 2], [-8, 20], [28, -18]], l1 = Math.hypot(18, 18), l2 = Math.hypot(36, 38);
+    inner.sort(function (a, b) { return a.x - b.x; });
+    inner.forEach(function (p, i) {
+      var u = i / inner.length * (l1 + l2), ab = u < l1 ? [pts[0], pts[1]] : [pts[1], pts[2]], a = ab[0], b = ab[1];
+      var fr = u < l1 ? u / l1 : (u - l1) / l2, dx = b[0] - a[0], dy = b[1] - a[1], dl = Math.hypot(dx, dy), off = ((i % 5) - 2) * 1.6 + (rnd() - 0.5) * 1.2;
+      p.tx = cx + a[0] + dx * fr - dy / dl * off; p.ty = cy + a[1] + dy * fr + dx / dl * off; p.w = 1; p.grp = 'check'; p.ux = dx / dl; p.uy = dy / dl; p.dl = 280 + (u / (l1 + l2)) * 520 + rnd() * 260; p.du = 1150 + rnd() * 550; p.sp2 = -(0.7 + rnd() * 0.9);
+    });
+    P.forEach(function (p) { p.e = 0; p.ox = p.x; p.oy = p.y; p.tag = null; });
+  }
+  function uTargets() {
+    // o "U" da Unico: duas hastes e a curva de baixo, traço largo
+    var cx = E.W / 2, cy = E.H / 2, T = [], R = 40, top = cy - 52, base = cy + 4;
+    var Ls = base - top, La = Math.PI * R, L = 2 * Ls + La;
+    for (var i = 0; i < E.N; i++) {
+      var u = rnd() * L, x, y, nx, ny;
+      if (u < Ls) { x = cx - R; y = top + u; nx = -1; ny = 0; }
+      else if (u < Ls + La) { var th = Math.PI - (u - Ls) / R; x = cx + Math.cos(th) * R; y = base + Math.sin(th) * R; nx = Math.cos(th); ny = Math.sin(th); }
+      else { x = cx + R; y = base - (u - Ls - La); nx = 1; ny = 0; }
+      var off = (rnd() - 0.5) * 18; T.push({ x: x + nx * off, y: y + ny * off, w: 0.35 + rnd() * 0.65, j: 1.5, tag: 'u' });
+    }
+    return T;
+  }
+  function ovalTargets() {
+    // anel de partículas em volta do oval da câmera
+    var cx = E.W / 2, cy = E.H / 2, T = [], rx = 59, ry = 69, nRing = Math.round(E.N * 0.5);
+    for (var i = 0; i < E.N; i++) {
+      var a = rnd() * 6.283, isR = i < nRing, d = isR ? 1 + (rnd() - 0.5) * 0.05 : 1 + (rnd() - 0.5) * 0.25;
+      T.push({ x: cx + Math.cos(a) * rx * d, y: cy + Math.sin(a) * ry * d, w: isR ? 0.7 + rnd() * 0.3 : 0.3, j: 1, tag: isR ? 'out' : 'fill', fr: ((a + Math.PI / 2) / 6.283 + 1) % 1 });
+    }
+    return T;
+  }
+  function setMode(m) {
+    if (!E.parts) { initParts(); }
+    E.mode = m; E.modeT = performance.now();
+    var cx = E.W / 2, cy = E.H / 2;
+    if (m === 'u') { E.mode = 'form'; E.glyphOn = false; assign(uTargets(), true); }
+    if (m === 'ring') { E.mode = 'form'; E.glyphOn = false; assign(ovalTargets(), true); }
+    if (m === 'swirl') { E.glyphOn = false; E.parts.forEach(function (p) { p.a = Math.atan2(p.y - cy, p.x - cx); p.r = 50 + rnd() * 45; p.grp = null; }); }
+    if (m === 'glyph') { E.mode = 'form'; E.glyphOn = true; assign(glyphTargets(), true); }
+    if (m === 'form') { var ct = camTargets(); if (ct) { E.glyphOn = false; assign(ct, true); } else if (!E.glyphOn) { E.glyphOn = true; assign(glyphTargets(), true); } E.lastSample = performance.now(); }
+    if (m === 'check') { E.glyphOn = false; checkMorph(); }
+  }
+
+  function tick(t) {
+    E.raf = requestAnimationFrame(tick);
+    var pe = host.el('u-isl');
+    if (pe) {
+      var D = dims(E.ph), s = E.ps || (E.ps = { w: D[0], h: D[1], r: D[2], vw: 0, vh: 0, vr: 0 });
+      s.vw = s.vw * 0.6 + (D[0] - s.w) * 0.06; s.w += s.vw;
+      s.vh = s.vh * 0.62 + (D[1] - s.h) * 0.045; s.h += s.vh;
+      s.vr = s.vr * 0.6 + (D[2] - s.r) * 0.06; s.r += s.vr;
+      var nv = host.el('u-navpill'), top0 = nv ? nv.offsetTop - 1 : 0, open = E.ph !== 'idle' && E.ph !== 'closing';
+      var tt = open && nv ? nv.offsetTop + nv.offsetHeight + 10 : top0;
+      if (s.t == null) { s.t = top0; s.vt = 0; }
+      s.vt = s.vt * 0.6 + (tt - s.t) * 0.06; s.t += s.vt;
+      pe.style.top = s.t.toFixed(2) + 'px';
+      pe.style.width = s.w.toFixed(2) + 'px'; pe.style.height = s.h.toFixed(2) + 'px'; pe.style.borderRadius = s.r.toFixed(2) + 'px';
+    }
+    var gl = host.el('u-capglow');
+    if (gl) {
+      var a1 = 30 + Math.sin(t * 0.00042) * 12, a2 = 52 + Math.sin(t * 0.00057 + 2) * 14, a3 = 72 + Math.sin(t * 0.00049 + 4) * 12;
+      var o1 = 0.36 + Math.sin(t * 0.0008) * 0.08, o2 = 0.3 + Math.sin(t * 0.0009 + 2) * 0.08, o3 = 0.42 + Math.sin(t * 0.00075 + 4) * 0.08;
+      gl.style.background = 'radial-gradient(38% 70% at ' + a1.toFixed(1) + '% 112%, rgba(57,115,148,' + o1.toFixed(3) + '), transparent 70%), radial-gradient(34% 64% at ' + a2.toFixed(1) + '% 116%, rgba(96,160,90,' + o2.toFixed(3) + '), transparent 70%), radial-gradient(40% 72% at ' + a3.toFixed(1) + '% 114%, rgba(151,71,255,' + o3.toFixed(3) + '), transparent 72%)';
+    }
+    var gll = host.el('u-capline');
+    if (gll) { var an = (t * 0.06) % 360; gll.style.background = 'conic-gradient(from ' + an.toFixed(1) + 'deg, transparent 0deg, rgba(41,182,246,0.8) 40deg, rgba(171,198,129,0.8) 70deg, rgba(206,147,216,0.9) 100deg, transparent 140deg, transparent 360deg)'; }
+    var c = host.el('u-capcv');
+    if (!c) { return; }
+    if (!E.parts) { initParts(); }
+    var W = E.W, H = E.H, CW = 370, CH = 480, dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (c.width !== CW * dpr) { c.width = CW * dpr; c.height = CH * dpr; }
+    var ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, CW, CH);
+    if (E.ph === 'idle' || E.ph === 'closing') { return; }
+    var pw = E.ps ? E.ps.w : 232;
+    var camPh = E.ph === 'camScan' || E.ph === 'camVerify' || E.ph === 'camFail';
+    E.camShow = camPh && (!!E.stream || !!E.sim);
+    var vt = E.ph === 'pill' ? { dx: -pw / 2 + 30, y: 25, s: 0.16 } : camPh ? { dx: 0, y: 182, s: 1.75 } : { dx: 0, y: 104, s: 0.82 };
+    var v = E.view || (E.view = { dx: vt.dx, y: vt.y, s: vt.s, x: 0 });
+    v.dx += (vt.dx - v.dx) * 0.08; v.x = pw / 2 + v.dx; v.y += (vt.y - v.y) * 0.08; v.s += (vt.s - v.s) * 0.08;
+    var vs = v.s > 1.2 ? 0.85 : Math.max(v.s < 0.4 ? 0.32 : 0.6, v.s);
+    var cx = W / 2, cy = H / 2, m = E.mode, el = t - E.modeT;
+    if (m === 'form' && !E.glyphOn && E.stream && t - (E.lastSample || 0) > 700) { E.lastSample = t; var tg = camTargets(); if (tg) { assign(tg, false); } }
+    var flash = t < (E.flashUntil || 0), band = cy - 80 + ((el % 1200) / 1200) * 160;
+    var blink = E.glyphOn && (t % 2300) < 170;
+    if (E.glyphOn) {
+      var yt = Math.sin(t * 0.0026) * 0.7 + Math.sin(t * 0.0047) * 0.18 + Math.sin(t * 0.0011) * 0.08, pt = Math.sin(t * 0.0033 + 1) * 0.45 + Math.sin(t * 0.0009) * 0.2;
+      E.yaw = (E.yaw || 0) + (yt - (E.yaw || 0)) * 0.08; E.pitch = (E.pitch || 0) + (pt - (E.pitch || 0)) * 0.08; E.roll = Math.sin(t * 0.0009) * 0.06 + E.yaw * 0.06;
+    }
+    for (var i = 0; i < E.parts.length; i++) {
+      var p = E.parts[i], tx, ty;
+      if (m === 'check') {
+        var u = Math.max(0, Math.min(1, (el - p.dl) / (p.du || 1100)));
+        var e = u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; p.e = e;
+        var ex, ey;
+        if (p.grp === 'ring') { var ra = p.ra + el * 0.00025; ex = cx + Math.cos(ra) * p.rr; ey = cy + Math.sin(ra) * p.rr; }
+        else { var sl = Math.sin(t * 0.002 + p.ph) * 0.8; ex = p.tx + p.ux * sl; ey = p.ty + p.uy * sl; }
+        // espiral: o vetor até o destino gira enquanto encolhe, com um leve "respiro" para fora no começo
+        var vx = p.ox - ex, vy = p.oy - ey, rot = (p.sp2 || 1) * Math.sin(e * Math.PI * 0.5) * 1.4, cr2 = Math.cos(rot), sr2 = Math.sin(rot);
+        var shrink = (1 - e) * (1 + 0.35 * Math.sin(Math.min(1, u * 1.6) * Math.PI));
+        var wob = Math.sin(e * Math.PI) * 3.2;
+        p.x = ex + (vx * cr2 - vy * sr2) * shrink + Math.sin(t * 0.0042 + p.ph) * wob;
+        p.y = ey + (vx * sr2 + vy * cr2) * shrink + Math.cos(t * 0.0037 + p.ph * 1.3) * wob;
+      } else if (m === 'swirl') { p.a += p.sp; var rr2 = p.r + Math.sin(t * 0.002 + p.ph) * 6; tx = cx + Math.cos(p.a) * rr2; ty = cy + Math.sin(p.a) * rr2 * 0.85; }
+      else {
+        var bx = p.tx, by = p.ty;
+        if (E.glyphOn) {
+          if (blink && p.tag === 'eye') { by = p.ey + (by - p.ey) * 0.12; }
+          var dx = bx - cx, dy = by - cy, Y = E.yaw, Pt = E.pitch, R = E.roll, isF = p.tag === 'eye' || p.tag === 'feat';
+          var nx = isF ? dx * (1 - 0.28 * Y * Math.sign(dx)) + Y * 15 : p.tag === 'fill' ? dx * (1 - 0.1 * Math.abs(Y)) + Y * 7 : dx * (1 - 0.1 * Math.abs(Y)) + Y * 3;
+          var ny = isF ? dy + Pt * 10 : p.tag === 'fill' ? dy * (1 - 0.06 * Math.abs(Pt)) + Pt * 4 : dy * (1 - 0.08 * Math.abs(Pt)) + Pt * 2;
+          var br = 1 + 0.012 * Math.sin(t * 0.0021), cr = Math.cos(R), sr = Math.sin(R);
+          bx = cx + (nx * cr - ny * sr) * br; by = cy + (nx * sr + ny * cr) * br;
+        }
+        tx = bx + Math.sin(t * 0.002 + p.ph) * 0.8; ty = by + Math.cos(t * 0.0023 + p.ph) * 0.8;
+      }
+      var k = m === 'swirl' ? 0.08 : (E.glyphOn ? 0.1 + p.k : 0.05 + p.k);
+      if (m !== 'check') { p.x += (tx - p.x) * k; p.y += (ty - p.y) * k; }
+      var a, col = p.hue ? C.hue : C.base, sz = m === 'check' ? p.s * (1 - 0.15 * (p.e || 0)) : p.s;
+      if (m === 'swirl') { a = 0.3 + 0.35 * (0.5 + 0.5 * Math.sin(t * 0.003 + p.ph)); } else { a = p.w * (0.75 + 0.25 * Math.sin(t * 0.004 + p.ph)); }
+      if (m === 'verify') { var bb = Math.max(0, 1 - Math.abs(p.y - band) / 14); a = p.w * 0.85 + bb * 0.5; sz *= 1 + bb * 0.8; if (bb > 0.3) { col = C.hue; } }
+      if (m === 'check') {
+        var ct2 = p.e || 0, from = p.hue ? C.hueA : C.baseA, to = p.hue ? C.okHA : C.okA;
+        col = from.map(function (q, j) { return Math.round(q + (to[j] - q) * ct2); }).join(',');
+        var pulse = Math.max(0, 1 - Math.abs(el - 2050) / 420); a = Math.min(1, a + pulse * 0.22); sz *= 1 + pulse * 0.15;
+      }
+      if (flash) { a = 1; sz *= 1.6; col = C.flash; }
+      if (E.camShow && p.tag !== 'out') { continue; }
+      var qx = p.x - cx, qy = p.y - cy;
+      if (E.camShow) {
+        // guia: o contorno "respira" na direção para onde a cabeça deve ir, girando em círculo
+        if (E.guideT0) {
+          var ga = Math.min(1, (t - E.guideT0) / 4200), gr = ga * 6.283 - Math.PI / 2, pa = Math.atan2(qy, qx), bulge = 1 + 0.07 * Math.cos(pa - gr);
+          qx = qx * bulge + Math.cos(gr) * 4; qy = qy * bulge + Math.sin(gr) * 4;
+          if (p.fr != null) {
+            if (p.fr <= ga) { col = C.ok; a = 1; }
+            var dd = Math.abs(p.fr - ga); dd = Math.min(dd, 1 - dd); if (dd < 0.06) { col = C.hue; a = 1; sz *= 1 + (0.06 - dd) * 10; }
+          }
+        } else if (E.guideDone && p.fr != null) { col = C.ok; a = Math.max(a, 0.9); }
+      }
+      ctx.fillStyle = 'rgba(' + col + ',' + Math.min(1, a) + ')';
+      ctx.beginPath(); ctx.arc(v.x + qx * v.s, v.y + qy * v.s, sz * vs, 0, 6.283); ctx.fill();
+    }
+  }
+  function loop() { if (!E.raf) { E.raf = requestAnimationFrame(tick); } }
+  function halt() { if (E.raf) { cancelAnimationFrame(E.raf); E.raf = 0; } }
+  function hex(n) { var o = ''; for (var i = 0; i < n; i++) { o += '0123456789abcdef'[Math.floor(rnd() * 16)]; } return o; }
+
+  function close() {
+    clear(); stopCam(); E.sim = false; E.guideT0 = 0; E.guideDone = false; setPh('closing');
+    later(function () { setPh('idle'); E.view = null; }, 620);
+    later(function () { halt(); E.ps = null; }, 1000);
+  }
+  function verifyThen(vph, dur) {
+    E.flashUntil = performance.now() + 200; setMode('verify');
+    var t0 = performance.now(), last = 0; setPh(vph, { capT: 0 });
+    E.vProg = 0;
+    var step = function (now) { if (E.ph !== vph) { return; } var d = now - t0; E.vProg = Math.min(1, d / dur); if (d - last > 33) { last = d; host.time(Math.min(d, dur)); } if (d < dur) { requestAnimationFrame(step); } };
+    requestAnimationFrame(step);
+    later(function () { stopCam(); E.sim = false; E.guideT0 = 0; E.guideDone = false; setPh('fastSuccess', { capT: dur, capTok: hex(4) + ' ' + hex(4) + ' ' + hex(4) + ' ' + hex(4) }); setMode('check'); }, dur + 40);
+  }
+  function begin() {
+    clear();
+    if (!E.raf) { var n0 = navDims(); E.ps = { w: n0[0], h: n0[1], r: n0[2], vw: 0, vh: 0, vr: 0 }; E.view = null; }
+    loop();
+  }
+  var api = {
+    runFast: function () {
+      begin(); stopCam(); E.sim = false;
+      if (!E.parts) { initParts(); }
+      setMode('u'); setPh('fast', { capT: 0, capTok: '' });
+      later(function () { setMode('glyph'); }, 750);
+      later(function () { setMode('form'); }, 1000);
+      var dur = 680 + Math.round(rnd() * 240);
+      later(function () { verifyThen('fastVerify', dur); }, 2500);
+    },
+    runCamera: function () {
+      begin();
+      if (!E.parts) { initParts(); }
+      E.sim = false; E.guideT0 = 0; E.guideDone = false; setMode('u');
+      setPh('camScan', { capT: 0, capTok: '', capLive: false, capSim: false, capStep: 0 });
+      var dur = 680 + Math.round(rnd() * 240), t0 = performance.now();
+      var step = function (n) { host.phase('camScan', { capStep: n }); };
+      var go = function (sim) {
+        if (E.ph !== 'camScan') { return; }
+        later(function () {
+          if (E.ph !== 'camScan') { return; }
+          E.sim = sim; host.phase('camScan', { capLive: true, capSim: sim, capStep: 1 }); setMode('ring');
+          later(function () { step(2); E.guideT0 = performance.now(); }, 2200);
+          later(function () { E.guideT0 = 0; E.guideDone = true; step(3); }, 2200 + 4400);
+          later(function () { verifyThen('camVerify', dur); }, 2200 + 4400 + 1400);
+        }, Math.max(0, 900 - (performance.now() - t0)));
+      };
+      startCam(function () { go(false); }, function () { go(true); });
+    },
+    cancel: function () { close(); },
+    destroy: function () { clear(); halt(); stopCam(); }
+  };
+  return api;
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { mcp: 0, last: null, moreOn: false, sdk: 0, cons: 0, api: 0, demo: 3, copied: '', scrolled: false, overDark: false };
+  }
+  /* realce de sintaxe simples: comentários, textos, palavras-chave e lacunas [a confirmar] */
+  hl(src) {
+    var KW = /^(const|let|val|var|await|async|import|from|if|else|try|new|return|func|def|package|err)$/;
+    return src.split('\n').map(function (line) {
+      var segs = [], re = /(\/\/.*$|#.*$|'[^']*'|"[^"]*"|\[[^\]]+\]|[A-Za-z_]+|[^A-Za-z_'"\[\/#]+|.)/g, m, buf = '', flush = function () { if (buf) { segs.push({ t: buf, c: '#E6E6E4' }); buf = ''; } };
+      while ((m = re.exec(line)) !== null) {
+        var tk = m[0];
+        if (/^(\/\/|#)/.test(tk)) { flush(); segs.push({ t: tk, c: '#8A8A85' }); }
+        else if (/^\[/.test(tk)) { flush(); segs.push({ t: tk, c: '#C9C29A' }); }
+        else if (/^['"]/.test(tk)) { flush(); segs.push({ t: tk, c: '#7EE2A1' }); }
+        else if (KW.test(tk)) { flush(); segs.push({ t: tk, c: '#9EA3BD' }); }
+        else { buf += tk; }
+      }
+      flush();
+      return { segs: segs.length ? segs : [{ t: ' ', c: '#E6E6E4' }] };
+    });
+  }
+  copyText(key, txt) {
+    var self = this;
+    try { navigator.clipboard.writeText(txt); } catch (e) {}
+    this.setState({ copied: key }); clearTimeout(this.copyTimer);
+    this.copyTimer = setTimeout(function () { self.setState({ copied: '' }); }, 1800);
+  }
+  componentDidMount() {
+    this._anchor = function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null; if (!a) { return; }
+      var id = (a.getAttribute('href') || '').slice(1); if (!id) { return; }
+      var tg = document.getElementById(id); if (!tg) { return; }
+      e.preventDefault();
+      var rm = false; try { rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (x) {}
+      window.scrollTo({ top: tg.getBoundingClientRect().top + (window.scrollY || 0) - 88, behavior: rm ? 'auto' : 'smooth' });
+    };
+    document.addEventListener('click', this._anchor, true);
+    var self = this, red = false;
+    try { red = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (!red) {
+      this.setState({ demo: 0 });
+      this.demoTimer = setInterval(function () {
+        var el = document.getElementById('i-demo'); if (!el) { return; }
+        var r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > (window.innerHeight || 800)) { return; }
+        self.setState({ demo: (self.state.demo + 1) % 6 });
+      }, 1300);
+    }
+    var sraf = null;
+    this.onScroll = function () {
+      if (sraf) { return; }
+      sraf = window.requestAnimationFrame(function () {
+        sraf = null;
+        var ft = document.querySelector('footer'), dk = ft ? ft.getBoundingClientRect().top < 64 : false, sc = (window.scrollY || 0) > 40;
+        if (dk !== self.state.overDark || sc !== self.state.scrolled) { self.setState({ overDark: dk, scrolled: sc }); }
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+  }
+  capStart() { this.capEnsure(); this.setState({ startOn: false }); this.capE.runFast(); }
+  capEnsure() {
+    var self = this;
+    if (!this.capE) { this.capE = uCapture({
+      el: function (id) { return document.getElementById(id); },
+      phase: function (ph, extra) { var st = Object.assign({ capPh: ph }, extra || {}); self.setState(st); },
+      time: function (ms) { self.setState({ capT: ms }); }
+    }); }
+  }
+  capStop() { if (this.capE) { this.capE.cancel(); } }
+  capCamera() { this.capEnsure(); this.setState({ startOn: false }); this.capE.runCamera(); }
+
+  componentWillUnmount() { cancelAnimationFrame(this._hpRaf); if (this._hpObs) { this._hpObs.disconnect(); } clearTimeout(this._agT1); clearTimeout(this._agT2); clearTimeout(this._hpEx); clearTimeout(this._hpCp); document.removeEventListener('click', this._anchor, true); if (this.capE) { this.capE.destroy(); } clearInterval(this.demoTimer); clearTimeout(this.copyTimer); window.removeEventListener('scroll', this.onScroll); }
+
+  hpInit() {
+    if (this.hp) { return; }
+    this.hp = { tab: 0, sub: 3, modal: null, mname: '', color: 0, rad: 1, cta: 'Continuar', period: 2, br: 0, exported: false, copied: false, ag: -1, agStep: 0, mode: 0,
+      branches: [
+        { id: 'sp', uid: 'db10f8fe-40b8-48fb', name: 'São Paulo', country: 'Brasil', tokens: 48210, people: '31,2 mil', on: true },
+        { id: 'cdmx', uid: '7a3c21d9-91e2-4c07', name: 'Cidade do México', country: 'México', tokens: 22940, people: '15,8 mil', on: true },
+        { id: 'bogota', uid: 'e58f0b44-2d16-4a9b', name: 'Bogotá', country: 'Colômbia', tokens: 9310, people: '6,1 mil', on: true }
+      ] };
+  }
+  hpAnim() {
+    var self = this, h = this.hp, red = false;
+    try { red = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    h.seen = true; h.ak = (h.ak || 0) ? 0 : 1;
+    if (red) { h.cnt = 1; this.forceUpdate(); return; }
+    cancelAnimationFrame(this._hpRaf); var t0 = 0, D = 1100;
+    h.cnt = 0; this.forceUpdate();
+    var step = function (t) { if (!t0) { t0 = t; } var x = Math.min(1, (t - t0) / D); h.cnt = 1 - Math.pow(1 - x, 3); self.forceUpdate(); if (x < 1) { self._hpRaf = requestAnimationFrame(step); } };
+    this._hpRaf = requestAnimationFrame(step);
+  }
+  hpWatch() {
+    var self = this;
+    if (this.hp.seen || typeof IntersectionObserver === 'undefined') { if (!this.hp.seen && typeof IntersectionObserver === 'undefined') { this.hpAnim(); } return; }
+    var el = document.getElementById('hp-dash'); if (!el || el === this._hpObsEl) { return; }
+    if (this._hpObs) { this._hpObs.disconnect(); } this._hpObsEl = el;
+    this._hpObs = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !self.hp.seen) { self.hpAnim(); } }); }, { threshold: 0.3 });
+    this._hpObs.observe(el);
+  }
+  hpSet(o) { this.hpInit(); Object.assign(this.hp, o); this.forceUpdate(); }
+  hpRunAgent(i) {
+    var self = this, AG = this.hpAgents();
+    this.hpInit(); clearTimeout(this._agT1); clearTimeout(this._agT2); clearTimeout(this._agT3);
+    this.hpSet({ ag: i, agStep: 1 });
+    this._agT1 = setTimeout(function () { self.hpSet({ agStep: 2 }); }, 650);
+    this._agT2 = setTimeout(function () { AG[i].act(); self.hpSet({ agStep: 3 }); }, 1400);
+  }
+  hpAgents() {
+    var self = this, h = function () { return self.hp; };
+    var openSet = function (o) { Object.assign(self.hp, { tab: 1, sub: 3 }, o || {}); };
+    return [
+      { chip: 'Trocar cor para verde', icon: 'M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-1.2-1-1.6-1-2.6 0-.9.7-1.6 1.6-1.6H17a4 4 0 0 0 4-4c0-4.4-4-8.2-9-8.2z', rt: 'Portal da Unico · Configurações › Branches', rows: [['Branch', 'São Paulo', ''], ['Cor principal', '#1A7F4B', '#1A7F4B']], p: 'Troque a cor da captura de São Paulo para o verde da nossa marca.', tool: 'unico.branches.atualizar({ id: "sp", cor: "#1A7F4B" })', r: 'Pronto. A captura da branch São Paulo agora usa o verde #1A7F4B.', act: function () { h().color = 1; openSet({ modal: 0 }); } },
+      { chip: 'Criar branch em Lima', icon: 'M4 21V5l8-3v19M12 8h8v13M2 21h20', rt: 'Portal da Unico · Configurações › Branches', rows: [['Lima', 'Peru · ativa', ''], ['Marca', 'Padrão da organização', '']], p: 'Crie uma branch para a operação de Lima, no Peru.', tool: 'unico.branches.criar({ nome: "Lima", pais: "PE" })', r: 'Branch Lima criada e ativa, usando a marca padrão.', act: function () { if (!h().branches.some(function (b) { return b.id === 'lima'; })) { h().branches.push({ id: 'lima', uid: '3f9d77a0-c1b5-46e2', name: 'Lima', country: 'Peru', on: true, fresh: true }); } openSet({ modal: null }); } },
+      { chip: 'Pessoas novas em 7 dias', icon: 'M3 20h18M6 20V11M11 20V5M16 20v-6M21 20V9', rt: 'Portal da Unico · Dashboard · últimos 7 dias', rows: [['Human Tokens novos', '18.420', ''], ['Human Tokens verificados', '59.810', '']], p: 'Quantas pessoas novas tivemos nos últimos 7 dias?', tool: 'unico.dashboard.resumo({ periodo: "7d" })', r: 'Foram 18.420 pessoas novas nos últimos 7 dias, em 59.810 Human Tokens verificados.', act: function () { Object.assign(h(), { tab: 0, period: 0, modal: null }); setTimeout(function () { self.hpAnim(); }, 0); } },
+      { chip: 'Pausar Bogotá', icon: 'M9 5v14M15 5v14', rt: 'Portal da Unico · Configurações › Branches', rows: [['Bogotá', 'Pausada até segunda', ''], ['Capturas novas', 'Suspensas', '']], p: 'Pause a branch de Bogotá até segunda-feira.', tool: 'unico.branches.atualizar({ id: "bogota", ativa: false })', r: 'Bogotá pausada. Novas capturas nessa branch ficam suspensas até segunda.', act: function () { h().branches.forEach(function (b) { if (b.id === 'bogota') { b.on = false; } }); openSet({ modal: null }); } }
+    ];
+  }
+
+  hpVals() {
+    this.hpInit();
+    var self = this, h = this.hp, fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
+    var TABS = [['Dashboard', 'M4 11l8-7 8 7v9h-5v-6H9v6H4z'], ['Configurações', 'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z']];
+    var COL = [['Preto', '#161616'], ['Verde', '#1A7F4B'], ['Azul', '#2F5BD3'], ['Vinho', '#8A2A4A'], ['Laranja', '#C2571A']];
+    var RAD = [['Retos', 6, 2, 6], ['Suaves', 28, 18, 14], ['Redondos', 90, 80, 999]];
+    var PER = ['7 dias', '30 dias', '90 dias'], REP = [[18420, 41390, 1120], [81300, 176200, 4870], [240900, 512400, 13950]];
+    var seg = function (on) { return { bg: on ? '#FFFFFF' : 'transparent', fg: on ? '#161616' : '#6E6E69', sh: on ? '0 1px 2px rgba(22,22,22,0.08), 0 4px 12px rgba(22,22,22,0.06)' : 'none', sel: on ? 'true' : 'false' }; };
+    var PERD = ['Últimos 7 dias', 'Este mês', 'Este ano'], DSH = [['59.810', '18.420', '94,0%', '6,0%', '3.820'], ['248.300', '77.400', '94,0%', '6,0%', '15.860'], ['1.182.040', '368.800', '94,1%', '5,9%', '74.210']][h.period];
+    var c = h.seen ? (h.cnt == null ? 1 : h.cnt) : 0, CN = function (str) { var pct = /%$/.test(str), dec = /,/.test(str), n = parseFloat(str.replace(/\./g, '').replace(',', '.').replace('%', '')) * c; var o = dec ? n.toFixed(1).replace('.', ',') : String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); return o + (pct ? '%' : ''); };
+    DSH = DSH.map(CN);
+    if (!this._hpW) { this._hpW = setTimeout(function () { self._hpW = 0; self.hpWatch(); }, 300); }
+    var AG = this.hpAgents(), rp = REP[h.period], mx = Math.max(rp[0], rp[1]);
+    var bars = [42, 55, 48, 61, 58, 66, 52, 70, 64, 72, 68, 80, 74, 86].map(function (v, i) { var n = Math.round(v * 0.32 + (i % 3) * 2); return { n: n, k: v - n }; });
+    var branch = h.branches[Math.min(h.br, h.branches.length - 1)];
+    return {
+      hpTabs: TABS.map(function (t, i) { var on = h.tab === i; return { label: t[0], icon: t[1], sel: on ? 'true' : 'false', bg: on ? '#F1F1EE' : 'transparent', fg: on ? '#161616' : '#5C5C58', sh: 'none', pick: function () { self.hpSet({ tab: i, mode: 0, modal: null }); if (i === 0) { setTimeout(function () { self.hpAnim(); }, 0); }; } }; }),
+      hpMonths: (function () { var M = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov'], V = [6.1, 7.4, 8.2, 8.9, 9.8, 10.6, 11.2, 12.4, 13.1, 14.6, 15.9], N = [2.8, 3.1, 3.0, 3.3, 3.4, 3.2, 3.6, 3.5, 3.7, 3.9, 4.1]; return M.map(function (m, i) { return { d: 300 + i * 55, d2: 360 + i * 55, m: m, v: Math.round(V[i] / 16 * 100), n: Math.round(N[i] / 16 * 100) }; }); })(),
+      hpCards: [['Human Tokens verificados', DSH[0], 'Processos Human Token concluídos com sucesso.'], ['Human Tokens novos', DSH[1], 'Pessoas distintas que usaram o produto pela primeira vez.']].map(function (k, i) { return { label: k[0], value: k[1], desc: k[2], d: i * 80 }; }),
+      hpStatus: [[DSH[2], 'Concluídos', '#E6F2D3', '#3E6B1F', DSH[0]], [DSH[3], 'Cancelados', '#FBE1E4', '#B4233C', DSH[4]]].map(function (x) { return { pct: x[0], label: x[1], bg: x[2], fg: x[3], n: x[4] }; }),
+      hpPeriodName: PERD[h.period], hpNextPeriod: function () { h.period = (h.period + 1) % 3; self.hpAnim(); },
+      hpIsDash: h.tab === 0, hpGb: h.seen ? 'hp-gb hp-gb' + (h.ak || 0) : 'hp-gb hp-gbw', hpCf: h.seen ? 'hp-cf' + (h.ak || 0) : 'hp-cfw', hpIsSet: h.tab === 1,
+      hpIsOrg: h.tab === 1 && h.sub === 0, hpIsApi: h.tab === 1 && h.sub === 1, hpIsUsers: h.tab === 1 && h.sub === 2, hpIsBr: h.tab === 1 && h.sub === 3,
+      hpSubs: ['Organização', 'Chaves de API', 'Usuários', 'Branches'].map(function (l, i) { var on = h.sub === i; return { label: l, sel: on ? 'true' : 'false', ul: on ? '#161616' : 'transparent', fw: on ? 500 : 400, fg: on ? '#161616' : '#5C5C58', pick: function () { self.hpSet({ sub: i }); } }; }),
+      hpModalOn: h.modal !== null && h.modal !== undefined,
+      hpModalTitle: h.modal === 'new' ? 'Criar branch' : 'Editar branch',
+      hpMName: h.modal === 'new' ? h.mname : (typeof h.modal === 'number' && h.branches[h.modal] ? h.branches[h.modal].name : ''),
+      hpMNameSet: function (e) { var v = e.target.value || ''; if (h.modal === 'new') { h.mname = v; } else if (typeof h.modal === 'number' && h.branches[h.modal]) { h.branches[h.modal].name = v; } self.forceUpdate(); },
+      hpMCountry: h.modal === 'new' ? 'Brasil' : (typeof h.modal === 'number' && h.branches[h.modal] ? h.branches[h.modal].country : ''),
+      hpMSave: h.modal === 'new' ? 'Criar branch' : 'Salvar',
+      hpMSaveBg: (h.modal === 'new' && !h.mname.trim()) ? '#D6D1C4' : '#161616',
+      hpOpenNew: function () { self.hpSet({ modal: 'new', mname: '' }); },
+      hpCloseModal: function () { self.hpSet({ modal: null }); },
+      hpSaveModal: function () { if (h.modal === 'new') { var n = h.mname.trim(); if (!n) { return; } h.branches.push({ id: 'n' + Date.now(), uid: Math.random().toString(16).slice(2, 10) + '-' + Math.random().toString(16).slice(2, 6) + '-4' + Math.random().toString(16).slice(2, 5), name: n, country: 'Brasil', on: true, fresh: true }); } self.hpSet({ modal: null }); },
+      hpTitle: TABS[h.tab][0], hpBranchName: branch.name,
+      hpKpis: [['Reconhecimentos hoje', '12.480', '+8% vs. ontem', '#1A7F4B'], ['Pessoas novas', '3.210', '+3%', '#1A7F4B'], ['Já conhecidas', '9.020', '+11%', '#1A7F4B'], ['Tentativas bloqueadas', '250', '−14%', '#5C5C58']].map(function (k) { return { label: k[0], value: k[1], delta: k[2], dc: k[3] }; }),
+      hpBars: bars,
+      hpFeed: [['7b21…e4d0', 'Já conhecida · login', '#1A7F4B', 'agora'], ['c58d…91aa', 'Pessoa nova · conta criada', '#161616', 'há 12 s'], ['a3f9…2c6f', 'Já conhecida · recuperação', '#1A7F4B', 'há 40 s'], ['—', 'Bloqueada · tela na frente da câmera', '#C2571A', 'há 1 min']].map(function (f) { return { tok: f[0], res: f[1], dot: f[2], when: f[3] }; }),
+      hpColors: COL.map(function (c, i) { var on = h.color === i; return { name: c[0], hex: c[1], sel: on ? 'true' : 'false', ring: on ? '0 0 0 3px #FFFFFF, 0 0 0 5px ' + c[1] : '0 0 0 1px rgba(22,22,22,0.1)', pick: function () { self.hpSet({ color: i }); } }; }),
+      hpRadii: RAD.map(function (r, i) { var s = seg(h.rad === i); s.label = r[0]; s.pick = function () { self.hpSet({ rad: i }); }; return s; }),
+      hpColor: COL[h.color][1], hpRad: RAD[h.rad][1], hpRadIn: RAD[h.rad][2], hpBtnRad: RAD[h.rad][3], hpCta: h.cta,
+      hpCtaSet: function (e) { self.hpSet({ cta: e.target.value || '' }); },
+      hpBranches: h.branches.map(function (b, i) { return { uid: (b.uid || '') + '…', edit: function () { self.hpSet({ modal: i }); }, name: b.name, country: b.country, tokens: fmt(b.tokens), people: b.people, on: b.on ? 'true' : 'false', tbg: b.on ? '#1A7F4B' : '#D9D9D4', tx: b.on ? 16 : 0, bg: b.fresh ? '#F3F5EA' : 'transparent', ul: h.br === i ? 'underline' : 'none', pick: function () { self.hpSet({ br: i }); }, toggle: function () { b.on = !b.on; self.forceUpdate(); } }; }),
+      hpAddBranch: function () { var n = h.branches.length + 1; h.branches.push({ id: 'nova' + n, name: 'Nova branch ' + (n - 3 > 0 ? n - 3 : n), country: '—', tokens: 0, people: '0', on: false, fresh: true }); self.forceUpdate(); },
+      hpPeriods: PER.map(function (p, i) { var s = seg(h.period === i); s.label = p; s.pick = function () { self.hpSet({ period: i }); }; return s; }),
+      hpRep: [['Pessoas novas', rp[0], '#161616'], ['Já conhecidas', rp[1], '#B9C08F'], ['Tentativas bloqueadas', rp[2], '#C2571A']].map(function (k) { return { label: k[0], value: fmt(k[1]), pct: Math.max(2, Math.round(k[1] / mx * 100)), col: k[2] }; }),
+      hpSched: [['Resumo semanal por branch', 'Toda segunda, 9h', 'PDF'], ['Tentativas bloqueadas', 'Diário', 'CSV'], ['Auditoria de reconhecimentos', 'Mensal', 'CSV']].map(function (s) { return { name: s[0], freq: s[1], fmt: s[2] }; }),
+      hpExportLabel: h.exported ? 'Exportado' : 'Exportar CSV',
+      hpExport: function () { self.hpSet({ exported: true }); clearTimeout(self._hpEx); self._hpEx = setTimeout(function () { self.hpSet({ exported: false }); }, 1800); },
+      hpCopyLabel: h.copied ? 'Copiado' : 'Copiar',
+      hpCopy: function () { try { navigator.clipboard.writeText('[comando de conexão do MCP da Unico]'); } catch (e) {} self.hpSet({ copied: true }); clearTimeout(self._hpCp); self._hpCp = setTimeout(function () { self.hpSet({ copied: false }); }, 1800); },
+      hpIsPanel: h.mode === 0, hpIsAgent: h.mode === 1,
+      hpCols: 'auto minmax(0, 1fr)',
+      hpModeNote: h.mode === 1 ? 'Ou peça ao seu agente. O MCP da Unico faz o mesmo que o painel.' : 'Configure marca, branches e relatórios direto no painel.',
+      hpModes: [['Pelo portal', 'Configure com cliques, sem código', 'M3 4h18v16H3zM9 4v16M13 9h5M13 13h5'], ['Pelo agente', 'Peça no Claude, ChatGPT ou Cursor, via MCP', 'M13 2L4 14h7l-1 8 9-12h-7z']].map(function (m, i) { var on = h.mode === i; return { label: m[0], desc: m[1], icon: m[2], sel: on ? 'true' : 'false', bg: on ? '#161616' : 'transparent', fg: on ? '#FFFFFF' : '#161616', sh: on ? '0 12px 24px -14px rgba(22,22,22,0.6)' : 'none', sub: on ? 'rgba(255,255,255,0.66)' : '#6E6E69', ibg: on ? 'rgba(255,255,255,0.12)' : '#FFFFFF', ifg: on ? '#FFFFFF' : '#5F7034', pick: function () { self.hpSet({ mode: i }); } }; }),
+      hpGoAgent: function () { self.hpSet({ mode: 1 }); },
+      agPh: h.ag >= 0 ? 'Responder…' : 'Peça algo para a Unico…',
+      agResT: h.ag >= 0 ? AG[h.ag].rt : '',
+      agRows: h.ag >= 0 ? AG[h.ag].rows.map(function (r) { return { k: r[0], v: r[1], sw: r[2] || 'transparent', swd: r[2] ? 'inline-block' : 'none' }; }) : [],
+      agSeePortal: function () { self.hpSet({ mode: 0 }); var el = document.getElementById('hp-app'); if (el) { try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} } },
+      agList: AG.map(function (a, i) { var on = h.ag === i; return { p: a.p, chip: a.chip, icon: a.icon, sel: on ? 'true' : 'false', bg: on ? '#EFEDE5' : '#FFFFFF', fg: '#3D3B35', sh: on ? 'inset 0 0 0 1px #D8D4C7' : 'inset 0 0 0 1px #E6E3D9', run: function () { self.hpRunAgent(i); } }; }),
+      agIdle: h.ag < 0, agHas: h.ag >= 0,
+      agP: h.ag >= 0 ? AG[h.ag].p : '', agTool: h.ag >= 0 ? AG[h.ag].tool : '', agR: h.ag >= 0 ? AG[h.ag].r : '',
+      ag1: h.agStep >= 1 ? '1' : '0', ag2: h.agStep >= 2 ? '1' : '0', ag3: h.agStep >= 3 ? '1' : '0'
+    };
+  }
+  renderVals() { return Object.assign(this._pageVals(), this.hpVals(), this.navVals(1)); }
+  navVals(active) {
+    var self = this, st = this.state, onPhoto = !!st.overDark, sc = !!st.scrolled;
+    var o = st.menuOpen == null ? -1 : st.menuOpen, last = st.lastMenu == null ? 1 : st.lastMenu;
+    var cmd = '[comando de conexão do MCP da Unico]';
+    var M = [
+      { label: 'Início', href: 'index.html', items: [] },
+      { label: 'Recursos', href: 'Tecnologia.html', items: [
+        { icon: 'M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M10 10h4v4h-4z', title: 'Human Token', text: 'Como uma selfie vira um token único por pessoa.', href: 'Tecnologia.html' },
+        { icon: 'M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z', title: 'Human Platform', text: 'Personalize a marca, gerencie branches e acompanhe relatórios.', href: 'HumanPlatform.html' },
+        { icon: 'M8 2v5M16 2v5M5 7h14v6H5zM12 13v9', title: 'Integração', text: 'MCP, SDK e API.', href: 'Integracao.html' },
+        { icon: 'M5 3h14v18H5zM9 8h6M9 12h6M9 16h3', title: 'Documentação', text: 'Guias, primeiros passos e status.', href: '#pagina-docs' }
+      ] },
+      { label: 'Empresa', href: 'Sobre.html', items: [
+        { icon: 'M4 21V7h8v14M12 11h8v10M7 10h2v2H7zM7 14h2v2H7zM15 14h2v2h-2z', title: 'Sobre a Unico', text: 'Quem somos e o que fazemos.', href: 'Sobre.html' },
+        { icon: 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M16 3.5a4 4 0 0 1 0 7.5M22 21v-1a6 6 0 0 0-4-5.6', title: 'Clientes', text: 'Histórias de quem usa a Unico.', href: 'Clientes.html' },
+        { icon: 'M4 4h16v4H4zM4 11h10M4 15h16M4 19h8', title: 'Newsroom', text: 'Notícias, lançamentos e kit de imprensa.', href: '#pagina-newsroom' },
+        { icon: 'M4 4h16v16H4zM8 8h8v8H8z', title: 'Central de confiança', text: 'Certificações e privacidade.', href: 'Confianca.html' },
+        { icon: 'M4 20 20 4M11 4h9v9', title: 'Carreiras', text: 'Venha construir com a gente.', href: '#carreiras' }
+      ] }
+    ];
+    var megaHas = o > 0 && M[o] && M[o].items.length > 0;
+    return {
+      menus: M.map(function (m, i) {
+        var has = m.items.length > 0, on = o === i && has;
+        var cur = (o >= 0 && M[o] && M[o].items.length > 0) ? o : last, vis = has && cur === i;
+        return {
+          label: m.label, href: m.href, items: m.items,
+          expanded: has ? (on ? 'true' : 'false') : null,
+          color: active === i ? '#161616' : (onPhoto ? (o === i ? '#FFFFFF' : 'rgba(255,255,255,0.86)') : (o === i ? '#3F3F3B' : '#8A8A85')),
+          current: active === i ? 'page' : 'false',
+          open: function () { self.setState(has ? { menuOpen: i, lastMenu: i, startOn: false } : { menuOpen: i }); },
+          cols: m.items.length === 3 ? 3 : 2, idir: m.items.length === 3 ? 'column' : 'row', ialign: m.items.length === 3 ? 'flex-start' : 'center',
+          story: !!m.story, grid: !m.story, pos: vis ? 'relative' : 'absolute',
+          has: has, op: vis ? 1 : 0, vis: (vis && megaHas) ? 'visible' : 'hidden', pe: (vis && megaHas) ? 'auto' : 'none', hidden: (vis && megaHas) ? 'false' : 'true'
+        };
+      }),
+      menuClose: function () { self.setState({ menuOpen: -1 }); },
+      megaOp: megaHas ? 1 : 0, megaY: megaHas ? 0 : -6, megaPE: megaHas ? 'auto' : 'none',
+      actX: Math.max(0, active) * 104,
+      hovBg: onPhoto ? 'rgba(255,255,255,0.18)' : 'rgba(22,22,22,0.06)',
+      hovX: Math.max(0, o) * 104,
+      hovOp: (o >= 0 && o !== active) ? 1 : 0,
+      hdrOp: onPhoto ? 0 : 1,
+      pillBg: onPhoto ? 'rgba(255,255,255,0.16)' : 'rgba(241,241,239,0.62)',
+      pillBorder: onPhoto ? 'rgba(255,255,255,0.32)' : 'rgba(255,255,255,0.75)',
+      logoFill: onPhoto ? '#FFFFFF' : '#161616',
+      enColor: onPhoto ? '#FFFFFF' : '#5C5C58',
+      ctaBg: onPhoto ? '#FFFFFF' : '#161616',
+      secBg: onPhoto ? 'rgba(255,255,255,0.18)' : 'rgba(22,22,22,0.06)',
+      secFg: onPhoto ? '#FFFFFF' : '#161616',
+      ctaFg: onPhoto ? '#161616' : '#FFFFFF',
+      navPad: sc ? 4 : 14, itemH: sc ? 34 : 40, ctaH: sc ? 36 : 44, ctaPx: sc ? 16 : 20, navFs: sc ? 13.5 : 14.5,
+      langOp: self.state.langOn ? 1 : 0,
+      langY: self.state.langOn ? 0 : -6,
+      langPE: self.state.langOn ? 'auto' : 'none',
+      langRot: self.state.langOn ? 180 : 0,
+      langExpanded: self.state.langOn ? 'true' : 'false',
+      langOpen: function () { clearTimeout(self.langTimer); if (!self.state.langOn) self.setState({ langOn: true, startOn: false, menuOpen: -1 }); },
+      langClose: function () { clearTimeout(self.langTimer); self.langTimer = setTimeout(function () { self.setState({ langOn: false }); }, 450); },
+      langToggle: function () { clearTimeout(self.langTimer); self.setState({ langOn: !self.state.langOn, startOn: false, menuOpen: -1 }); },
+      startOp: st.startOn ? 1 : 0, startY: st.startOn ? 0 : -6, startPE: st.startOn ? 'auto' : 'none', startExpanded: st.startOn ? 'true' : 'false',
+      startOpen: function () { self.setState({ startOn: true, langOn: false, menuOpen: -1 }); },
+      startClose: function () { self.setState({ startOn: false }); },
+      capOn: (self.state.capPh && self.state.capPh !== 'idle') ? '1' : '0',
+      capHidden: (self.state.capPh && self.state.capPh !== 'idle') ? 'false' : 'true',
+      capCls: '',
+      capGlow: ['fast', 'fastVerify', 'fastSuccess', 'camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0 ? 0.7 : 0,
+      capSquare: ['fast', 'fastVerify', 'fastSuccess', 'camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0,
+      capCamOp: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capLive && !self.state.capSim) ? 1 : 0,
+      capMediaS: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capLive) ? 1 : 0.15,
+      capSimOp: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capSim) ? 1 : 0,
+      capScanWait: self.state.capPh === 'camScan' && !self.state.capLive, capScanLive: self.state.capPh === 'camScan' && !!self.state.capLive,
+      capCamVerify: self.state.capPh === 'camVerify', capCamFail: self.state.capPh === 'camFail',
+      capCamTxtOp: ['camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0 ? 1 : 0,
+      capCamT1: self.state.capPh === 'camVerify' ? 'Gerando o Human Token' : (self.state.capPh === 'camScan' ? ['Abrindo a câmera', 'Encaixe o rosto na moldura', 'Mova a cabeça em círculo', 'Perfeito, fique parado'][self.state.capLive ? (self.state.capStep || 1) : 0] : ''),
+      capCamT2: self.state.capPh === 'camVerify' ? ((self.state.capT || 0) / 1000).toFixed(2).replace('.', ',') + ' s' : (self.state.capPh === 'camScan' ? ['Permita o acesso para continuar', 'Segure o celular na altura dos olhos', 'Até completar o contorno', 'Capturando'][self.state.capLive ? (self.state.capStep || 1) : 0] : ''),
+      capCamKey: (self.state.capPh || '') + (self.state.capStep || 0),
+      capCamBtn: self.state.capPh === 'fast' || self.state.capPh === 'fastVerify',
+      capCam: function () { self.capCamera(); },
+      capFast: self.state.capPh === 'fast', capVerify: self.state.capPh === 'fastVerify', capOk: self.state.capPh === 'fastSuccess', capPill: self.state.capPh === 'pill',
+      capTime: ((self.state.capT || 0) / 1000).toFixed(2).replace('.', ',') + ' s',
+      capTok: self.state.capTok || '',
+      capOpen: function () { self.capStart(); },
+      capClose: function () { self.capStop(); },
+      capAgain: function () { self.capStart(); },
+      startToggle: function () { self.setState({ startOn: !self.state.startOn }); },
+      navCmd: cmd,
+      navCopyLabel: st.navCopied ? 'Copiado' : 'Copiar',
+      navCopy: function () { try { navigator.clipboard.writeText(cmd); } catch (e) {} self.setState({ navCopied: true }); clearTimeout(self.navCopyTimer); self.navCopyTimer = setTimeout(function () { self.setState({ navCopied: false }); }, 1800); }
+    };
+  }
+  _pageVals() {
+    var self = this, st = this.state, onDark = !!st.overDark;
+    var cmd = '[comando de conexão do MCP da Unico]', URL = '[url do MCP da Unico]';
+    var cfg = JSON.stringify({ url: URL }), b64 = ''; try { b64 = btoa(cfg); } catch (e) {}
+    /* [nome, grupo, tipo, trecho, link] · tipo: link abre o app, cmd/cfg/url copiam */
+    var CLI = [
+      ['Claude Code', 0, 'cmd', 'claude mcp add --transport http unico ' + URL, ''],
+      ['Codex', 0, 'cmd', 'codex mcp add unico --url ' + URL, ''],
+      ['Gemini CLI', 0, 'cmd', 'gemini mcp add --transport http unico ' + URL, ''],
+      ['Cursor', 1, 'link', '// .cursor/mcp.json\n{\n  "mcpServers": {\n    "unico": { "url": "' + URL + '" }\n  }\n}', 'cursor://anysphere.cursor-deeplink/mcp/install?name=unico&config=' + encodeURIComponent(b64)],
+      ['VS Code', 1, 'link', '// .vscode/mcp.json\n{\n  "servers": {\n    "unico": { "type": "http", "url": "' + URL + '" }\n  }\n}', 'vscode:mcp/install?' + encodeURIComponent(JSON.stringify({ name: 'unico', type: 'http', url: URL }))],
+      ['Windsurf', 1, 'cfg', '// ~/.codeium/windsurf/mcp_config.json\n{\n  "mcpServers": {\n    "unico": { "serverUrl": "' + URL + '" }\n  }\n}', ''],
+      ['Claude', 2, 'url', '# Configurações › Conectores › Adicionar conector personalizado\n' + URL, ''],
+      ['ChatGPT', 2, 'url', '# Configurações › Conectores › Criar\n' + URL, '']
+    ];
+    var LOGO = {"Claude Code": "44dfa30dacd07a2b46ce7d0ea2e904bc.png", "Codex": "ec3c85d687b59c012872b463a44d1ec6.png", "Gemini CLI": "8d572d4f725a614537c04b571e33b4bc.png", "Cursor": "bf997b0b27b8ce986f37bbd6cfc97d40.png", "VS Code": "e5ddf6e97009ce9f35bb0a1b74140289.png", "Windsurf": "74bea8926aadde6a0a15b267b6990215.png", "Claude": "44dfa30dacd07a2b46ce7d0ea2e904bc.png", "ChatGPT": "e52e6f4cba9f4658a2be718dd641d830.png"};
+    var cur = CLI[st.mcp], kind = cur[2];
+    var ACT = { link: 'Abrir no ' + cur[0], cmd: 'Copiar comando', cfg: 'Copiar configuração', url: 'Copiar URL' };
+    var NOTE = { link: 'Abre o ' + cur[0] + ' já com a Unico configurada. Se preferir, cole a configuração acima.', cmd: 'Cole no terminal, dentro do seu projeto.', cfg: 'Cole no arquivo de configuração do ' + cur[0] + '.', url: 'Siga o caminho acima e cole a URL do MCP da Unico.' };
+    var HINT = ['comando', 'abre o app', 'URL'];
+    var cv = st.cons === 0 ? 'unico' : 'cliente';
+    var SDK = [
+      ['Web', "import { Unico } from '[pacote web da Unico]'\n\nconst unico = new Unico({ chave: '[sua chave pública]' })\nconst r = await unico.token({ consentimento: '" + cv + "' })\n\nif (r.jaCadastrada) irParaLogin(r.token)\nelse criarConta(r.token)"],
+      ['iOS', "import UnicoSDK\n\nlet r = try await Unico.token(consentimento: ." + cv + ")\n\nif r.jaCadastrada { irParaLogin(r.token) }\nelse { criarConta(r.token) }"],
+      ['Android', "import [pacote Android da Unico]\n\nval r = Unico.token(this, consentimento = Consentimento." + cv.toUpperCase() + ")\n\nif (r.jaCadastrada) irParaLogin(r.token)\nelse criarConta(r.token)"]
+    ];
+    var API = [
+      ['curl', 'curl -X POST [url da API]/tokens \\\n  -H "Authorization: Bearer $UNICO_KEY" \\\n  -F selfie=@selfie.jpg'],
+      ['Node', "import { Unico } from '[pacote Node da Unico]'\n\nconst unico = new Unico(process.env.UNICO_KEY)\nconst r = await unico.token(selfie)"],
+      ['Python', "from unico import Unico  # [pacote a confirmar]\n\nunico = Unico(os.environ['UNICO_KEY'])\nr = unico.token(selfie)"],
+      ['Go', "client := unico.New(os.Getenv(\"UNICO_KEY\"))  // [pacote a confirmar]\n\nr, err := client.Token(ctx, selfie)"]
+    ];
+    var darkTab = function (list, cur, key) { return list.map(function (it, i) { var on = cur === i; return { label: it[0], sel: on ? 'true' : 'false', bg: on ? '#2A2A27' : 'transparent', fg: on ? '#FFFFFF' : '#8A8A85', pick: function () { var o = {}; o[key] = i; self.setState(o); } }; }); };
+    var lightTab = function (labels, cur, key) { return labels.map(function (lb, i) { var on = cur === i; return { label: lb, sel: on ? 'true' : 'false', bg: on ? '#FFFFFF' : 'transparent', fg: on ? '#161616' : '#6E6E69', sh: on ? '0 1px 2px rgba(22,22,22,0.08), 0 4px 12px rgba(22,22,22,0.06)' : 'none', pick: function () { var o = {}; o[key] = i; self.setState(o); } }; }); };
+    var cl = function (k) { return st.copied === k ? 'Copiado' : 'Copiar'; };
+    return {
+      mcpCmd: cmd,
+      copyLabel: cl('cta'), copy: function () { self.copyText('cta', cmd); },
+      menus: [['Início', 'index.html'], ['Tecnologia', 'Tecnologia.html'], ['Integração', '#topo'], ['Clientes', 'Clientes.html'], ['Empresa', 'Sobre.html']].map(function (m, i) {
+        return { label: m[0], href: m[1], current: i === 2 ? 'page' : 'false', color: i === 2 ? '#161616' : (onDark ? 'rgba(255,255,255,0.86)' : '#8A8A85') };
+      }),
+      hdrOp: onDark ? 0 : 1,
+      pillBg: onDark ? 'rgba(255,255,255,0.16)' : 'rgba(241,241,239,0.62)',
+      pillBorder: onDark ? 'rgba(255,255,255,0.32)' : 'rgba(255,255,255,0.75)',
+      logoFill: onDark ? '#FFFFFF' : '#161616',
+      enColor: onDark ? '#FFFFFF' : '#5C5C58',
+      ctaBg: onDark ? '#FFFFFF' : '#161616',
+      ctaFg: onDark ? '#161616' : '#FFFFFF',
+      navPad: st.scrolled ? 4 : 14,
+      itemH: st.scrolled ? 34 : 40,
+      ctaH: st.scrolled ? 36 : 44,
+      ctaPx: st.scrolled ? 16 : 20,
+      navFs: st.scrolled ? 13.5 : 14.5,
+
+      d0: st.demo >= 0 ? '1' : '0', d1: st.demo >= 1 ? '1' : '0', d2: st.demo >= 2 ? '1' : '0', d3: st.demo >= 3 ? '1' : '0',
+
+      copyCmdLabel: st.copied === 'c0' ? 'Copiado' : 'Copiar comando',
+      connCopy: function () { self.copyText('c0', CLI[0][3]); self.setState({ last: 0, moreOn: false }); },
+      connClaude: function () { self.copyText('c6', URL); self.setState({ last: 6, moreOn: false }); },
+      cursorHref: CLI[3][4], connCursor: function () { self.setState({ last: 3, moreOn: false }); },
+      moreExp: st.moreOn ? 'true' : 'false', plusRot: st.moreOn ? 45 : 0,
+      moreOp: st.moreOn ? 1 : 0, moreY: st.moreOn ? 0 : -4, morePE: st.moreOn ? 'auto' : 'none', moreVis: st.moreOn ? 'visible' : 'hidden',
+      moreToggle: function () { self.setState({ moreOn: !self.state.moreOn }); },
+      moreClose: function () { if (self.state.moreOn) { self.setState({ moreOn: false }); } },
+      moreItems: [1, 2, 4, 5, 7].map(function (i) {
+        var c = CLI[i], k = c[2];
+        return { label: c[0], logo: LOGO[c[0]], hint: k === 'link' ? 'abre o app' : (k === 'cmd' ? 'copia o comando' : (k === 'cfg' ? 'copia a configuração' : 'copia a URL')), isLink: k === 'link', isCopy: k !== 'link', href: c[4] || '#mcp',
+          act: function () { if (k !== 'link') { self.copyText('c' + i, k === 'url' ? URL : c[3]); } self.setState({ last: i, moreOn: false }); } };
+      }),
+      connShow: st.last != null,
+      connNote: st.last == null ? '' : (function (c) { var n = c[0]; return { link: 'Abrindo o ' + n + ' com a Unico já configurada. Se não abrir, cole esta configuração no MCP do ' + n + ':', cmd: 'Comando do ' + n + ' copiado. Cole no terminal, dentro do seu projeto.', cfg: 'Configuração copiada. Cole no arquivo de configuração do ' + n + '.', url: 'URL copiada. No ' + n + ', vá em Configurações › Conectores, adicione um conector e cole.' }[c[2]]; })(CLI[st.last]),
+      connCmd: st.last == null ? '' : (CLI[st.last][2] === 'url' ? URL : CLI[st.last][3].split('\n').filter(function (l) { return l.indexOf('//') !== 0 && l.indexOf('#') !== 0; }).join(' ')),
+
+      sdkTabs: lightTab(['Web', 'iOS', 'Android'], st.sdk, 'sdk').map(function (t, i) { t.icon = ['M3 4h18v16H3zM3 9h18M6 6h2v1H6z', 'M7 2h10v20H7zM10 5h4', 'M7 2h10v20H7zM7 17h10M11 19h2'][i]; return t; }),
+      consTabs: lightTab(['Unico Side', 'Client Side'], st.cons, 'cons'),
+      sdkLines: this.hl(SDK[st.sdk][1]),
+      copySdkLabel: cl('sdk'), copySdk: function () { self.copyText('sdk', SDK[st.sdk][1]); },
+      consNote: st.cons === 0 ? 'Unico Side: o widget da Unico mostra o termo de consentimento junto da captura, no formato exigido em cada região.' : 'Client Side: você mostra o termo no seu fluxo, com o seu texto e o seu design, antes de abrir a câmera.',
+
+      apiTabs: darkTab(API, st.api, 'api'), apiLines: this.hl(API[st.api][1]),
+      copyApiLabel: cl('api'), copyApi: function () { self.copyText('api', API[st.api][1]); }
+    };
+  }
+}
+</script>
+
+</body>
+</html>
