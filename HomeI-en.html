@@ -13,6 +13,18 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
 <style>
 article.u-card{transition:background-color .5s ease}article.u-card[data-on="1"]{background-color:#EEF0E4 !important}
+#u-uc>article.u-card{isolation:isolate}
+#u-uc>article.u-card::before{content:"";position:absolute;inset:-25%;z-index:-1;pointer-events:none;background:url(assets/img/fundos/gradiente-onda.jpg) 42% 50%/cover no-repeat;filter:blur(6px) saturate(1.08);opacity:0;scale:1.18;transition:opacity .8s ease,scale 1.6s cubic-bezier(.2,.7,.2,1)}
+#u-uc>article.u-card[data-on="1"]::before{opacity:1;scale:1;animation:uGradDrift 14s ease-in-out infinite alternate}
+@keyframes uGradDrift{0%{translate:0 0;rotate:0deg}50%{translate:-2% 1.5%;rotate:1.5deg}100%{translate:1.5% -1%;rotate:-1deg}}
+#u-uc>article.u-card::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to top,rgba(255,255,255,.62) 0%,rgba(255,255,255,.4) 38%,rgba(255,255,255,0) 68%);opacity:0;transition:opacity .8s ease}
+#u-uc>article.u-card[data-on="1"]::after{opacity:1}
+#u-uc>article.u-card[data-on="1"] p{color:rgba(22,22,22,.8) !important}
+#u-uc>article.u-card[data-on="1"] .u-ic{color:#2F3A12 !important}
+#u-uc>article.u-card[data-on="1"] .u-arrow{background:#FFFFFF !important}
+#u-uc>article.u-card .u-arrow{opacity:0;translate:0 8px;pointer-events:none;transition:opacity .4s ease,translate .5s cubic-bezier(.2,.7,.2,1),transform .35s cubic-bezier(.2,.7,.2,1),background-color .3s}
+#u-uc>article.u-card[data-on="1"] .u-arrow,#u-uc>article.u-card .u-arrow:focus-visible{opacity:1;translate:0 0;pointer-events:auto}
+@media (prefers-reduced-motion: reduce){#u-uc>article.u-card::before{animation:none !important;transition:opacity .3s ease}}
 
 html{scroll-behavior:smooth}[id]{scroll-margin-top:88px}@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 
@@ -127,7 +139,7 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
 @media (prefers-reduced-motion: reduce){.u-ic svg,.u-ic svg *{animation:none !important}}
 
 .u-ucprog{display:none}
-@media (max-width: 760px){.u-pin{height:calc(100svh + 2100px) !important}.u-stage{height:100svh !important;padding:76px 0 28px !important}.u-uchd{width:auto !important;padding:0 24px calc(28px - 12px * var(--uh, 0)) !important}#u-uc{gap:12px !important;padding:0 24px !important}#u-uc>article{width:min(340px, calc(100vw - 64px)) !important;height:calc(clamp(320px, calc(100svh - 300px), 500px) + var(--uh, 0) * 60px) !important;transform:scale(calc(.94 + var(--q) * .06));transform-origin:50% 100%}#u-uc>article>div{left:24px !important;right:24px !important;bottom:24px !important}#u-uc>article h3{font-size:24px !important}.u-ucprog{display:block;position:relative;height:3px;margin:24px 24px 0;border-radius:3px;background:#E4E4E0;overflow:hidden}.u-ucprog>span{position:absolute;inset:0;border-radius:3px;background:#161616;transform-origin:0 50%;transform:scaleX(var(--prog, 0))}}
+@media (max-width: 760px){.u-pin{height:calc(100svh + 2560px) !important}.u-stage{height:100svh !important;padding:76px 0 28px !important}.u-uchd{width:auto !important;padding:0 24px calc(28px - 12px * var(--uh, 0)) !important}#u-uc{gap:12px !important;padding:0 24px !important}#u-uc>article{width:min(340px, calc(100vw - 64px)) !important;height:calc(clamp(320px, calc(100svh - 300px), 500px) + var(--uh, 0) * 60px) !important;transform:scale(calc(.94 + var(--q) * .06));transform-origin:50% 100%}#u-uc>article>div{left:24px !important;right:24px !important;bottom:24px !important}#u-uc>article h3{font-size:24px !important}.u-ucprog{display:block;position:relative;height:3px;margin:24px 24px 0;border-radius:3px;background:#E4E4E0;overflow:hidden}.u-ucprog>span{position:absolute;inset:0;border-radius:3px;background:#161616;transform-origin:0 50%;transform:scaleX(var(--prog, 0))}}
 @media (prefers-reduced-motion: reduce){.u-ucprog{display:none !important}}
 @media (prefers-reduced-motion: reduce){.u-pin{height:auto !important}.u-stage{position:static !important;height:auto !important;overflow:visible !important}#u-uc{transform:none !important;}#u-uc>article{transform:none !important;box-shadow:none !important}#u-uc{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px !important}#u-uc>article{scroll-snap-align:start}}
 
@@ -531,7 +543,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 
     <!-- 3. Casos de uso -->
     <sc-if value="{{show_casos}}" hint-placeholder-val="{{true}}">
-<section id="casos" class="u-pin" style="position: relative; margin-top: 144px; height: calc(min(100vh, 920px) + 2600px)">
+<section id="casos" class="u-pin" style="position: relative; margin-top: 144px; height: calc(min(100vh, 920px) + 3170px)">
       <div class="u-stage" style="position: sticky; top: 0; height: min(100vh, 920px); overflow: hidden; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding: 88px 0 24px">
       <div class="u-uchd" style="width: calc(100% - 48px); max-width: 1200px; margin: 0 auto; padding: 0 24px calc(48px - 24px * var(--uh, 0))">
         <h2 style="margin: 0; font-size: calc(clamp(28px, 3.2vw, 44px) * (1 - 0.36 * var(--uh, 0))); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">What changes in your product<br><span style="color: #8A8A85">when every person has just one token</span></h2>
@@ -1654,12 +1666,16 @@ class Component extends DCLogic {
         if (total <= 0) { tr.style.setProperty('--p', '0'); tr.style.setProperty('--tx', '0px'); return; }
         var r = sec.getBoundingClientRect();
         var prog = Math.min(1, Math.max(0, -r.top / total));
-        var n = tr.children.length, shift = Math.max(0, tr.scrollWidth - tr.clientWidth);
-        tr.style.setProperty('--p', (prog * (n - 1)).toFixed(3));
-        tr.style.setProperty('--tx', (-prog * shift).toFixed(1) + 'px');
-        var pg = document.getElementById('u-ucprog'); if (pg) { pg.style.setProperty('--prog', prog.toFixed(3)); }
-        var uh = Math.min(1, prog / 0.12); uh = uh * uh * (3 - 2 * uh); sec.style.setProperty('--uh', uh.toFixed(3));
-        var on = Math.round(prog * (n - 1));
+        // os cards terminam de passar em 82% do trajeto; o resto segura o último card em destaque
+        var cp = Math.min(1, prog / 0.82);
+        // anda além do fim o mesmo tanto da margem esquerda, para o último card não terminar colado na borda direita
+        var n = tr.children.length, extra = parseFloat(getComputedStyle(tr).paddingLeft) || 0;
+        var shift = Math.max(0, tr.scrollWidth - tr.clientWidth) + extra;
+        tr.style.setProperty('--p', (cp * (n - 1)).toFixed(3));
+        tr.style.setProperty('--tx', (-cp * shift).toFixed(1) + 'px');
+        var pg = document.getElementById('u-ucprog'); if (pg) { pg.style.setProperty('--prog', cp.toFixed(3)); }
+        var uh = Math.min(1, prog / 0.1); uh = uh * uh * (3 - 2 * uh); sec.style.setProperty('--uh', uh.toFixed(3));
+        var on = Math.round(cp * (n - 1));
         for (var i = 0; i < n; i++) { var c = tr.children[i]; var v = i === on ? '1' : '0'; if (c.getAttribute('data-on') !== v) { c.setAttribute('data-on', v); } }
       });
     };
