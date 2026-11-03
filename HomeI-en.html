@@ -126,7 +126,7 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
 @media (prefers-reduced-motion: reduce){.u-ic svg,.u-ic svg *{animation:none !important}}
 
 .u-ucprog{display:none}
-@media (max-width: 760px){.u-pin{height:calc(100svh + 2100px) !important}.u-stage{height:100svh !important;padding:76px 0 28px !important}.u-uchd{width:auto !important;padding:0 24px 28px !important}#u-uc{gap:12px !important;padding:0 24px !important}#u-uc>article{width:min(340px, calc(100vw - 64px)) !important;height:clamp(320px, calc(100svh - 300px), 500px) !important;transform:scale(calc(.94 + var(--q) * .06));transform-origin:50% 100%}#u-uc>article>div{left:24px !important;right:24px !important;bottom:24px !important}#u-uc>article h3{font-size:24px !important}.u-ucprog{display:block;position:relative;height:3px;margin:24px 24px 0;border-radius:3px;background:#E4E4E0;overflow:hidden}.u-ucprog>span{position:absolute;inset:0;border-radius:3px;background:#161616;transform-origin:0 50%;transform:scaleX(var(--prog, 0))}}
+@media (max-width: 760px){.u-pin{height:calc(100svh + 2100px) !important}.u-stage{height:100svh !important;padding:76px 0 28px !important}.u-uchd{width:auto !important;padding:0 24px calc(28px - 12px * var(--uh, 0)) !important}#u-uc{gap:12px !important;padding:0 24px !important}#u-uc>article{width:min(340px, calc(100vw - 64px)) !important;height:calc(clamp(320px, calc(100svh - 300px), 500px) + var(--uh, 0) * 60px) !important;transform:scale(calc(.94 + var(--q) * .06));transform-origin:50% 100%}#u-uc>article>div{left:24px !important;right:24px !important;bottom:24px !important}#u-uc>article h3{font-size:24px !important}.u-ucprog{display:block;position:relative;height:3px;margin:24px 24px 0;border-radius:3px;background:#E4E4E0;overflow:hidden}.u-ucprog>span{position:absolute;inset:0;border-radius:3px;background:#161616;transform-origin:0 50%;transform:scaleX(var(--prog, 0))}}
 @media (prefers-reduced-motion: reduce){.u-ucprog{display:none !important}}
 @media (prefers-reduced-motion: reduce){.u-pin{height:auto !important}.u-stage{position:static !important;height:auto !important;overflow:visible !important}#u-uc{transform:none !important;}#u-uc>article{transform:none !important;box-shadow:none !important}#u-uc{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px !important}#u-uc>article{scroll-snap-align:start}}
 
@@ -233,6 +233,15 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 .u-stack2{grid-template-columns:1fr !important}
 }
 @media (prefers-reduced-motion: reduce){.u-mnav,.u-mrow,.u-mfoot,.u-msub,.u-msub>div{transition:none !important;transform:none !important}}
+
+.u-dring rect{stroke-dasharray:100;stroke-dashoffset:100;opacity:0}
+.u-dst[data-on="1"] .u-dring rect{opacity:1;animation:uDring 6s linear forwards}
+@keyframes uDring{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+.u-dstory:active .u-dring rect,.u-dstory:has(:focus-visible) .u-dring rect{animation-play-state:paused}
+.u-dst{transition:background-color .45s ease,transform .3s cubic-bezier(.2,.7,.2,1)}.u-dst:hover{transform:translateY(-2px)}
+.u-dst:focus-visible{outline:2px solid #161616;outline-offset:8px}
+.u-dlink svg{transition:transform .3s cubic-bezier(.2,.7,.2,1)}.u-dlink:hover svg{transform:translate(2px,-2px)}
+@media (prefers-reduced-motion: reduce){.u-dst[data-on="1"] .u-dring rect{animation:none;stroke-dashoffset:0}.u-dst,.u-dtxt{transition:none !important}}
 </style>
 </helmet>
 <div style="background: #FFFFFF; color: #161616; font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased">
@@ -250,6 +259,14 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
           <sc-for list="{{cfgItems}}" as="c" hint-placeholder-count="7">
             <button type="button" role="switch" aria-checked="{{c.on}}" onClick="{{c.toggle}}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 0 6px; border: 0; border-radius: 10px; background: transparent; cursor: pointer; text-align: left; font: 400 14px 'Geist', sans-serif; color: #161616"><span>{{c.label}}</span><span aria-hidden="true" style="flex: none; position: relative; width: 32px; height: 18px; border-radius: 999px; background: {{c.track}}; transition: background-color .2s"><span style="position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 1px 2px rgba(0,0,0,0.2); transform: translateX({{c.knob}}px); transition: transform .2s cubic-bezier(.2,.7,.2,1)"></span></span></button>
           </sc-for>
+        </div>
+        <div style="margin-top: 8px; padding: 10px 6px; border-top: 1px solid #EDEDEA; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 14px; color: #161616">Testimonials layout</span>
+          <div role="radiogroup" aria-label="Testimonials layout" style="display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: #F1F1EE">
+            <sc-for list="{{cfgModels}}" as="md" hint-placeholder-count="2">
+              <button type="button" role="radio" aria-checked="{{md.sel}}" onClick="{{md.pick}}" style="flex: 1 1 0; min-height: 32px; padding: 0 10px; border: 0; border-radius: 999px; background: {{md.bg}}; color: {{md.fg}}; box-shadow: {{md.sh}}; cursor: pointer; font: 500 13px 'Geist', sans-serif">{{md.label}}</button>
+            </sc-for>
+          </div>
         </div>
         <div style="margin-top: 8px; padding: 10px 6px 0; border-top: 1px solid #EDEDEA; display: flex; align-items: center; justify-content: space-between; gap: 8px">
           <span style="font-size: 12px; line-height: 1.35; color: #8A8A85">Applies to this view only.</span>
@@ -515,11 +532,11 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
     <sc-if value="{{show_casos}}" hint-placeholder-val="{{true}}">
 <section id="casos" class="u-pin" style="position: relative; margin-top: 144px; height: calc(min(100vh, 920px) + 2600px)">
       <div class="u-stage" style="position: sticky; top: 0; height: min(100vh, 920px); overflow: hidden; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding: 88px 0 24px">
-      <div class="u-uchd" style="width: calc(100% - 48px); max-width: 1200px; margin: 0 auto; padding: 0 24px 48px">
-        <h2 style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">What changes in your product<br><span style="color: #8A8A85">when every person has just one token</span></h2>
+      <div class="u-uchd" style="width: calc(100% - 48px); max-width: 1200px; margin: 0 auto; padding: 0 24px calc(48px - 24px * var(--uh, 0))">
+        <h2 style="margin: 0; font-size: calc(clamp(28px, 3.2vw, 44px) * (1 - 0.36 * var(--uh, 0))); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">What changes in your product<br><span style="color: #8A8A85">when every person has just one token</span></h2>
       </div>
       <div id="u-uc" style="--p: 0; --tx: 0px; display: flex; gap: 16px; padding: 0 max(24px, calc((100% - 1200px) / 2)); transform: translateX(var(--tx)); will-change: transform">
-        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 0, 0 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: clamp(380px, calc(min(100vh, 920px) - 300px), 560px); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
+        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 0, 0 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: calc(clamp(380px, calc(min(100vh, 920px) - 300px), 560px) + var(--uh, 0) * max(0px, min(100px, calc(min(100vh, 920px) - 590px)))); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
           <div style="position: absolute; left: 40px; right: 40px; bottom: 40px; display: flex; flex-direction: column">
             <span class="u-ic u-ic1" style="display: block; margin-bottom: 20px; color: #5F7034"><svg width="28" height="28" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges"><rect x="10" y="10" width="4" height="4" fill="currentColor" stroke="none"></rect><rect x="3" y="3" width="4" height="4"></rect><rect x="17" y="3" width="4" height="4"></rect><rect x="3" y="17" width="4" height="4"></rect><rect x="17" y="17" width="4" height="4"></rect><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3"></path></svg></span>
             <h3 style="margin: 0; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500">One token in every country.</h3>
@@ -538,7 +555,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 
         
 
-        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 1, 1 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: clamp(380px, calc(min(100vh, 920px) - 300px), 560px); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
+        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 1, 1 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: calc(clamp(380px, calc(min(100vh, 920px) - 300px), 560px) + var(--uh, 0) * max(0px, min(100px, calc(min(100vh, 920px) - 590px)))); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
           <div style="position: absolute; left: 40px; right: 40px; bottom: 40px; display: flex; flex-direction: column">
             <span class="u-ic u-ic2" style="display: block; margin-bottom: 20px; color: #5F7034"><svg width="28" height="28" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges"><path class="u-icf" d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"></path><rect class="u-ice" x="8" y="9" width="2" height="2" fill="currentColor" stroke="none"></rect><rect class="u-ice" x="14" y="9" width="2" height="2" fill="currentColor" stroke="none"></rect><path class="u-icm" d="M8.5 15h7"></path></svg></span>
             <h3 style="margin: 0; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500">Sign in with your face, no password.</h3>
@@ -557,7 +574,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 
         
 
-        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 2, 2 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: clamp(380px, calc(min(100vh, 920px) - 300px), 560px); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
+        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 2, 2 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: calc(clamp(380px, calc(min(100vh, 920px) - 300px), 560px) + var(--uh, 0) * max(0px, min(100px, calc(min(100vh, 920px) - 590px)))); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
           <div style="position: absolute; left: 40px; right: 40px; bottom: 40px; display: flex; flex-direction: column">
             <span class="u-ic u-ic3" style="display: block; margin-bottom: 20px; color: #5F7034"><svg width="28" height="28" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges"><path class="u-sh" d="M8 11V5h8v6"></path><rect x="5" y="11" width="14" height="10"></rect><rect x="11" y="14" width="2" height="4" fill="currentColor" stroke="none"></rect></svg></span>
             <h3 style="margin: 0; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500">Recover the account with your face.</h3>
@@ -576,7 +593,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 
         
 
-        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 3, 3 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: clamp(380px, calc(min(100vh, 920px) - 300px), 560px); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
+        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 3, 3 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: calc(clamp(380px, calc(min(100vh, 920px) - 300px), 560px) + var(--uh, 0) * max(0px, min(100px, calc(min(100vh, 920px) - 590px)))); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
           <div style="position: absolute; left: 40px; right: 40px; bottom: 40px; display: flex; flex-direction: column">
             <span class="u-ic u-ic4" style="display: block; margin-bottom: 20px; color: #5F7034"><svg width="28" height="28" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges"><rect x="3" y="3" width="18" height="18"></rect><path class="u-ck" d="M7.5 12.5l3 3 6-7"></path></svg></span>
             <h3 style="margin: 0; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500">Confirm actions with your face.</h3>
@@ -595,7 +612,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 
         
 
-        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 4, 4 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: clamp(380px, calc(min(100vh, 920px) - 300px), 560px); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
+        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 4, 4 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: calc(clamp(380px, calc(min(100vh, 920px) - 300px), 560px) + var(--uh, 0) * max(0px, min(100px, calc(min(100vh, 920px) - 590px)))); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
           <div style="position: absolute; left: 40px; right: 40px; bottom: 40px; display: flex; flex-direction: column">
             <span class="u-ic u-ic5" style="display: block; margin-bottom: 20px; color: #5F7034"><svg width="28" height="28" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges"><path d="M12 3l8 3v6c0 4.6-3.4 7.8-8 9-4.6-1.2-8-4.4-8-9V6z"></path><path class="u-x" d="M9 9l6 6"></path><path class="u-x u-x2" d="M15 9l-6 6"></path></svg></span>
             <h3 style="margin: 0; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500">Stop account takeovers.</h3>
@@ -614,7 +631,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 
         
 
-        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 5, 5 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: clamp(380px, calc(min(100vh, 920px) - 300px), 560px); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
+        <article class="u-card" style="--q: max(0, 1 - max(var(--p) - 5, 5 - var(--p)) * 1.4); box-shadow: 0 calc(var(--q) * 16px) calc(var(--q) * 48px) calc(var(--q) * -16px) rgba(22,22,22,0.10); position: relative; flex: none; width: min(420px, 82vw); height: calc(clamp(380px, calc(min(100vh, 920px) - 300px), 560px) + var(--uh, 0) * max(0px, min(100px, calc(min(100vh, 920px) - 590px)))); border-radius: 28px; background: #F4F4F2; color: #161616; overflow: hidden;">
           <div style="position: absolute; left: 40px; right: 40px; bottom: 40px; display: flex; flex-direction: column">
             <span class="u-ic u-ic6" style="display: block; margin-bottom: 20px; color: #5F7034"><svg width="28" height="28" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges"><rect class="u-hd" x="9" y="3" width="6" height="6" fill="currentColor" stroke="none"></rect><path d="M5 21v-7h14v7"></path></svg></span>
             <h3 style="margin: 0; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500">One person, one account, always.</h3>
@@ -689,21 +706,20 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
       <sc-if value="{{show_paraQuem}}" hint-placeholder-val="{{true}}">
 <h2 id="para-quem-titulo" style="margin: 0 0 40px; max-width: 900px; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 500">Who is Unico for?<span style="color: rgb(138, 138, 133)">&nbsp;For anyone who can't mistake one person for another.</span></h2>
       <div style="display: flex; flex-direction: column">
-        <a class="u-row" href="#empresas-globais" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 168px auto; align-items: center; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #ECECE8; color: #161616; text-decoration: none">
+        <a class="u-row" href="#empresas-globais" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: center; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #ECECE8; color: #161616; text-decoration: none">
           <span class="u-pqt" style="font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500">Global companies</span>
           <span style="font-size: 16px; line-height: 1.5; color: #6E6E69; max-width: 460px">One customer, one account, in every country where you operate.</span>
-          <span class="u-avs" aria-label="Global companies that use Unico" style="display: flex; align-items: center; justify-content: flex-end"><span title="Uber" style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; padding: 7px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 1px #E4E4E0, 0 0 0 3px #FFFFFF; margin-left: 0px; position: relative; z-index: 5"><img src="c29178edf9f6dafefc0dffaef9a4a993.png" alt="Uber" style="max-width: 100%; max-height: 100%; object-fit: contain"></span><span title="Nubank" style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; padding: 7px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 1px #E4E4E0, 0 0 0 3px #FFFFFF; margin-left: -9px; position: relative; z-index: 4"><img src="c676b56f3a417c658f017282ac20cdd3.png" alt="Nubank" style="max-width: 100%; max-height: 100%; object-fit: contain"></span><span title="Shopee" style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; padding: 8px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 1px #E4E4E0, 0 0 0 3px #FFFFFF; margin-left: -9px; position: relative; z-index: 3"><img src="1ba06b10a57992f4abf6a016cc6b7c2d.png" alt="Shopee" style="max-width: 100%; max-height: 100%; object-fit: contain"></span><span title="DiDi" style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; padding: 8px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 1px #E4E4E0, 0 0 0 3px #FFFFFF; margin-left: -9px; position: relative; z-index: 2"><img src="c0945114e1d112f07860c7091df67783.png" alt="DiDi" style="max-width: 100%; max-height: 100%; object-fit: contain"></span><span title="Meituan" style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; padding: 8px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 1px #E4E4E0, 0 0 0 3px #FFFFFF; margin-left: -9px; position: relative; z-index: 1"><img src="7559d506e17f1415d033b2cc537904c5.png" alt="Meituan" style="max-width: 100%; max-height: 100%; object-fit: contain"></span></span>
           <span class="u-arr" aria-hidden="true" style="font-size: 22px">→</span>
         </a>
-        <a class="u-row" href="#empresas-kyc" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 168px auto; align-items: center; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #ECECE8; border-bottom: 1px solid #ECECE8; color: #161616; text-decoration: none">
+        <a class="u-row" href="#empresas-kyc" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: center; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #ECECE8; border-bottom: 1px solid #ECECE8; color: #161616; text-decoration: none">
           <span class="u-pqt" style="font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 500">KYC companies</span>
           <span style="font-size: 16px; line-height: 1.5; color: #6E6E69; max-width: 460px">Your KYC tells you whose document it is. Unico tells you if the person has been there before.</span>
-          <span class="u-avs" aria-label="KYC companies that use Unico" style="display: flex; align-items: center; justify-content: flex-end"><span title="Persona" style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; padding: 8px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 1px #E4E4E0, 0 0 0 3px #FFFFFF; margin-left: 0px; position: relative; z-index: 3"><img src="716cc9b8669f5afff92c7db1f8bbc731.png" alt="Persona" style="max-width: 100%; max-height: 100%; object-fit: contain"></span><span title="Veridas" style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; padding: 8px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 1px #E4E4E0, 0 0 0 3px #FFFFFF; margin-left: -9px; position: relative; z-index: 2"><img src="24e7af29d4be610e49d4c14e317ab91c.png" alt="Veridas" style="max-width: 100%; max-height: 100%; object-fit: contain"></span><span title="Didit" style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; padding: 8px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 1px #E4E4E0, 0 0 0 3px #FFFFFF; margin-left: -9px; position: relative; z-index: 1"><img src="ccfb2cec6b7332d68c9772b79e484d02.png" alt="Didit" style="max-width: 100%; max-height: 100%; object-fit: contain"></span></span>
           <span class="u-arr" aria-hidden="true" style="font-size: 22px">→</span>
         </a>
       </div>
     </sc-if>
       <sc-if value="{{show_depo}}" hint-placeholder-val="{{true}}">
+<sc-if value="{{depoCards}}" hint-placeholder-val="{{true}}">
 <div class="u-quotes" style="margin: 64px 0 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px">
         <figure style="margin: 0; grid-column: span 6; min-height: 280px; box-sizing: border-box; padding: 28px; border-radius: 20px; background: #F4F4F2; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
           <blockquote style="margin: 0; max-width: 440px; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.35; letter-spacing: -0.015em; color: #161616">“They were two customers, one in Brazil and one in Mexico. With Unico, they’re one person.”</blockquote>
@@ -726,7 +742,27 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
           <span class="u-arr" aria-hidden="true" style="align-self: flex-start; font-size: 22px">→</span>
         </a>
       </div>
-      <p style="margin: 14px 0 0; font-size: 13px; color: #8A8A85">Sample testimonials, pending customer approval.</p>
+      </sc-if>
+      <sc-if value="{{depoStories}}" hint-placeholder-val="{{false}}">
+      <div class="u-dstory" style="margin: 32px 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px">
+        <div class="u-dtabs" role="tablist" aria-label="Customer stories" style="flex: none; max-width: 100%; display: flex; gap: 12px; padding: 6px; box-sizing: border-box; overflow-x: auto">
+          <sc-for list="{{depoItems}}" as="d" hint-placeholder-count="5">
+            <button type="button" role="tab" class="u-dst" data-on="{{d.on}}" aria-selected="{{d.sel}}" aria-label="{{d.n}}" onClick="{{d.pick}}" onAnimationEnd="{{d.end}}" style="position: relative; flex: none; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 13px; background: {{d.bg}}; display: grid; place-items: center; cursor: pointer">
+              <img src="{{d.logo}}" alt="" style="display: block; max-width: {{d.mw}}px; max-height: {{d.mh}}px; width: auto; height: auto">
+              <svg class="u-dring" aria-hidden="true" viewBox="0 0 54 54" style="position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; transform: translate(-50%, -50%); pointer-events: none; overflow: visible"><rect x="1" y="1" width="52" height="52" rx="16" pathLength="100" fill="none" stroke="{{d.c}}" stroke-width="2" stroke-linecap="round"></rect></svg>
+            </button>
+          </sc-for>
+        </div>
+        <div style="flex: 1 1 260px; min-width: 0; display: grid">
+          <sc-for list="{{depoItems}}" as="d" hint-placeholder-count="1">
+            <div class="u-dtxt" aria-hidden="{{d.hid}}" style="grid-area: 1 / 1; display: flex; flex-direction: column; gap: 6px; opacity: {{d.op}}; transform: translateY({{d.ty}}px); visibility: {{d.vis}}; transition: opacity .35s ease, transform .5s cubic-bezier(.2,.7,.2,1), visibility .35s">
+              <a class="u-dlink" href="{{d.h}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 24px; font-size: 16px; line-height: 1.2; letter-spacing: -0.01em; font-weight: 500; color: #161616; text-decoration: none">{{d.n}} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+              <p style="margin: 0; font-size: 15px; line-height: 1.45; color: #6E6E69">{{d.t}}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      </sc-if>
     </sc-if>
       <sc-if value="{{show_logos}}" hint-placeholder-val="{{true}}">
 <div style="margin: {{logosMt}}px 0 0; padding: {{logosPt}}px 0 0; border-top: {{logosBorder}}">
@@ -807,7 +843,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
   <div id="u-ibar" class="u-ibar" aria-hidden="true"></div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#1A7F4B","options":["#1A7F4B","#161616"]},"$preview":{"width":1440,"height":7200},"mostrarComoFunciona":{"editor":"boolean","default":true,"section":"Seções"},"mostrarCasosDeUso":{"editor":"boolean","default":true,"section":"Seções"},"mostrarDesenvolvedores":{"editor":"boolean","default":true,"section":"Seções"},"mostrarParaQuem":{"editor":"boolean","default":true,"section":"Seções"},"mostrarDepoimentos":{"editor":"boolean","default":false,"section":"Seções"},"mostrarLogosClientes":{"editor":"boolean","default":true,"section":"Seções"},"mostrarCertificacoes":{"editor":"boolean","default":false,"section":"Seções"}}'>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#1A7F4B","options":["#1A7F4B","#161616"]},"$preview":{"width":1440,"height":7200},"mostrarComoFunciona":{"editor":"boolean","default":true,"section":"Seções"},"mostrarCasosDeUso":{"editor":"boolean","default":true,"section":"Seções"},"mostrarDesenvolvedores":{"editor":"boolean","default":true,"section":"Seções"},"mostrarParaQuem":{"editor":"boolean","default":true,"section":"Seções"},"mostrarDepoimentos":{"editor":"boolean","default":false,"section":"Seções"},"modeloDepoimentos":{"editor":"enum","options":["Stories","Cards"],"default":"Stories","section":"Seções"},"mostrarLogosClientes":{"editor":"boolean","default":true,"section":"Seções"},"mostrarCertificacoes":{"editor":"boolean","default":false,"section":"Seções"}}'>
 // Captura Unico (fluxo rápido), portada do protótipo "Verificação Selfie".
 function uCapture(host) {
   var E = { mode: 'swirl', modeT: 0, parts: null, W: 280, H: 190, N: 720, timers: [], ph: 'idle', raf: 0, ps: null, view: null, stream: null };
@@ -1494,7 +1530,7 @@ class Component extends DCLogic {
     var selfC = this;
     this._cfgOut = function (e) { if (!selfC.state.cfgOn) { return; } var w = document.getElementById('u-cfgwrap'); if (w && w.contains(e.target)) { return; } selfC.setState({ cfgOn: false }); };
     document.addEventListener('click', this._cfgOut);
-    try { var sv = JSON.parse(localStorage.getItem('unico-home-secoes') || 'null'); if (sv && typeof sv === 'object') { this.setState({ secOv: sv }); } } catch (e) {}
+    try { var sv = JSON.parse(localStorage.getItem('unico-home-secoes') || 'null'); if (sv && typeof sv === 'object') { this.setState({ secOv: sv }); } } catch (e) {} try { var dm = localStorage.getItem('unico-home-depomodelo'); if (dm) { this.setState({ depoModel: dm }); } } catch (e) {}
     var self0 = this;
     this._anchor = function (e) {
       var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null; if (!a) { return; }
@@ -1620,6 +1656,7 @@ class Component extends DCLogic {
         tr.style.setProperty('--p', (prog * (n - 1)).toFixed(3));
         tr.style.setProperty('--tx', (-prog * shift).toFixed(1) + 'px');
         var pg = document.getElementById('u-ucprog'); if (pg) { pg.style.setProperty('--prog', prog.toFixed(3)); }
+        var uh = Math.min(1, prog / 0.12); uh = uh * uh * (3 - 2 * uh); sec.style.setProperty('--uh', uh.toFixed(3));
         var on = Math.round(prog * (n - 1));
         for (var i = 0; i < n; i++) { var c = tr.children[i]; var v = i === on ? '1' : '0'; if (c.getAttribute('data-on') !== v) { c.setAttribute('data-on', v); } }
       });
@@ -1768,6 +1805,9 @@ class Component extends DCLogic {
       show_casos: !!showVals.casos,
       show_dev: !!showVals.dev,
       show_paraQuem: !!showVals.paraQuem,
+      depoCards: !!showVals.depo && (self.state.depoModel || this.props.modeloDepoimentos || 'Stories') !== 'Stories', depoStories: !!showVals.depo && (self.state.depoModel || this.props.modeloDepoimentos || 'Stories') === 'Stories',
+      cfgModels: [['Stories', 'stories'], ['Cards', 'cards']].map(function (m) { var cur = (self.state.depoModel || self.props.modeloDepoimentos || 'Stories') === 'Stories' ? 'stories' : 'cards', on = cur === m[1]; return { label: m[0], sel: on ? 'true' : 'false', bg: on ? '#FFFFFF' : 'transparent', fg: on ? '#161616' : '#6E6E69', sh: on ? '0 1px 2px rgba(22,22,22,0.1)' : 'none', pick: function () { var v = m[1] === 'stories' ? 'Stories' : 'Cards'; var ov = Object.assign({}, self.state.secOv || {}); ov.depo = true; self.setState({ depoModel: v, secOv: ov, depoIx: 0 }); try { localStorage.setItem('unico-home-depomodelo', v); localStorage.setItem('unico-home-secoes', JSON.stringify(ov)); } catch (e) {} } }; }),
+      depoItems: (function () { var D = [['Nubank', '31a7dbe2a86f389895eef07e7843d8d4.png', '#820AD1', 'The same customer recognized in Brazil and in Mexico.', 'HistoriaNubank-en.html', 26, 13], ['Uber', 'ce9cd9c4f2898cad23d3fea8b465fe7d.png', '#000000', 'Someone banned in one country can’t come back under another name.', 'Clientes-en.html#historia-uber', 28, 10], ['Persona', 'c95a96cbbc34e1a94c658f398b689119.png', '#7379FD', 'Uniqueness inside KYC, without changing a single screen.', 'Clientes-en.html#historia-persona', 17, 19]], n = D.length, ix = ((self.state.depoIx || 0) % n + n) % n; return D.map(function (d, i) { var on = i === ix; return { n: d[0], logo: d[1], c: d[2], t: d[3], h: d[4], mw: d[5], mh: d[6], on: on ? '1' : '0', sel: on ? 'true' : 'false', bg: on ? d[2] : '#D9D9D5', op: on ? 1 : 0, ty: on ? 0 : 8, vis: on ? 'visible' : 'hidden', hid: on ? 'false' : 'true', pick: function () { self.setState({ depoIx: i }); }, end: function (e) { if (e && e.animationName && e.animationName !== 'uDring') { return; } if (i === ix) { self.setState({ depoIx: (i + 1) % n }); } } }; }); })(),
       show_depo: !!showVals.depo,
       logosBorder: (showVals.depo || !showVals.paraQuem) ? '1px solid #E4E4E0' : '0 solid transparent', logosMt: showVals.depo ? 48 : 16, logosPt: (showVals.depo || !showVals.paraQuem) ? 40 : 24,
       show_logos: !!showVals.logos,
@@ -1777,7 +1817,7 @@ class Component extends DCLogic {
       cfgToggle: function () { self.setState({ cfgOn: !self.state.cfgOn }); },
       cfgClose: function () { self.setState({ cfgOn: false }); },
       cfgItems: [['como', 'How it works'], ['casos', 'Use cases'], ['dev', 'However you want to use it'], ['paraQuem', 'Who it is for'], ['depo', 'Customer testimonials'], ['logos', 'Customer logos'], ['cert', 'Certifications']].map(function (it) { var on = !!showVals[it[0]]; return { label: it[1], on: on ? 'true' : 'false', track: on ? '#161616' : '#D9D9D5', knob: on ? 14 : 0, toggle: function () { var ov = Object.assign({}, self.state.secOv || {}); ov[it[0]] = !on; self.setState({ secOv: ov }); try { localStorage.setItem('unico-home-secoes', JSON.stringify(ov)); } catch (e) {} } }; }),
-      cfgReset: function () { self.setState({ secOv: {} }); try { localStorage.removeItem('unico-home-secoes'); } catch (e) {} },
+      cfgReset: function () { self.setState({ secOv: {}, depoModel: null }); try { localStorage.removeItem('unico-home-secoes'); localStorage.removeItem('unico-home-depomodelo'); } catch (e) {} },
       eggToggle: function () { clearTimeout(self._eggT); self.setState({ eggOn: !self.state.eggOn }); },
       eggEnter: function () { clearTimeout(self._eggT); },
       eggLeave: function () { clearTimeout(self._eggT); if (self.state.eggOn) self._eggT = setTimeout(function () { self.setState({ eggOn: false }); }, 1600); },
