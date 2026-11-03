@@ -101,7 +101,7 @@ a{color:#161616}a:hover{color:#000000}
 @media (prefers-reduced-motion: reduce){.u-in,.u-stage,.u-bar{animation:none}.u-btn,.u-rowb,.u-row .u-arr,.u-row .u-title{transition:none}}
 .u-sc{scrollbar-width:none;scroll-behavior:smooth}
 @media (max-width: 760px){.u-quotes>*{grid-column:1 / -1 !important;min-height:0 !important}}
-@media (max-width: 900px){.u-cta{grid-template-columns:1fr !important}.u-fcols{grid-template-columns:1fr 1fr !important}}
+@media (max-width: 900px){.u-cta{grid-template-columns:minmax(0, 1fr) !important}.u-fcols{grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) !important}}
 @media (max-width: 900px){.u-trust{grid-template-columns:1fr !important}}
 .u-row .u-arr{transition:transform .3s cubic-bezier(.2,.7,.2,1)}.u-row:hover .u-arr{transform:translateX(6px)}
 .u-pqt{transition:color .3s ease}.u-row:hover .u-pqt,.u-row:focus-visible .u-pqt{color:#5F7034}
@@ -129,7 +129,10 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
 @keyframes uIcHop{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-3px)}}
 @media (prefers-reduced-motion: reduce){.u-ic svg,.u-ic svg *{animation:none !important}}
 
-@media (max-width: 760px), (prefers-reduced-motion: reduce){.u-pin{height:auto !important}.u-stage{position:static !important;height:auto !important;overflow:visible !important}#u-uc{transform:none !important;}#u-uc>article{transform:none !important;box-shadow:none !important}#u-uc{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px !important}#u-uc>article{scroll-snap-align:start}}
+.u-ucprog{display:none}
+@media (max-width: 760px){.u-pin{height:calc(100svh + 2100px) !important}.u-stage{height:100svh !important;padding:76px 0 28px !important}.u-uchd{width:auto !important;padding:0 24px 28px !important}#u-uc{gap:12px !important;padding:0 24px !important}#u-uc>article{width:min(340px, calc(100vw - 64px)) !important;height:clamp(320px, calc(100svh - 300px), 500px) !important;transform:scale(calc(.94 + var(--q) * .06));transform-origin:50% 100%}#u-uc>article>div{left:24px !important;right:24px !important;bottom:24px !important}#u-uc>article h3{font-size:24px !important}.u-ucprog{display:block;position:relative;height:3px;margin:24px 24px 0;border-radius:3px;background:#E4E4E0;overflow:hidden}.u-ucprog>span{position:absolute;inset:0;border-radius:3px;background:#161616;transform-origin:0 50%;transform:scaleX(var(--prog, 0))}}
+@media (prefers-reduced-motion: reduce){.u-ucprog{display:none !important}}
+@media (prefers-reduced-motion: reduce){.u-pin{height:auto !important}.u-stage{position:static !important;height:auto !important;overflow:visible !important}#u-uc{transform:none !important;}#u-uc>article{transform:none !important;box-shadow:none !important}#u-uc{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px !important}#u-uc>article{scroll-snap-align:start}}
 
 @media (max-width: 760px){.u-menu,.u-mega{display:none !important}}
 .u-mi{transition:background-color .2s}
@@ -203,7 +206,38 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
 .u-stl{animation: u-stl 1.6s linear infinite} @keyframes u-stl{to{stroke-dashoffset: 8}} @media (prefers-reduced-motion: reduce){.u-stl{animation:none}}
 .u-mq{will-change: transform} @keyframes u-mq{to{transform: translateX(-50%)}} .u-bento:hover .u-mq{animation-play-state: paused} .u-mqt{transition: background-color .3s ease} .u-mqt:hover{background-color: #ECECE8} @media (prefers-reduced-motion: reduce){.u-mq{animation: none}}
 </style>
-<style>.u-lg{transition:background-color .2s}.u-lg:hover{background-color:#F6F6F4}</style>
+<style>.u-lg{transition:background-color .2s}.u-lg:hover{background-color:#F6F6F4}
+/* menu mobile */
+.u-burger{display:none}
+.u-mnav{display:none}
+.u-mnav{position:fixed;inset:0;z-index:70;flex-direction:column;background:#FFFFFF;color:#161616;font-family:'Geist','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s ease,transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s linear .45s;overscroll-behavior:contain}
+.u-mnav[data-open="1"]{opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.u-mrow{opacity:0;transform:translateY(12px);transition:opacity .35s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.u-mnav[data-open="1"] .u-mrow{opacity:1;transform:none}
+.u-mnav[data-open="1"] .u-mrow:nth-child(1){transition-delay:.06s}.u-mnav[data-open="1"] .u-mrow:nth-child(2){transition-delay:.1s}.u-mnav[data-open="1"] .u-mrow:nth-child(3){transition-delay:.14s}.u-mnav[data-open="1"] .u-mrow:nth-child(4){transition-delay:.18s}.u-mnav[data-open="1"] .u-mrow:nth-child(5){transition-delay:.22s}.u-mnav[data-open="1"] .u-mrow:nth-child(6){transition-delay:.26s}
+.u-mfoot{opacity:0;transform:translateY(12px);transition:opacity .35s ease .2s,transform .55s cubic-bezier(.2,.7,.2,1) .2s}
+.u-mnav[data-open="1"] .u-mfoot{opacity:1;transform:none}
+.u-msub{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1)}
+.u-msub[data-open="1"]{grid-template-rows:1fr}
+.u-msub>div{min-height:0;overflow:hidden;visibility:hidden;transition:visibility 0s linear .4s}
+.u-msub[data-open="1"]>div{visibility:visible;transition:visibility 0s}
+.u-mi2{transition:background-color .2s}.u-mi2:active,.u-mi2:hover{background-color:#F3F3EF}
+.u-burger:focus-visible,.u-mnav a:focus-visible,.u-mnav button:focus-visible{outline:2px solid #161616;outline-offset:2px}
+@media (max-width: 760px){
+html,body{overflow-x:clip}
+.u-hdr nav{grid-template-columns:1fr auto !important;padding-left:16px !important;padding-right:12px !important;gap:8px !important}
+#u-navpill{display:none !important}
+.u-dlang,.u-dtok{display:none !important}
+.u-burger{display:grid}
+.u-startdd{position:fixed !important;left:12px !important;right:12px !important;top:64px !important;width:auto !important;max-width:none !important}
+.u-mnav{display:flex}
+html:has(.u-mnav[data-open="1"]){overflow:hidden}
+#hero-titulo{font-size:clamp(38px, 11.4vw, 60px) !important}
+.u-egC{white-space:normal !important}
+.u-stack2{grid-template-columns:1fr !important}
+}
+@media (prefers-reduced-motion: reduce){.u-mnav,.u-mrow,.u-mfoot,.u-msub,.u-msub>div{transition:none !important;transform:none !important}}
+</style>
 </helmet>
 <div style="background: #FFFFFF; color: #161616; font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased">
 
@@ -239,6 +273,12 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
               <div class="u-captxt" style="position: absolute; left: 0; right: 0; top: 186px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center">
                 <div style="font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: 0.15px">Olhe para a tela</div>
                 <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6); font-variant-numeric: tabular-nums">Capturando automaticamente</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{capHelp}}" hint-placeholder-val="{{false}}">
+              <div class="u-captxt" style="position: absolute; left: 0; right: 0; top: 186px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center">
+                <div style="font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: 0.15px">Não deu para capturar</div>
+                <div style="font-size: 13px; line-height: 1.4; letter-spacing: 0.17px; color: rgba(0,0,0,0.6)">Sem problema, vamos te ajudar com a câmera</div>
               </div>
             </sc-if>
             <sc-if value="{{capVerify}}" hint-placeholder-val="{{false}}">
@@ -293,7 +333,8 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
       </div>
       </div>
       <div style="justify-self: end; display: flex; align-items: center; gap: 10px">
-        <div style="position: relative; z-index: 4" onMouseEnter="{{langOpen}}" onMouseLeave="{{langClose}}">
+        <button type="button" class="u-burger" onClick="{{mobToggle}}" aria-expanded="{{mobExp}}" aria-controls="u-mnav" aria-label="Abrir menu" style="order: 9; flex: none; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: {{secBg}}; color: {{secFg}}; place-items: center; cursor: pointer; transition: background-color .4s, color .4s"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"></path></svg></button>
+        <div class="u-dlang" style="position: relative; z-index: 4" onMouseEnter="{{langOpen}}" onMouseLeave="{{langClose}}">
           <button type="button" onClick="{{langToggle}}" aria-expanded="{{langExpanded}}" aria-haspopup="true" aria-label="Idioma: Português" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; border: 0; background: transparent; cursor: pointer; font: 500 14px 'Geist', sans-serif; color: {{enColor}}; transition: color .4s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"></path></svg><span>PT</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="transform: rotate({{langRot}}deg); transition: transform .3s"><path d="M6 9l6 6 6-6"></path></svg></button>
           <div onMouseEnter="{{langOpen}}" style="position: absolute; z-index: 5; right: 0; top: 100%; width: 320px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{langOp}}; transform: translateY({{langY}}px); pointer-events: {{langPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
             <div role="dialog" aria-label="Idioma" style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.2); padding: 12px; display: flex; flex-direction: column; gap: 4px">
@@ -304,10 +345,10 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
             </div>
           </div>
         </div>
-        <button type="button" class="u-btn u-sec" onClick="{{capOpen}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{secBg}}; color: {{secFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none" aria-label="Me tokenize: gerar meu Human Token">Me tokenize</button>
+        <button type="button" class="u-btn u-sec u-dtok" onClick="{{capOpen}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{secBg}}; color: {{secFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none" aria-label="Me tokenize: gerar meu Human Token">Me tokenize</button>
         <div style="position: relative" onMouseLeave="{{startClose}}">
           <button type="button" class="u-btn" onClick="{{startToggle}}" onMouseEnter="{{startOpen}}" aria-expanded="{{startExpanded}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{ctaBg}}; color: {{ctaFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none">Começar</button>
-          <div style="position: absolute; right: 0; top: 100%; width: 400px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{startOp}}; transform: translateY({{startY}}px); pointer-events: {{startPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
+          <div class="u-startdd" style="position: absolute; right: 0; top: 100%; width: 400px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{startOp}}; transform: translateY({{startY}}px); pointer-events: {{startPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
             <div style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.2); padding: 20px; display: flex; flex-direction: column; gap: 14px">
               <div style="display: flex; flex-direction: column; gap: 4px">
                 <span style="font-size: 16px; font-weight: 500">Conecte a Unico ao seu agente</span>
@@ -368,6 +409,45 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
       </div>
     </nav>
   </header>
+
+  <div id="u-mnav" class="u-mnav" data-open="{{mobOpen}}" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="{{mobHidden}}" onKeyDown="{{mobKey}}">
+    <div style="flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 72px; padding: 0 12px 0 16px; padding-top: env(safe-area-inset-top, 0px); box-sizing: border-box">
+      <a href="#topo" aria-label="Unico, página inicial" onClick="{{mobClose}}" style="display: flex; align-items: center; min-height: 44px"><svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47" fill="#161616"></path></svg></a>
+      <div style="display: flex; align-items: center; gap: 8px">
+        <div role="group" aria-label="Idioma" style="display: flex; align-items: center; gap: 2px; height: 44px; padding: 4px; box-sizing: border-box; border-radius: 999px; background: #F3F3EF"><span aria-current="true" lang="pt-BR" aria-label="Português" style="display: grid; place-items: center; min-width: 40px; height: 36px; padding: 0 10px; box-sizing: border-box; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(22,22,22,0.08); font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: #161616">PT</span><a href="HomeI-en.html" hreflang="en" lang="en" aria-label="English" onClick="{{mobClose}}" style="display: grid; place-items: center; min-width: 40px; height: 36px; padding: 0 10px; box-sizing: border-box; border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: #6E6E69">EN</a></div>
+        <button type="button" class="u-mclose" onClick="{{mobClose}}" aria-label="Fechar menu" style="width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: rgba(22,22,22,0.06); color: #161616; display: grid; place-items: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+      </div>
+    </div>
+    <nav aria-label="Menu" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 8px 16px 24px">
+      <ul style="margin: 0; padding: 0; list-style: none">
+        <sc-for list="{{menus}}" as="m" hint-placeholder-count="3">
+          <li class="u-mrow" style="border-bottom: 1px solid #EDEDEA">
+            <sc-if value="{{m.mHas}}" hint-placeholder-val="{{true}}">
+              <button type="button" onClick="{{m.mToggle}}" aria-expanded="{{m.mExp}}" aria-controls="{{m.mSubId}}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 68px; padding: 0 4px; border: 0; background: transparent; cursor: pointer; text-align: left; font-family: 'Geist', sans-serif; font-size: 28px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 500; color: #161616"><span style="display: inline-flex; align-items: center; gap: 10px">{{m.label}}<span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 50%; background: #1A7F4B; opacity: {{m.mDot}}"></span></span><span aria-hidden="true" style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #F3F3EF; color: #3F3F3B; display: grid; place-items: center; transform: rotate({{m.mRot}}deg); transition: transform .4s cubic-bezier(.2,.7,.2,1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></button>
+              <div id="{{m.mSubId}}" class="u-msub" data-open="{{m.mOpen}}">
+                <div>
+                  <ul style="margin: 0; padding: 0 0 16px; list-style: none; display: flex; flex-direction: column; gap: 2px">
+                    <sc-for list="{{m.mItems}}" as="it" hint-placeholder-count="4">
+                      <li><a class="u-mi2" href="{{it.href}}" onClick="{{it.close}}" style="display: flex; align-items: center; gap: 14px; min-height: 56px; padding: 8px; border-radius: 14px; text-decoration: none; color: #161616"><span style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: #F3F3EF"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F3F3B" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="{{it.icon}}"></path></svg></span><span style="min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15.5px; font-weight: 500">{{it.title}}</span><span style="font-size: 13.5px; line-height: 1.4; color: #6E6E69">{{it.text}}</span></span></a></li>
+                    </sc-for>
+                  </ul>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{m.mLink}}" hint-placeholder-val="{{false}}">
+              <a href="{{m.href}}" onClick="{{m.mClose}}" aria-current="{{m.mCur}}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 68px; padding: 0 4px; text-decoration: none; font-size: 28px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 500; color: #161616"><span style="display: inline-flex; align-items: center; gap: 10px">{{m.label}}<span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 50%; background: #1A7F4B; opacity: {{m.mDot}}"></span></span><span aria-hidden="true" style="flex: none; width: 36px; height: 36px; display: grid; place-items: center; font-size: 17px; color: #8A8A85">→</span></a>
+            </sc-if>
+          </li>
+        </sc-for>
+      </ul>
+    </nav>
+    <div class="u-mfoot" style="flex: none; display: flex; flex-direction: column; gap: 12px; padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid #EDEDEA">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
+        <button type="button" onClick="{{mobTok}}" style="min-height: 52px; padding: 0 16px; border: 0; border-radius: 999px; background: rgba(22,22,22,0.06); color: #161616; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500">Me tokenize</button>
+        <button type="button" onClick="{{mobStart}}" style="min-height: 52px; padding: 0 16px; border: 0; border-radius: 999px; background: #161616; color: #FFFFFF; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500">Começar</button>
+      </div>
+    </div>
+  </div>
 
   <main id="topo">
 
@@ -439,7 +519,7 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
     <sc-if value="{{show_casos}}" hint-placeholder-val="{{true}}">
 <section id="casos" class="u-pin" style="position: relative; margin-top: 144px; height: calc(min(100vh, 920px) + 2600px)">
       <div class="u-stage" style="position: sticky; top: 0; height: min(100vh, 920px); overflow: hidden; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; padding: 88px 0 24px">
-      <div style="width: calc(100% - 48px); max-width: 1200px; margin: 0 auto; padding: 0 24px 48px">
+      <div class="u-uchd" style="width: calc(100% - 48px); max-width: 1200px; margin: 0 auto; padding: 0 24px 48px">
         <h2 style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">O que muda no seu produto<br><span style="color: #8A8A85">quando cada pessoa tem um só token</span></h2>
       </div>
       <div id="u-uc" style="--p: 0; --tx: 0px; display: flex; gap: 16px; padding: 0 max(24px, calc((100% - 1200px) / 2)); transform: translateX(var(--tx)); will-change: transform">
@@ -547,6 +627,7 @@ article[data-on="1"] .u-ic6 .u-hd{animation:uIcHop 1.6s ease-in-out infinite}
           </div>
         </article>
       </div>
+      <div id="u-ucprog" class="u-ucprog" aria-hidden="true"><span></span></div>
       </div>
     </section>
     </sc-if>
@@ -747,7 +828,7 @@ function uCapture(host) {
   }
   function dims(ph) {
     if (ph === 'fastSuccess') { return [264, 378, 48]; }
-    if (ph === 'fast' || ph === 'fastVerify') { return [264, 320, 48]; }
+    if (ph === 'fast' || ph === 'fastVerify' || ph === 'fastHelp') { return [264, 320, 48]; }
     if (ph === 'camScan' || ph === 'camVerify' || ph === 'camFail') { return [300, 430, 48]; }
     if (ph === 'pill') { return [300, 50, 25]; }
     return navDims();
@@ -888,7 +969,7 @@ function uCapture(host) {
   }
   function setMode(m) {
     if (!E.parts) { initParts(); }
-    E.mode = m; E.modeT = performance.now();
+    E.mode = m; E.modeT = performance.now(); E.ringOn = m === 'ring';
     var cx = E.W / 2, cy = E.H / 2;
     if (m === 'u') { E.mode = 'form'; E.glyphOn = false; assign(uTargets(), true); }
     if (m === 'ring') { E.mode = 'form'; E.glyphOn = false; assign(ovalTargets(), true); }
@@ -937,7 +1018,7 @@ function uCapture(host) {
     v.dx += (vt.dx - v.dx) * 0.08; v.x = pw / 2 + v.dx; v.y += (vt.y - v.y) * 0.08; v.s += (vt.s - v.s) * 0.08;
     var vs = v.s > 1.2 ? 0.85 : Math.max(v.s < 0.4 ? 0.32 : 0.6, v.s);
     var cx = W / 2, cy = H / 2, m = E.mode, el = t - E.modeT;
-    if (m === 'form' && !E.glyphOn && E.stream && t - (E.lastSample || 0) > 700) { E.lastSample = t; var tg = camTargets(); if (tg) { assign(tg, false); } }
+    if (m === 'form' && !E.glyphOn && !E.ringOn && E.stream && t - (E.lastSample || 0) > 700) { E.lastSample = t; var tg = camTargets(); if (tg) { assign(tg, false); } }
     var flash = t < (E.flashUntil || 0), band = cy - 80 + ((el % 1200) / 1200) * 160;
     var blink = E.glyphOn && (t % 2300) < 170;
     if (E.glyphOn) {
@@ -1029,7 +1110,7 @@ function uCapture(host) {
       later(function () { setMode('glyph'); }, 750);
       later(function () { setMode('form'); }, 1000);
       var dur = 680 + Math.round(rnd() * 240);
-      later(function () { verifyThen('fastVerify', dur); }, 2500);
+      later(function () { if (E.ph !== 'fast') { return; } setPh('fastHelp'); setMode('swirl'); later(function () { if (E.ph === 'fastHelp') { api.runCamera(); } }, 1900); }, 2500);
     },
     runCamera: function () {
       begin();
@@ -1160,6 +1241,36 @@ function uHeroDots(cv) {
   };
 }
 class Component extends DCLogic {
+  renderVals() {
+    var self = this, v = this._uRV();
+    var on = !!self.state.mobOn, sub = self.state.mobSub == null ? -1 : self.state.mobSub;
+    var focusTo = function (sel) { setTimeout(function () { try { var el = document.querySelector(sel); if (el) { el.focus({ preventScroll: true }); } } catch (e) {} }, 60); };
+    var setMob = function (o, extra) { var st = Object.assign({ mobOn: o }, extra || {}); if (o) { st.startOn = false; st.langOn = false; st.menuOpen = -1; } else { st.mobSub = -1; } self.setState(st); focusTo(o ? '#u-mnav .u-mclose' : '.u-burger'); };
+    var close = function () { setMob(false); };
+    var hoverOK = function () { try { return !window.matchMedia('(hover: none)').matches; } catch (e) { return true; } };
+    ['startOpen', 'langOpen'].forEach(function (k) { var f = v[k]; if (typeof f === 'function') { v[k] = function (e) { if (hoverOK()) { return f(e); } }; } });
+    var cap = v.capOpen;
+    v.mobOpen = on ? '1' : '0';
+    v.mobExp = on ? 'true' : 'false';
+    v.mobHidden = on ? 'false' : 'true';
+    v.mobToggle = function () { setMob(!self.state.mobOn); };
+    v.mobClose = close;
+    v.mobKey = function (e) { if (e && e.key === 'Escape') { close(); } };
+    v.mobTok = function () { setMob(false); if (typeof cap === 'function') { setTimeout(function () { cap(); }, 280); } };
+    v.mobStart = function () { self.setState({ mobOn: false, mobSub: -1, startOn: true, langOn: false }); };
+    if (Array.isArray(v.menus)) {
+      v.menus = v.menus.map(function (m, i) {
+        var has = !!(m.items && m.items.length), op = has && sub === i, cur = m.current === 'page';
+        return Object.assign({}, m, {
+          mHas: has, mLink: !has, mOpen: op ? '1' : '0', mExp: op ? 'true' : 'false', mRot: op ? 180 : 0,
+          mCur: cur ? 'page' : 'false', mDot: cur ? 1 : 0, mClose: close, mSubId: 'u-msub-' + i,
+          mItems: has ? m.items.map(function (it) { return Object.assign({}, it, { close: close }); }) : [],
+          mToggle: function () { self.setState({ mobSub: self.state.mobSub === i ? -1 : i }); }
+        });
+      });
+    }
+    return v;
+  }
   constructor(props) {
     super(props);
     this.state = { copied: false, navActive: 0, navHover: -1, menuOpen: -1, lastMenu: 1, overPhoto: false, overDark: false, scrolled: false, heroIx: 2, startOn: false, heroP: 0 };
@@ -1513,6 +1624,7 @@ class Component extends DCLogic {
         var n = tr.children.length, shift = Math.max(0, tr.scrollWidth - tr.clientWidth);
         tr.style.setProperty('--p', (prog * (n - 1)).toFixed(3));
         tr.style.setProperty('--tx', (-prog * shift).toFixed(1) + 'px');
+        var pg = document.getElementById('u-ucprog'); if (pg) { pg.style.setProperty('--prog', prog.toFixed(3)); }
         var on = Math.round(prog * (n - 1));
         for (var i = 0; i < n; i++) { var c = tr.children[i]; var v = i === on ? '1' : '0'; if (c.getAttribute('data-on') !== v) { c.setAttribute('data-on', v); } }
       });
@@ -1534,7 +1646,7 @@ class Component extends DCLogic {
   capCamera() { this.capEnsure(); this.setState({ startOn: false }); this.capE.runCamera(); }
 
   componentWillUnmount() { document.removeEventListener('click', this._cfgOut); document.removeEventListener('click', this._anchor, true); clearTimeout(this._unlockT); if (this._unlock) { this._unlock(); } clearTimeout(this._rpT); clearTimeout(this._rpD); if (this.heroDots) { this.heroDots.destroy(); } if (this.capE) { this.capE.destroy(); } if (this.stopGlobe) { this.stopGlobe(); } if (this.stopViz) { this.stopViz(); } clearTimeout(this.copyTimer); window.removeEventListener('scroll', this.vScroll); window.removeEventListener('resize', this.vScroll); window.removeEventListener('scroll', this.heroScroll); window.removeEventListener('scroll', this.devScroll); window.removeEventListener('scroll', this.ucScroll); window.removeEventListener('resize', this.ucScroll); }
-  renderVals() {
+  _uRV() {
     var self = this;
     var secOv = this.state.secOv || {};
     var showVals = { como: (secOv.como != null ? secOv.como : (this.props.mostrarComoFunciona ?? true)), casos: (secOv.casos != null ? secOv.casos : (this.props.mostrarCasosDeUso ?? true)), dev: (secOv.dev != null ? secOv.dev : (this.props.mostrarDesenvolvedores ?? true)), paraQuem: (secOv.paraQuem != null ? secOv.paraQuem : (this.props.mostrarParaQuem ?? true)), depo: (secOv.depo != null ? secOv.depo : (this.props.mostrarDepoimentos ?? false)), logos: (secOv.logos != null ? secOv.logos : (this.props.mostrarLogosClientes ?? true)), cert: (secOv.cert != null ? secOv.cert : (this.props.mostrarCertificacoes ?? false)) };
@@ -1635,8 +1747,8 @@ class Component extends DCLogic {
       capOn: (self.state.capPh && self.state.capPh !== 'idle') ? '1' : '0',
       capHidden: (self.state.capPh && self.state.capPh !== 'idle') ? 'false' : 'true',
       capCls: '',
-      capGlow: ['fast', 'fastVerify', 'fastSuccess', 'camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0 ? 0.7 : 0,
-      capSquare: ['fast', 'fastVerify', 'fastSuccess', 'camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0,
+      capGlow: ['fast', 'fastHelp', 'fastVerify', 'fastSuccess', 'camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0 ? 0.7 : 0,
+      capSquare: ['fast', 'fastHelp', 'fastVerify', 'fastSuccess', 'camScan', 'camVerify', 'camFail'].indexOf(self.state.capPh) >= 0,
       capCamOp: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capLive && !self.state.capSim) ? 1 : 0,
       capMediaS: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capLive) ? 1 : 0.15,
       capSimOp: (['camScan', 'camVerify'].indexOf(self.state.capPh) >= 0 && self.state.capSim) ? 1 : 0,
@@ -1648,7 +1760,7 @@ class Component extends DCLogic {
       capCamKey: (self.state.capPh || '') + (self.state.capStep || 0),
       capCamBtn: self.state.capPh === 'fast' || self.state.capPh === 'fastVerify',
       capCam: function () { self.capCamera(); },
-      capFast: self.state.capPh === 'fast', capVerify: self.state.capPh === 'fastVerify', capOk: self.state.capPh === 'fastSuccess', capPill: self.state.capPh === 'pill',
+      capHelp: self.state.capPh === 'fastHelp', capFast: self.state.capPh === 'fast', capVerify: self.state.capPh === 'fastVerify', capOk: self.state.capPh === 'fastSuccess', capPill: self.state.capPh === 'pill',
       capTime: ((self.state.capT || 0) / 1000).toFixed(2).replace('.', ',') + ' s',
       capTok: self.state.capTok || '',
       capOpen: function () { self.capStart(); },
