@@ -291,6 +291,9 @@ a{color:#161616}a:hover{color:#000000}
               <img id="u-gshot" src="{{genShot}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: {{genShotOp}}; transition: opacity .6s ease">
               <canvas id="u-gcv" width="240" height="240" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none"></canvas>
               <sc-if value="{{genShowMeta}}" hint-placeholder-val="{{false}}">
+                <span style="position: absolute; left: 16px; top: 16px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(22,22,22,0.72); color: #FFFFFF; font-size: 12px; line-height: 1; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>Visível só para você</span>
+              </sc-if>
+              <sc-if value="{{genShowMeta}}" hint-placeholder-val="{{false}}">
                 <div class="u-gmeta" style="position: absolute; left: 16px; bottom: 16px; display: inline-flex; flex-direction: column; gap: 6px; padding: 10px 14px 11px; border-radius: 12px; background: rgba(255,255,255,0.95); box-shadow: 0 6px 20px rgba(0,0,0,0.15)">
                   <span style="font-size: 17px; font-weight: 500; letter-spacing: -0.01em; color: #161616; white-space: nowrap">{{genNameVal}}</span>
                   <span id="u-gtk" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: .03em; color: #3F3F3B">{{genTokenShow}}</span>
@@ -319,16 +322,23 @@ a{color:#161616}a:hover{color:#000000}
                 </div>
               </sc-if>
               <sc-if value="{{genStepDone}}" hint-placeholder-val="{{false}}">
-                <div style="display: flex; flex-direction: column; gap: 16px" aria-live="polite">
-                  <div style="display: flex; flex-direction: column; gap: 8px">
+                <div style="display: flex; flex-direction: column; gap: 18px" aria-live="polite">
+                  <div style="display: flex; flex-direction: column; gap: 6px">
                     <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #3F7A55"><span style="width: 7px; height: 7px; border-radius: 999px; background: #3FA66A"></span>Token emitido</span>
                     <span style="font-size: 26px; line-height: 1.1; font-weight: 500; letter-spacing: -0.03em">Prazer, {{genFirst}}.</span>
-                    <span style="font-size: 14px; line-height: 1.45; color: #5C5C58">Este é o seu Human Token. Nenhuma outra pessoa no mundo vai ter o mesmo.</span>
                   </div>
+                  <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px 18px 16px; border-radius: 16px; background: #F4F4F2">
+                    <span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #6E6E69">Seu Human Token</span>
+                    <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: clamp(22px, 2.3vw, 30px); line-height: 1; font-weight: 500; letter-spacing: .02em; color: #161616; white-space: nowrap">{{genTokenShow}}</span>
+                    <span style="display: block; height: 3px; border-radius: 3px; background: #3FA66A"></span>
+                    <span style="font-size: 13px; line-height: 1.45; color: #5C5C58">Um por pessoa. Nenhuma outra pessoa no mundo vai ter o mesmo.</span>
+                  </div>
+                  <p style="margin: 0; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.45; color: #5C5C58"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px; color: #3F7A55"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg><span>Sua foto aparece só para você, neste navegador. Ela não é enviada nem fica visível no site para outras pessoas.</span></p>
                   <div style="display: flex; flex-wrap: wrap; gap: 8px">
                     <button class="u-btn u-dark" type="button" onClick="{{genBack}}" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #161616; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Ver meu lugar na esfera</button>
                     <button class="u-btn u-light" type="button" onClick="{{genAgain}}" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #F4F4F2; color: #161616; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Gerar de novo</button>
                   </div>
+                  <a href="#para-quem" onClick="{{genApps}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding-top: 14px; border-top: 1px solid #ECECE8; color: #161616; font-size: 14px; font-weight: 500; text-decoration: none">Veja onde o Human Token é usado<span aria-hidden="true">→</span></a>
                 </div>
               </sc-if>
             </div>
@@ -536,6 +546,7 @@ class Component extends DCLogic {
       genStart: function () { self.genStart(); },
       genClose: function () { self.genClose(); },
       genBack: function () { self.genReturn(); },
+      genApps: function (e) { if (e && e.preventDefault) { e.preventDefault(); } self.genClose(); setTimeout(function () { var t = document.getElementById('para-quem'); if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }, 380); },
       genAgain: function () { self.genStop(); self.gRead = null; self.setState({ gen: 'name', genToken: null, genShot: '', genVid: false, genStatus: '' }); self.gIdleOn = true; self.gIdleT = self.now(); if (self.gIdle) { self.initDots(self.gIdle); } setTimeout(function () { var i = document.getElementById('u-gname'); if (i) { try { i.focus({ preventScroll: true }); i.select(); } catch (er) {} } }, 80); },
       genKey: function (e) { if (e && e.key === 'Escape') { self.genClose(); } },
       genBtnBg: light ? '#F4F4F2' : 'rgba(255,255,255,0.14)',
@@ -946,6 +957,7 @@ class Component extends DCLogic {
     if (R.o.ctx) { R.o.ctx.clearRect(0, 0, 240, 240); }
     var name = ((this.state && this.state.genName) || '').trim(), shot = this.genSnapshot(name);
     this.gShot = shot; this.genStop();
+    var gtk = document.getElementById('u-gtk'); if (gtk) { gtk.textContent = this.gTok; }
     this.setState({ gen: 'done', genToken: this.gTok, genShot: shot, genVid: false });
   }
   genReturn() {
