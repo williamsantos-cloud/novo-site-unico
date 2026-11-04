@@ -485,7 +485,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
     <!-- 1. Hero em painel -->
     <section aria-labelledby="hero-titulo" style="padding: clamp(72px, 11vh, 128px) 0 0">
       <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: center; text-align: center">
-        <h1 id="hero-titulo" class="u-hmove" style="margin: 0; display: grid; justify-items: center; text-align: center; color: #161616; font-size: clamp(48px, 7vw, 108px); line-height: 0.98; letter-spacing: -0.045em; font-weight: 500"><button type="button" class="u-egg" data-egg="{{eggOn}}" aria-pressed="{{eggPressed}}" onClick="{{eggToggle}}" onMouseEnter="{{eggEnter}}" onMouseLeave="{{eggLeave}}" style="all: unset; grid-area: 1 / 1; display: grid; justify-items: center; cursor: pointer; -webkit-tap-highlight-color: transparent"><span aria-hidden="true" class="u-introA" style="grid-area: 1 / 1"><span class="u-wA" style="display: inline-block; animation-delay: 0.15s">Reconhecimento</span> <span class="u-wA" style="display: inline-block; animation-delay: 0.29s">Humano</span></span><span class="u-egB" style="grid-area: 1 / 1"><span class="u-wB" style="display: inline-block; animation-delay: 2.75s">Cada</span> <span class="u-wB" style="display: inline-block; animation-delay: 2.86s">pessoa</span> <span class="u-wB" style="display: inline-block; animation-delay: 2.97s">é</span> <span class="u-wB" style="display: inline-block; animation-delay: 3.08s">única.</span></span><span class="u-egC" aria-hidden="true" style="grid-area: 1 / 1; white-space: nowrap">Cada token é <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: .72em; letter-spacing: -0.04em; color: #5F7034"><span class="u-egk">a</span><span class="u-egk">3</span><span class="u-egk">f</span><span class="u-egk">9</span><span class="u-egk">…</span><span class="u-egk">2</span><span class="u-egk">c</span><span class="u-egk">6</span><span class="u-egk">f</span></span></span></button></h1>
+        <h1 id="hero-titulo" class="u-hmove" style="margin: 0; display: grid; justify-items: center; text-align: center; color: #161616; font-size: clamp(48px, 7vw, 108px); line-height: 0.98; letter-spacing: -0.045em; font-weight: 500"><button type="button" class="u-egg" data-egg="{{eggOn}}" aria-pressed="{{eggPressed}}" onClick="{{eggToggle}}" onMouseEnter="{{eggEnter}}" onMouseLeave="{{eggLeave}}" style="all: unset; grid-area: 1 / 1; display: grid; justify-items: center; cursor: pointer; -webkit-tap-highlight-color: transparent"><span aria-hidden="true" class="u-introA" style="grid-area: 1 / 1"><span class="u-wA" style="display: inline-block; animation-delay: 0.15s">Reconhecimento</span> <span class="u-wA" style="display: inline-block; animation-delay: 0.29s">Humano</span></span><span class="u-egB" style="grid-area: 1 / 1"><span class="u-wB" style="display: inline-block; animation-delay: 2.75s">Cada</span> <span class="u-wB" style="display: inline-block; animation-delay: 2.86s">pessoa</span> <span class="u-wB" style="display: inline-block; animation-delay: 2.97s">é</span> <span class="u-wB" style="display: inline-block; animation-delay: 3.08s">única.</span></span><span class="u-egC" aria-hidden="true" style="grid-area: 1 / 1; white-space: nowrap">Cada <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: .72em; letter-spacing: -0.04em; color: #5F7034"><span class="u-egk">{{egk1}}</span><span class="u-egk">{{egk2}}</span><span class="u-egk">{{egk3}}</span><span class="u-egk">{{egk4}}</span><span class="u-egk">{{egk5}}</span><span class="u-egk">{{egk6}}</span><span class="u-egk">{{egk7}}</span><span class="u-egk">{{egk8}}</span><span class="u-egk">{{egk9}}</span></span> é único.</span></button></h1>
         <p class="u-in" style="margin: 22px 0 0; max-width: 540px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.5; color: #5C5C58; animation-delay: 5.35s">Um token por pessoa, em qualquer país, sem depender de documento. Pronto no seu produto em minutos.</p>
         <div class="u-in" style="margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; animation-delay: 5.5s"><a class="u-btn" href="#hero" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #161616; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 500">Ver como funciona <span aria-hidden="true">↓</span></a><button type="button" class="u-btn u-sec" onClick="{{capOpen}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; background: #F1F1EF; color: #161616; cursor: pointer; font: 500 15px 'Geist', sans-serif">Gerar meu Human Token</button></div>
       </div>
@@ -1694,7 +1694,18 @@ class Component extends DCLogic {
     var self = this;
     if (!this.capE) { this.capE = uCapture({
       el: function (id) { return document.getElementById(id); },
-      phase: function (ph, extra) { var st = Object.assign({ capPh: ph }, extra || {}); self.setState(st); },
+      phase: function (ph, extra) {
+        var st = Object.assign({ capPh: ph }, extra || {});
+        // guarda o token gerado para o easter egg do título
+        if (st.capTok) { st.myTok = st.capTok; self._tokNew = true; }
+        self.setState(st);
+        // ao fechar a captura, revela o token no título por alguns segundos
+        if (ph === 'idle' && self._tokNew) {
+          self._tokNew = false; clearTimeout(self._eggT);
+          self.setState({ eggOn: true });
+          self._eggT = setTimeout(function () { self.setState({ eggOn: false }); }, 3200);
+        }
+      },
       time: function (ms) { self.setState({ capT: ms }); }
     }); }
   }
@@ -1799,6 +1810,7 @@ class Component extends DCLogic {
       startClose: function () { self.setState({ startOn: false }); },
       startToggle: function () { self.setState({ startOn: !self.state.startOn }); },
       eggOn: self.state.eggOn ? '1' : '0',
+      ...(() => { const p = (self.state.myTok || '').split(' '), t = p.length === 4 ? p[0] + '…' + p[3] : 'a3f9…2c6f', o = {}; for (let i = 0; i < 9; i++) { o['egk' + (i + 1)] = t[i] || ''; } return o; })(),
       eggPressed: self.state.eggOn ? 'true' : 'false',
       capOn: (self.state.capPh && self.state.capPh !== 'idle') ? '1' : '0',
       capHidden: (self.state.capPh && self.state.capPh !== 'idle') ? 'false' : 'true',
