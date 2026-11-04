@@ -48,28 +48,19 @@ a{color:#161616}a:hover{color:#000000}
 .u-card .u-arr{display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .u-card:hover .u-arr{transform:translateX(5px)}
 #historias .u-card{position:relative;isolation:isolate;overflow:hidden}
-#historias .u-card::before{content:"";position:absolute;inset:-12%;z-index:-1;pointer-events:none;background:var(--g) center/cover no-repeat;filter:saturate(1.35) contrast(1.08);opacity:0;scale:1.14;transition:opacity .5s ease,scale 1.4s cubic-bezier(.2,.7,.2,1)}
-#historias .u-card::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(130% 85% at 0% 100%,rgba(var(--t),.7) 0%,rgba(var(--t),.6) 22%,rgba(var(--t),.42) 40%,rgba(var(--t),.22) 58%,rgba(var(--t),.08) 74%,rgba(var(--t),0) 88%);opacity:0;transition:opacity .5s ease}
-#historias .u-card:hover::before,#historias .u-card:focus-visible::before{opacity:1;scale:1}
+/* mesmo tratamento do card ativo da home: gradiente com movimento lento, véu claro embaixo e texto escuro */
+#historias .u-card::before{content:"";position:absolute;inset:-25%;z-index:-1;pointer-events:none;background:var(--g) center/cover no-repeat;filter:blur(6px) saturate(1.08);opacity:0;scale:1.18;transition:opacity .8s ease,scale 1.6s cubic-bezier(.2,.7,.2,1)}
+#historias .u-card::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to top,rgba(255,255,255,.62) 0%,rgba(255,255,255,.4) 38%,rgba(255,255,255,0) 68%);opacity:0;transition:opacity .8s ease}
+#historias .u-card:hover::before,#historias .u-card:focus-visible::before{opacity:1;scale:1;animation:uGradDrift 14s ease-in-out infinite alternate}
 #historias .u-card:hover::after,#historias .u-card:focus-visible::after{opacity:1}
-#historias .u-card,#historias .u-card .u-cmut,#historias .u-card .u-arr{transition:transform .5s cubic-bezier(.2,.7,.2,1),color .4s ease}
-#historias .u-card:hover,#historias .u-card:focus-visible{color:#FFFFFF !important;text-shadow:0 1px 14px rgba(var(--t),.45)}
-#historias .u-card:hover .u-chead,#historias .u-card:focus-visible .u-chead{text-shadow:none}
-#historias .u-card[data-g="1"]:hover .u-chead,#historias .u-card[data-g="1"]:focus-visible .u-chead{text-shadow:0 1px 14px rgba(var(--t),.45)}
-#historias .u-card:hover .u-cmut,#historias .u-card:focus-visible .u-cmut{color:rgba(255,255,255,.88) !important}
-#historias .u-card:hover .u-arr,#historias .u-card:focus-visible .u-arr{color:#FFFFFF !important}
-#historias .u-card .u-logo{mix-blend-mode:normal;filter:grayscale(1) brightness(1) invert(0);transition:filter .4s ease,opacity .4s ease}
-#historias .u-card:hover .u-logo,#historias .u-card:focus-visible .u-logo{filter:none !important;opacity:1}
-#historias .u-card:hover .u-chead,#historias .u-card:focus-visible .u-chead,#historias .u-card:hover .u-chead .u-arr,#historias .u-card:focus-visible .u-chead .u-arr{color:#161616 !important}
-#historias .u-card:hover .u-chead .u-cmut,#historias .u-card:focus-visible .u-chead .u-cmut{color:rgba(22,22,22,.72) !important}
-#historias .u-card[data-g="1"]::after{background:radial-gradient(70% 55% at 0% 0%,rgba(var(--t),.5) 0%,rgba(var(--t),.3) 40%,rgba(var(--t),.1) 70%,rgba(var(--t),0) 100%),radial-gradient(130% 85% at 0% 100%,rgba(var(--t),.7) 0%,rgba(var(--t),.6) 22%,rgba(var(--t),.42) 40%,rgba(var(--t),.22) 58%,rgba(var(--t),.08) 74%,rgba(var(--t),0) 88%)}
-#historias .u-card[data-g="1"]:hover .u-logo,#historias .u-card[data-g="1"]:focus-visible .u-logo{filter:grayscale(1) brightness(0) invert(1) !important}
-#historias .u-card[data-g="1"]:hover .u-chead,#historias .u-card[data-g="1"]:focus-visible .u-chead,#historias .u-card[data-g="1"]:hover .u-chead .u-arr,#historias .u-card[data-g="1"]:focus-visible .u-chead .u-arr{color:#FFFFFF !important}
-#historias .u-card[data-g="1"]:hover .u-chead .u-cmut,#historias .u-card[data-g="1"]:focus-visible .u-chead .u-cmut{color:rgba(255,255,255,.9) !important}
-#historias .u-card[data-g="0"]{--g:url(assets/img/fundos/gradiente-onda.jpg);--t:14,52,38}
-#historias .u-card[data-g="1"]{--g:url(assets/img/fundos/gradiente-azul-rosa.jpg);--t:22,32,78}
-#historias .u-card[data-g="2"]{--g:url(assets/img/fundos/gradiente-verde-suave.jpg);--t:16,56,36}
-#historias .u-card[data-g="3"]{--g:url(assets/img/fundos/gradiente-verde.jpg);--t:24,58,22}
+@keyframes uGradDrift{0%{translate:0 0;rotate:0deg}50%{translate:-2% 1.5%;rotate:1.5deg}100%{translate:1.5% -1%;rotate:-1deg}}
+@media (prefers-reduced-motion: reduce){#historias .u-card::before{animation:none !important;transition:opacity .3s ease}}
+#historias .u-card .u-cmut{transition:color .4s ease}
+#historias .u-card:hover .u-cmut,#historias .u-card:focus-visible .u-cmut{color:rgba(22,22,22,.8) !important}
+#historias .u-card .u-logo{mix-blend-mode:normal}
+#historias .u-card[data-g="0"]{--g:url(assets/img/fundos/gradiente-onda.jpg)}
+#historias .u-card[data-g="1"]{--g:url(assets/img/fundos/gradiente-verde-suave.jpg)}
+#historias .u-card[data-g="2"]{--g:url(assets/img/fundos/gradiente-verde.jpg)}
 .u-feat .u-img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .u-feat:hover .u-img{transform:scale(1.03)}
 .u-feat .u-arr{display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
@@ -950,7 +941,7 @@ class Component extends DCLogic {
         while (k < L.length) {
           var row = PAT[r % PAT.length], take = Math.min(row.length, L.length - k), sp = row.slice(0, take);
           if (take < row.length) { var used = sp.reduce(function (a, b) { return a + b; }, 0); sp = sp.map(function (v) { return Math.round(v * 6 / used); }); var sum = sp.reduce(function (a, b) { return a + b; }, 0); sp[sp.length - 1] += 6 - sum; }
-          for (var q = 0; q < take; q++) { var c = L[k + q]; out.push({ g: C.indexOf(c) % 4, mark: c.mark, logo: c.logo, lh: c.lh, seg: c.seg === 1 ? 'GLOBAL' : 'KYC', span: sp[q], isQuote: c.t === 'q', isMetric: c.t === 'm', isTitle: c.t === 't', quote: c.quote || '', who: c.who || '', metric: c.metric || '', metricLabel: c.metricLabel || '', title: c.title || '', href: '#historia-' + c.mark.toLowerCase() }); }
+          for (var q = 0; q < take; q++) { var c = L[k + q]; out.push({ g: C.indexOf(c) % 3, mark: c.mark, logo: c.logo, lh: c.lh, seg: c.seg === 1 ? 'GLOBAL' : 'KYC', span: sp[q], isQuote: c.t === 'q', isMetric: c.t === 'm', isTitle: c.t === 't', quote: c.quote || '', who: c.who || '', metric: c.metric || '', metricLabel: c.metricLabel || '', title: c.title || '', href: '#historia-' + c.mark.toLowerCase() }); }
           k += take; r++;
         }
         return out;
