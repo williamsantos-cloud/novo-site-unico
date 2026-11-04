@@ -168,7 +168,7 @@ a{color:#161616}a:hover{color:#000000}
       </a>
       <div style="display: flex; align-items: center; gap: 8px">
         <button class="u-btn u-gbtn" type="button" onClick="{{genStart}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: {{genBtnBg}}; color: {{navFg}}; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 999px; background: #7EE2A1"></span>Gerar meu token</button>
-        <a class="u-btn" href="#integracao" onClick="{{menuClose}}" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: {{btnBg}}; color: {{btnFg}}; font-size: 14px; font-weight: 500; text-decoration: none">Começar</a>
+        <a class="u-btn" href="#como-funciona" onClick="{{goStart}}"style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: {{btnBg}}; color: {{btnFg}}; font-size: 14px; font-weight: 500; text-decoration: none">Começar</a>
         <button class="u-burger" type="button" onClick="{{toggleMenu}}" aria-expanded="{{menuExpanded}}" aria-controls="u-menu" aria-label="{{menuLabel}}" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 999px; background: {{burgerBg}}; color: {{burgerFg}}; cursor: pointer">
           <span class="u-bl u-bl1" aria-hidden="true"></span>
           <span class="u-bl u-bl2" aria-hidden="true"></span>
@@ -335,10 +335,10 @@ a{color:#161616}a:hover{color:#000000}
                   </div>
                   <p style="margin: 0; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.45; color: #5C5C58"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px; color: #3F7A55"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg><span>Sua foto aparece só para você, neste navegador. Ela não é enviada nem fica visível no site para outras pessoas.</span></p>
                   <div style="display: flex; flex-wrap: wrap; gap: 8px">
-                    <button class="u-btn u-dark" type="button" onClick="{{genBack}}" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #161616; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Ver meu lugar na esfera</button>
-                    <button class="u-btn u-light" type="button" onClick="{{genAgain}}" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #F4F4F2; color: #161616; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Gerar de novo</button>
+                    <a class="u-btn u-dark" href="#para-quem" onClick="{{genApps}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 18px; border-radius: 999px; background: #161616; color: #FFFFFF; font-size: 14px; font-weight: 500; white-space: nowrap; text-decoration: none">Conhecer mais<span aria-hidden="true">→</span></a>
+                    <button class="u-btn u-light" type="button" onClick="{{genBack}}" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #F4F4F2; color: #161616; font-family: inherit; font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer">Ver na esfera</button>
                   </div>
-                  <a href="#para-quem" onClick="{{genApps}}" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding-top: 14px; border-top: 1px solid #ECECE8; color: #161616; font-size: 14px; font-weight: 500; text-decoration: none">Veja onde o Human Token é usado<span aria-hidden="true">→</span></a>
+                  <button type="button" onClick="{{genAgain}}" style="align-self: flex-start; min-height: 44px; margin: -6px 0 -10px; padding: 0; border: 0; background: none; color: #5C5C58; font-family: inherit; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer">Gerar de novo</button>
                 </div>
               </sc-if>
             </div>
@@ -580,6 +580,7 @@ class Component extends DCLogic {
       burgerFg: st.menu || light ? '#161616' : '#FFFFFF',
       menuLabel: st.menu ? 'Fechar menu' : 'Abrir menu',
       menuClose: function () { if (self.state && self.state.menu) { self.setState({ menu: false }); } },
+      goStart: function (e) { if (e && e.preventDefault) { e.preventDefault(); } if (self.state && self.state.menu) { self.setState({ menu: false }); } var pin = document.getElementById('u-pin'); if (!pin) { return; } var vh = window.innerHeight || 800, total = Math.max(1, pin.offsetHeight - vh), top = pin.getBoundingClientRect().top + window.scrollY + total * 0.92; window.scrollTo({ top: top, behavior: 'smooth' }); },
       menuKey: function (e) { if (e && e.key === 'Escape') { self.setState({ menu: false }); } },
       copyLabel: st.copied ? 'Copiado' : 'Copiar',
       copyCmd: function () {
