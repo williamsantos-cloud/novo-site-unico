@@ -64,6 +64,44 @@ a{color:#161616}a:hover{color:#000000}
 @media (max-width: 760px){.u-menu{display:none !important}}
 @media (max-width: 560px){.u-certs{grid-template-columns:1fr !important}}
 @media (prefers-reduced-motion: reduce){.u-in,.u-hdr{animation:none}.u-btn,.u-card{transition:none}}
+
+/* header e footer da home esfera */
+.ux-btn{transition:background-color .25s,color .25s,transform .25s cubic-bezier(.2,.7,.2,1)}.ux-btn:hover{transform:translateY(-1px)}
+.ux-bl{position:absolute;left:14px;right:14px;top:50%;height:1.5px;margin-top:-0.75px;border-radius:2px;background:currentColor;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.ux-bl1{transform:translateY(-3.5px)}.ux-bl2{transform:translateY(3.5px)}
+.ux-h[data-open="1"] .ux-bl1{transform:rotate(45deg)}.ux-h[data-open="1"] .ux-bl2{transform:rotate(-45deg)}
+.ux-burger{transition:background-color .25s,transform .25s cubic-bezier(.2,.7,.2,1)}.ux-burger:hover{transform:translateY(-1px)}
+.ux-menu,.ux-scrim{display:none}
+.ux-h[data-open="1"] .ux-menu{display:block;transform-origin:top right;animation:uxMenu .38s cubic-bezier(.22,1,.36,1) both}
+.ux-h[data-open="1"] .ux-scrim{display:block;animation:uxFade .3s ease both}
+@keyframes uxMenu{from{opacity:0;transform:translateY(-8px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes uxFade{from{opacity:0}to{opacity:1}}
+.ux-mi{color:#161616;transition:background-color .2s}.ux-mi:hover{background-color:#F4F4F2}
+.ux-mi .ux-arr,.ux-row .ux-arr{transition:transform .3s cubic-bezier(.2,.7,.2,1)}.ux-mi:hover .ux-arr,.ux-row:hover .ux-arr{transform:translateX(4px)}
+.ux-row{color:#161616}
+.ux-fcol summary::-webkit-details-marker{display:none}.ux-fchev{display:none}
+@media (min-width: 861px){.ux-fcol summary{pointer-events:none}}
+@media (max-width: 860px){
+  .ux-nav{padding:0 16px !important;gap:12px !important}
+  .ux-menu{right:16px !important}
+  .ux-fhead{grid-template-columns:minmax(0,1fr) !important}
+  .ux-ftr{grid-template-columns:minmax(0,1fr) !important;gap:0 !important}
+  .ux-fcol{border-top:1px solid rgba(255,255,255,0.12)}
+  .ux-fcol:last-child{border-bottom:1px solid rgba(255,255,255,0.12)}
+  .ux-fcol summary{display:flex;align-items:center;justify-content:space-between;min-height:52px;cursor:pointer !important;font-size:12px !important}
+  .ux-fchev{display:block !important;transition:transform .25s ease}
+  .ux-fcol[open] .ux-fchev{transform:rotate(180deg)}
+  .ux-fcol .ux-flinks{margin:0 !important;padding:4px 0 20px;font-size:16px}
+  .ux-fin{padding:72px 24px 32px !important}
+  .ux-fhead .ux-btn{justify-self:start}
+  .ux-fdesc{grid-column:1/-1;max-width:none !important;font-size:16px !important;margin-bottom:24px !important}
+  .ux-fbot{margin-top:48px !important;flex-direction:column;gap:8px !important}
+}
+@media (max-width: 560px){.ux-start{display:none !important}.ux-gbtn{padding:0 14px !important}}
+@media (prefers-reduced-motion: reduce){.ux-h .ux-menu,.ux-h .ux-scrim{animation:none}.ux-bl{transition:none}}
+
+[data-wrap]{box-sizing:border-box}
+@media (max-width: 860px){[data-wrap]{padding-left:16px !important;padding-right:16px !important}}
 </style>
 <style>.u-lg{transition:background-color .2s}.u-lg:hover{background-color:#F6F6F4}
 /* menu mobile */
@@ -100,12 +138,9 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 </helmet>
 <div style="background: #FFFFFF; color: #161616; font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased">
 
-  <header class="u-hdr" style="position: sticky; top: 0; z-index: 20">
-    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; bottom: -36px; pointer-events: none; opacity: {{hdrOp}}; transition: opacity .4s ease; background: linear-gradient(to bottom, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.82) 45%, rgba(255,255,255,0.4) 75%, rgba(255,255,255,0) 100%); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 100%)"></div>
-    <nav aria-label="Principal" onMouseLeave="{{menuClose}}" style="position: relative; max-width: 1200px; margin: 0 auto; padding: {{navPad}}px 24px; transition: padding .45s cubic-bezier(.2,.7,.2,1); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px">
-      <a href="index.html" aria-label="Unico, página inicial" style="justify-self: start; display: flex; align-items: center; min-height: 44px">
-        <svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47" fill="{{logoFill}}" style="transition: fill .4s"></path></svg>
-      </a>
+  <header id="ux-h" class="ux-h" data-open="0" style="position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,0.92); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); box-shadow: 0 1px 0 rgba(0,0,0,0.06)">
+    <nav class="ux-nav" aria-label="Principal" style="position: relative; max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 0 32px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+      <a href="home-esfera.html" aria-label="Unico, página inicial" style="display: flex; align-items: center; min-height: 44px"><svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.99 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.630a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47" fill="#161616"></path></svg></a>
       <div id="u-isl" class="u-isl" data-on="{{capOn}}" role="dialog" aria-label="Teste da captura" aria-hidden="{{capHidden}}" style="width: 126px; height: 37px; border-radius: 24px">
           <div id="u-capglow" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 140px; pointer-events: none; opacity: {{capGlow}}; transition: opacity .5s ease"></div>
           <div id="u-capline" aria-hidden="true" style="position: absolute; inset: 0; border-radius: inherit; padding: 1px; box-sizing: border-box; pointer-events: none; opacity: {{capGlow}}; transition: opacity .5s ease; -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0)"></div>
@@ -166,140 +201,60 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
             </sc-if>
           </div>
         </div>
-      <div id="u-navpill" class="{{capCls}}" style="position: relative; z-index: 7; display: flex; align-items: center; padding: 5px; border-radius: 999px; background: {{pillBg}}; -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); border: 1px solid {{pillBorder}}; box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 8px 24px -10px rgba(22,22,22,0.14); transition: background-color .4s, border-color .4s">
-        
-        
-      <div class="u-menu" role="list" style="position: relative; display: flex">
-        <span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 0; width: 104px; border-radius: 999px; background: {{hovBg}}; transform: translateX({{hovX}}px); opacity: {{hovOp}}; transition: transform .35s cubic-bezier(.3,.7,.2,1), opacity .25s"></span>
-        <span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 0; width: 104px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(22,22,22,0.06), 0 4px 12px rgba(22,22,22,0.06); transform: translateX({{actX}}px)"></span>
-        <sc-for list="{{menus}}" as="m" hint-placeholder-count="5">
-          <a role="listitem" href="{{m.href}}" onMouseEnter="{{m.open}}" onFocus="{{m.open}}" aria-expanded="{{m.expanded}}" aria-current="{{m.current}}" style="position: relative; width: 104px; min-height: {{itemH}}px; display: grid; place-items: center; border-radius: 999px; text-decoration: none; font-size: {{navFs}}px; font-weight: 500; color: {{m.color}}; transition: color .25s, min-height .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1)">{{m.label}}</a>
-        </sc-for>
-      </div>
-      </div>
-      <div style="justify-self: end; display: flex; align-items: center; gap: 10px">
-        <button type="button" class="u-burger" onClick="{{mobToggle}}" aria-expanded="{{mobExp}}" aria-controls="u-mnav" aria-label="Abrir menu" style="order: 9; flex: none; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: {{secBg}}; color: {{secFg}}; place-items: center; cursor: pointer; transition: background-color .4s, color .4s"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"></path></svg></button>
-        <div class="u-dlang" style="position: relative; z-index: 4" onMouseEnter="{{langOpen}}" onMouseLeave="{{langClose}}">
-          <button type="button" onClick="{{langToggle}}" aria-expanded="{{langExpanded}}" aria-haspopup="true" aria-label="Idioma: Português" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; border: 0; background: transparent; cursor: pointer; font: 500 14px 'Geist', sans-serif; color: {{enColor}}; transition: color .4s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"></path></svg><span>PT</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="transform: rotate({{langRot}}deg); transition: transform .3s"><path d="M6 9l6 6 6-6"></path></svg></button>
-          <div onMouseEnter="{{langOpen}}" style="position: absolute; z-index: 5; right: 0; top: 100%; width: 320px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{langOp}}; transform: translateY({{langY}}px); pointer-events: {{langPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
-            <div role="dialog" aria-label="Idioma" style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.2); padding: 12px; display: flex; flex-direction: column; gap: 4px">
-              <span style="padding: 6px 12px 4px; font-size: 13px; color: #6E6E69">Idioma</span>
-              <a class="u-lg" href="#topo" lang="pt-BR" aria-current="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 8px 12px; border-radius: 14px; background: #F3F3EF; text-decoration: none; color: #161616"><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 15px; font-weight: 500">Português</span><span style="font-size: 12.5px; color: #6E6E69">Idioma atual</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A7F4B" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></a><a class="u-lg" href="Confianca-en.html" hreflang="en" lang="en" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 8px 12px; border-radius: 14px; text-decoration: none; color: #161616"><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 15px; font-weight: 500">English</span><span style="font-size: 12.5px; color: #6E6E69">Inglês</span></span><span style="font-size: 12.5px; color: #6E6E69">Trocar</span></a>
-              <div style="margin: 8px 12px 0; padding-top: 12px; border-top: 1px solid #ECECE8; font-size: 13px; color: #6E6E69">Outros idiomas</div>
-              <ul style="margin: 0; padding: 0 0 4px; list-style: none; max-height: 248px; overflow-y: auto"><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="zh" style="font-size: 14px; color: #8A8A85">中文 <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Mandarim</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="hi" style="font-size: 14px; color: #8A8A85">हिन्दी <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Hindi</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="es" style="font-size: 14px; color: #8A8A85">Español <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Espanhol</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="fr" style="font-size: 14px; color: #8A8A85">Français <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Francês</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ar" style="font-size: 14px; color: #8A8A85">العربية <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Árabe</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="bn" style="font-size: 14px; color: #8A8A85">বাংলা <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Bengali</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ru" style="font-size: 14px; color: #8A8A85">Русский <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Russo</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ur" style="font-size: 14px; color: #8A8A85">اردو <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Urdu</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="id" style="font-size: 14px; color: #8A8A85">Bahasa Indonesia <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Indonésio</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="de" style="font-size: 14px; color: #8A8A85">Deutsch <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Alemão</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li><li aria-disabled="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; padding: 4px 12px"><span lang="ja" style="font-size: 14px; color: #8A8A85">日本語 <span lang="pt-BR" style="font-size: 12.5px; color: #A3A39E">· Japonês</span></span><span style="flex: none; padding: 3px 8px; border-radius: 999px; background: #F4F4F2; border: 1px solid #E4E4E0; font-size: 11px; font-weight: 500; color: #5C5C58; white-space: nowrap">Não disponível</span></li></ul>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="u-btn u-sec u-dtok" onClick="{{capOpen}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{secBg}}; color: {{secFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none" aria-label="Me tokenize: gerar meu Human Token">Me tokenize</button>
-        <div style="position: relative" onMouseLeave="{{startClose}}">
-          <button type="button" class="u-btn" onClick="{{startToggle}}" onMouseEnter="{{startOpen}}" aria-expanded="{{startExpanded}}" style="display: inline-flex; align-items: center; min-height: {{ctaH}}px; padding: 0 {{ctaPx}}px; border: 0; border-radius: 999px; background: {{ctaBg}}; color: {{ctaFg}}; transition: background-color .4s, color .4s, min-height .45s cubic-bezier(.2,.7,.2,1), padding .45s cubic-bezier(.2,.7,.2,1), font-size .45s cubic-bezier(.2,.7,.2,1); cursor: pointer; font-family: 'Geist', sans-serif; font-weight: 500; font-size: {{navFs}}px; white-space: nowrap; flex: none">Começar</button>
-          <div class="u-startdd" style="position: absolute; right: 0; top: 100%; width: 400px; max-width: calc(100vw - 32px); padding-top: 8px; opacity: {{startOp}}; transform: translateY({{startY}}px); pointer-events: {{startPE}}; transition: opacity .25s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
-            <div style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.2); padding: 20px; display: flex; flex-direction: column; gap: 14px">
-              <div style="display: flex; flex-direction: column; gap: 4px">
-                <span style="font-size: 16px; font-weight: 500">Conecte a Unico ao seu agente</span>
-                <span style="font-size: 13.5px; color: #6E6E69">Cole o comando no seu cliente MCP. O primeiro token sai em minutos.</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 14px; border-radius: 12px; background: #F4F4F2">
-                <code style="flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: 'Geist Mono', monospace; font-size: 12.5px">{{navCmd}}</code>
-                <button type="button" onClick="{{navCopy}}" style="flex: none; min-height: 36px; padding: 0 12px; border: 1px solid #E4E4E0; border-radius: 9px; background: #FFFFFF; cursor: pointer; font: 500 13px 'Geist', sans-serif; color: #161616"><span aria-live="polite">{{navCopyLabel}}</span></button>
-              </div>
-              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; font-size: 13px; color: #5C5C58">
-                <span>10.000 tokens grátis</span>
-                <a class="u-link" href="Confianca.html" style="color: #161616">Garantia de US$ 100 mil</a>
-              </div>
-              <div aria-hidden="true" style="height: 1px; background: #EDEDEA"></div>
-              <button type="button" class="u-try" onClick="{{capOpen}}" aria-label="Testar a captura com o seu rosto" style="width: calc(100% + 16px); border: 0; cursor: pointer; text-align: left; font: inherit; display: flex; align-items: center; gap: 14px; margin: -4px -8px -8px; padding: 10px 12px 10px 10px; border-radius: 16px; background: #EEF0E4; color: #161616; text-decoration: none">
-                <span aria-hidden="true" style="flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #161616; color: #7EE2A1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"></path><rect x="11" y="11" width="2" height="2" fill="currentColor" stroke="none"></rect></svg></span>
-                <span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Teste a captura</span><span style="font-size: 13px; line-height: 1.4; color: #5C5C58">Do rosto ao Human Token em menos de 1 segundo. Faça o seu.</span></span>
-                <span class="u-tarr" aria-hidden="true" style="flex: none; font-size: 18px">→</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="u-mega" style="position: absolute; left: 50%; top: 100%; width: min(680px, calc(100% - 48px)); padding-top: 4px; opacity: {{megaOp}}; transform: translate(-50%, {{megaY}}px); pointer-events: {{megaPE}}; transition: opacity .28s ease, transform .35s cubic-bezier(.2,.7,.2,1)">
-        <div style="border-radius: 22px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 0 0 1px rgba(22,22,22,0.05), 0 24px 60px -18px rgba(22,22,22,0.18); padding: 12px; overflow: hidden">
-          <div style="position: relative; display: grid">
-          <sc-for list="{{menus}}" as="m" hint-placeholder-count="1">
-            <sc-if value="{{m.has}}" hint-placeholder-val="{{ true }}">
-              <div aria-hidden="{{m.hidden}}" style="grid-area: 1 / 1; position: {{m.pos}}; left: 0; right: 0; top: 0; opacity: {{m.op}}; visibility: {{m.vis}}; pointer-events: {{m.pe}}; transition: opacity .22s ease, visibility .22s">
-                <sc-if value="{{m.grid}}" hint-placeholder-val="{{ true }}">
-                <div style="display: grid; grid-template-columns: repeat({{m.cols}}, minmax(0, 1fr)); gap: 2px 8px">
-                  <sc-for list="{{m.items}}" as="it" hint-placeholder-count="4">
-                    <a class="u-nmi" href="{{it.href}}" style="display: flex; flex-direction: {{m.idir}}; align-items: {{m.ialign}}; gap: 16px; padding: 12px; border-radius: 14px; text-decoration: none; color: #161616">
-                      <span style="flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: #F3F3EF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3F3F3B" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges" aria-hidden="true"><path d="{{it.icon}}"></path></svg></span>
-                      <span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 500">{{it.title}}</span><span style="font-size: 13.5px; line-height: 1.4; color: #6E6E69">{{it.text}}</span></span>
-                    </a>
-                  </sc-for>
-                </div>
-                </sc-if>
-                <sc-if value="{{m.story}}" hint-placeholder-val="{{ false }}">
-                <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 8px">
-                  <a class="u-nmi" href="Clientes.html#historia-nubank" style="display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 14px; text-decoration: none; color: #161616">
-                    <span style="flex: none; width: 124px; height: 96px; border-radius: 12px; overflow: hidden; background: #5A3A22"><picture style="display: contents"><source type="image/avif" srcset="assets/img/fotos/nubank-cartao-400.avif 400w, assets/img/fotos/nubank-cartao-800.avif 800w, assets/img/fotos/nubank-cartao.avif 1600w" sizes="124px"><source type="image/webp" srcset="assets/img/fotos/nubank-cartao-400.webp 400w, assets/img/fotos/nubank-cartao-800.webp 800w, assets/img/fotos/nubank-cartao.webp 1600w" sizes="124px"><img loading="lazy" decoding="async" src="assets/img/fotos/nubank-cartao.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%"></picture></span>
-                    <span style="display: flex; flex-direction: column; gap: 8px"><span style="display: flex; align-items: center; gap: 8px"><img loading="lazy" decoding="async" src="assets/img/logos-clientes/nubank.webp" alt="Nubank" style="height: 14px; width: auto"><span style="font-size: 12.5px; color: #8A8A85">História em destaque</span></span><span style="font-size: 15px; line-height: 1.35; font-weight: 500">Como o Nubank reconhece o mesmo cliente em qualquer país.</span></span>
-                  </a>
-                  <a class="u-nmi u-nrow" href="Clientes.html#historias" style="display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 16px 18px; border-radius: 14px; background: #F4F4F2; text-decoration: none; color: #161616">
-                    <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 500">Todas as histórias</span><span style="font-size: 13.5px; line-height: 1.4; color: #6E6E69">Uber, Shopee, DiDi, Persona e outras.</span></span>
-                    <span class="u-narr" aria-hidden="true" style="align-self: flex-start; font-size: 16px">→</span>
-                  </a>
-                </div>
-                </sc-if>
-              </div>
-            </sc-if>
-          </sc-for>
-          </div>
-        </div>
+      <div style="display: flex; align-items: center; gap: 8px">
+        <button class="ux-btn ux-gbtn" type="button" onClick="{{capOpen}}" style="display: inline-flex; white-space: nowrap; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #F4F4F2; color: #161616; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer"><span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 999px; background: #3FA66A"></span>Gerar meu token</button>
+        <a class="ux-btn ux-start" href="Integracao.html" style="display: inline-flex; white-space: nowrap; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #161616; color: #FFFFFF; font-size: 14px; font-weight: 500; text-decoration: none">Começar</a>
+        <button class="ux-burger" type="button" aria-expanded="false" aria-controls="ux-menu" aria-label="Abrir menu" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 999px; background: #F4F4F2; color: #161616; cursor: pointer">
+          <span class="ux-bl ux-bl1" aria-hidden="true"></span>
+          <span class="ux-bl ux-bl2" aria-hidden="true"></span>
+        </button>
       </div>
     </nav>
+    <button class="ux-scrim" type="button" tabindex="-1" aria-label="Fechar menu" style="position: fixed; inset: 72px 0 0 0; z-index: -1; width: 100%; margin: 0; padding: 0; border: 0; background: rgba(0,0,0,0.18); cursor: default"></button>
+    <div id="ux-menu" class="ux-menu" role="dialog" aria-label="Menu" style="position: absolute; top: 72px; right: max(32px, calc((100vw - 1440px) / 2 + 32px)); width: 420px; max-width: calc(100vw - 32px); box-sizing: border-box; padding: 12px; border-radius: 22px; background: #FFFFFF; color: #161616; box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 28px 80px rgba(0,0,0,0.28)">
+        <p style="margin: 0; padding: 14px 14px 8px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #8A8A85">Tecnologia</p>
+        <a class="ux-mi" href="Tecnologia.html" style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-radius: 14px; text-decoration: none">
+          <span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: #F4F4F2; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M10 10h4v4h-4z"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 16px; font-weight: 500; letter-spacing: -0.01em">Human Token</span><span style="font-size: 13px; line-height: 1.35; color: #6E6E69">Como uma selfie vira um token único por pessoa.</span></span>
+          <span class="ux-arr" aria-hidden="true" style="color: #8A8A85">→</span>
+        </a>
+        <a class="ux-mi" href="HumanPlatform.html" style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-radius: 14px; text-decoration: none">
+          <span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: #F4F4F2; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 16px; font-weight: 500; letter-spacing: -0.01em">Human Platform</span><span style="font-size: 13px; line-height: 1.35; color: #6E6E69">Personalize a marca, gerencie branches e acompanhe relatórios.</span></span>
+          <span class="ux-arr" aria-hidden="true" style="color: #8A8A85">→</span>
+        </a>
+        <a class="ux-mi" href="Integracao.html" style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-radius: 14px; text-decoration: none">
+          <span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: #EEF0E4; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v5M16 2v5M5 7h14v6H5zM12 13v9"></path></svg></span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 16px; font-weight: 500; letter-spacing: -0.01em">MCP</span><span style="font-size: 13px; line-height: 1.35; color: #6E6E69">Conecte seu agente e configure tudo por conversa.</span></span>
+          <span class="ux-arr" aria-hidden="true" style="color: #8A8A85">→</span>
+        </a>
+        <div style="height: 1px; margin: 10px 14px; background: #ECECE8"></div>
+        <p style="margin: 0; padding: 6px 14px 8px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #8A8A85">Empresa</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 4px; padding: 0 0 4px">
+          <a class="ux-mi" href="Sobre.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 12px; font-size: 15px; text-decoration: none">Sobre a Unico</a>
+          <a class="ux-mi" href="Clientes.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 12px; font-size: 15px; text-decoration: none">Clientes</a>
+          <a class="ux-mi" href="#pagina-newsroom" style="display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 12px; font-size: 15px; text-decoration: none">Newsroom</a>
+          <a class="ux-mi" href="Confianca.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 12px; font-size: 15px; text-decoration: none">Central de confiança</a>
+          <a class="ux-mi" href="#carreiras" style="display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 12px; font-size: 15px; text-decoration: none">Carreiras</a>
+        </div>
+        <div style="margin-top: 6px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 14px; background: #F4F4F2">
+          <a class="ux-row" href="#pagina-docs" style="display: inline-flex; align-items: center; gap: 10px; min-height: 36px; font-size: 14px; font-weight: 500; text-decoration: none; background: transparent">Documentação<span class="ux-arr" aria-hidden="true">→</span></a>
+          <span style="display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: #FFFFFF; font-family: 'Geist Mono', monospace; font-size: 12px">
+            <span aria-current="true" style="display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; border-radius: 999px; background: #161616; color: #FFFFFF">PT</span>
+            <a href="Confianca-en.html" hreflang="en" style="display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; border-radius: 999px; color: #6E6E69; text-decoration: none">EN</a>
+          </span>
+        </div>
+      </div>
   </header>
 
-  <div id="u-mnav" class="u-mnav" data-open="{{mobOpen}}" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="{{mobHidden}}" onKeyDown="{{mobKey}}">
-    <div style="flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 72px; padding: 0 12px 0 16px; padding-top: env(safe-area-inset-top, 0px); box-sizing: border-box">
-      <a href="index.html" aria-label="Unico, página inicial" onClick="{{mobClose}}" style="display: flex; align-items: center; min-height: 44px"><svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47" fill="#161616"></path></svg></a>
-      <div style="display: flex; align-items: center; gap: 8px">
-        <div role="group" aria-label="Idioma" style="display: flex; align-items: center; gap: 2px; height: 44px; padding: 4px; box-sizing: border-box; border-radius: 999px; background: #F3F3EF"><span aria-current="true" lang="pt-BR" aria-label="Português" style="display: grid; place-items: center; min-width: 40px; height: 36px; padding: 0 10px; box-sizing: border-box; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(22,22,22,0.08); font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: #161616">PT</span><a href="Confianca-en.html" hreflang="en" lang="en" aria-label="English" onClick="{{mobClose}}" style="display: grid; place-items: center; min-width: 40px; height: 36px; padding: 0 10px; box-sizing: border-box; border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: #6E6E69">EN</a></div>
-        <button type="button" class="u-mclose" onClick="{{mobClose}}" aria-label="Fechar menu" style="width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: rgba(22,22,22,0.06); color: #161616; display: grid; place-items: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
-      </div>
-    </div>
-    <nav aria-label="Menu" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 8px 16px 24px">
-      <ul style="margin: 0; padding: 0; list-style: none">
-        <sc-for list="{{menus}}" as="m" hint-placeholder-count="3">
-          <li class="u-mrow" style="border-bottom: 1px solid #EDEDEA">
-            <sc-if value="{{m.mHas}}" hint-placeholder-val="{{true}}">
-              <button type="button" onClick="{{m.mToggle}}" aria-expanded="{{m.mExp}}" aria-controls="{{m.mSubId}}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 68px; padding: 0 4px; border: 0; background: transparent; cursor: pointer; text-align: left; font-family: 'Geist', sans-serif; font-size: 28px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 500; color: #161616"><span style="display: inline-flex; align-items: center; gap: 10px">{{m.label}}<span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 50%; background: #1A7F4B; opacity: {{m.mDot}}"></span></span><span aria-hidden="true" style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #F3F3EF; color: #3F3F3B; display: grid; place-items: center; transform: rotate({{m.mRot}}deg); transition: transform .4s cubic-bezier(.2,.7,.2,1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></button>
-              <div id="{{m.mSubId}}" class="u-msub" data-open="{{m.mOpen}}">
-                <div>
-                  <ul style="margin: 0; padding: 0 0 16px; list-style: none; display: flex; flex-direction: column; gap: 2px">
-                    <sc-for list="{{m.mItems}}" as="it" hint-placeholder-count="4">
-                      <li><a class="u-mi2" href="{{it.href}}" onClick="{{it.close}}" style="display: flex; align-items: center; gap: 14px; min-height: 56px; padding: 8px; border-radius: 14px; text-decoration: none; color: #161616"><span style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: #F3F3EF"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3F3F3B" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="{{it.icon}}"></path></svg></span><span style="min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15.5px; font-weight: 500">{{it.title}}</span><span style="font-size: 13.5px; line-height: 1.4; color: #6E6E69">{{it.text}}</span></span></a></li>
-                    </sc-for>
-                  </ul>
-                </div>
-              </div>
-            </sc-if>
-            <sc-if value="{{m.mLink}}" hint-placeholder-val="{{false}}">
-              <a href="{{m.href}}" onClick="{{m.mClose}}" aria-current="{{m.mCur}}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 68px; padding: 0 4px; text-decoration: none; font-size: 28px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 500; color: #161616"><span style="display: inline-flex; align-items: center; gap: 10px">{{m.label}}<span aria-hidden="true" style="width: 7px; height: 7px; border-radius: 50%; background: #1A7F4B; opacity: {{m.mDot}}"></span></span><span aria-hidden="true" style="flex: none; width: 36px; height: 36px; display: grid; place-items: center; font-size: 17px; color: #8A8A85">→</span></a>
-            </sc-if>
-          </li>
-        </sc-for>
-      </ul>
-    </nav>
-    <div class="u-mfoot" style="flex: none; display: flex; flex-direction: column; gap: 12px; padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid #EDEDEA">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
-        <button type="button" onClick="{{mobTok}}" style="min-height: 52px; padding: 0 16px; border: 0; border-radius: 999px; background: rgba(22,22,22,0.06); color: #161616; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500">Me tokenize</button>
-        <button type="button" onClick="{{mobStart}}" style="min-height: 52px; padding: 0 16px; border: 0; border-radius: 999px; background: #161616; color: #FFFFFF; cursor: pointer; font-family: 'Geist', sans-serif; font-size: 15px; font-weight: 500">Começar</button>
-      </div>
-    </div>
-  </div>
+  
 
   <main id="topo">
 
     <!-- 1. Hero -->
     <section aria-labelledby="hero-titulo" style="padding: clamp(56px, 8vh, 96px) 0 clamp(40px, 6vh, 64px)">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
-        <nav class="u-in" aria-label="Você está em" style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #8A8A85"><a href="index.html" style="color: #8A8A85; text-decoration: none">Início</a><span aria-hidden="true" style="color: #C4C4BF">/</span><a href="Sobre.html" style="color: #8A8A85; text-decoration: none">Empresa</a><span aria-hidden="true" style="color: #C4C4BF">/</span><span aria-current="page" style="color: #161616">Central de confiança</span></nav>
+      <div data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 0 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+        <nav class="u-in" aria-label="Você está em" style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #8A8A85"><a href="home-esfera.html" style="color: #8A8A85; text-decoration: none">Início</a><span aria-hidden="true" style="color: #C4C4BF">/</span><a href="Sobre.html" style="color: #8A8A85; text-decoration: none">Empresa</a><span aria-hidden="true" style="color: #C4C4BF">/</span><span aria-current="page" style="color: #161616">Central de confiança</span></nav>
         <h1 id="hero-titulo" class="u-in" style="margin: 0; max-width: 820px; font-size: clamp(36px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 500; animation-delay: .08s">Central de confiança. <span style="color: #8A8A85">Tudo o que protege cada pessoa, em um só lugar.</span></h1>
         <p class="u-in" style="margin: 0; max-width: 600px; font-size: 18px; line-height: 1.5; color: #5C5C58; animation-delay: .16s">Certificações, garantia, privacidade e segurança da Unico. O que fazemos com o rosto de quem passa pela câmera, e o que nunca fazemos.</p>
         <nav class="u-in" aria-label="Nesta página" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; animation-delay: .24s">
@@ -313,14 +268,14 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
     </section>
 
     <!-- 2. Certificações -->
-    <section id="certificacoes" aria-labelledby="cert-titulo" style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 0">
+    <section id="certificacoes" aria-labelledby="cert-titulo" data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 48px 32px 0">
       <div class="u-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 32px 64px; align-items: start">
         <div style="display: flex; flex-direction: column; gap: 16px">
-          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8A85">Certificações</span>
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #6E6E69">(01) Certificações</span>
           <h2 id="cert-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">Testada por quem tenta enganar. <span style="color: #8A8A85">Para não ser enganada.</span></h2>
           <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C58">Laboratórios independentes atacam a prova de vida com fotos, telas, máscaras e deepfakes. Os relatórios estão disponíveis para clientes.</p>
         </div>
-        <div class="u-certs" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+        <div class="u-certs" data-stagger="" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
           <article style="display: flex; flex-direction: column; justify-content: space-between; gap: 40px; min-height: 280px; box-sizing: border-box; padding: 28px; border-radius: 22px; background: #F4F4F2">
             <span style="display: flex; align-items: center; justify-content: space-between; color: #5F7034"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges" aria-hidden="true"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8z"></path><path d="M8 12.5l3 3 5-6"></path></svg><span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8A8A85">IBETA</span></span>
             <span style="display: flex; flex-direction: column; gap: 8px">
@@ -350,11 +305,11 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
     </section>
 
     <!-- 3. Garantia -->
-    <section id="garantia" aria-labelledby="gar-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 0">
+    <section id="garantia" aria-labelledby="gar-titulo" data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 144px 32px 0">
       <div class="u-split" style="border-radius: 28px; background: #F4F4F2; padding: clamp(28px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px 56px; align-items: stretch">
         <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
           <div style="display: flex; flex-direction: column; gap: 16px">
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8A85">Garantia de desempenho</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #6E6E69">(02) Garantia de desempenho</span>
             <h2 id="gar-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">US$ 100 mil de garantia. <span style="color: #8A8A85">Se a tecnologia falhar, a Unico paga.</span></h2>
           </div>
           <a class="u-link" href="#termos-garantia" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; font-weight: 500; color: #161616; text-decoration: none">Ler os termos da garantia <span aria-hidden="true">→</span></a>
@@ -374,10 +329,10 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
     </section>
 
     <!-- 4. Privacidade por desenho -->
-    <section id="privacidade-desenho" aria-labelledby="priv-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 0">
+    <section id="privacidade-desenho" aria-labelledby="priv-titulo" data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 144px 32px 0">
       <div class="u-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 32px 64px; align-items: start">
         <div style="display: flex; flex-direction: column; gap: 16px">
-          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8A85">Privacidade por desenho</span>
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #6E6E69">(03) Privacidade por desenho</span>
           <h2 id="priv-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">A foto fica no caminho. <span style="color: #8A8A85">Só o token chega até você.</span></h2>
           <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C58">O token é de mão única: não existe caminho de volta do token para o rosto. E nada acontece sem o consentimento da pessoa, colhido no seu fluxo ou no widget da Unico.</p>
           <a class="u-link" href="Tecnologia.html" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; font-weight: 500; color: #161616; text-decoration: none">Como o token nasce <span aria-hidden="true">→</span></a>
@@ -399,10 +354,10 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
     </section>
 
     <!-- 5. Segurança e conformidade -->
-    <section id="seguranca" aria-labelledby="seg-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 0">
+    <section id="seguranca" aria-labelledby="seg-titulo" data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 144px 32px 0">
       <div class="u-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 32px 64px; align-items: start">
         <div style="display: flex; flex-direction: column; gap: 16px">
-          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8A85">Segurança e conformidade</span>
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #6E6E69">(04) Segurança e conformidade</span>
           <h2 id="seg-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">Global por padrão. <span style="color: #8A8A85">Dentro das regras de cada lugar.</span></h2>
         </div>
         <ul class="u-split" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px">
@@ -417,8 +372,8 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
     </section>
 
     <!-- 7. Status e documentos -->
-    <section id="status" aria-labelledby="st-titulo" style="max-width: 1200px; margin: 0 auto; padding: 144px 24px 144px">
-      <h2 id="st-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500; margin-bottom: 32px">Para o seu time de segurança.</h2>
+    <section id="status" aria-labelledby="st-titulo" data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 144px 32px 144px">
+      <div style="display: flex; flex-direction: column; min-width: 0"><p style="margin: 0 0 16px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #6E6E69">(05) Status e documentos</p><h2 id="st-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500; margin-bottom: 32px">Para o seu time de segurança.</h2></div>
       <div class="u-split" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
         <a class="u-card" href="#pagina-status" style="display: flex; flex-direction: column; justify-content: space-between; gap: 40px; min-height: 240px; padding: 32px; border-radius: 22px; background: #F4F4F2; color: #161616; text-decoration: none">
           <span style="display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500"><span style="width: 9px; height: 9px; border-radius: 50%; background: #1A7F4B"></span>Todos os sistemas operando <span style="font-size: 13px; font-weight: 400; color: #8A8A85">· exemplo</span></span>
@@ -434,25 +389,19 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 
   </main>
 
-<footer id="comecar" aria-labelledby="fim-titulo" style="background: #161616; color: #FFFFFF">
-    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(80px, 10vw, 128px) 24px 32px">
-      <div class="u-cta" style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px 64px; align-items: end">
-        <h2 id="fim-titulo" style="margin: 0; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 500">Confiança se testa. <span style="color: rgba(255,255,255,0.5)">Gere o primeiro token e veja.</span></h2>
-        <div style="display: flex; flex-direction: column; gap: 14px">
-          <div style="display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 20px; border-radius: 16px; background: #222220; border: 1px solid #2E2E2B">
-            <span aria-hidden="true" style="font-family: 'Geist Mono', monospace; font-size: 14px; color: rgba(255,255,255,0.45)">$</span>
-            <code style="flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: 'Geist Mono', monospace; font-size: 14px; color: #FFFFFF">{{mcpCmd}}</code>
-            <button type="button" class="u-btn" onClick="{{copy}}" style="flex: none; min-height: 44px; min-width: 92px; padding: 0 16px; border: 0; border-radius: 10px; background: #FFFFFF; cursor: pointer; font: 500 14px 'Geist', sans-serif; color: #161616"><span aria-live="polite">{{copyLabel}}</span></button>
-          </div>
-          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.6)">Os primeiros 10.000 tokens são por nossa conta.</p>
-        </div>
+<footer id="comecar" style="position: relative; overflow: hidden; background: #0B0B0B; color: #FFFFFF">
+    <div class="ux-fin" style="max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 104px 32px 28px; display: flex; flex-direction: column">
+      <div class="ux-fhead" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px">
+        <p style="margin: 0; max-width: 900px; font-size: clamp(34px, 4.6vw, 72px); line-height: 0.98; letter-spacing: -0.05em; font-weight: 500">Mais de 8 bilhões de pessoas.<br><span style="color: #6E6E69">Nenhuma igual à outra.</span></p>
+        <a class="ux-btn" href="Integracao.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #FFFFFF; color: #161616; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap">Começar pelo MCP<span aria-hidden="true">→</span></a>
       </div>
-      <div class="u-fcols" style="margin-top: clamp(72px, 9vw, 112px); padding-top: 40px; border-top: 1px solid #2A2A27; display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px">
-        <div style="display: flex; flex-direction: column; gap: 14px"><svg role="img" aria-label="unico" width="80" height="17" viewBox="0 0 135 29" fill="#FFFFFF"><path d="M14.47 29C6.46 28.98 0 22.38 0 14.36V.91C0 .42.41.01.91.01h3.62c.51 0 .91.41.91.9v13.47c0 4.99 3.990 9.12 8.98 9.18 5.04.05 9.15-4.03 9.15-9.06V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v13.59C29.01 22.51 22.49 29.02 14.47 29zM60.75 29h-3.63a.9.9 0 0 1-.91-.91V14.63c0-4.99-3.99-9.14-8.98-9.19-5.04-.05-9.15 4.04-9.15 9.06v13.59c0 .5-.4.91-.91.91h-3.63a.9.9 0 0 1-.9-.91V14.65C32.64 6.63 39.08.03 47.11.01c8.02-.03 14.55 6.49 14.55 14.5v13.59c0 .5-.41.91-.91.91zM120.13 5.44a9.06 9.06 0 1 0 0 18.12 9.06 9.06 0 0 0 0-18.12zm0 23.56c-8 0-14.5-6.5-14.5-14.5S112.14 0 120.13 0s14.51 6.5 14.51 14.5-6.5 14.5-14.51 14.5zM69.82 29h-3.63a.9.9 0 0 1-.91-.91V.91c0-.49.41-.9.91-.9h3.63c.49 0 .9.41.9.9v27.18c0 .5-.41.91-.9.91zM96.51 19.06a9.07 9.07 0 0 1-16.89-4.19 9.06 9.06 0 0 1 16.87-4.96c.19.31.53.5.9.5h4.26c.48 0 .81-.48.64-.93A14.5 14.5 0 0 0 88.16.01C80.55.27 74.4 6.47 74.18 14.07c-.23 8.18 6.36 14.92 14.5 14.92 6.23 0 11.57-3.96 13.61-9.49.17-.45-.16-.92-.64-.92h-4.32c-.34 0-.65.18-.83.47"></path></svg><span style="font-size: 14px; color: rgba(255,255,255,0.5)">Reconhecimento Humano</span><span style="margin-top: 2px; font-size: 13px; color: rgba(255,255,255,0.4)">© 2026 Unico</span></div>
-        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Recursos</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="Tecnologia.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Human Token</a></li><li><a class="u-tab" href="HumanPlatform.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Human Platform</a></li><li><a class="u-tab" href="Integracao.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Integração</a></li><li><a class="u-tab" href="#pagina-docs" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Documentação</a></li></ul></div>
-        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Empresa</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="Sobre.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Sobre a Unico</a></li><li><a class="u-tab" href="Clientes.html" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Clientes</a></li><li><a class="u-tab" href="#pagina-newsroom" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Newsroom</a></li><li><a class="u-tab" href="#topo" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Central de confiança</a></li><li><a class="u-tab" href="#carreiras" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Carreiras</a></li></ul></div>
-        <div style="display: flex; flex-direction: column; gap: 14px"><span style="font-size: 13px; color: rgba(255,255,255,0.45)">Legal</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 15px"><li><a class="u-tab" href="#privacidade-desenho" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Privacidade</a></li><li><a class="u-tab" href="#termos" style="text-decoration: none; color: rgba(255,255,255,0.72); padding: 6px 0">Termos</a></li></ul></div>
+      <div class="ux-ftr" style="margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.12); display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); gap: 32px; font-size: 14px">
+        <p class="ux-fdesc" style="margin: 0; max-width: 280px; font-size: 14px; line-height: 1.5; color: #A3A39E">A Unico sabe quem é uma pessoa sem depender de documentos.</p>
+        <details class="ux-fcol" open=""><summary style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #A3A39E; cursor: default; list-style: none">Tecnologia<svg class="ux-fchev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><div class="ux-flinks" style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px"><a href="Tecnologia.html" style="color: #FFFFFF; text-decoration: none">Human Token</a><a href="HumanPlatform.html" style="color: #FFFFFF; text-decoration: none">Human Platform</a><a href="Integracao.html" style="color: #FFFFFF; text-decoration: none">MCP</a></div></details>
+        <details class="ux-fcol" open=""><summary style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #A3A39E; cursor: default; list-style: none">Empresa<svg class="ux-fchev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><div class="ux-flinks" style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px"><a href="Sobre.html" style="color: #FFFFFF; text-decoration: none">Sobre</a><a href="Clientes.html" style="color: #FFFFFF; text-decoration: none">Clientes</a><a href="#pagina-newsroom" style="color: #FFFFFF; text-decoration: none">Newsroom</a><a href="Confianca.html" style="color: #FFFFFF; text-decoration: none">Central de confiança</a></div></details>
+        <details class="ux-fcol" open=""><summary style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #A3A39E; cursor: default; list-style: none">Escritórios<svg class="ux-fchev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><div class="ux-flinks" style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px"><span>São Paulo</span><span>Lisboa</span></div></details>
       </div>
+      <div class="ux-fbot" style="margin-top: 72px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: .02em; color: #8A8A85"><span>© Unico</span><span>PT / EN</span></div>
     </div>
   </footer>
 </div>
@@ -859,7 +808,7 @@ class Component extends DCLogic {
     var o = st.menuOpen == null ? -1 : st.menuOpen, last = st.lastMenu == null ? 1 : st.lastMenu;
     var cmd = '[comando de conexão do MCP da Unico]';
     var M = [
-      { label: 'Início', href: 'index.html', items: [] },
+      { label: 'Início', href: 'home-esfera.html', items: [] },
       { label: 'Recursos', href: 'Tecnologia.html', items: [
         { icon: 'M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M10 10h4v4h-4z', title: 'Human Token', text: 'Como uma selfie vira um token único por pessoa.', href: 'Tecnologia.html' },
         { icon: 'M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z', title: 'Human Platform', text: 'Personalize a marca, gerencie branches e acompanhe relatórios.', href: 'HumanPlatform.html' },
@@ -953,7 +902,7 @@ class Component extends DCLogic {
       mcpCmd: cmd,
       copyLabel: st.copied ? 'Copiado' : 'Copiar',
       copy: function () { try { navigator.clipboard.writeText(cmd); } catch (e) {} self.setState({ copied: true }); clearTimeout(self.copyTimer); self.copyTimer = setTimeout(function () { self.setState({ copied: false }); }, 1800); },
-      menus: [['Início', 'index.html'], ['Tecnologia', 'Tecnologia.html'], ['Integração', 'Integracao.html'], ['Clientes', 'Clientes.html'], ['Empresa', 'Sobre.html']].map(function (m, i) {
+      menus: [['Início', 'home-esfera.html'], ['Tecnologia', 'Tecnologia.html'], ['Integração', 'Integracao.html'], ['Clientes', 'Clientes.html'], ['Empresa', 'Sobre.html']].map(function (m, i) {
         return { label: m[0], href: m[1], current: i === 4 ? 'page' : 'false', color: i === 4 ? '#161616' : (onDark ? 'rgba(255,255,255,0.86)' : '#8A8A85') };
       }),
       hdrOp: onDark ? 0 : 1,
@@ -971,6 +920,53 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(function () {
+  var OPEN = 'Abrir menu', CLOSE = 'Fechar menu';
+  function hd() { return document.getElementById('ux-h'); }
+  function set(o) { var h = hd(); if (!h) { return; } h.setAttribute('data-open', o ? '1' : '0'); var b = h.querySelector('.ux-burger'); if (b) { b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.setAttribute('aria-label', o ? CLOSE : OPEN); } }
+  document.addEventListener('click', function (e) {
+    var t = e.target; if (!t || !t.closest) { return; }
+    if (t.closest('.ux-burger')) { var h = hd(); set(!(h && h.getAttribute('data-open') === '1')); return; }
+    if (!t.closest('.ux-menu') || t.closest('.ux-menu a')) { set(false); }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); } });
+  var mq = window.matchMedia('(max-width: 860px)');
+  function fs() { var ds = document.querySelectorAll('.ux-fcol'); for (var i = 0; i < ds.length; i++) { if (mq.matches) { ds[i].removeAttribute('open'); } else { ds[i].setAttribute('open', ''); } } }
+  if (mq.addEventListener) { mq.addEventListener('change', fs); }
+  var n = 0, iv = setInterval(function () { if (document.querySelector('.ux-fcol') || ++n > 50) { clearInterval(iv); fs(); } }, 100);
+})();
+</script>
+<script>
+(function () {
+  var rm = false; try { rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  if (rm) { return; }
+  var raf = null, OFF = [140, 260, 380, 220, 340, 180];
+  function ease(x) { return 1 - Math.pow(1 - x, 3); }
+  function tick() {
+    raf = null;
+    var gs = document.querySelectorAll('[data-stagger]'), vh = window.innerHeight || 800, small = window.innerWidth <= 960;
+    for (var j = 0; j < gs.length; j++) {
+      var g = gs[j]; if (!g.offsetParent) { continue; }
+      var cs = g.children, r = g.getBoundingClientRect();
+      for (var i = 0; i < cs.length; i++) {
+        var c = cs[i], lag = Math.min(.35, i * .07);
+        var top = small ? c.getBoundingClientRect().top - (parseFloat(c.dataset.ty) || 0) : r.top;
+        var p = (vh - top) / (vh * 0.6);
+        var k = small ? Math.max(0, Math.min(1, p)) : Math.max(0, Math.min(1, (p - lag) / (1 - lag)));
+        var ty = (1 - ease(k)) * (small ? 100 : OFF[i % OFF.length]);
+        c.dataset.ty = ty.toFixed(1);
+        if (ty > 0.5) { c.style.transition = 'none'; c.style.transform = 'translate3d(0,' + ty.toFixed(1) + 'px,0)'; }
+        else if (c.style.transform) { c.style.transform = ''; c.style.transition = ''; }
+      }
+    }
+  }
+  function on() { if (!raf) { raf = requestAnimationFrame(tick); } }
+  window.addEventListener('scroll', on, { passive: true });
+  window.addEventListener('resize', on, { passive: true });
+  var n = 0, iv = setInterval(function () { if (document.querySelector('[data-stagger]') || ++n > 50) { clearInterval(iv); tick(); } }, 100);
+})();
 </script>
 </body>
 </html>
