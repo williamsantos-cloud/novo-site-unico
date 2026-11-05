@@ -161,6 +161,91 @@ a{color:#161616}a:hover{color:#000000}
 
 [data-wrap]{box-sizing:border-box}
 @media (max-width: 860px){[data-wrap]{padding-left:16px !important;padding-right:16px !important}}
+
+/* sobre: nossa história no estilo do How it works */
+.h-scroly{position:relative;height:620vh}
+.h-stick{position:sticky;top:0;height:100vh;min-height:640px;overflow:hidden}
+.h-grid{height:100%;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px}
+.h-left{display:flex;flex-direction:column;min-width:0;padding-top:8px}
+.h-head{margin:0 0 48px;font-size:clamp(28px,3.2vw,44px);line-height:1.12;letter-spacing:-0.03em;font-weight:500}
+.h-body{display:grid;grid-template-columns:minmax(0,1fr);align-items:start}
+.h-ring{position:relative;width:52px;height:52px}
+.h-ring svg{display:block;width:52px;height:52px;transform:rotate(-90deg)}
+.h-rbg{fill:#FFFFFF;stroke:#ECECE8;stroke-width:1.5}
+.h-rfg{fill:none;stroke:#5F7034;stroke-width:2;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:calc(100 - var(--rp,0) * 100)}
+.h-rn{position:absolute;inset:0;display:grid;font-family:'Geist Mono',monospace;font-size:15px;color:#161616}
+.h-rn span{grid-area:1/1;display:grid;place-items:center;opacity:0;transition:opacity .3s}
+.h-stxs{display:grid}
+.h-stx{grid-area:1/1;opacity:0;transform:translateY(24px);visibility:hidden;transition:opacity .45s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility .45s}
+.h-stx.h-past{transform:translateY(-24px)}
+.h-slb{margin:0;font-size:clamp(40px,4.4vw,68px);line-height:1.02;letter-spacing:-0.045em;font-weight:500;color:#161616}
+.h-yr{margin:0;font-size:clamp(64px,7vw,112px);line-height:.92;letter-spacing:-0.055em;font-weight:500;color:#161616;font-variant-numeric:tabular-nums}
+.h-evs{margin:32px 0 0;padding:0;list-style:none;max-width:560px}
+.h-evs li{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #ECECE8;font-size:17px;line-height:1.35;letter-spacing:-0.01em}
+.h-evs li:last-child{border-bottom:1px solid #ECECE8}
+.h-evs svg{flex:none;color:#5F7034}
+.h-evs .h-tag{margin-left:auto;flex:none;font-size:13px;color:#A3A39E}
+.h-dots{margin-top:auto;display:flex;gap:8px}
+.h-dot{width:24px;height:44px;padding:0;border:0;background:transparent;cursor:pointer;display:flex;align-items:center;transition:width .4s}
+.h-dot i{display:block;width:100%;height:3px;border-radius:2px;background:#ECECE8;transition:background-color .4s}
+.h-dot:hover i{background:#C4C4BF}
+.h-panel{position:relative;border-radius:32px;background:#161616;overflow:hidden;min-height:0}
+.h-panel::before,.h-panel::after{content:"";position:absolute;left:0;right:0;height:30%;z-index:2;pointer-events:none}
+.h-panel::before{top:0;background:linear-gradient(#161616,rgba(22,22,22,0))}
+.h-panel::after{bottom:0;background:linear-gradient(rgba(22,22,22,0),#161616)}
+.h-chip{position:absolute;left:20px;top:20px;z-index:3;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.10);font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:rgba(255,255,255,0.78)}
+.h-chip i{width:7px;height:7px;border-radius:50%;background:#B8C78F}
+.h-rail{position:absolute;left:0;right:0;top:50%;padding:0 40px;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.h-ry{display:flex;align-items:baseline;justify-content:space-between;gap:16px;height:96px;color:rgba(255,255,255,0.22);transition:color .45s}
+.h-ry b{font-weight:500;font-size:clamp(48px,5vw,80px);line-height:96px;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-origin:left center;transform:scale(.72)}
+.h-ry span{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;opacity:0;transition:opacity .45s}
+.h-scroly[data-a="0"] .h-stx[data-i="0"],.h-scroly[data-a="0"] .h-rn span[data-i="0"]{opacity:1;transform:none;visibility:visible}
+.h-scroly[data-a="0"] .h-ry[data-i="0"]{color:#FFFFFF}.h-scroly[data-a="0"] .h-ry[data-i="0"] b{transform:none}.h-scroly[data-a="0"] .h-ry[data-i="0"] span{opacity:.7}
+.h-scroly[data-a="0"] .h-dot[data-i="0"]{width:48px}.h-scroly[data-a="0"] .h-dot[data-i="0"] i{background:#161616}
+.h-scroly[data-a="1"] .h-stx[data-i="1"],.h-scroly[data-a="1"] .h-rn span[data-i="1"]{opacity:1;transform:none;visibility:visible}
+.h-scroly[data-a="1"] .h-ry[data-i="1"]{color:#FFFFFF}.h-scroly[data-a="1"] .h-ry[data-i="1"] b{transform:none}.h-scroly[data-a="1"] .h-ry[data-i="1"] span{opacity:.7}
+.h-scroly[data-a="1"] .h-dot[data-i="1"]{width:48px}.h-scroly[data-a="1"] .h-dot[data-i="1"] i{background:#161616}
+.h-scroly[data-a="2"] .h-stx[data-i="2"],.h-scroly[data-a="2"] .h-rn span[data-i="2"]{opacity:1;transform:none;visibility:visible}
+.h-scroly[data-a="2"] .h-ry[data-i="2"]{color:#FFFFFF}.h-scroly[data-a="2"] .h-ry[data-i="2"] b{transform:none}.h-scroly[data-a="2"] .h-ry[data-i="2"] span{opacity:.7}
+.h-scroly[data-a="2"] .h-dot[data-i="2"]{width:48px}.h-scroly[data-a="2"] .h-dot[data-i="2"] i{background:#161616}
+.h-scroly[data-a="3"] .h-stx[data-i="3"],.h-scroly[data-a="3"] .h-rn span[data-i="3"]{opacity:1;transform:none;visibility:visible}
+.h-scroly[data-a="3"] .h-ry[data-i="3"]{color:#FFFFFF}.h-scroly[data-a="3"] .h-ry[data-i="3"] b{transform:none}.h-scroly[data-a="3"] .h-ry[data-i="3"] span{opacity:.7}
+.h-scroly[data-a="3"] .h-dot[data-i="3"]{width:48px}.h-scroly[data-a="3"] .h-dot[data-i="3"] i{background:#161616}
+.h-scroly[data-a="4"] .h-stx[data-i="4"],.h-scroly[data-a="4"] .h-rn span[data-i="4"]{opacity:1;transform:none;visibility:visible}
+.h-scroly[data-a="4"] .h-ry[data-i="4"]{color:#FFFFFF}.h-scroly[data-a="4"] .h-ry[data-i="4"] b{transform:none}.h-scroly[data-a="4"] .h-ry[data-i="4"] span{opacity:.7}
+.h-scroly[data-a="4"] .h-dot[data-i="4"]{width:48px}.h-scroly[data-a="4"] .h-dot[data-i="4"] i{background:#161616}
+.h-scroly[data-a="5"] .h-stx[data-i="5"],.h-scroly[data-a="5"] .h-rn span[data-i="5"]{opacity:1;transform:none;visibility:visible}
+.h-scroly[data-a="5"] .h-ry[data-i="5"]{color:#FFFFFF}.h-scroly[data-a="5"] .h-ry[data-i="5"] b{transform:none}.h-scroly[data-a="5"] .h-ry[data-i="5"] span{opacity:.7}
+.h-scroly[data-a="5"] .h-dot[data-i="5"]{width:48px}.h-scroly[data-a="5"] .h-dot[data-i="5"] i{background:#161616}
+.h-scroly[data-a="6"] .h-stx[data-i="6"],.h-scroly[data-a="6"] .h-rn span[data-i="6"]{opacity:1;transform:none;visibility:visible}
+.h-scroly[data-a="6"] .h-ry[data-i="6"]{color:#FFFFFF}.h-scroly[data-a="6"] .h-ry[data-i="6"] b{transform:none}.h-scroly[data-a="6"] .h-ry[data-i="6"] span{opacity:.7}
+.h-scroly[data-a="6"] .h-dot[data-i="6"]{width:48px}.h-scroly[data-a="6"] .h-dot[data-i="6"] i{background:#161616}
+.h-scroly[data-a="7"] .h-stx[data-i="7"],.h-scroly[data-a="7"] .h-rn span[data-i="7"]{opacity:1;transform:none;visibility:visible}
+.h-scroly[data-a="7"] .h-ry[data-i="7"]{color:#FFFFFF}.h-scroly[data-a="7"] .h-ry[data-i="7"] b{transform:none}.h-scroly[data-a="7"] .h-ry[data-i="7"] span{opacity:.7}
+.h-scroly[data-a="7"] .h-dot[data-i="7"]{width:48px}.h-scroly[data-a="7"] .h-dot[data-i="7"] i{background:#161616}
+@media (max-width: 860px){
+  .h-stick{min-height:0;height:100svh}
+  .h-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:20px;padding-top:84px !important;padding-bottom:16px !important}
+  .h-panel{order:-1;border-radius:24px}
+  .h-head{display:none}
+  .h-ring,.h-ring svg{width:40px;height:40px}
+  .h-rn{font-size:13px}
+  .h-slb{font-size:30px}
+  .h-evs{margin-top:12px}
+  .h-evs li{padding:9px 0;font-size:14px}
+  .h-dots{display:none}
+  .h-ry{height:72px}.h-ry b{font-size:44px;line-height:72px}
+}
+@media (prefers-reduced-motion: reduce){.h-stx,.h-rail,.h-ry,.h-ry b,.h-ry span,.h-rn span{transition:none}}
+
+/* sobre: manifesto palavra a palavra */
+.q-quote{margin:0;max-width:1180px;font-size:clamp(40px,6vw,96px);line-height:1.02;letter-spacing:-0.05em;font-weight:500;color:#161616}
+.q-w{display:inline-block;opacity:.12;transform:translateY(.12em);transition:opacity .35s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.q-w.q-on{opacity:1;transform:none}
+.q-acc{color:#8A8A85}
+.q-cap{margin-top:40px;display:flex;align-items:center;gap:12px;font-size:16px;color:#5C5C58;opacity:0;transition:opacity .6s ease}
+.q-cap.q-on{opacity:1}
+@media (prefers-reduced-motion: reduce){.q-w,.q-cap{opacity:1;transform:none;transition:none}}
 </style>
 <style>.u-lg{transition:background-color .2s}.u-lg:hover{background-color:#F6F6F4}
 /* menu mobile */
@@ -353,42 +438,31 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
 
     <!-- 3. Manifesto -->
     <section aria-label="Manifesto" data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 144px 32px 0">
-      <figure class="s-mani" style="margin: 0; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px 64px; align-items: stretch">
-        <div style="display: flex; flex-direction: column; gap: 24px">
-          <p class="s-eb">(01) Why we exist</p>
-          <picture style="display: block; flex: 1 1 auto"><source type="image/avif" srcset="assets/img/fotos/diego-martins-ceo.avif"><source type="image/webp" srcset="assets/img/fotos/diego-martins-ceo.webp"><img loading="lazy" decoding="async" src="assets/img/fotos/diego-martins-ceo.jpg" alt="Diego Martins, founder and CEO of Unico" style="display: block; width: 100%; height: 100%; min-height: 360px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 30% 20%; border-radius: 24px; background: #F4F4F2"></picture>
-        </div>
-        <div style="display: flex; flex-direction: column; justify-content: flex-end; gap: 28px; padding-bottom: 8px">
-          <blockquote class="s-quote">“Every person should be treated as they are, <span style="color: #8A8A85">unique.</span>”</blockquote>
-          <figcaption style="display: flex; align-items: center; gap: 12px; font-size: 15px; color: #5C5C58"><span aria-hidden="true" style="width: 24px; height: 1px; background: #C4C4BF"></span>Diego Martins, founder and CEO</figcaption>
-          <p style="margin: 0; max-width: 560px; font-size: 19px; line-height: 1.55; color: #5C5C58">The name came from Estonia, where every citizen has a single digital identity for everything. Unico takes that idea to the world, without relying on any country's documents: a face is enough to know who is who.</p>
-        </div>
+      <figure style="margin: 0">
+        <p class="s-eb" style="margin-bottom: 40px">(01) Why we exist</p>
+        <blockquote class="q-quote"><span class="q-w">“Every</span> <span class="q-w">person</span> <span class="q-w">should</span> <span class="q-w">be</span> <span class="q-w">treated</span> <span class="q-w">as</span> <span class="q-w">they</span> <span class="q-w">are,</span> <span class="q-w q-acc">unique.<span style="color: #161616">”</span></span></blockquote>
+        <figcaption class="q-cap"><span aria-hidden="true" style="width: 32px; height: 1px; background: #C4C4BF"></span>Diego Martins, founder and CEO</figcaption>
       </figure>
     </section>
 
     <!-- 4. Linha do tempo -->
-    <section id="historia" aria-labelledby="tl-titulo" data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 144px 32px 0">
-      <div class="u-split" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 32px 64px; align-items: start">
-        <div style="display: flex; flex-direction: column; gap: 16px"><p class="s-eb">(02) Our story</p><h2 id="tl-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">From 2007 to now. <span style="color: #8A8A85">Eight milestones in twenty years.</span></h2></div>
-        <div style="display: flex; flex-direction: column">
-          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
-            <span aria-live="polite" style="display: inline-flex; align-items: center; gap: 14px; padding: 6px 0; font-size: clamp(56px, 7vw, 104px); line-height: 1; letter-spacing: -0.05em; font-weight: 600; font-variant-numeric: tabular-nums"><span role="img" aria-label="{{yrNow}}" style="display: inline-flex; line-height: 1"><sc-for list="{{digits}}" as="g" hint-placeholder-count="4"><span aria-hidden="true" style="display: inline-block; height: 1.04em; overflow: clip; overflow-clip-margin: 0; clip-path: inset(0 -0.25em 0 -0.25em)"><span class="u-roll" style="display: flex; flex-direction: column; transform: translateY({{g.off}}%); transition: transform .9s cubic-bezier(.2,.85,.25,1) {{g.delay}}ms"><sc-for list="{{g.nums}}" as="n" hint-placeholder-count="10"><span style="display: block; height: 1.04em; line-height: 1.04em; text-align: center">{{n}}</span></sc-for></span></span></sc-for></span><span aria-hidden="true" class="u-anim" style="flex: none; width: 14px; height: 14px; border-radius: 50%; background: #5F7034; animation: {{aPop}} .5s cubic-bezier(.2,.7,.2,1) .15s both"></span></span>
-            <span style="flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right"><span class="u-anim" style="animation: {{aFade}} .45s ease both; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; color: #8A8A85">{{yrTitle}}</span><span style="font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; color: #BDBDB7">Milestone <span role="img" aria-label="{{yrIdx}}" style="display: inline-flex; vertical-align: top"><span aria-hidden="true" style="display: inline-block; height: 1.1em; overflow: clip; clip-path: inset(0 -0.25em 0 -0.25em)"><span class="u-roll" style="display: flex; flex-direction: column; transform: translateY({{mkOff}}%); transition: transform .8s cubic-bezier(.2,.85,.25,1)"><sc-for list="{{mkNums}}" as="n" hint-placeholder-count="10"><span style="display: block; height: 1.1em; line-height: 1.1em; text-align: center">{{n}}</span></sc-for></span></span></span> of 8</span></span>
+    <section id="historia" aria-labelledby="tl-titulo">
+      <div class="h-scroly" data-a="0">
+        <div class="h-stick">
+          <div class="h-grid" data-wrap="" style="max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 96px 32px 32px">
+            <div class="h-panel" aria-hidden="true">
+              <span class="h-chip"><i></i>timeline</span>
+              <div class="h-rail"><div class="h-ry" data-i="0"><b>2007</b><span>Start</span></div><div class="h-ry" data-i="1"><b>2016</b><span>Pivot</span></div><div class="h-ry" data-i="2"><b>2020</b><span>Name</span></div><div class="h-ry" data-i="3"><b>2021</b><span>Series C</span></div><div class="h-ry" data-i="4"><b>2022</b><span>Series D</span></div><div class="h-ry" data-i="5"><b>2024</b><span>Scale</span></div><div class="h-ry" data-i="6"><b>2025</b><span>1.5B</span></div><div class="h-ry" data-i="7"><b>2026</b><span>Global</span></div></div>
+            </div>
+            <div class="h-left">
+              <p style="margin: 0 0 16px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #6E6E69">(02) Our story</p>
+              <h2 id="tl-titulo" class="h-head">From 2007 to now. <span style="color: #8A8A85">Eight milestones in twenty years.</span></h2>
+              <div class="h-body">
+                <div class="h-stxs" aria-live="polite"><div class="h-stx" data-i="0"><p class="h-slb">Beginning</p><ul class="h-evs"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 21V3h12l-2 4 2 4H5"></path></svg><span>Acesso Digital is founded</span><span class="h-tag">founding</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M10 10h4v4h-4z"></path></svg><span>Cloud document storage for businesses</span><span class="h-tag">product</span></li></ul></div><div class="h-stx" data-i="1"><p class="h-slb">The turn</p><ul class="h-evs"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h16M12 4v16"></path></svg><span>The founders visit Estonia</span><span class="h-tag">inspiration</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M10 10h4v4h-4z"></path></svg><span>The company enters the digital identity market</span><span class="h-tag">pivot</span></li></ul></div><div class="h-stx" data-i="2"><p class="h-slb">Unico</p><ul class="h-evs"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 5h14v14H5zM10 10h4v4h-4z"></path></svg><span>Acesso Digital is renamed Unico</span><span class="h-tag">Dec 1</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 6h18v12H3zM10 10h4v4h-4z"></path></svg><span>General Atlantic and SoftBank invest R$580 million</span><span class="h-tag">funding</span></li></ul></div><div class="h-stx" data-i="3"><p class="h-slb">Unicorn</p><ul class="h-evs"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 6h18v12H3zM10 10h4v4h-4z"></path></svg><span>US$120 million Series C, with SoftBank and General Atlantic</span><span class="h-tag">Aug</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20V14M10 20V9M16 20V12M22 20V4"></path></svg><span>Valued at US$1.02 billion</span><span class="h-tag">unicorn</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 21V3h12l-2 4 2 4H5"></path></svg><span>Acquisition of ViaNuvem and CredDefense</span><span class="h-tag">acquisitions</span></li></ul></div><div class="h-stx" data-i="4"><p class="h-slb">Series D</p><ul class="h-evs"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 6h18v12H3zM10 10h4v4h-4z"></path></svg><span>US$100 million led by Goldman Sachs Asset Management</span><span class="h-tag">Apr</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20V14M10 20V9M16 20V12M22 20V4"></path></svg><span>Valued at US$2.6 billion</span><span class="h-tag">valuation</span></li></ul></div><div class="h-stx" data-i="5"><p class="h-slb">Scale</p><ul class="h-evs"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20V14M10 20V9M16 20V12M22 20V4"></path></svg><span>608 million transactions in the year</span><span class="h-tag">scale</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 6h18v12H3zM10 10h4v4h-4z"></path></svg><span>First positive EBITDA in company history</span><span class="h-tag">profit</span></li></ul></div><div class="h-stx" data-i="6"><p class="h-slb">Record</p><ul class="h-evs"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M10 10h4v4h-4z"></path></svg><span>Implementation from months to days</span><span class="h-tag">May</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M10 10h4v4h-4z"></path></svg><span>Liveness check in two seconds</span><span class="h-tag">product</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20V14M10 20V9M16 20V12M22 20V4"></path></svg><span>1.5 billion authentications in the year</span><span class="h-tag">record</span></li></ul></div><div class="h-stx" data-i="7"><p class="h-slb">World</p><ul class="h-evs"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20v-6h6v6M14 20V8h6v12M8 10h-2V6h2z"></path></svg><span>Executives from Meta, MongoDB and EBANX</span><span class="h-tag">Feb</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 21V3h12l-2 4 2 4H5"></path></svg><span>Global HQ moves to Menlo Park, California</span><span class="h-tag">Apr</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h16M12 4v16"></path></svg><span>Commercial presence in 23 countries</span><span class="h-tag">global</span></li></ul></div></div>
+              </div>
+              <nav class="h-dots" aria-label="Milestones"><button type="button" class="h-dot" data-i="0" aria-label="Milestone 1: 2007"><i></i></button><button type="button" class="h-dot" data-i="1" aria-label="Milestone 2: 2016"><i></i></button><button type="button" class="h-dot" data-i="2" aria-label="Milestone 3: 2020"><i></i></button><button type="button" class="h-dot" data-i="3" aria-label="Milestone 4: 2021"><i></i></button><button type="button" class="h-dot" data-i="4" aria-label="Milestone 5: 2022"><i></i></button><button type="button" class="h-dot" data-i="5" aria-label="Milestone 6: 2024"><i></i></button><button type="button" class="h-dot" data-i="6" aria-label="Milestone 7: 2025"><i></i></button><button type="button" class="h-dot" data-i="7" aria-label="Milestone 8: 2026"><i></i></button></nav>
+            </div>
           </div>
-          <div class="u-stripw" style="margin-top: 28px"><div role="tablist" aria-label="Years in Unico's history" class="u-strip" style="position: relative; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px"><span aria-hidden="true" class="u-yind" style="position: absolute; left: 0; top: 0; bottom: 0; width: calc((100% - 28px) / 8); border-radius: 16px; background: #FFFFFF; box-shadow: 0 0 0 1px #DCDCD7, 0 8px 20px -12px rgba(22,22,22,0.3); transform: translateX(calc({{yrI}} * (100% + 4px)))"></span>
-            <sc-for list="{{years}}" as="y" hint-placeholder-count="8">
-              <button type="button" role="tab" class="u-yr" aria-selected="{{y.sel}}" onClick="{{y.pick}}" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 72px; padding: 12px 4px; border: 0; border-radius: 16px; background: transparent; cursor: pointer; font-family: 'Geist', sans-serif"><span class="u-yn" style="font-size: clamp(16px, 1.5vw, 21px); letter-spacing: -0.02em; font-weight: 500; font-variant-numeric: tabular-nums; color: {{y.fg}}; transition: color .3s">{{y.year}}</span><span style="font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: {{y.lc}}; transition: color .3s">{{y.tag}}</span></button>
-            </sc-for>
-          </div></div>
-          <ul aria-live="polite" style="overflow: hidden; margin: 20px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column">
-            <sc-for list="{{events}}" as="e" hint-placeholder-count="3">
-              <li class="u-ev u-anim" style="display: flex; align-items: center; gap: 16px; min-height: 72px; padding: 14px 0; border-top: 2px dotted #DCDCD7; animation: {{e.anim}} .55s cubic-bezier(.2,.8,.25,1) both; animation-delay: {{e.delay}}ms">
-                <span aria-hidden="true" style="flex: none; color: #5F7034"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" shape-rendering="crispEdges"><path d="{{e.icon}}"></path></svg></span>
-                <span style="flex: 1 1 auto; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.3; letter-spacing: -0.015em; font-weight: 500">{{e.text}}</span>
-                <span style="flex: none; font-size: 15px; color: #A3A39E; font-variant-numeric: tabular-nums">{{e.tag}}</span>
-              </li>
-            </sc-for>
-          </ul>
         </div>
       </div>
     </section>
@@ -452,10 +526,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
     <section aria-labelledby="lid-titulo" data-wrap="" style="max-width: 1440px; margin: 0 auto; padding: 144px 32px 0">
       <p class="s-eb" style="margin-bottom: 16px">(04) Leadership</p><h2 id="lid-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500; margin-bottom: 40px">Who leads.</h2>
       <div class="u-four" data-stagger="" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px">
-        <div style="display: flex; flex-direction: column; gap: 16px"><picture style="display: contents"><source type="image/avif" srcset="assets/img/fotos/diego-martins-ceo.avif"><source type="image/webp" srcset="assets/img/fotos/diego-martins-ceo.webp"><img loading="lazy" decoding="async" src="assets/img/fotos/diego-martins-ceo.jpg" alt="Diego Martins, founder and CEO of Unico" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 30% 20%; border-radius: 20px; background: #F4F4F2"></picture><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 500">Diego Martins</span><span style="font-size: 14px; color: #6E6E69">Founder and CEO</span></span></div>
-        <div style="display: flex; flex-direction: column; gap: 16px"><span aria-hidden="true" style="display: grid; place-items: center; aspect-ratio: 1 / 1; border-radius: 20px; background: #F4F4F2; font-size: 32px; letter-spacing: -0.03em; font-weight: 500; color: #8A8A85">—</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 500">[First Last]</span><span style="font-size: 14px; color: #6E6E69">[Title]</span></span></div>
-        <div style="display: flex; flex-direction: column; gap: 16px"><span aria-hidden="true" style="display: grid; place-items: center; aspect-ratio: 1 / 1; border-radius: 20px; background: #F4F4F2; font-size: 32px; letter-spacing: -0.03em; font-weight: 500; color: #8A8A85">—</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 500">[First Last]</span><span style="font-size: 14px; color: #6E6E69">[Title]</span></span></div>
-        <div style="display: flex; flex-direction: column; gap: 16px"><span aria-hidden="true" style="display: grid; place-items: center; aspect-ratio: 1 / 1; border-radius: 20px; background: #F4F4F2; font-size: 32px; letter-spacing: -0.03em; font-weight: 500; color: #8A8A85">—</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 500">[First Last]</span><span style="font-size: 14px; color: #6E6E69">[Title]</span></span></div>
+        <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0"><img loading="lazy" decoding="async" src="assets/img/fotos/diego-martins-ceo-ceu.webp" alt="Diego Martins" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; background: #F4F4F2"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 500">Diego Martins</span><span style="font-size: 14px; color: #6E6E69">Founder and CEO</span></span></div><div style="display: flex; flex-direction: column; gap: 16px; min-width: 0"><img loading="lazy" decoding="async" src="assets/img/esfera/c9f255aa25327748a112e5af065137cb.jpg" alt="" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; background: #F4F4F2"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 500">[First Last]</span><span style="font-size: 14px; color: #6E6E69">[Title]</span></span></div><div style="display: flex; flex-direction: column; gap: 16px; min-width: 0"><img loading="lazy" decoding="async" src="assets/img/esfera/d268126b91e0def4a36c6b6eaf1af58a.jpg" alt="" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; background: #F4F4F2"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 500">[First Last]</span><span style="font-size: 14px; color: #6E6E69">[Title]</span></span></div><div style="display: flex; flex-direction: column; gap: 16px; min-width: 0"><img loading="lazy" decoding="async" src="assets/img/esfera/e190607e2c7e3ccb80a304779a8b59d2.jpg" alt="" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px; background: #F4F4F2"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 500">[First Last]</span><span style="font-size: 14px; color: #6E6E69">[Title]</span></span></div>
       </div>
       <p style="margin: 16px 0 0; font-size: 13px; color: #8A8A85">Executive team photos and names pending from HR.</p>
     </section>
@@ -467,7 +538,7 @@ html:has(.u-mnav[data-open="1"]){overflow:hidden}
           <p class="s-eb">(05) Investors</p>
           <h2 id="inv-titulo" style="margin: 0; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 500">Who backs <span style="color: #8A8A85">Unico.</span></h2>
         </div>
-        <ul class="u-four" data-stagger="" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px"><li class="s-card">SoftBank Latin America Fund</li><li class="s-card">General Atlantic</li><li class="s-card">Goldman Sachs Asset Management</li><li class="s-card">Ribbit Capital</li></ul>
+        <ul class="u-four" data-stagger="" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px"><li class="s-card"><img src="assets/img/investidores/softbank.png" alt="SoftBank Latin America Fund" loading="lazy" decoding="async" style="display: block; height: 26px; width: auto; max-width: 78%; object-fit: contain; mix-blend-mode: multiply; filter: grayscale(1)"></li><li class="s-card"><img src="assets/img/investidores/general-atlantic.webp" alt="General Atlantic" loading="lazy" decoding="async" style="display: block; height: 76px; width: auto; max-width: 78%; object-fit: contain; mix-blend-mode: multiply; filter: grayscale(1)"></li><li class="s-card"><img src="assets/img/investidores/goldman-sachs.png" alt="Goldman Sachs Asset Management" loading="lazy" decoding="async" style="display: block; height: 44px; width: auto; max-width: 78%; object-fit: contain; mix-blend-mode: multiply; filter: grayscale(1)"></li><li class="s-card"><img src="assets/img/investidores/ribbit-capital.png" alt="Ribbit Capital" loading="lazy" decoding="async" style="display: block; height: 24px; width: auto; max-width: 78%; object-fit: contain; mix-blend-mode: multiply; filter: grayscale(1)"></li></ul>
       </div>
     </section>
 
@@ -1107,6 +1178,52 @@ class Component extends DCLogic {
     if (!rm || !w) { requestAnimationFrame(frame); }
   }
   requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(function () {
+  var raf = null;
+  function tick() {
+    raf = null;
+    var root = document.querySelector('.h-scroly'); if (!root) { return; }
+    var vh = window.innerHeight || 800, r = root.getBoundingClientRect(), total = root.offsetHeight - vh;
+    var p = total > 0 ? Math.max(0, Math.min(0.9999, -r.top / total)) : 0, q = p * 8, a = Math.floor(q);
+    if (root.getAttribute('data-a') !== String(a)) {
+      root.setAttribute('data-a', String(a));
+      var xs = root.querySelectorAll('.h-stx'); for (var i = 0; i < xs.length; i++) { xs[i].classList.toggle('h-past', i < a); }
+      var rail = root.querySelector('.h-rail'), it = rail && rail.children[a];
+      if (it) { rail.style.transform = 'translateY(' + (-(it.offsetTop + it.offsetHeight / 2)) + 'px)'; }
+    }
+    var ring = root.querySelector('.h-ring'); if (ring) { ring.style.setProperty('--rp', (q - a).toFixed(3)); }
+  }
+  function on() { if (!raf) { raf = requestAnimationFrame(tick); } }
+  window.addEventListener('scroll', on, { passive: true });
+  window.addEventListener('resize', function () { var root = document.querySelector('.h-scroly'); if (root) { root.removeAttribute('data-a'); } on(); }, { passive: true });
+  document.addEventListener('click', function (e) {
+    var d = e.target && e.target.closest ? e.target.closest('.h-dot') : null; if (!d) { return; }
+    var root = document.querySelector('.h-scroly'), vh = window.innerHeight || 800, total = root.offsetHeight - vh;
+    var top = root.getBoundingClientRect().top + window.scrollY + ((+d.getAttribute('data-i') + 0.5) / 8) * total;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  });
+  var n = 0, iv = setInterval(function () { if (document.querySelector('.h-scroly') || ++n > 50) { clearInterval(iv); tick(); } }, 100);
+})();
+</script>
+<script>
+(function () {
+  var raf = null;
+  function tick() {
+    raf = null;
+    var q = document.querySelector('.q-quote'); if (!q) { return; }
+    var ws = q.querySelectorAll('.q-w'), cap = document.querySelector('.q-cap'), vh = window.innerHeight || 800, r = q.getBoundingClientRect();
+    var p = (vh * 0.92 - r.top) / (vh * 0.92 - vh * 0.55);
+    var n = Math.round(Math.max(0, Math.min(1, p)) * ws.length);
+    for (var i = 0; i < ws.length; i++) { ws[i].classList.toggle('q-on', i < n); }
+    if (cap) { cap.classList.toggle('q-on', n >= ws.length); }
+  }
+  function on() { if (!raf) { raf = requestAnimationFrame(tick); } }
+  window.addEventListener('scroll', on, { passive: true });
+  window.addEventListener('resize', on, { passive: true });
+  var k = 0, iv = setInterval(function () { if (document.querySelector('.q-quote') || ++k > 50) { clearInterval(iv); tick(); } }, 100);
 })();
 </script>
 </body>
