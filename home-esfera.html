@@ -174,6 +174,26 @@ a{color:#161616}a:hover{color:#000000}
 @media (max-width: 560px){.u-start{display:none !important}.u-gbtn{padding:0 14px !important}}
 .u-fcol summary::-webkit-details-marker{display:none}.u-fchev{display:none}
 @media (min-width: 861px){.u-fcol summary{pointer-events:none}}
+
+/* cards do globo: card largo e leve; "Verificando" + loader do index durante o scan, transição para Face ID + nome + token */
+.u-meta{left:calc(var(--cw) * 0.05) !important;right:calc(var(--cw) * 0.05);bottom:calc(var(--cw) * 0.05) !important;display:grid !important;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;column-gap:calc(var(--cw) * 0.045);row-gap:0;align-items:center;padding:calc(var(--cw) * 0.045) calc(var(--cw) * 0.055) !important;border-radius:calc(var(--cw) * 0.05) !important;background:rgba(255,255,255,.96) !important;box-shadow:0 calc(var(--cw) * 0.015) calc(var(--cw) * 0.05) rgba(0,0,0,.10) !important}
+.u-ldr,.u-fid{display:block;grid-column:1;grid-row:1 / span 2;width:calc(var(--cw) * 0.095);height:calc(var(--cw) * 0.095);transition:opacity .35s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.u-ldr svg,.u-fid svg{display:block;width:100%;height:100%}
+.u-ldr{color:rgba(0,0,0,.55)}.u-ldr svg{animation:uCico 2.4s linear infinite}
+.u-fid{color:#161616;opacity:0;transform:scale(.6) rotate(-20deg)}
+.u-card[data-s="ok"] .u-ldr,.u-card[data-s="new"] .u-ldr,.u-card[data-s="match"] .u-ldr{opacity:0;transform:scale(.6) rotate(90deg)}
+.u-card[data-s="ok"] .u-fid,.u-card[data-s="new"] .u-fid,.u-card[data-s="match"] .u-fid{opacity:1;transform:none;transition-delay:.12s}
+.u-meta .u-nm{display:block !important;grid-column:2;grid-row:1;margin:0 !important;font-family:'Geist',sans-serif;font-weight:500 !important;font-size:calc(var(--cw) * 0.058) !important;line-height:1.25;letter-spacing:.005em;color:#161616;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .3s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.u-meta .u-nmv{opacity:0;transform:translateY(40%)}
+.u-card[data-s="ok"] .u-nmp,.u-card[data-s="new"] .u-nmp,.u-card[data-s="match"] .u-nmp{opacity:0;transform:translateY(-40%)}
+.u-card[data-s="ok"] .u-nmv,.u-card[data-s="new"] .u-nmv,.u-card[data-s="match"] .u-nmv{opacity:1;transform:none;transition-delay:.1s}
+.u-meta .u-r1{grid-column:2;grid-row:2;display:block !important;max-height:0;opacity:0;overflow:hidden;font-family:'Geist',sans-serif !important;font-size:calc(var(--cw) * 0.046) !important;line-height:1.3;letter-spacing:.01em !important;color:rgba(0,0,0,.5) !important;transition:max-height .5s cubic-bezier(.2,.7,.2,1),opacity .35s ease,margin .5s cubic-bezier(.2,.7,.2,1)}
+.u-card[data-s="ok"] .u-r1,.u-card[data-s="new"] .u-r1,.u-card[data-s="match"] .u-r1{max-height:calc(var(--cw) * 0.08);opacity:1;margin-top:calc(var(--cw) * 0.006);transition-delay:.15s}
+.u-meta .u-tk{color:rgba(0,0,0,.5)}
+.u-meta .u-cc,.u-meta .u-bar{display:none !important}
+@keyframes uCico{to{transform:rotate(360deg)}}
+.u-cico{flex:none;color:rgba(0,0,0,.55);animation:uCico 2.4s linear infinite}
+@media (prefers-reduced-motion: reduce){.u-ldr svg,.u-cico{animation:none}.u-meta *{transition:none !important}}
 </style>
 </helmet>
 <div id="u-root" data-intro="0" style="font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; color: #161616; background: #FFFFFF; -webkit-font-smoothing: antialiased">
@@ -244,8 +264,8 @@ a{color:#161616}a:hover{color:#000000}
                 <canvas class="u-pc" width="240" height="240" aria-hidden="true"></canvas>
                 <span class="u-pill u-pn">token emitido</span>
                 <span class="u-pill u-pm">mesma pessoa</span>
-                <span class="u-meta">
-                  <span class="u-nm u-nmp">Lendo rosto…</span><span class="u-nm u-nmv">{{c.name}}</span>
+                <span class="u-meta"><span class="u-ldr" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><rect x="2.5" y="2.5" width="15" height="15" rx="4" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1.2 2.4" stroke-linecap="round"></rect></svg></span><span class="u-fid" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8V5.5A2.5 2.5 0 0 1 5.5 3H8M16 3h2.5A2.5 2.5 0 0 1 21 5.5V8M21 16v2.5a2.5 2.5 0 0 1-2.5 2.5H16M8 21H5.5A2.5 2.5 0 0 1 3 18.5V16"/><path d="M9 9v1.5M15 9v1.5M12 9v4h-1M9.5 16.2c1.4 1 3.6 1 5 0"/></svg></span>
+                  <span class="u-nm u-nmp">Verificando</span><span class="u-nm u-nmv">{{c.name}}</span>
                   <span class="u-r1"><span class="u-tk">ht_········</span><span class="u-cc">{{c.code}}</span></span>
                   <span class="u-bar"><i></i></span>
                 </span>
